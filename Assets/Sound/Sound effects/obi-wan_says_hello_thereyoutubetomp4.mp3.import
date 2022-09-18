@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/obi-wan_says_hello_thereyoutubetomp4.mp3-52b9989833b9bda863f4818f5166d1e7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound effects/obi-wan_says_hello_thereyoutubetomp4.mp3"
+dest_files=[ "res://.import/obi-wan_says_hello_thereyoutubetomp4.mp3-52b9989833b9bda863f4818f5166d1e7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

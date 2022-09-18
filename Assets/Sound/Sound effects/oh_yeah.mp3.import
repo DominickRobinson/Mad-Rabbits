@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/oh_yeah.mp3-8bd68a772d02dbc3b48a06c3686f3456.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound effects/oh_yeah.mp3"
+dest_files=[ "res://.import/oh_yeah.mp3-8bd68a772d02dbc3b48a06c3686f3456.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

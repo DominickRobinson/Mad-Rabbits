@@ -1,0 +1,197 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Scripts/FarCamera.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/CloseCamera.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shroom sky.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/InterfaceController.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms dark hill.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shroom light hill.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/Rex.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shroom dirt.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shroom in the background.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scripts/CameraController.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shroom shrubs.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shroom blue iconic.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shroom big wide.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms green flat 1.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms green flat 2.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms iconic red.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms orange and tall.png" type="Texture" id=22]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1022.01, 64.25 )
+
+[node name="Shroom Test" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 1, 0 )
+motion_mirroring = Vector2( 4096, 1714 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Sky"]
+position = Vector2( -701, -67.5 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+offset = Vector2( 612, 300 )
+
+[node name="Shrooms3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Shroom" type="Sprite" parent="ParallaxBackground/Shrooms3"]
+position = Vector2( -2036, -310 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Hills" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 1, 0 )
+
+[node name="DarkHill" type="Sprite" parent="ParallaxBackground/Hills"]
+position = Vector2( -705, -64.5 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 612, 300 )
+
+[node name="Shrooms2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 1, 0 )
+motion_mirroring = Vector2( 819.2, 0 )
+
+[node name="Shroom" type="Sprite" parent="ParallaxBackground/Shrooms2"]
+position = Vector2( -1310.8, 121.4 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 17 )
+offset = Vector2( 612, 300 )
+
+[node name="Shroom2" type="Sprite" parent="ParallaxBackground/Shrooms2"]
+position = Vector2( -1236.8, 148.4 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 18 )
+offset = Vector2( 612, 300 )
+
+[node name="Shroom3" type="Sprite" parent="ParallaxBackground/Shrooms2"]
+position = Vector2( -1079.8, 124.4 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 19 )
+offset = Vector2( 612, 300 )
+
+[node name="Shroom4" type="Sprite" parent="ParallaxBackground/Shrooms2"]
+position = Vector2( -702.8, 121.4 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 20 )
+offset = Vector2( 612, 300 )
+
+[node name="Shroom5" type="Sprite" parent="ParallaxBackground/Shrooms2"]
+position = Vector2( -969.8, 139.4 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 21 )
+offset = Vector2( 612, 300 )
+
+[node name="Shroom6" type="Sprite" parent="ParallaxBackground/Shrooms2"]
+position = Vector2( -765.8, 131.4 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 22 )
+offset = Vector2( 612, 300 )
+
+[node name="Slingshot" parent="." instance=ExtResource( 10 )]
+position = Vector2( -906, 260 )
+z_index = -1
+MaxSlingshotPull = 150
+MaxLaunchVelocity = 800
+
+[node name="Cameras" type="Node2D" parent="." groups=["CameraController", "Cameras"]]
+script = ExtResource( 15 )
+
+[node name="CloseCamera" type="Camera2D" parent="Cameras" groups=["Camera", "CloseCamera"]]
+position = Vector2( -902, 112 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+script = ExtResource( 2 )
+
+[node name="CloseTween" type="Tween" parent="Cameras/CloseCamera"]
+
+[node name="CloseTweenZoom" type="Tween" parent="Cameras/CloseCamera"]
+
+[node name="FarCamera" type="Camera2D" parent="Cameras" groups=["Camera", "FarCamera"]]
+position = Vector2( -549, 36 )
+zoom = Vector2( 1.3, 1.3 )
+script = ExtResource( 1 )
+
+[node name="FarTween" type="Tween" parent="Cameras/FarCamera"]
+
+[node name="FarTweenZoom" type="Tween" parent="Cameras/FarCamera"]
+
+[node name="InterfaceController" parent="." instance=ExtResource( 4 )]
+
+[node name="Bricks" type="Node2D" parent="."]
+position = Vector2( 1319, -169 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 6 )]
+position = Vector2( -971, 238 )
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Chip" parent="Rabbits" instance=ExtResource( 14 )]
+position = Vector2( -1007, 238 )
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 8 )]
+position = Vector2( -1041, 238 )
+
+[node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
+position = Vector2( -1075, 240 )
+
+[node name="Bears" type="Node2D" parent="."]
+position = Vector2( -1027, 246 )
+
+[node name="Bear" parent="Bears" instance=ExtResource( 13 )]
+position = Vector2( 1140, -68 )
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( -1143, 225 )
+
+[node name="Bushes" type="Sprite" parent="Ground"]
+visible = false
+position = Vector2( 133, -36 )
+scale = Vector2( 0.2, 0.2 )
+z_index = -1
+texture = ExtResource( 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2( 144, 37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 602.019, 61.7012 )
+rotation = -0.00523599
+shape = SubResource( 1 )
+
+[node name="Dirt" type="Sprite" parent="Ground/StaticBody2D/CollisionShape2D"]
+show_behind_parent = true
+position = Vector2( 3.25046, -242.438 )
+rotation = 0.00523599
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="LightHill1" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( -418, -170, -364, -166, -327, -159, -291, -140, -169, -42, -151, -28, -129, -15, -92, -7, -421, -5 )
+
+[node name="LightHill" type="Sprite" parent="Ground/StaticBody2D/LightHill1"]
+position = Vector2( 604, -180.75 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -2
+texture = ExtResource( 7 )
+
+[node name="LightHill2" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 1300, -12, 1392, -77, 1426, -97, 1447, -120, 1527, -182, 1571, -195, 1628, -225, 1627, -17 )
+
+[connection signal="tween_completed" from="Cameras/CloseCamera/CloseTween" to="Cameras/CloseCamera" method="_on_CloseTween_tween_completed"]
+[connection signal="tween_completed" from="Cameras/CloseCamera/CloseTweenZoom" to="Cameras/CloseCamera" method="_on_CloseTweenZoom_tween_completed"]
