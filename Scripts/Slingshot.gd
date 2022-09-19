@@ -106,9 +106,11 @@ func _process(delta):
 				var pointPosition = player.position
 				var grav = 150
 				$ShotArc.clear_points()
+				var c = 0.005
 				for i in 50:
 					$ShotArc.add_point(pointPosition)
 					velocity.y += grav * delta
+					velocity += -c * velocity
 					pointPosition += velocity * delta
 					if pointPosition.y > $ShotArc.position.y:
 						#print(str(i))
