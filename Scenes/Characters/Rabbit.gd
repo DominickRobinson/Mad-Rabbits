@@ -116,8 +116,8 @@ func _on_Catchphrase_finished():
 
 func prepareAbilityPopup():
 	if is_instance_valid($AbilityPanel):
-		#$AbilityPanel/Control.visible = false
-		#$AbilityPanel/Control/DialoguePanel/Catchphrase.bbcode_text = catchphrase_text
+		$AbilityPanel/Control.visible = false
+		$AbilityPanel/Control/DialoguePanel/Catchphrase.bbcode_text = catchphrase_text
 		pass
 	pass
 

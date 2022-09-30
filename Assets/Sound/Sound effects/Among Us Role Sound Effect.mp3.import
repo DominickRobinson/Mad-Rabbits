@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Among Us Role Sound Effect.mp3-6a39f615a03c97ab184f5d41ee039b8e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound effects/Among Us Role Sound Effect.mp3"
+dest_files=[ "res://.import/Among Us Role Sound Effect.mp3-6a39f615a03c97ab184f5d41ee039b8e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

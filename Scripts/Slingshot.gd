@@ -4,7 +4,7 @@ enum SlingState {
 	idle,
 	pulling,
 	thrown,
-	reset	
+	reset
 }
 
 export var MaxSlingshotPull := 100
@@ -106,7 +106,7 @@ func _process(delta):
 				var pointPosition = player.position
 				var grav = 150
 				$ShotArc.clear_points()
-				for i in 50:
+				for i in 5000:
 					$ShotArc.add_point(pointPosition)
 					velocity.y += grav * delta
 					pointPosition += velocity * delta
@@ -150,7 +150,7 @@ func _process(delta):
 
 
 func reset_slingshot():
-	$ShotArc.clear_points()
+	#$ShotArc.clear_points()
 	LeftLine.points[1] = CenterOfSlingshot
 	RightLine.points[1] = CenterOfSlingshot
 	
