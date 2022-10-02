@@ -130,7 +130,7 @@ func _process(delta):
 				get_tree().get_nodes_in_group("Camera")[0].followingPlayer = true
 				
 		SlingState.thrown:
-			if Input.is_action_pressed("ability"):
+			if Input.is_action_just_pressed("ability"):
 				player.useAbility()
 			
 			reset_slingshot()
