@@ -58,7 +58,7 @@ func _on_HurtZone_body_entered(body):
 	
 	if not can_take_damage:
 		return false
-	
+	print(body)
 	if is_instance_valid(body):
 		if body is RigidBody2D or body.is_in_group("Rabbits"):
 			#if body.is_in_group("Player"):
