@@ -7,7 +7,10 @@ func _ready2():
 
 
 func ability():
+	
+	
 	explode()
+	
 	pass
 
 func explode():

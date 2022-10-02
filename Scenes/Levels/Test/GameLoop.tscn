@@ -77,6 +77,7 @@ rotation = 1.5708
 
 [node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 16 )]
 position = Vector2( -106, -125 )
+counter = 3
 catchphrase_filename = "res://Assets/Sound/Sound effects/Among Us Role Sound Effect.mp3"
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
@@ -86,6 +87,7 @@ catchphrase_text = "[wave] susususus"
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
+counter = 4
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
 position = Vector2( -149, -9 )
