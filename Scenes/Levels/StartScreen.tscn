@@ -1,0 +1,46 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DialoguePanel" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -185.0
+margin_top = -306.0
+margin_right = 839.0
+margin_bottom = -98.0
+rect_scale = Vector2( 0.639999, 0.639999 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="DialoguePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -498.0
+margin_top = -85.0
+margin_right = 496.0
+margin_bottom = 85.0
+color = Color( 0.831373, 0.792157, 0.196078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Catchphrase" type="RichTextLabel" parent="DialoguePanel"]
+anchor_left = 0.360352
+anchor_top = -0.0528846
+anchor_right = 0.860352
+anchor_bottom = 0.552885
+margin_left = -346.0
+margin_top = 43.0
+margin_right = -508.0
+margin_bottom = -23.0001
+rect_scale = Vector2( 2.92, 2.92 )
+bbcode_enabled = true
+text = "The amoguses were living happily in their spaceship until the imposter appeared. Find and defeat the imposter amogus!"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

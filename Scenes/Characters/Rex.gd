@@ -16,6 +16,5 @@ func ability():
 func explode():
 	var cloud = Explosion.instance()
 	get_parent().add_child(cloud)
-	print(global_position)
 	cloud.position = global_position
 	print("kaboom")

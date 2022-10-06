@@ -8,6 +8,7 @@ export var health := 300
 var last_linear_velocity
 var calculate_yet = true
 var can_take_damage = false
+const Kaboom = preload("../Effects/Kaboom.tscn")
 
 func _ready():
 	last_linear_velocity = linear_velocity
@@ -85,4 +86,9 @@ func _on_HurtZone_body_entered(body):
 			if health <= 0:
 				queue_free()
 				pass # Replace with function body.
+		elif body.is_in_group("Explosion"):
+			var cloud = Kaboom.instance()
+			get_parent().add_child(cloud)
+			cloud.position = global_position
+			queue_free()
 
