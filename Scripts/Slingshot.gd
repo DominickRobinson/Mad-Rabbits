@@ -107,7 +107,7 @@ func _process(delta):
 				var grav = 150
 				$ShotArc.clear_points()
 				var c = 0.005
-				for i in 50:
+				for i in 500:
 					$ShotArc.add_point(pointPosition)
 					velocity.y += grav * delta
 					velocity += -c * velocity
@@ -133,7 +133,7 @@ func _process(delta):
 			if Input.is_action_pressed("ability"):
 				player.useAbility()
 			
-			reset_slingshot()
+
 			
 			if Input.is_action_pressed("return_to_slingshot"):
 				nextPlayer()
@@ -141,6 +141,7 @@ func _process(delta):
 
 		SlingState.reset:
 			var lives = get_tree().get_nodes_in_group("Player")
+			reset_slingshot()
 			if lives.size() > 0:
 				player = lives[0]
 				$Tween.interpolate_property(player, "position", player.position, CenterOfSlingshotGlobal, 0.1)

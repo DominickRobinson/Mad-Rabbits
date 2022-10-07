@@ -78,6 +78,7 @@ switch_camera={
 
 common/enable_pause_aware_picking=true
 2d/default_gravity=150
+2d/default_linear_damp=0.0
 
 [rendering]
 
