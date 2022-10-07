@@ -1,55 +1,37 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/Characters/Chip.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Characters/Chewy.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sound/Sound effects/fart-meme-sound.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sound/Sound effects/Among Us Role Sound Effect.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Characters/among-us-lime-character-dum-512x512.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Characters/Amogus.gd" type="Script" id=4]
 
-[sub_resource type="PhysicsMaterial" id=2]
-bounce = 0.2
+[sub_resource type="CapsuleShape2D" id=6]
+height = 8.0
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 13.0
-
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=5]
 font_path = "res://Assets/Fonts/true-crimes.ttf"
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 64
 outline_size = 3
-outline_color = Color( 0.627451, 0.45098, 0.235294, 1 )
+outline_color = Color( 0.117647, 0.435294, 0.745098, 1 )
 extra_spacing_char = 2
 extra_spacing_space = -5
-font_data = SubResource( 7 )
+font_data = SubResource( 5 )
 
-[node name="Chip" type="RigidBody2D" groups=["Player", "Rabbits"]]
-mass = 2.0
-physics_material_override = SubResource( 2 )
-script = ExtResource( 1 )
-counter = null
-catchphrase_filename = "res://Assets/Sound/Sound effects/fart-meme-sound.mp3"
+[node name="Amogus" type="RigidBody2D"]
+script = ExtResource( 4 )
+catchphrase_text = "blue vented i swear"
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2, -12 )
-scale = Vector2( 0.055, 0.06 )
-texture = ExtResource( 2 )
+position = Vector2( 5.96046e-08, -1.42109e-14 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 3 )
 
 [node name="Body" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
-[node name="LargeSprite" type="Sprite" parent="."]
-visible = false
-modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 5, -28 )
-scale = Vector2( 0.14, 0.14 )
-texture = ExtResource( 2 )
-
-[node name="LargeBody" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource( 1 )
-disabled = true
+shape = SubResource( 6 )
 
 [node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
-stream = ExtResource( 3 )
+stream = ExtResource( 2 )
 
 [node name="AbilityPanel" type="CanvasLayer" parent="."]
 
@@ -83,7 +65,7 @@ margin_left = -497.0
 margin_top = -85.0
 margin_right = 497.0
 margin_bottom = 85.0
-color = Color( 0.27451, 0.196078, 0.054902, 1 )
+color = Color( 0.635294, 0.184314, 0.184314, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -97,10 +79,10 @@ margin_left = -79.0
 margin_top = 48.0
 margin_right = 107.0
 margin_bottom = 48.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 bbcode_enabled = true
-bbcode_text = "[shake rate=10 level=10] OOGA BOOGA !!"
-text = " OOGA BOOGA !!"
+bbcode_text = "IT'S [wave] MORBIN' TIME!!"
+text = "IT'S  MORBIN' TIME!!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -124,14 +106,12 @@ margin_left = -110.0
 margin_top = -110.0
 margin_right = 110.0
 margin_bottom = 110.0
-color = Color( 0.27451, 0.196078, 0.054902, 1 )
+color = Color( 0.654902, 0.196078, 0.121569, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="AbilityPanel/Control/SpritePanel"]
-position = Vector2( 122, 124 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 2 )
-
-[connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]
+position = Vector2( 126, 126.25 )
+scale = Vector2( 0.421875, 0.399414 )
+texture = ExtResource( 3 )
