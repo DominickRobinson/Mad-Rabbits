@@ -62,7 +62,7 @@ func _on_Brick_body_entered(body):
 			#print(health)
 			body = body as RigidBody2D
 			#var damage = body.linear_velocity.length()
-			var damage = abs(mass * body.linear_velocity.length()) + abs(last_linear_velocity.length())
+			var damage = abs(body.mass * body.linear_velocity.length()) + abs(last_linear_velocity.length())
 			print(damage)
 			#audio.play()
 			health -= damage

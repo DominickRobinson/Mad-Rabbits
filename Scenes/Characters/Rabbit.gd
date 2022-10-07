@@ -1,7 +1,6 @@
 extends RigidBody2D
 class_name Rabbit
 
-
 export var DespawnTimer := 2
 export var DespawnVelocity := 5
 
@@ -9,6 +8,7 @@ export var initial_angular_velocity := 3
 export var ability_used := false
 
 export var catchphrase_text := "IT'S MORBIN' TIME!!"
+export var counter := 4
 #export(String, FILE, ".mp3") var catchphrase_filename := ""
 export var catchphrase_filename := ""
 
@@ -88,7 +88,8 @@ func useAbility():
 		return false
 	ability()
 	sayCatchphrase()
-	ability_used = true
+	if counter == 0:
+		ability_used = true
 
 
 
@@ -120,8 +121,8 @@ func _on_Catchphrase_finished():
 
 func prepareAbilityPopup():
 	if is_instance_valid($AbilityPanel):
-		#$AbilityPanel/Control.visible = false
-		#$AbilityPanel/Control/DialoguePanel/Catchphrase.bbcode_text = catchphrase_text
+		$AbilityPanel/Control.visible = false
+		$AbilityPanel/Control/DialoguePanel/Catchphrase.bbcode_text = catchphrase_text
 		pass
 	pass
 
