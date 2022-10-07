@@ -27,19 +27,25 @@ func _ready():
 	cameraController = findCamera()
 	pass
 
+func slowdown(p = 0.2):
+	Engine.time_scale = p
+	dampAllAudio()
+	cameraController.slowMotion()
+	
+func speedup():
+	normalAllAudio()
+	Engine.time_scale = 1
+	cameraController.normalMotion()
+
 func _process(delta):
 	
 	currentPlayer = findPlayer()
 	cameraController = findCamera()
 	
 	if Input.is_action_pressed("slowmo"):
-		Engine.time_scale = 0.2
-		dampAllAudio()
-		cameraController.slowMotion()
+		slowdown()
 	elif Input.is_action_just_released("slowmo"):
-		normalAllAudio()
-		Engine.time_scale = 1
-		cameraController.normalMotion()
+		speedup()
 	
 	match CurrentGameState:
 		GameState.Start:
@@ -95,13 +101,13 @@ func findPlayer():
 func findCamera():
 	return get_tree().get_nodes_in_group("CameraController")[0]
 
-func dampAllAudio():
+func dampAllAudio(p = 0.2):
 	var audioPlayers = get_tree().get_nodes_in_group("dampable")
 	for audio in audioPlayers:
 		print(audioPlayers.size())
 		audio = audio as AudioStreamPlayer
 		audio.volume_db = -1
-		audio.pitch_scale = 0.2
+		audio.pitch_scale = p
 
 func normalAllAudio():
 	var audioPlayers = get_tree().get_nodes_in_group("dampable")
