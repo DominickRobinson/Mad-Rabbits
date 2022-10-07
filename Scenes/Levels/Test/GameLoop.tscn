@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/InterfaceController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodSuperLong.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )
@@ -74,8 +75,8 @@ rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
 
-[node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
-position = Vector2( -284, -7 )
+[node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 16 )]
+position = Vector2( -38, -15 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
 position = Vector2( -80, -9 )
@@ -86,6 +87,9 @@ position = Vector2( -228, -9 )
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
 position = Vector2( -149, -9 )
+
+[node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
+position = Vector2( -284, -7 )
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )
