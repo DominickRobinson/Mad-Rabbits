@@ -40,6 +40,12 @@ func _process(delta):
 		normalAllAudio()
 		Engine.time_scale = 1
 		cameraController.normalMotion()
+		
+	if Input.is_action_pressed("spin_up"):
+		currentPlayer.angular_velocity += 1
+	elif Input.is_action_pressed("spin_down"):
+		currentPlayer.angular_velocity -= 1
+	
 	
 	match CurrentGameState:
 		GameState.Start:

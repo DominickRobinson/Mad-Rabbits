@@ -75,18 +75,12 @@ rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
 
-[node name="PhysicsRabbitTest" parent="Rabbits" instance=ExtResource( 16 )]
-position = Vector2( -235, -241 )
+[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
+position = Vector2( -280, -271 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
 position = Vector2( -80, -9 )
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
-
-[node name="PhysicsRabbitTest2" parent="Rabbits" instance=ExtResource( 16 )]
-position = Vector2( -287, -143 )
-
-[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
-position = Vector2( -280, -271 )
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
