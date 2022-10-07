@@ -25,6 +25,7 @@ font_data = SubResource( 7 )
 mass = 2.0
 physics_material_override = SubResource( 2 )
 script = ExtResource( 1 )
+counter = null
 catchphrase_filename = "res://Assets/Sound/Sound effects/fart-meme-sound.mp3"
 
 [node name="Sprite" type="Sprite" parent="."]

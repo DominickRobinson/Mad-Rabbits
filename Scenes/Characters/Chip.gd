@@ -21,6 +21,7 @@ func ability():
 	set_friction(0)
 	mass = 4
 	#print(friction)
+	ability_used = true
 	pass
 
 
