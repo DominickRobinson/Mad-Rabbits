@@ -8,6 +8,9 @@ var last_linear_velocity
 var calculate_yet = true
 var can_take_damage = false
 
+onready var audio = $SoundEffect
+onready var damageNoise = "res://Assets/Sound/Sound effects/ow.mp3"
+
 func _ready():
 	_ready2()
 	
@@ -54,11 +57,14 @@ func _on_Brick_body_entered(body):
 			if not can_take_damage:
 				return false
 			
+			GameManager.playAudio(damageNoise)
+			
 			#print(health)
 			body = body as RigidBody2D
 			#var damage = body.linear_velocity.length()
 			var damage = abs(mass * body.linear_velocity.length()) + abs(last_linear_velocity.length())
 			print(damage)
+			#audio.play()
 			health -= damage
 			
 #			if is_instance_valid($Bubble):
@@ -66,6 +72,7 @@ func _on_Brick_body_entered(body):
 #				$Bubble.activate()
 			
 			if health <= 0:
+				#if audio != null:
 				#body's linear velocity will slow significantly if it just barely destroys a block
 				#body.linear_velocity *= 1 - abs(damage + health) / abs(damage)
 				queue_free()

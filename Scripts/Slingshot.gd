@@ -19,7 +19,12 @@ var player
 
 var can_start = false
 
+var music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
+var launchNoise = "res://Assets/Sound/Sound effects/slingshot.mp3"
+
 func _ready():
+	
+	GameManager.playAudio(music, -15)
 	
 	SlingshotState = SlingState.idle
 	LeftLine = $LeftLine
@@ -116,6 +121,7 @@ func _process(delta):
 						#print(str(i))
 						break
 			else:
+				GameManager.playAudio(launchNoise, -10)
 				player.ThrowRabbit()
 				player = player as RigidBody2D
 				#player.position = CenterOfSlingshot

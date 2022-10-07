@@ -12,6 +12,7 @@ extends Rabbit
 
 
 func _ready2():
+	ability_used = true
 	#$AbilityPanel/Control/DialoguePanel.rect_size = $AbilityPanel/Control.rect_size - Vector2(0, 50)
 	#$AbilityPanel/Control/DialoguePanel/ColorRect.rect_size = $AbilityPanel/Control.rect_size - Vector2(30, 50)
 	pass

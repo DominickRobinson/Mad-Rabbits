@@ -18,16 +18,10 @@ _global_script_classes=[ {
 "class": "Rabbit",
 "language": "GDScript",
 "path": "res://Scenes/Characters/Rabbit.gd"
-}, {
-"base": "Node2D",
-"class": "RabbitTest",
-"language": "GDScript",
-"path": "res://Scenes/Characters/PhysicsRabbitTest.gd"
 } ]
 _global_script_class_icons={
 "Brick": "",
-"Rabbit": "",
-"RabbitTest": ""
+"Rabbit": ""
 }
 
 [application]

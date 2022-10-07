@@ -14,6 +14,10 @@ export var catchphrase_filename := ""
 
 onready var catchphrase = $CatchphraseAudio
 
+var teamwork_file = "res://Assets/Sound/Sound effects/teamwork.mp3"
+
+
+
 var dying = false
 var deathCounter = 0
 var dead = false
@@ -127,6 +131,10 @@ func collide_with_rabbit(body):
 		return false
 	
 	if is_instance_valid(body):
+		
 		if body.is_in_group("Rabbits") and body.state == RabbitState.thrown:
 			if not ability_used and state == RabbitState.thrown:
+				GameManager.playAudio(teamwork_file)
 				ability()
+
+

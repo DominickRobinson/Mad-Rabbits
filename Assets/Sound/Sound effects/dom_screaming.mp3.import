@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dom_screaming.mp3-35b1b5aef264a27a2b7b956365271b2b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound effects/dom_screaming.mp3"
+dest_files=[ "res://.import/dom_screaming.mp3-35b1b5aef264a27a2b7b956365271b2b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

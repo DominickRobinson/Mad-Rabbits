@@ -6,9 +6,7 @@ func _ready2():
 	catchphrase = "TRIPLE THREAT! HIYA!"
 
 
-func ability():
-	
-	
+func ability():	
 	explode()
 	
 	pass

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3-7753c8bd532ad0612a9895a1ee2ce1b2.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
+dest_files=[ "res://.import/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3-7753c8bd532ad0612a9895a1ee2ce1b2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

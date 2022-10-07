@@ -9,6 +9,8 @@ var last_linear_velocity
 var calculate_yet = true
 var can_take_damage = false
 
+var deathNoise = "res://Assets/Sound/Sound effects/dying.mp3"
+
 func _ready():
 	last_linear_velocity = linear_velocity
 	var t = Timer.new()
@@ -64,7 +66,6 @@ func _on_HurtZone_body_entered(body):
 			#if body.is_in_group("Player"):
 			#	queue_free()
 			#else:
-			
 			GameManager.makePOW(get_tree().get_root(), "dab", Color(0, 1, 0, 0.5), global_position, 25)
 			
 			var damage = abs(body.linear_velocity.length()) + abs(last_linear_velocity.length())
@@ -75,6 +76,7 @@ func _on_HurtZone_body_entered(body):
 			GameManager.Score += damage
 			#print(health)
 			if health <= 0:
+				GameManager.playAudio(deathNoise)
 				queue_free()
 				
 		elif body is TileMap:

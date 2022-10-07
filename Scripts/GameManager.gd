@@ -104,10 +104,11 @@ func findCamera():
 func dampAllAudio():
 	var audioPlayers = get_tree().get_nodes_in_group("dampable")
 	for audio in audioPlayers:
-		print(audioPlayers.size())
-		audio = audio as AudioStreamPlayer
-		audio.volume_db = -1
-		audio.pitch_scale = 0.2
+		if audio != null:
+			print(audioPlayers.size())
+			audio = audio as AudioStreamPlayer
+			audio.volume_db = -1
+			audio.pitch_scale = 0.2
 
 func normalAllAudio():
 	var audioPlayers = get_tree().get_nodes_in_group("dampable")
@@ -133,3 +134,12 @@ func makePOW(node, word, color, location, rng_range):
 	bubble.rect_position.x += rand1
 	bubble.rect_position.y += rand2
 
+func playAudio(file, vol := 0):
+	var a = AudioStreamPlayer.new()
+	add_child(a)
+	a.stream = load(file)
+	a.volume_db = vol
+	a.play()
+	
+	yield(a, "finished")
+	a.queue_free()

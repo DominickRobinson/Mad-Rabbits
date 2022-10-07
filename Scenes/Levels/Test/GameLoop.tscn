@@ -39,7 +39,7 @@ script = ExtResource( 11 )
 [node name="CloseCamera" type="Camera2D" parent="Cameras" groups=["Camera", "CloseCamera"]]
 position = Vector2( 145, -96 )
 current = true
-zoom = Vector2( 0.75, 0.75 )
+zoom = Vector2( 0.5, 0.5 )
 script = ExtResource( 8 )
 
 [node name="CloseTween" type="Tween" parent="Cameras/CloseCamera"]
