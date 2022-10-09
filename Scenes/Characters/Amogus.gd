@@ -12,7 +12,7 @@ func _ready2():
 
 func ability():
 	$Sprite.modulate = Color(1,0,0)
-	self.linear_velocity.y -= 300
+	self.linear_velocity.y -= 200
 	self.counter -= 1
 	if counter == 0:
 		ability_used = true

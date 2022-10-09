@@ -23,13 +23,21 @@ onready var currentPlayer
 onready var cameraController
 
 func _ready():
+	
+	print(get_tree().current_scene.name)
+	print(get_tree().current_scene.is_in_group("Level"))
+	
+	if not get_tree().current_scene.is_in_group("Level"):
+		return
+	
+	print("why")
 	currentPlayer = findPlayer()
 	cameraController = findCamera()
 	pass
 
-func slowdown(p = 0.2):
+func slowdown(p=0.2):
 	Engine.time_scale = p
-	dampAllAudio()
+	dampAllAudio(p)
 	cameraController.slowMotion()
 	
 func speedup():
@@ -39,11 +47,17 @@ func speedup():
 
 func _process(delta):
 	
+	if not get_tree().current_scene.is_in_group("Level"):
+		return
+	
+
+	
+	
 	currentPlayer = findPlayer()
 	cameraController = findCamera()
 	
 	if Input.is_action_pressed("slowmo"):
-		slowdown()
+		slowdown(0.2)
 	elif Input.is_action_just_released("slowmo"):
 		normalAllAudio()
 		Engine.time_scale = 1
@@ -109,20 +123,21 @@ func findPlayer():
 func findCamera():
 	return get_tree().get_nodes_in_group("CameraController")[0]
 
-func dampAllAudio(p = 0.2):
+func dampAllAudio(p=0.2):
 	var audioPlayers = get_tree().get_nodes_in_group("dampable")
 	for audio in audioPlayers:
-		print(audioPlayers.size())
-		audio = audio as AudioStreamPlayer
-		audio.volume_db = -1
-		audio.pitch_scale = p
+		if audio is AudioStreamPlayer and audio != null:
+			audio = audio as AudioStreamPlayer
+			audio.volume_db = -1
+			audio.pitch_scale = p
 
 func normalAllAudio():
 	var audioPlayers = get_tree().get_nodes_in_group("dampable")
 	for audio in audioPlayers:
-		audio = audio as AudioStreamPlayer
-		audio.volume_db = 0
-		audio.pitch_scale = 1
+		if audio != null and audio is AudioStreamPlayer:
+			audio = audio as AudioStreamPlayer
+			audio.volume_db = 0
+			audio.pitch_scale = 1
 
 func makePOW(node, word, color, location, rng_range):
 	
@@ -141,12 +156,20 @@ func makePOW(node, word, color, location, rng_range):
 	bubble.rect_position.x += rand1
 	bubble.rect_position.y += rand2
 
-func playAudio(file, vol := 0):
+
+func playAudio(file, vol = 0, dampable = true):
 	var a = AudioStreamPlayer.new()
 	add_child(a)
+	if dampable:
+		a.add_to_group("dampable")
 	a.stream = load(file)
 	a.volume_db = vol
 	a.play()
 	
 	yield(a, "finished")
 	a.queue_free()
+
+
+
+func wait(time):
+	yield(get_tree().create_timer(time), "timeout")

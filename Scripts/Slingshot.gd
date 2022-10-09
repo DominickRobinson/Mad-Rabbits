@@ -24,7 +24,7 @@ var launchNoise = "res://Assets/Sound/Sound effects/slingshot.mp3"
 
 func _ready():
 	
-	GameManager.playAudio(music, -15)
+	GameManager.playAudio(music, -12, false)
 	
 	SlingshotState = SlingState.idle
 	LeftLine = $LeftLine
@@ -35,8 +35,9 @@ func _ready():
 	reset_slingshot()
 	
 	wait(1)
-	$Tween.interpolate_property(player, "position", player.position, CenterOfSlingshotGlobal, 1)
-	$Tween.start()
+	#$Tween.interpolate_property(player, "global_position", player.global_position, CenterOfSlingshotGlobal, 1)
+	#$Tween.start()
+	movePlayerToSlingshot(1)
 	
 
 	print(str(player.position))
@@ -106,7 +107,8 @@ func _process(delta):
 			if Input.is_action_pressed("Left_Mouse"):
 				LeftLine.points[1] = pullPositionLocal
 				RightLine.points[1] = pullPositionLocal
-				player.position = pullPositionGlobal
+				#player.position = pullPositionGlobal
+				player.position = pullPositionLocal
 				#var pointPosition = CenterOfSlingshot
 				var pointPosition = player.position
 				var grav = 150
@@ -137,7 +139,8 @@ func _process(delta):
 				
 		SlingState.thrown:
 			if Input.is_action_just_pressed("ability"):
-				player.useAbility()
+				if is_instance_valid(player):
+					player.useAbility()
 			
 
 			
@@ -150,9 +153,10 @@ func _process(delta):
 			reset_slingshot()
 			if lives.size() > 0:
 				player = lives[0]
-				$Tween.interpolate_property(player, "position", player.position, CenterOfSlingshotGlobal, 0.1)
-				$Tween.start()
-				if (player.position - CenterOfSlingshotGlobal).length() < 1: 
+				#$Tween.interpolate_property(player, "global_position", player.position, CenterOfSlingshotGlobal, 0.1)
+				#$Tween.start()
+				movePlayerToSlingshot(0.1)
+				if (player.global_position - CenterOfSlingshotGlobal).length() < 1: 
 					SlingshotState = SlingState.idle
 			elif lives.size() == 0:
 				GameManager.gaveUp = true
@@ -177,7 +181,8 @@ func return_to_slingshot():
 
 
 func nextPlayer():
-	player.remove_from_group("Player")
+	if is_instance_valid(player):
+		player.remove_from_group("Player")
 	var players = get_tree().get_nodes_in_group("Player")
 	
 	print("All remaining rabbits:")
@@ -186,6 +191,9 @@ func nextPlayer():
 	if players.size() > 0:
 		player = GameManager.currentPlayer
 
+func movePlayerToSlingshot(t = 0.1):
+	$Tween.interpolate_property(player, "global_position", player.global_position, CenterOfSlingshotGlobal, t)
+	$Tween.start()
 
 func _on_TouchArea_input_event(viewport, event, shape_idx):
 	

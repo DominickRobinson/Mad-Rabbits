@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Character
 class_name Rabbit
 
 export var DespawnTimer := 2
@@ -11,6 +11,8 @@ export var catchphrase_text := "IT'S MORBIN' TIME!!"
 export var counter := 4
 #export(String, FILE, ".mp3") var catchphrase_filename := ""
 export var catchphrase_filename := ""
+
+
 
 onready var catchphrase = $CatchphraseAudio
 
@@ -41,6 +43,9 @@ func _ready():
 	connect("body_entered", self, "collide_with_rabbit")
 	prepareAbilityPopup()
 	_ready2()
+	
+	if cutsceneMode:
+		unfreeze()
 
 func _ready2():
 	pass
@@ -74,6 +79,7 @@ func ThrowRabbit():
 	mode = RigidBody2D.MODE_RIGID
 	state = RabbitState.thrown
 
+
 func despawnConditionsMet():
 	return true
 	
@@ -88,6 +94,7 @@ func useAbility():
 		return false
 	ability()
 	sayCatchphrase()
+	showCatchphrase()
 	if counter == 0:
 		ability_used = true
 
@@ -104,20 +111,31 @@ func ability():
 
 
 func sayCatchphrase():
-	print(catchphrase_text)
-	if catchphrase_filename != "":
-		catchphrase.stream = load(catchphrase_filename)
-		catchphrase.play()
+	GameManager.playAudio(catchphrase_filename)
+	
+func showCatchphrase():
 	if is_instance_valid($AbilityPanel/Control):
 		$AbilityPanel/Control.visible = true
-
-
-func _on_Catchphrase_finished():
-	#catchphrase.stop()
-	#print("catchphrase done")
+	
+	yield(get_tree().create_timer(2.0), "timeout")
+	
 	if is_instance_valid($AbilityPanel/Control):
 		$AbilityPanel/Control.visible = false
-	pass
+		
+#	print(catchphrase_text)
+#	if catchphrase_filename != "":
+#		catchphrase.stream = load(catchphrase_filename)
+#	catchphrase.play()
+#	if is_instance_valid($AbilityPanel/Control):
+#		$AbilityPanel/Control.visible = true
+
+
+#func _on_Catchphrase_finished():
+#	#catchphrase.stop()
+#	#print("catchphrase done")
+#	if is_instance_valid($AbilityPanel/Control):
+#		$AbilityPanel/Control.visible = false
+#	pass
 
 func prepareAbilityPopup():
 	if is_instance_valid($AbilityPanel):
@@ -135,7 +153,10 @@ func collide_with_rabbit(body):
 		
 		if body.is_in_group("Rabbits") and body.state == RabbitState.thrown:
 			if not ability_used and state == RabbitState.thrown:
-				GameManager.playAudio(teamwork_file)
+				GameManager.playAudio(teamwork_file, -15)
 				ability()
+
+
+
 
 

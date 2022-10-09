@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Backgrounds/Forest.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=2]
+resource_name = "cutscene"
+length = 20.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("Sarge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.7, 4, 6.6, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "wassup!!", 1.5 ],
+"method": "speak"
+}, {
+"args": [ "No no, not you Chip...", 2.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 0, -150 ) ],
+"method": "apply_central_impulse"
+}, {
+"args": [ "hello, sir", 2.0 ],
+"method": "speak"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Chip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.2, 2.3, 2.301 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "bubreugbiuggirnsgipneiprngipherishgkers7g9eg", 2.0 ],
+"method": "speak"
+}, {
+"args": [  ],
+"method": "ability"
+}, {
+"args": [  ],
+"method": "sayCatchphrase"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("PhysicsRabbitTest3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 4.2, 7.4, 11.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ 700, 0, 3.0 ],
+"method": "walk_to"
+}, {
+"args": [ "h e l l o", 1.0 ],
+"method": "speak"
+}, {
+"args": [ 2000, 0, 1.0 ],
+"method": "walk_to"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1000.26, 64.25 )
+
+[node name="CutsceneDemo" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="CutscenePlayer" type="AnimationPlayer" parent="."]
+anims/cutscene = SubResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 532, -109 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 530.77, 62.0743 )
+rotation = -0.00523599
+shape = SubResource( 1 )
+
+[node name="PhysicsRabbitTest3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 413, -64 )
+cutsceneMode = true
+
+[node name="Sarge" parent="." instance=ExtResource( 2 )]
+position = Vector2( 821, -60 )
+cutsceneMode = true
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Chip" parent="." instance=ExtResource( 4 )]
+position = Vector2( 610, -55 )
+cutsceneMode = true
+counter = 4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 725, -61 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
