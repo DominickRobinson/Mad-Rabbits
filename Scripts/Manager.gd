@@ -6,20 +6,21 @@ enum GameModes {
 	Cutscene
 }
 
-var currentGameMode = GameModes.Cutscene
+var currentGameMode
+
 
 func _ready():
-	manageAutoloads()
+	pass
 	
 func _process(delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 
-func manageAutoloads():
-	match currentGameMode:
-		
-		GameModes.Level:
-			pass
+func levelMode():
+	currentGameMode = GameModes.Level
 	
+func cutsceneMode():
+	currentGameMode = GameModes.Cutscene
+
 func speedup(speed):
 	Engine.time_scale = speed

@@ -107,11 +107,9 @@ func _process(delta):
 			if Input.is_action_pressed("Left_Mouse"):
 				LeftLine.points[1] = pullPositionLocal
 				RightLine.points[1] = pullPositionLocal
-				#player.position = pullPositionGlobal
-				player.position = pullPositionLocal
-				#var pointPosition = CenterOfSlingshot
-				var pointPosition = player.position
-				var grav = 150
+				player.global_position = pullPositionGlobal
+				var pointPosition = pullPositionLocal
+				var grav = ProjectSettings.get_setting("physics/2d/default_gravity")
 				$ShotArc.clear_points()
 				var c = 0.005
 				for i in 500:

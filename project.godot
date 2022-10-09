@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Mad Rabbits"
-run/main_scene="res://Scenes/Cutscenes/CutsceneDemo.tscn"
+run/main_scene="res://Scenes/Levels/Test/GameLoop.tscn"
 config/icon="res://icon.png"
 
 [autoload]

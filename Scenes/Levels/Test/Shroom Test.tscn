@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/FarCamera.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/CloseCamera.gd" type="Script" id=2]
@@ -22,17 +22,19 @@
 [ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms green flat 2.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms iconic red.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms orange and tall.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Levels/Test/Level.gd" type="Script" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1022.01, 64.25 )
 
 [node name="Shroom Test" type="Node2D"]
+script = ExtResource( 23 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2( -902, 0 )
 scroll_ignore_camera_zoom = true
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 motion_scale = Vector2( 1, 0 )
 motion_mirroring = Vector2( 4096, 1714 )
 
@@ -52,7 +54,6 @@ texture = ExtResource( 12 )
 centered = false
 
 [node name="Hills" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 motion_scale = Vector2( 1, 0 )
 
 [node name="DarkHill" type="Sprite" parent="ParallaxBackground/Hills"]
@@ -62,7 +63,6 @@ texture = ExtResource( 5 )
 offset = Vector2( 612, 300 )
 
 [node name="Shrooms2" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 motion_scale = Vector2( 1, 0 )
 motion_mirroring = Vector2( 819.2, 0 )
 
@@ -143,6 +143,7 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 14 )]
 position = Vector2( -1007, 238 )
+counter = 4
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 8 )]
 position = Vector2( -1041, 238 )
@@ -160,7 +161,6 @@ position = Vector2( 1140, -68 )
 position = Vector2( -1143, 225 )
 
 [node name="Bushes" type="Sprite" parent="Ground"]
-visible = false
 position = Vector2( 133, -36 )
 scale = Vector2( 0.2, 0.2 )
 z_index = -1
