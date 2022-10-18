@@ -34,7 +34,6 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="Slingshot" parent="." instance=ExtResource( 6 )]
-position = Vector2( 46, -8 )
 MaxSlingshotPull = 150
 MaxLaunchVelocity = 800
 
@@ -78,16 +77,32 @@ position = Vector2( -143, 32 )
 position = Vector2( -173, -102 )
 rotation = 1.5708
 
+[node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -503, -231 )
+
+[node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
+position = Vector2( -258, -38 )
+
+[node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -504, 35 )
+
+[node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -506, -95 )
+rotation = 1.5708
+
 [node name="Rabbits" type="Node2D" parent="."]
 
-[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
-position = Vector2( -280, -271 )
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
+position = Vector2( -149, -9 )
 
 [node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
 position = Vector2( -284, -7 )
 
+[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
+position = Vector2( -411, -14 )
+
 [node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 17 )]
-position = Vector2( -42, -20 )
+position = Vector2( -349, -18 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
 position = Vector2( -80, -9 )
@@ -96,9 +111,6 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
 counter = 4
-
-[node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
-position = Vector2( -149, -9 )
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )

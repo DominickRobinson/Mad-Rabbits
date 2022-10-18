@@ -1,12 +1,9 @@
 extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 export var expand = 1.05
-export var decrease_opacity = 0.02
-export var max_size = 200
+export var decrease_opacity = 0.002
+export var max_size = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

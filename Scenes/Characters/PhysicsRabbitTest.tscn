@@ -74,6 +74,7 @@ tracks/1/keys = {
 
 [node name="PhysicsRabbitTest" type="RigidBody2D" groups=["Player", "Rabbits"]]
 script = ExtResource( 3 )
+catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
