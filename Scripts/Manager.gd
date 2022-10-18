@@ -10,11 +10,13 @@ var currentGameMode
 
 
 func _ready():
-	pass
-	
+	currentGameMode = GameModes.Level
+
 func _process(delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
+	if Input.is_action_just_pressed("reload"):
+		get_tree().reload_current_scene()
 
 func levelMode():
 	currentGameMode = GameModes.Level

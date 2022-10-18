@@ -71,7 +71,7 @@ func _process(delta):
 			if not can_start:
 				return false
 			
-			player = GameManager.currentPlayer
+			player = GameManager.findPlayer()
 			#position of slingshot rope relative to center
 			var pullPositionGlobal = get_global_mouse_position()
 			var pullPositionLocal = CenterOfSlingshot
@@ -187,7 +187,8 @@ func nextPlayer():
 	print(str(players))
 	
 	if players.size() > 0:
-		player = GameManager.currentPlayer
+		#player = GameManager.currentPlayer
+		player = GameManager.findPlayer()
 
 func movePlayerToSlingshot(t = 0.1):
 	$Tween.interpolate_property(player, "global_position", player.global_position, CenterOfSlingshotGlobal, t)

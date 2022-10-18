@@ -50,9 +50,6 @@ func _process(delta):
 	if not get_tree().current_scene.is_in_group("Level"):
 		return
 	
-
-	
-	
 	currentPlayer = findPlayer()
 	cameraController = findCamera()
 	

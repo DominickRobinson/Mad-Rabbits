@@ -22,7 +22,7 @@
 [ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms green flat 2.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms iconic red.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Backgrounds/Shroom stuff/Shrooms orange and tall.png" type="Texture" id=22]
-[ext_resource path="res://Scenes/Levels/Test/Level.gd" type="Script" id=23]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1022.01, 64.25 )
