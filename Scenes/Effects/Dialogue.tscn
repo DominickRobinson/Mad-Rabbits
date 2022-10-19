@@ -21,21 +21,20 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 117.0
-margin_bottom = 31.0
+margin_bottom = 48.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "hre
 ege5he5h4r4t24f4"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/Label"]
 show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_left = -19.0
 margin_top = -10.0
-margin_right = 20.0
-margin_bottom = 29.0
+margin_right = 130.0
+margin_bottom = 83.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource( 1 )

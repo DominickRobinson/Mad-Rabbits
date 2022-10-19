@@ -14,23 +14,12 @@ var rng = RandomNumberGenerator.new()
 var CurrentGameState = GameState.Start
 var Score = 0
 
-var Levels = ["Test/GameLoop", "Test/GameLoop"]
-var LevelIndex = 0
-
 var gaveUp = false
 
 onready var currentPlayer
 onready var cameraController
 
 func _ready():
-	
-	print(get_tree().current_scene.name)
-	print(get_tree().current_scene.is_in_group("Level"))
-	
-	if not get_tree().current_scene.is_in_group("Level"):
-		return
-	
-	print("why")
 	currentPlayer = findPlayer()
 	cameraController = findCamera()
 	pass
@@ -56,9 +45,7 @@ func _process(delta):
 	if Input.is_action_pressed("slowmo"):
 		slowdown(0.2)
 	elif Input.is_action_just_released("slowmo"):
-		normalAllAudio()
-		Engine.time_scale = 1
-		cameraController.normalMotion()
+		speedup()
 		
 	if Input.is_action_pressed("spin_up"):
 		currentPlayer.angular_velocity += 1
@@ -95,15 +82,15 @@ func _process(delta):
 
 
 func RestartLevel():
-	get_tree().change_scene(ConvertLevelToFile(LevelIndex))
+	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
 	ResetGameManager()
 	
 func NextLevel():
-	LevelIndex += 1
+	Manager.LevelIndex += 1
 	RestartLevel()
 
 func ConvertLevelToFile(level):
-	var file = str("res://Scenes/Levels/" + Levels[level] + ".tscn")
+	var file = str("res://Scenes/Levels/" + Manager.Levels[level] + ".tscn")
 	print(file)
 	return file
 	

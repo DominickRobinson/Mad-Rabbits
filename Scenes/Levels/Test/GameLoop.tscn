@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/InterfaceController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scripts/AbilityCamera.gd" type="Script" id=20]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )
@@ -29,6 +31,7 @@ script = ExtResource( 18 )
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 532, -109 )
 scale = Vector2( 0.5, 0.5 )
+z_index = -99
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 4000, 2000 )
@@ -41,9 +44,9 @@ MaxLaunchVelocity = 800
 script = ExtResource( 11 )
 
 [node name="CloseCamera" type="Camera2D" parent="Cameras" groups=["Camera", "CloseCamera"]]
-position = Vector2( 145, -96 )
+position = Vector2( 183, -132 )
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.3, 0.3 )
 script = ExtResource( 8 )
 
 [node name="CloseTween" type="Tween" parent="Cameras/CloseCamera"]
@@ -51,13 +54,20 @@ script = ExtResource( 8 )
 [node name="CloseTweenZoom" type="Tween" parent="Cameras/CloseCamera"]
 
 [node name="FarCamera" type="Camera2D" parent="Cameras" groups=["Camera", "FarCamera"]]
-position = Vector2( 457, -134 )
+position = Vector2( 535, -129 )
 zoom = Vector2( 1.5, 1.5 )
 script = ExtResource( 12 )
 
 [node name="FarTween" type="Tween" parent="Cameras/FarCamera"]
 
 [node name="FarTweenZoom" type="Tween" parent="Cameras/FarCamera"]
+
+[node name="AbilityCamera" type="Camera2D" parent="Cameras"]
+script = ExtResource( 20 )
+
+[node name="AbilityTweenPosition" type="Tween" parent="Cameras/AbilityCamera"]
+
+[node name="AbilityTweenZoom" type="Tween" parent="Cameras/AbilityCamera"]
 
 [node name="InterfaceController" parent="." instance=ExtResource( 1 )]
 
@@ -110,7 +120,6 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
-counter = 4
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )
@@ -130,5 +139,10 @@ position = Vector2( 530.77, 62.0743 )
 rotation = -0.00523599
 shape = SubResource( 10 )
 
+[node name="StoryText" parent="." instance=ExtResource( 19 )]
+position = Vector2( 126, -544 )
+
 [connection signal="tween_completed" from="Cameras/CloseCamera/CloseTween" to="Cameras/CloseCamera" method="_on_CloseTween_tween_completed"]
 [connection signal="tween_completed" from="Cameras/CloseCamera/CloseTweenZoom" to="Cameras/CloseCamera" method="_on_CloseTweenZoom_tween_completed"]
+[connection signal="tween_completed" from="Cameras/AbilityCamera/AbilityTweenPosition" to="Cameras/AbilityCamera" method="_on_AbilityTween_tween_completed"]
+[connection signal="tween_completed" from="Cameras/AbilityCamera/AbilityTweenZoom" to="Cameras/AbilityCamera" method="_on_AbilityTweenZoom_tween_completed"]

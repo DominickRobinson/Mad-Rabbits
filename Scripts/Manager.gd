@@ -1,5 +1,7 @@
 extends Node
 
+var Levels = ["Test/GameLoop", "Test/GameLoop"]
+var LevelIndex = 0
 
 enum GameModes {
 	Level,
@@ -7,6 +9,7 @@ enum GameModes {
 }
 
 var currentGameMode
+
 
 
 func _ready():
@@ -20,6 +23,7 @@ func _process(delta):
 
 func levelMode():
 	currentGameMode = GameModes.Level
+	
 	
 func cutsceneMode():
 	currentGameMode = GameModes.Cutscene

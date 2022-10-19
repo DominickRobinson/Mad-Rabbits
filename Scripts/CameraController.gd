@@ -23,23 +23,24 @@ var followingPlayer
 
 
 func _ready():
-	#useFarCamera()
-	useCloseCamera()
+	useFarCamera()
+	#useCloseCamera()
 	currentTimeScale = TimeScale.normal_motion
 
 
 func _physics_process(delta):
-	
+	pass
 	#toggling camera mode
-	if Input.is_action_just_pressed("switch_camera"):
-		match currentCameraMode:
-			CameraMode.close:
-				useFarCamera()
-			CameraMode.far:
-				useCloseCamera()
+#	if Input.is_action_just_pressed("switch_camera"):
+#		match currentCameraMode:
+#			CameraMode.close:
+#				useFarCamera()
+#			CameraMode.far:
+#				useCloseCamera()
 				
 #	elif Input.is_action_just_pressed("return_to_slingshot"):
 #		currentCamera.resetCamera()
+
 
 
 func useFarCamera():
@@ -67,10 +68,6 @@ func unfollowPlayer():
 	closeCamera.unfollowPlayer()
 	farCamera.unfollowPlayer()
 
-func toggleSlowMotion():
-	if currentTimeScale == TimeScale.normal_motion:
-		pass
-	pass
 
 func slowMotion():
 	#currentCamera.zoomIn(0.5, 0.5)

@@ -18,7 +18,7 @@ func ability():
 	$LargeSprite.visible = true
 	$LargeBody.set_deferred("disabled", false)
 	set_bounce(1)
-	set_friction(0)
+	#set_friction(0)
 	mass = 4
 	#print(friction)
 	ability_used = true
