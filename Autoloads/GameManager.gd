@@ -8,8 +8,8 @@ enum GameState {
 	Lose
 }
 
-var bubble_root = load("res://Scenes/Bubble.tscn")
-var rng = RandomNumberGenerator.new()
+
+
 
 var CurrentGameState = GameState.Start
 var Score = 0
@@ -26,7 +26,7 @@ onready var screen = $ScreenEffects
 func _ready():
 	if not get_tree().current_scene.is_in_group("Level"):
 		return
-	currentPlayer = findPlayer()
+	currentPlayer = get_current_player()
 	#currentCamera = findCamera()
 	
 	#disable collisions between rabbits
@@ -69,7 +69,7 @@ func _process(delta):
 #	else:
 #		speedup()
 	
-	currentPlayer = findPlayer()
+	currentPlayer = get_current_player()
 	currentCamera = findCamera()
 	
 	if Input.is_action_pressed("slowmo"):
@@ -85,7 +85,7 @@ func _process(delta):
 	
 	match CurrentGameState:
 		GameState.Start:
-			currentPlayer = findPlayer()
+			currentPlayer = get_current_player()
 			#cameraController = findCamera()
 			#print("start")
 			CurrentGameState = GameState.Play
@@ -129,61 +129,10 @@ func ConvertLevelToFile(level):
 	print(file)
 	return file
 	
-func ResetGameManager():
-	CurrentGameState = GameState.Start
-	gaveUp = false
-	speedup()
-
-func findPlayer():
-	var players = get_tree().get_nodes_in_group("Player")
-	if players.size() > 0:
-		return players[0]
-	else:
-		return currentPlayer
-
-func findCamera():
-	return get_tree().get_nodes_in_group("LevelCamera")[0]
-
-func dampAllAudio(p=0.2):
-	var audioPlayers = get_tree().get_nodes_in_group("dampable")
-	for audio in audioPlayers:
-		if audio is AudioStreamPlayer and audio != null:
-			audio = audio as AudioStreamPlayer
-			audio.volume_db = -1
-			audio.pitch_scale = p
-
-func normalAllAudio():
-	var audioPlayers = get_tree().get_nodes_in_group("dampable")
-	for audio in audioPlayers:
-		if audio != null and audio is AudioStreamPlayer:
-			audio = audio as AudioStreamPlayer
-			audio.volume_db = 0
-			audio.pitch_scale = 1
-
-func makePOW(node, word, color, location, rng_range):
 	
-	rng.randomize()
-	var rand1 = rng.randf_range(-rng_range, rng_range)
-	var rand2 = rng.randf_range(-rng_range, rng_range)
-
-	var bubble = bubble_root.instance()
-
-	node.add_child(bubble)
-	bubble = bubble as Control
-	bubble.text = word
-	bubble.bubble_color = color
-	bubble.update()
-	bubble.rect_global_position = location
-	bubble.rect_position.x += rand1
-	bubble.rect_position.y += rand2
 
 
 func wait(time):
 	yield(get_tree().create_timer(time), "timeout")
 
-#gets the last rabbit thrown (useful for zooming in when abilities cant be manually activated
-func last_rabbit_thrown():
-	if is_instance_valid(get_tree().get_current_scene().get_node("Slingshot")):
-		return get_tree().get_current_scene().get_node("Slingshot").lastRabbitThrown
-	else:
-		return null
+

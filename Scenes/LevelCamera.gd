@@ -55,8 +55,8 @@ func _process(delta):
 	
 	match currentCameraFollow:
 		FollowMode.following:
-			if is_instance_valid(GameManager.last_rabbit_thrown()):
-				global_position = GameManager.last_rabbit_thrown().global_position
+			if is_instance_valid(Manager.last_rabbit_thrown()):
+				global_position = Manager.last_rabbit_thrown().global_position
 			else:
 				currentCameraFollow = FollowMode.notFollowing
 			
@@ -99,7 +99,7 @@ func unfollow_player():
 
 
 func trackPlayerPosition():
-	posTween.interpolate_property(self, "global_position", null, GameManager.last_rabbit_thrown().global_position, abilityZoomInSpeed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	posTween.interpolate_property(self, "global_position", null, Manager.get_scene().get_player().global_position, abilityZoomInSpeed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	posTween.start()
 
 func untrackPlayerPosition():

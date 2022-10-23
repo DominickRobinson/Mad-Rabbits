@@ -23,14 +23,14 @@ func explode():
 	print("kaboom")
 	
 	sayCatchphrase()
-	if self == GameManager.last_rabbit_thrown():
+	if self == Manager.last_rabbit_thrown():
 		showCatchphrase()
 	if counter == 0:
 		ability_used = true
 	
 	yield(get_tree().create_timer(0.4), "timeout")
-	if not GameManager.slowmo:
-		GameManager.speedup()
+	if not Manager.slowmo:
+		Manager.speedup()
 	hideCatchphrase()
-	GameManager.currentCamera.abilityZoomOut()
+	Manager.findCamera().abilityZoomOut()
 	queue_free()

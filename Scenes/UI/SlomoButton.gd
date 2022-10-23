@@ -17,9 +17,9 @@ func _ready():
 
 
 func _on_Button_toggled(button_pressed):
-	GameManager.slowmo = button_pressed
+	Manager.slowmo = button_pressed
 	
 	if button_pressed:
-		GameManager.slowdown()
+		Manager.slowdown()
 	else:
-		GameManager.speedup()
+		Manager.speedup()

@@ -200,7 +200,6 @@ config/icon="res://carrot_cursor.png"
 
 [autoload]
 
-GameManager="*res://Autoloads/GameManager.gd"
 MapManager="res://Autoloads/MapManager.gd"
 Manager="*res://Autoloads/Manager.gd"
 Options="*res://Autoloads/Options.gd"

@@ -44,11 +44,11 @@ func popupLevelCompleted(win, score):
 
 func _on_RestartLevelButton_button_down():
 	print("1")
-	GameManager.RestartLevel()
+	Manager.reload()
 	pass # Replace with function body.
 
 
 func _on_NextLevelButton_button_down():
 	print("2")
-	GameManager.NextLevel()
+	Manager.NextLevel()
 	pass # Replace with function body.

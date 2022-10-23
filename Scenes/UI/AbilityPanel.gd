@@ -10,6 +10,6 @@ func _on_Button_toggled(is_pressed: bool, button: Button) -> void:
 	if last_pressed == button:
 		button.pressed = false
 		last_pressed = null
-		GameManager.currentPlayer.ability
+		Manager.get_current_player().ability
 	else:
 		last_pressed = button

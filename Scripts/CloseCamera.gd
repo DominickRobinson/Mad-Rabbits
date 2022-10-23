@@ -16,4 +16,4 @@ func unfollow_player():
 
 func _physics_process(delta):
 	if followingPlayer:
-		global_position = GameManager.currentPlayer.global_position
+		global_position = Manager.currentPlayer.global_position

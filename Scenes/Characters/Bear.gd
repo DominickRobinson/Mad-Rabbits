@@ -67,14 +67,14 @@ func _on_HurtZone_body_entered(body):
 			#if body.is_in_group("Player"):
 			#	queue_free()
 			#else:
-			GameManager.makePOW(get_tree().get_root(), "dab", Color(0, 1, 0, 0.5), global_position, 25)
+			Manager.makePOW(get_tree().get_root(), "dab", Color(0, 1, 0, 0.5), global_position, 25)
 			
 			var damage = abs(body.linear_velocity.length()) + abs(last_linear_velocity.length())
 			#damage *= 0.1
 			print(damage)
 			
 			health -= damage
-			GameManager.Score += damage
+			Manager.Score += damage
 			#print(health)
 			if health <= 0:
 				Manager.playAudio(deathNoise)
@@ -83,7 +83,7 @@ func _on_HurtZone_body_entered(body):
 		elif body is TileMap:
 			var damage = abs(last_linear_velocity.length()) * 0.1
 			health -= damage
-			GameManager.Score += damage
+			Manager.Score += damage
 			#print(health)
 			if health <= 0:
 				queue_free()

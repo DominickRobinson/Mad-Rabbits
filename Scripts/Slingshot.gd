@@ -10,6 +10,8 @@ enum SlingState {
 export var MaxSlingshotPull := 100
 export var MaxLaunchVelocity := 400
 
+onready var currentLevel = get_tree().current_scene
+
 var SlingshotState
 var LeftLine
 var RightLine
@@ -29,7 +31,8 @@ func _ready():
 	RightLine = $RightLine
 	CenterOfSlingshot = $CenterOfSlingshot.position
 	CenterOfSlingshotGlobal = $CenterOfSlingshot.global_position
-	player = GameManager.findPlayer()
+	print(currentLevel.get_name())
+	player = currentLevel.get_player()
 	reset_slingshot()
 	
 	wait(1)
@@ -72,7 +75,7 @@ func _process(delta):
 				return false
 			
 			#finds current player
-			player = GameManager.findPlayer()
+			player = currentLevel.get_player()
 			#shows ability selection
 			player.showAbilitySelection(true)
 			
@@ -139,7 +142,7 @@ func _process(delta):
 				player.angular_velocity = player.initial_angular_velocity
 				
 				SlingshotState = SlingState.thrown
-				GameManager.CurrentGameState = GameManager.GameState.Play
+				currentLevel.CurrentGameState = currentLevel.GameState.Play
 				reset_slingshot()
 				
 				#automatically reloads slingshot
@@ -211,15 +214,15 @@ func nextPlayer():
 		player.remove_from_group("Player")
 	
 	#resets camera
-	GameManager.currentCamera.abilityZoomOut()
-	if not GameManager.slowmo:
-		GameManager.speedup()
+	currentLevel.currentCamera.abilityZoomOut()
+	if not Manager.slowmo:
+		Manager.speedup()
 		
 	#finds next player
 	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		#player = GameManager.currentPlayer
-		player = GameManager.findPlayer()
+		player = currentLevel.get_player()
 
 #moves next player into catapult
 func movePlayerToSlingshot(t = 0.1):

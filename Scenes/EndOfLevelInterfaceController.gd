@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func SetScore():
-	$ScoreValue.text = str(int(GameManager.Score))
+	$ScoreValue.text = str(int(Manager.Score))
 	
 func PopupLevelCompleted(win, score):
 	$Popup/ScoreValue.text = str(int(score))
@@ -29,10 +29,10 @@ func PopupLevelCompleted(win, score):
 
 
 func _on_RestartLevelButton_button_down():
-	GameManager.RestartLevel()
+	Manager.RestartLevel()
 	pass # Replace with function body.
 
 
 func _on_NextLevelButton_button_down():
-	GameManager.NextLevel()
+	Manager.NextLevel()
 	pass # Replace with function body.

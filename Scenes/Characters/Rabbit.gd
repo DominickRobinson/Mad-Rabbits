@@ -89,9 +89,9 @@ func useAbility():
 	
 	#dramatic zoom in
 	if Options.zoomInDuringAbility:
-		GameManager.currentCamera.abilityZoomIn()
-		yield(GameManager.currentCamera.posTween, "tween_completed")
-		GameManager.slowdown(0.2)
+		Manager.findCamera().abilityZoomIn()
+		yield(Manager.findCamera().posTween, "tween_completed")
+		Manager.slowdown(0.2)
 
 	#ability
 	ability()
@@ -109,10 +109,10 @@ func useAbility():
 	
 	#dramatic zoom out
 	yield(get_tree().create_timer(0.4), "timeout")
-	if not GameManager.slowmo:
-		GameManager.speedup()
+	if not Manager.slowmo:
+		Manager.speedup()
 	if Options.zoomInDuringAbility:
-		GameManager.currentCamera.abilityZoomOut()
+		Manager.get_scene().get_camera().abilityZoomOut()
 	hideCatchphrase()
 
 

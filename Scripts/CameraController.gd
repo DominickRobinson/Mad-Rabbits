@@ -58,7 +58,7 @@ func useCloseCamera():
 
 	var zoomInTime = 0.02
 	closeCamera.zoomTween.interpolate_property(closeCamera, "zoom", closeCamera.zoom, closeCamera.originalZoom, zoomInTime, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-	closeCamera.posTween.interpolate_property(closeCamera, "global_position", closeCamera.global_position, GameManager.currentPlayer.global_position, zoomInTime, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	closeCamera.posTween.interpolate_property(closeCamera, "global_position", closeCamera.global_position, Manager.currentPlayer.global_position, zoomInTime, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	closeCamera.zoomTween.start()
 	closeCamera.posTween.start()
 	closeCamera.follow_player()
