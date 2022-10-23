@@ -10,6 +10,8 @@ func _on_Button_toggled(is_pressed: bool, button: Button) -> void:
 	if last_pressed == button:
 		button.pressed = false
 		last_pressed = null
+		var num = int(button.get_name()[7])
+		print(button.name(), ": ", num)
 		#GameManager.currentPlayer.set_ability()
 	else:
 		last_pressed = button

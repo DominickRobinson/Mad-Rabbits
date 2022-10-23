@@ -153,6 +153,7 @@ func prepare_signals():
 	zoomTween.connect("tween_completed", self, "_on_zoomTween_completed")
 	#posTween.connect("tween_completed", self, "on_posTween_completed")
 
+
 func set_limits():
 	limit_left = background.global_position.x - background.scale.x * background.texture.get_width()/2
 	limit_right = background.global_position.x + background.scale.x * background.texture.get_width()/2

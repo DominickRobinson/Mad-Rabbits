@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/UI/AbilitySelectionPanel.gd" type="Script" id=1]
+
+[node name="AbilitySelectionPanel" type="CanvasLayer"]
+
+[node name="AbilitySelectionPanel" type="Control" parent="."]
+margin_right = 230.0
+margin_bottom = 72.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AbilitySelectionPanel"]
+anchor_right = 0.878261
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Ability1" type="Button" parent="AbilitySelectionPanel/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 60, 60 )
+toggle_mode = true
+text = "1"
+
+[node name="Ability2" type="Button" parent="AbilitySelectionPanel/HBoxContainer"]
+margin_left = 64.0
+margin_right = 124.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 60, 60 )
+toggle_mode = true
+text = "2"
+
+[node name="Ability3" type="Button" parent="AbilitySelectionPanel/HBoxContainer"]
+margin_left = 128.0
+margin_right = 188.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 60, 60 )
+toggle_mode = true
+text = "3"
