@@ -3,12 +3,13 @@ extends CanvasLayer
 
 onready var Score = $Score
 onready var EndOfLevel = $EndOfLevel
-
+onready var pauseMenu = $PauseMenu
 
 var children = [Score, EndOfLevel]
 
 func _ready():
-	pass # Replace with function body.
+	#EndOfLevel.visible = false
+	pass
 
 func SetScore():
 	Score.setScore()
@@ -23,3 +24,6 @@ func hideAllChildren():
 func showOnlyOneChild(child):
 	hideAllChildren()
 	child.visible = true
+
+func pause(toggle):
+	pauseMenu.set_is_paused(toggle)

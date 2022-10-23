@@ -77,7 +77,7 @@ func _on_HurtZone_body_entered(body):
 			GameManager.Score += damage
 			#print(health)
 			if health <= 0:
-				GameManager.playAudio(deathNoise)
+				Manager.playAudio(deathNoise)
 				queue_free()
 				
 		elif body is TileMap:

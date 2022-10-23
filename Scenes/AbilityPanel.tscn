@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://AbilityPanel.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Characters/Ninjaman.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://Assets/Fonts/true-crimes.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 64
+outline_size = 3
+outline_color = Color( 0.745098, 0.117647, 0.117647, 1 )
+extra_spacing_char = 2
+extra_spacing_space = -5
+font_data = SubResource( 7 )
+
+[node name="AbilityPanel" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 346.0
+margin_bottom = -4.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialoguePanel" type="ColorRect" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -208.0
+margin_right = 1024.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control/DialoguePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -497.0
+margin_top = -86.0
+margin_right = 497.0
+margin_bottom = 84.0
+color = Color( 0.341176, 0.156863, 0.156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Catchphrase" type="RichTextLabel" parent="Control/DialoguePanel"]
+anchor_left = 0.360352
+anchor_top = -0.0528846
+anchor_right = 0.860352
+anchor_bottom = 0.552885
+margin_left = -93.0005
+margin_top = 47.0
+margin_right = 107.0
+margin_bottom = 61.9999
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[tornado]TRIPLE THREAT !!
+"
+text = "TRIPLE THREAT !!
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpritePanel" type="ColorRect" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -250.0
+margin_right = 250.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control/SpritePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -110.0
+margin_top = -111.0
+margin_right = 110.0
+margin_bottom = 109.0
+color = Color( 0.341176, 0.156863, 0.156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/SpritePanel"]
+position = Vector2( 134, 136 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 2 )

@@ -23,6 +23,8 @@ func _ready():
 	
 	show_all_chars(5)
 
+func _physics_process(delta):
+	visible = Options.storytextVisible
 
 
 func show_chars(newChars, time):

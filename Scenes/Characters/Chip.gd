@@ -5,7 +5,7 @@ var is_big = false
 #export var big_health := 75
 
 
-func _ready2():
+func _ready():
 	catchphrase_text = "OOGA BOOGA"
 	$LargeSprite.visible = false
 	$LargeBody.disabled = true

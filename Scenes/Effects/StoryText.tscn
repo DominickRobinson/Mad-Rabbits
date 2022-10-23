@@ -9,7 +9,6 @@ size = 128
 font_data = ExtResource( 1 )
 
 [node name="StoryText" type="Node2D"]
-modulate = Color( 1, 1, 1, 0.611765 )
 scale = Vector2( 0.2, 0.2 )
 z_index = -10
 script = ExtResource( 3 )

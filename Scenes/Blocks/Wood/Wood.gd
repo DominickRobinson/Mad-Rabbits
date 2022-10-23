@@ -2,7 +2,7 @@ extends Brick
 
 
 
-func _ready2():
+func _ready():
 	#print("ready")
 	max_health = 100
 	contact_monitor = true

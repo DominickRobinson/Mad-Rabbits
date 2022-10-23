@@ -1,15 +1,11 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export (String, FILE, "*.mp3") var music := ""
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	self.add_to_group("Level")
-
+	#self.add_to_group("Level")
+	Manager.playAudio(music, -5, false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

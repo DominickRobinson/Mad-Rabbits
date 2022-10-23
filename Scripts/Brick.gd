@@ -1,7 +1,7 @@
 extends RigidBody2D
 class_name Brick
 
-export var max_health := 100
+export var max_health := 50
 var health
 
 var last_linear_velocity
@@ -11,8 +11,8 @@ var can_take_damage = false
 onready var audio = $SoundEffect
 onready var damageNoise = "res://Assets/Sound/Sound effects/ow.mp3"
 
-func _ready():
-	_ready2()
+func _init():
+	#_ready2()
 	
 	health = max_health
 	
@@ -25,9 +25,9 @@ func _ready():
 	yield(t, "timeout")
 	can_take_damage = true
 	contact_monitor = true
-
-func _ready2():
-	pass
+#
+#func _ready2():
+#	pass
 
 
 func _process(delta):
@@ -57,13 +57,13 @@ func _on_Brick_body_entered(body):
 			if not can_take_damage:
 				return false
 			
-			GameManager.playAudio(damageNoise)
+			Manager.playAudio(damageNoise)
 			
 			#print(health)
 			body = body as RigidBody2D
 			#var damage = body.linear_velocity.length()
 			var damage = abs(body.mass * body.linear_velocity.length()) + abs(last_linear_velocity.length())
-			print(damage)
+			print("Damage: ", damage)
 			#audio.play()
 			health -= damage
 			

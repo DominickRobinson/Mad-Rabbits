@@ -35,7 +35,6 @@ scale = Vector2( 0.0333334, -0.0170833 )
 texture = ExtResource( 1 )
 
 [node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2( 2, -1 )
 shape = SubResource( 6 )
 
 [node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]

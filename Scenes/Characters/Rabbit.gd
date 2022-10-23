@@ -7,14 +7,13 @@ export var DespawnVelocity := 5
 export var initial_angular_velocity := 3
 export var ability_used := false
 
-export var catchphrase_text := "IT'S MORBIN' TIME!!"
+export var catchphrase_text := "*insert catchphrase text here*"
 export var counter := 4
-#export(String, FILE, ".mp3") var catchphrase_filename := ""
-export var catchphrase_filename := ""
 
+export(String, FILE) var catchphrase_filename := ""
 
-
-onready var catchphrase = $CatchphraseAudio
+#different abilities
+var currentAbility = 1
 
 var teamwork_file = "res://Assets/Sound/Sound effects/teamwork.mp3"
 
@@ -34,25 +33,23 @@ enum RabbitState {
 var state = RabbitState.notThrown
 
 
-func _ready():
+func _init():
 	contact_monitor = true
 	contacts_reported = 1
 	mode = RigidBody2D.MODE_KINEMATIC
-	#mode = RigidBody2D.MODE_RIGID
-	catchphrase.connect("finished", self, "_on_Catchphrase_finished")
+
 	connect("body_entered", self, "collide_with_rabbit")
 	prepareAbilityPopup()
-	_ready2()
 	
 	if cutsceneMode:
 		unfreeze()
 
-func _ready2():
-	pass
-
 
 func _physics_process(delta):
-	
+	if not Options.abilityCatchphraseVisible:
+		if is_instance_valid($AbilityPanel/Control):
+			$AbilityPanel/Control.visible = false
+		
 	match state:
 		RabbitState.thrown:
 			
@@ -68,16 +65,12 @@ func _physics_process(delta):
 				yield(t, "timeout")
 				#queue_free()
 				dead = true
-			#state = RabbitState.notThrown
-			
-	if dead:
-		#print("ded XD")
-		pass
 
 
 func ThrowRabbit():
 	mode = RigidBody2D.MODE_RIGID
 	state = RabbitState.thrown
+	showAbilitySelection(false)
 
 
 func despawnConditionsMet():
@@ -90,35 +83,53 @@ func despawnConditionsMet():
 
 
 func useAbility():
+	#dont use if ability already used
 	if ability_used:
 		return false
+	
+	#dramatic zoom in
+	if Options.zoomInDuringAbility:
+		GameManager.currentCamera.abilityZoomIn()
+		yield(GameManager.currentCamera.posTween, "tween_completed")
+		GameManager.slowdown(0.2)
+
+	#ability
 	ability()
+
+	#show catchphrase if on in settings
+	if Options.abilityCatchphraseVisible:
+		showCatchphrase()
+	
+	#says catchphrase
 	sayCatchphrase()
-	showCatchphrase()
+	
+	#checks if ability cant be used again
 	if counter == 0:
 		ability_used = true
+	
+	#dramatic zoom out
+	yield(get_tree().create_timer(0.4), "timeout")
+	if not GameManager.slowmo:
+		GameManager.speedup()
+	if Options.zoomInDuringAbility:
+		GameManager.currentCamera.abilityZoomOut()
+	hideCatchphrase()
 
 
 
 func ability():
-	#print("no special ability :(")
-	if is_instance_valid($AbilityPanel/Control):
-		print("success")
-		#$AbilityPanel/Control.visible = true
-	else:
-		print("failed")
 	ability_used = true
+	self.modulate = Color.red
 
 
 func sayCatchphrase():
-	GameManager.playAudio(catchphrase_filename)
+	Manager.playAudio(catchphrase_filename)
 	
 func showCatchphrase():
 	if is_instance_valid($AbilityPanel/Control):
 		$AbilityPanel/Control.visible = true
-	
-	yield(get_tree().create_timer(2.0), "timeout")
-	
+
+func hideCatchphrase():
 	if is_instance_valid($AbilityPanel/Control):
 		$AbilityPanel/Control.visible = false
 		
@@ -141,8 +152,10 @@ func prepareAbilityPopup():
 	if is_instance_valid($AbilityPanel):
 		$AbilityPanel/Control.visible = false
 		$AbilityPanel/Control/DialoguePanel/Catchphrase.bbcode_text = catchphrase_text
-		pass
-	pass
+
+func showAbilitySelection(show):
+	if is_instance_valid($AbilityIcon/Control):
+		$AbilityIcon/Control.visible = show
 
 
 func collide_with_rabbit(body):
@@ -153,8 +166,22 @@ func collide_with_rabbit(body):
 		
 		if body.is_in_group("Rabbits") and body.state == RabbitState.thrown:
 			if not ability_used and state == RabbitState.thrown:
-				GameManager.playAudio(teamwork_file, -15)
+				Manager.playAudio(teamwork_file, -15)
+				
 				ability()
+				
+#				if linear_velocity.length() > body.linear_velocity.length():
+#					useAbility()
+#				else:
+#					ability()
+				
+#				if self == GameManager.last_rabbit_thrown():
+#					useAbility()
+#				else:
+#					ability()
+		
+				#make collisions more volatile
+				linear_velocity *= 2
 
 
 

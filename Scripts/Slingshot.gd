@@ -17,15 +17,13 @@ var CenterOfSlingshot
 var CenterOfSlingshotGlobal
 var player
 
+var lastRabbitThrown
+
 var can_start = false
 
-var music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
 var launchNoise = "res://Assets/Sound/Sound effects/slingshot.mp3"
 
 func _ready():
-	
-	GameManager.playAudio(music, -12, false)
-	
 	SlingshotState = SlingState.idle
 	LeftLine = $LeftLine
 	RightLine = $RightLine
@@ -38,6 +36,8 @@ func _ready():
 	#$Tween.interpolate_property(player, "global_position", player.global_position, CenterOfSlingshotGlobal, 1)
 	#$Tween.start()
 	movePlayerToSlingshot(1)
+	
+	lastRabbitThrown = player
 	
 
 	print(str(player.position))
@@ -71,7 +71,11 @@ func _process(delta):
 			if not can_start:
 				return false
 			
+			#finds current player
 			player = GameManager.findPlayer()
+			#shows ability selection
+			player.showAbilitySelection(true)
+			
 			#position of slingshot rope relative to center
 			var pullPositionGlobal = get_global_mouse_position()
 			var pullPositionLocal = CenterOfSlingshot
@@ -104,24 +108,28 @@ func _process(delta):
 			
 			$Arrow.global_position = pullPositionGlobal
 			
-			if Input.is_action_pressed("Left_Mouse"):
+			if Input.is_action_pressed("pull_in_slingshot"):
+				#makes slingshot rope follow player
 				LeftLine.points[1] = pullPositionLocal
 				RightLine.points[1] = pullPositionLocal
 				player.global_position = pullPositionGlobal
 				var pointPosition = pullPositionLocal
 				var grav = ProjectSettings.get_setting("physics/2d/default_gravity")
+				#draws trajectory
 				$ShotArc.clear_points()
 				var c = 0.005
 				for i in 500:
 					$ShotArc.add_point(pointPosition)
-					velocity.y += grav * delta
-					velocity += -c * velocity
-					pointPosition += velocity * delta
+					velocity.y += grav * delta# / Engine.time_scale
+					velocity += -c * velocity# / Engine.time_scale
+					pointPosition += velocity * delta# / Engine.time_scale
 					if pointPosition.y > $ShotArc.position.y:
 						#print(str(i))
 						break
+			
+			#happens right after rabbit is thrown
 			else:
-				GameManager.playAudio(launchNoise, -10)
+				Manager.playAudio(launchNoise, -10)
 				player.ThrowRabbit()
 				player = player as RigidBody2D
 				#player.position = CenterOfSlingshot
@@ -132,23 +140,38 @@ func _process(delta):
 				
 				SlingshotState = SlingState.thrown
 				GameManager.CurrentGameState = GameManager.GameState.Play
+				reset_slingshot()
 				
-				get_tree().get_nodes_in_group("Camera")[0].followingPlayer = true
+				#automatically reloads slingshot
+#				yield(get_tree().create_timer(0.25), "timeout")
+#				nextPlayer()
+#				return_to_slingshot()
+
+				
+				
 				
 		SlingState.thrown:
 			if Input.is_action_just_pressed("ability"):
 				if is_instance_valid(player):
 					player.useAbility()
-			
 
+			#if we want ability to be activated with double mouse click
+#			if (Input.is_action_pressed("ability_1.2") and Input.is_action_just_pressed("ability_2.2")) or (Input.is_action_just_pressed("ability_1.2") and Input.is_action_pressed("ability_2.2")):
+#				if is_instance_valid(player):
+#					player.useAbility()
 			
+			#keeps track of last rabbit thrown
+			lastRabbitThrown = player
+
+			#reloads slingshot on button press
 			if Input.is_action_pressed("return_to_slingshot"):
 				nextPlayer()
 				return_to_slingshot()
 
+
 		SlingState.reset:
 			var lives = get_tree().get_nodes_in_group("Player")
-			reset_slingshot()
+			
 			if lives.size() > 0:
 				player = lives[0]
 				#$Tween.interpolate_property(player, "global_position", player.position, CenterOfSlingshotGlobal, 0.1)
@@ -156,12 +179,15 @@ func _process(delta):
 				movePlayerToSlingshot(0.1)
 				if (player.global_position - CenterOfSlingshotGlobal).length() < 1: 
 					SlingshotState = SlingState.idle
-			elif lives.size() == 0:
-				GameManager.gaveUp = true
+#			elif lives.size() == 0:
+#				GameManager.gaveUp = true
 
 
 func reset_slingshot():
+	#clears trajectory
 	$ShotArc.clear_points()
+	
+	#returns rope to neutral position
 	LeftLine.points[1] = CenterOfSlingshot
 	RightLine.points[1] = CenterOfSlingshot
 	
@@ -170,30 +196,38 @@ func return_to_slingshot():
 	
 	SlingshotState = SlingState.reset
 	
-	var cams = get_tree().get_nodes_in_group("Cameras")
+	#var cams = get_tree().get_nodes_in_group("Cameras")
 	#print(cams.size())
 	
-	var currCam = cams[0]
-	currCam.resetCamera()
+	#var currCam = cams[0]
+	#currCam.resetCamera()
 	
 
-
+#finds next available character in line
 func nextPlayer():
+	#removes ability catchphrase if still up
 	if is_instance_valid(player):
+		player.hideCatchphrase()
 		player.remove_from_group("Player")
+	
+	#resets camera
+	GameManager.currentCamera.abilityZoomOut()
+	if not GameManager.slowmo:
+		GameManager.speedup()
+		
+	#finds next player
 	var players = get_tree().get_nodes_in_group("Player")
-	
-	print("All remaining rabbits:")
-	print(str(players))
-	
 	if players.size() > 0:
 		#player = GameManager.currentPlayer
 		player = GameManager.findPlayer()
 
+#moves next player into catapult
 func movePlayerToSlingshot(t = 0.1):
 	$Tween.interpolate_property(player, "global_position", player.global_position, CenterOfSlingshotGlobal, t)
 	$Tween.start()
 
+
+#when player presses on catapult to drag character
 func _on_TouchArea_input_event(viewport, event, shape_idx):
 	
 	if not can_start:

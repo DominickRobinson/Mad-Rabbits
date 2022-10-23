@@ -1,6 +1,6 @@
 extends Rabbit
 
-func _ready2():
+func _ready():
 	catchphrase_text = "TRIPLE THREAT! HIYA!"
 	
 
@@ -14,6 +14,7 @@ func ability():
 	self.modulate = Color(1, 0, 0)
 	
 	ability_used = true
+
 
 func newNinja(offset, color, vel_mult):
 	

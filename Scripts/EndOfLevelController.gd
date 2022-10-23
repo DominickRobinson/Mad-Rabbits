@@ -11,7 +11,7 @@ enum idk {
 var idk_state = idk.nothing
 
 func _ready():
-	pass # Replace with function body.
+	$Popup.hide()
 	
 func popupLevelCompleted(win, score):
 	$Popup/ScoreValue.text = str(int(score))

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/CameraController.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/CloseCamera.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/FarCamera.gd" type="Script" id=3]
+
+[node name="CameraController" type="Node2D" groups=["CameraController", "Cameras"]]
+script = ExtResource( 1 )
+
+[node name="CloseCamera" type="Camera2D" parent="." groups=["Camera", "CloseCamera"]]
+position = Vector2( 183, -132 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+script = ExtResource( 2 )
+
+[node name="FarCamera" type="Camera2D" parent="." groups=["Camera", "FarCamera"]]
+position = Vector2( 535, -129 )
+zoom = Vector2( 1.5, 1.5 )
+script = ExtResource( 3 )
