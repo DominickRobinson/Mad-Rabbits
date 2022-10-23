@@ -53,7 +53,7 @@ func _physics_process(delta):
 	match state:
 		RabbitState.thrown:
 			
-			linear_velocity += -c * linear_velocity
+			linear_velocity += -c * linear_velocity * Engine.time_scale
 			
 			if despawnConditionsMet() and not dying:
 				var dying = true
@@ -117,7 +117,24 @@ func useAbility():
 
 
 
+func ability1():
+	pass
+
+func ability2():
+	pass
+
+func ability3():
+	pass
+
+func set_ability(num):
+	currentAbility = num
+
 func ability():
+	match currentAbility:
+		1:	ability1()
+		2:	ability2()
+		3:	ability3()
+	
 	ability_used = true
 	self.modulate = Color.red
 

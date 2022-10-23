@@ -120,9 +120,9 @@ func _process(delta):
 				var c = 0.005
 				for i in 500:
 					$ShotArc.add_point(pointPosition)
-					velocity.y += grav * delta# / Engine.time_scale
-					velocity += -c * velocity# / Engine.time_scale
-					pointPosition += velocity * delta# / Engine.time_scale
+					velocity.y += grav * delta / Engine.time_scale
+					velocity += -c * velocity
+					pointPosition += velocity * delta / Engine.time_scale
 					if pointPosition.y > $ShotArc.position.y:
 						#print(str(i))
 						break

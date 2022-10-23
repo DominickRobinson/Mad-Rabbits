@@ -6,7 +6,7 @@ func _ready():
 	catchphrase_text = "d e s t r o y"
 
 
-func ability():
+func ability1():
 	ability_used = true
 	explode()
 	

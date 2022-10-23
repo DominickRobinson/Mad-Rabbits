@@ -10,7 +10,7 @@ func _ready():
 	#counter = 2
 	#pass # Replace with function body.
 
-func ability():
+func ability1():
 	$Sprite.modulate = Color(1,0,0)
 	self.linear_velocity.y -= 200
 	self.counter -= 1

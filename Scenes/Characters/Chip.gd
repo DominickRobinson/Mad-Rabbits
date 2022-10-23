@@ -11,7 +11,7 @@ func _ready():
 	$LargeBody.disabled = true
 
 
-func ability():
+func ability1():
 	$Sprite.visible = false
 	$Body.set_deferred("disabled", true)
 	

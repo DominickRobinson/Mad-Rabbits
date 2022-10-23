@@ -4,7 +4,7 @@ func _ready():
 	catchphrase_text = "TRIPLE THREAT! HIYA!"
 	
 
-func ability():
+func ability1():
 	
 	var copy = load(self.filename)
 	
