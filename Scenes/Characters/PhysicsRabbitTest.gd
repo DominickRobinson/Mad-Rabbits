@@ -3,8 +3,6 @@ extends Rabbit
 
 export (int) var speedboost := 6
 export (float) var speedcrash := -.25
-export (int) var totalAbilities := 1
-
 onready var MotionBlurShader = preload("res://Assets/Shaders/motion_blur.tres")
 
 var blur = false
@@ -34,6 +32,10 @@ func ability1():
 	ability_used = true
 	blur()
 	self.modulate = Color.red
+
+func ability2():
+	ability_used = true
+	self.modulate = Color.blue
 
 
 func blur():

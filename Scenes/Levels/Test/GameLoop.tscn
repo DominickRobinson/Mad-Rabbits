@@ -75,6 +75,7 @@ rotation = 1.5708
 
 [node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
 position = Vector2( -411, -14 )
+totalAbilities = 2
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
@@ -83,7 +84,7 @@ position = Vector2( -228, -9 )
 position = Vector2( -149, -9 )
 
 [node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
-position = Vector2( -284, -7 )
+position = Vector2( -284, -15 )
 catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
 
 [node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 17 )]

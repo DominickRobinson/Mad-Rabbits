@@ -13,9 +13,7 @@ var idk_state = idk.nothing
 func _ready():
 	$Popup.hide()
 	
-func popupLevelCompleted(win, score):
-	$Popup/ScoreValue.text = str(int(score))
-	
+func popupLevelCompleted(win):	
 	match idk_state:
 		idk.winning:
 			#print("You win!")

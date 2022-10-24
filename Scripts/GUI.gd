@@ -11,11 +11,8 @@ func _ready():
 	#EndOfLevel.visible = false
 	pass
 
-func SetScore():
-	Score.setScore()
-
-func PopupLevelCompleted(win, score):
-	EndOfLevel.popupLevelCompleted(win, score)
+func PopupLevelCompleted(win):
+	EndOfLevel.popupLevelCompleted(win)
 
 func hideAllChildren():
 	for child in children:

@@ -9,6 +9,7 @@ export var ability_used := false
 
 export var catchphrase_text := "*insert catchphrase text here*"
 export var counter := 4
+export (int) var totalAbilities := 1
 
 export(String, FILE) var catchphrase_filename := ""
 
@@ -136,7 +137,7 @@ func ability():
 		3:	ability3()
 	
 	ability_used = true
-	self.modulate = Color.red
+	#self.modulate = Color.red
 
 
 func sayCatchphrase():
@@ -171,8 +172,8 @@ func prepareAbilityPopup():
 		$AbilityPanel/Control/DialoguePanel/Catchphrase.bbcode_text = catchphrase_text
 
 func showAbilitySelection(show):
-	if is_instance_valid($AbilityIcon/Control):
-		$AbilityIcon/Control.visible = show
+	if is_instance_valid($AbilitySelectionPanel):
+		$AbilitySelectionPanel.toggle_visibility(show)
 
 
 func collide_with_rabbit(body):
