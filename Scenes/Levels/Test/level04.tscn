@@ -52,23 +52,23 @@ position = Vector2( -26, 39 )
 position = Vector2( 113, 12 )
 
 [node name="WoodRectangle" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -351, 41 )
+position = Vector2( -143, 32 )
 
 [node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -375, -95 )
+position = Vector2( -173, -102 )
 rotation = 1.5708
 
 [node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -427, -24 )
+position = Vector2( -503, -231 )
 
 [node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -436, -221 )
+position = Vector2( -258, -38 )
 
 [node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
 position = Vector2( -504, 35 )
 
 [node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -494, -101 )
+position = Vector2( -506, -95 )
 rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
@@ -97,7 +97,7 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 530, -172 )
+position = Vector2( 441, -362 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
 position = Vector2( 364, -69 )

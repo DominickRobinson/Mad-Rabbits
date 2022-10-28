@@ -39,6 +39,7 @@ texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="Slingshot" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5, -168 )
 MaxSlingshotPull = 150
 MaxLaunchVelocity = 800
 
@@ -46,29 +47,43 @@ MaxLaunchVelocity = 800
 position = Vector2( 910, -84 )
 
 [node name="WoodSquare" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -26, 39 )
+position = Vector2( -224, -13 )
 
 [node name="WoodLong" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( 113, 12 )
+position = Vector2( -32, -138 )
 
 [node name="WoodRectangle" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -351, 41 )
+position = Vector2( -237, 50 )
 
 [node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -375, -95 )
+position = Vector2( -365, -16 )
 rotation = 1.5708
 
 [node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -427, -24 )
+position = Vector2( -155, 48 )
 
 [node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -436, -221 )
+position = Vector2( -416, -132 )
 
 [node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -504, 35 )
+position = Vector2( -904, 48 )
+
+[node name="WoodRectangle3" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -904, -73 )
+
+[node name="WoodRectangle4" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -904, -14 )
 
 [node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -494, -101 )
+position = Vector2( -476, -19 )
+rotation = 1.5708
+
+[node name="WoodSuperLong3" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -89, -24 )
+rotation = 1.5708
+
+[node name="WoodSuperLong4" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( 15, -26 )
 rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
@@ -97,10 +112,10 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 530, -172 )
+position = Vector2( 547, -26 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 364, -69 )
+position = Vector2( 935, -34 )
 
 [node name="Ground" type="Node2D" parent="."]
 
