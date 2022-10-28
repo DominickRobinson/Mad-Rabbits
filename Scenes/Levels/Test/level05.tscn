@@ -46,29 +46,65 @@ MaxLaunchVelocity = 800
 position = Vector2( 910, -84 )
 
 [node name="WoodSquare" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -26, 39 )
+position = Vector2( -508, -437 )
+
+[node name="WoodSquare4" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -194, -428 )
 
 [node name="WoodLong" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( 113, 12 )
+position = Vector2( -507, -390 )
+
+[node name="WoodLong4" parent="Bricks" instance=ExtResource( 14 )]
+position = Vector2( -192, -377 )
 
 [node name="WoodRectangle" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -143, 32 )
+position = Vector2( -306, 39 )
 
 [node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -173, -102 )
+position = Vector2( -546, -26 )
+rotation = 1.5708
+
+[node name="WoodSuperLong5" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -231, -27 )
+rotation = 1.5708
+
+[node name="WoodSuperLong3" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -547, -272 )
+rotation = 1.5708
+
+[node name="WoodSuperLong7" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -235, -257 )
+rotation = 1.5708
+
+[node name="WoodSuperLong4" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -468, -273 )
+rotation = 1.5708
+
+[node name="WoodSuperLong8" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -148, -257 )
 rotation = 1.5708
 
 [node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -503, -231 )
+position = Vector2( -388, -20 )
+
+[node name="WoodSquare3" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -318, -26 )
 
 [node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -258, -38 )
+position = Vector2( -505, -146 )
+
+[node name="WoodLong3" parent="Bricks" instance=ExtResource( 14 )]
+position = Vector2( -194, -143 )
 
 [node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -504, 35 )
+position = Vector2( -402, 44 )
 
 [node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -506, -95 )
+position = Vector2( -465, -27 )
+rotation = 1.5708
+
+[node name="WoodSuperLong6" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -151, -24 )
 rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
@@ -97,10 +133,10 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 441, -362 )
+position = Vector2( 457, -269 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 364, -69 )
+position = Vector2( 768, -261 )
 
 [node name="Ground" type="Node2D" parent="."]
 
