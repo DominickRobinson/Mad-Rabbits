@@ -109,11 +109,13 @@ func _process(delta):
 func RestartLevel():
 	#reloads scene
 	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
+	speedup()
 	
 	
 func NextLevel():
 	Manager.LevelIndex += 1
 	RestartLevel()
+	speedup()
 
 func ConvertLevelToFile(level):
 	var file = str("res://Scenes/Levels/" + Manager.Levels[level] + ".tscn")

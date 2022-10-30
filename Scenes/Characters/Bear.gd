@@ -10,7 +10,8 @@ var calculate_yet = true
 var can_take_damage = false
 const Kaboom = preload("../Effects/Kaboom.tscn")
 
-var deathNoise = "res://Assets/Sound/Sound effects/dying.mp3"
+#var deathNoise = "res://Assets/Sound/Sound effects/dying.mp3"
+var deathNoise = "res://Assets/Sound/Sound effects/wilhelmscream.mp3"
 
 func _ready():
 	last_linear_velocity = linear_velocity
