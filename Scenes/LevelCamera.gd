@@ -99,7 +99,7 @@ func unfollow_player():
 
 
 func trackPlayerPosition():
-	posTween.interpolate_property(self, "global_position", null, Manager.get_scene().get_player().global_position, abilityZoomInSpeed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	posTween.interpolate_property(self, "global_position", null, Manager.get_level().get_player().global_position, abilityZoomInSpeed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	posTween.start()
 
 func untrackPlayerPosition():

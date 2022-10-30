@@ -14,6 +14,8 @@ func ability1():
 	self.modulate = Color(1, 0, 0)
 	
 	ability_used = true
+	
+	#change
 
 
 func newNinja(offset, color, vel_mult):

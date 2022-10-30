@@ -12,4 +12,4 @@ func _ready():
 
 func _on_Button_pressed():
 	print("plz give up")
-	Manager.get_scene().gaveUp = true
+	Manager.get_level().gaveUp = true

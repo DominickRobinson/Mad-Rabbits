@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Backgrounds/Mountain.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/true-crimes.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 154.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -463.0
+margin_right = 463.0
+margin_bottom = 179.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Space" type="Control" parent="Text"]
+margin_right = 926.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Mad Rabbits" type="RichTextLabel" parent="Text"]
+margin_top = 29.0
+margin_right = 926.0
+margin_bottom = 123.0
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Mad Rabbits"
+text = "Mad Rabbits"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Epic Vegetable Quest" type="RichTextLabel" parent="Text"]
+margin_top = 127.0
+margin_right = 926.0
+margin_bottom = 175.0
+custom_colors/default_color = Color( 0, 1, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Epic Vegetable Quest"
+text = "Epic Vegetable Quest"
+fit_content_height = true
+
+[node name="Legend of the Infinity Carrot" type="RichTextLabel" parent="Text"]
+margin_top = 179.0
+margin_right = 926.0
+margin_bottom = 210.0
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]and the Legend of the Infinity Carrot"
+text = "and the Legend of the Infinity Carrot"
+fit_content_height = true
+
+[node name="ft Winnie" type="RichTextLabel" parent="Text"]
+margin_top = 214.0
+margin_right = 926.0
+margin_bottom = 228.0
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[right]ft. Winnie the Pooh"
+text = "ft. Winnie the Pooh"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

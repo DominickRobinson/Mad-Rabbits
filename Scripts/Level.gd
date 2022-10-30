@@ -32,6 +32,7 @@ func _ready():
 	if not get_tree().current_scene.is_in_group("Level"):
 		return
 	currentPlayer = Manager.get_player()
+	speedup()
 
 func slowdown(p=0.2):
 	Engine.time_scale = p

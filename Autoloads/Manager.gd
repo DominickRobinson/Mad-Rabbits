@@ -121,6 +121,12 @@ func makePOW(node, word, color, location, rng_range):
 	bubble.rect_global_position = location
 	bubble.rect_position.x += rand1
 	bubble.rect_position.y += rand2
-	
-func get_scene():
-	return get_tree().current_scene
+
+
+func get_level():
+	var currScene = get_tree().current_scene
+	if currScene.get_name() == "MainLoop":
+		get_tree().current_scene.get_node("MainLoop/Viewport").get_children()[0]
+	else:
+		get_tree().current_scene
+		

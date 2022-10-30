@@ -113,7 +113,7 @@ func useAbility():
 	if not Manager.slowmo:
 		Manager.speedup()
 	if Options.zoomInDuringAbility:
-		Manager.get_scene().get_camera().abilityZoomOut()
+		Manager.get_level().get_camera().abilityZoomOut()
 	hideCatchphrase()
 
 

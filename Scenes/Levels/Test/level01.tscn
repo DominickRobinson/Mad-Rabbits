@@ -22,8 +22,7 @@
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )
 
-[node name="GameLoop" type="Node2D" groups=["Level"]]
-position = Vector2( 4, 33 )
+[node name="GameLoop3" type="Node2D" groups=["Level"]]
 script = ExtResource( 18 )
 music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
 
@@ -42,6 +41,12 @@ region_rect = Rect2( 0, 0, 4000, 2000 )
 position = Vector2( 5, -168 )
 MaxSlingshotPull = 150
 MaxLaunchVelocity = 800
+
+[node name="Front" parent="Slingshot" index="3"]
+visible = false
+
+[node name="Back" parent="Slingshot" index="4"]
+visible = false
 
 [node name="Bricks" type="Node2D" parent="."]
 position = Vector2( 910, -84 )
@@ -133,3 +138,5 @@ position = Vector2( -103, -560 )
 position = Vector2( 340, -182 )
 zoom = Vector2( 1.5, 1.4 )
 editor_draw_limits = true
+
+[editable path="Slingshot"]
