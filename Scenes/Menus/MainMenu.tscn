@@ -97,3 +97,9 @@ fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Control" type="Control" parent="."]
+margin_left = 213.0
+margin_top = 263.0
+margin_right = 817.0
+margin_bottom = 496.0

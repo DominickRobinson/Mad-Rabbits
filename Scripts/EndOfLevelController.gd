@@ -48,5 +48,5 @@ func _on_RestartLevelButton_button_down():
 
 func _on_NextLevelButton_button_down():
 	#print("2")
-	Manager.NextLevel()
+	Manager.next_level()
 	pass # Replace with function body.

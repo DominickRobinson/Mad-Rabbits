@@ -34,6 +34,24 @@ func _unhandled_input(event):
 		speedup()
 
 
+#helper level
+func RestartLevel():
+	#reloads scene
+	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
+	speedup()
+
+func next_level():
+	Manager.LevelIndex += 1
+	RestartLevel()
+	speedup()
+
+func ConvertLevelToFile(level):
+	var file = str("res://Scenes/Levels/" + Manager.Levels[level] + ".tscn")
+	#print(file)
+	return file
+#helper level
+
+
 
 func set_level_mode():
 	CurrentGameMode = GameModes.Level
