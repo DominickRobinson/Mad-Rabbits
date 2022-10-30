@@ -59,7 +59,7 @@ position = Vector2( -173, -102 )
 rotation = 1.5708
 
 [node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -503, -231 )
+position = Vector2( -444, -222 )
 
 [node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
 position = Vector2( -258, -38 )
@@ -75,6 +75,7 @@ rotation = 1.5708
 
 [node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
 position = Vector2( -411, -14 )
+totalAbilities = 2
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
@@ -83,7 +84,7 @@ position = Vector2( -228, -9 )
 position = Vector2( -149, -9 )
 
 [node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
-position = Vector2( -284, -7 )
+position = Vector2( -284, -15 )
 catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
 
 [node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 17 )]
@@ -97,7 +98,7 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 441, -362 )
+position = Vector2( 681, -145 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
 position = Vector2( 364, -69 )
@@ -107,7 +108,7 @@ position = Vector2( 364, -69 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2( 530.77, 62.0743 )
+position = Vector2( 526, 263 )
 rotation = -0.00523599
 shape = SubResource( 10 )
 

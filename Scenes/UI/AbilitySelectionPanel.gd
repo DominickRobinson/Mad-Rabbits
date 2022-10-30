@@ -1,17 +1,29 @@
-extends Control
+extends CanvasLayer
 
-var last_pressed : Button = null
+#var buttons = get_children()[0].get_children()
+var buttons
 
 func _ready() -> void:
-	for button in get_children():
-		button.connect("toggled", self, "_on_Button_toggled", [button])
+	toggle_visibility(false)
+	buttons = $Control/HBoxContainer.get_children()
+	for button in buttons:
+		button.connect("pressed", self, "_on_Button_pressed", [button])
+		if get_button_number(button) > get_parent().totalAbilities:
+			button.hide()
 
-func _on_Button_toggled(is_pressed: bool, button: Button) -> void:
-	if last_pressed == button:
-		button.pressed = false
-		last_pressed = null
-		var num = int(button.get_name()[7])
-		print(button.name(), ": ", num)
-		#GameManager.currentPlayer.set_ability()
+func _on_Button_pressed(button: Button) -> void:
+	var num = get_button_number(button)
+	print("Ability selected: ", num)
+	Manager.get_scene().get_player().set_ability(num)
+	
+	for b in buttons:
+		b.pressed = (button == b)
+
+func toggle_visibility(show):
+	if show:
+		$Control.show()
 	else:
-		last_pressed = button
+		$Control.hide()
+
+func get_button_number(button: Button):
+	return int(button.get_name()[7])

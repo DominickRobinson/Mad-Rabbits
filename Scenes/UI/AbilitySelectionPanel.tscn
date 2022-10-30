@@ -3,41 +3,57 @@
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.gd" type="Script" id=1]
 
 [node name="AbilitySelectionPanel" type="CanvasLayer"]
-
-[node name="AbilitySelectionPanel" type="Control" parent="."]
-margin_right = 230.0
-margin_bottom = 72.0
+layer = 100
 script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 192.0
+margin_bottom = 62.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="AbilitySelectionPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 anchor_right = 0.878261
 anchor_bottom = 1.0
+margin_right = -14.0
+margin_bottom = -12.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Ability1" type="Button" parent="AbilitySelectionPanel/HBoxContainer"]
+[node name="Ability1" type="Button" parent="Control/HBoxContainer"]
 margin_right = 60.0
-margin_bottom = 72.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 toggle_mode = true
+pressed = true
 text = "1"
+expand_icon = true
 
-[node name="Ability2" type="Button" parent="AbilitySelectionPanel/HBoxContainer"]
+[node name="Ability2" type="Button" parent="Control/HBoxContainer"]
 margin_left = 64.0
 margin_right = 124.0
-margin_bottom = 72.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 toggle_mode = true
 text = "2"
+expand_icon = true
 
-[node name="Ability3" type="Button" parent="AbilitySelectionPanel/HBoxContainer"]
+[node name="Ability3" type="Button" parent="Control/HBoxContainer"]
 margin_left = 128.0
 margin_right = 188.0
-margin_bottom = 72.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 toggle_mode = true
 text = "3"
+expand_icon = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Characters/Chip.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Chewy.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sound/Sound effects/fart-meme-sound.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/AbilityPanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=5]
 
 [sub_resource type="PhysicsMaterial" id=2]
 bounce = 0.2
@@ -45,5 +46,7 @@ panelColor = Color( 0.352941, 0.207843, 0, 1 )
 portraitFilename = "res://Assets/Characters/Chewy.png"
 catchphrase = "[shake rate=10 level=10] OOGA BOOGA !!"
 catchphraseOutlineColor = Color( 0.619608, 0.231373, 0, 1 )
+
+[node name="AbilitySelectionPanel" parent="." instance=ExtResource( 5 )]
 
 [connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]

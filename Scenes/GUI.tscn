@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/EndOfLevelController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/GUI.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/ScoreController.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/GiveUpButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI/PauseButton.tscn" type="PackedScene" id=6]
@@ -13,44 +12,6 @@
 pause_mode = 2
 layer = 99
 script = ExtResource( 2 )
-
-[node name="Score" type="Control" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="Score"]
-margin_left = 44.0
-margin_top = 17.0
-margin_right = 185.0
-margin_bottom = 57.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ScoreLabel" type="RichTextLabel" parent="Score"]
-margin_left = 59.0
-margin_top = 30.0
-margin_right = 130.0
-margin_bottom = 57.0
-text = "Score: "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ScoreValue" type="RichTextLabel" parent="Score"]
-margin_left = 107.0
-margin_top = 30.0
-margin_right = 235.0
-margin_bottom = 57.0
-text = "1000"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="EndOfLevel" type="Control" parent="."]
 visible = false

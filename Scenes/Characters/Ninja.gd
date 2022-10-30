@@ -20,7 +20,7 @@ func newNinja(offset, color, vel_mult):
 	
 	var dup = load(self.filename)
 	var copy = dup.instance()
-	get_parent().add_child(copy)
+	self.get_parent().add_child(copy)
 	
 	copy = copy as Rabbit
 	

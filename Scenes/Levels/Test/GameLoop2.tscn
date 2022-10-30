@@ -118,3 +118,13 @@ position = Vector2( -103, -560 )
 position = Vector2( 340, -182 )
 zoom = Vector2( 1.5, 1.4 )
 editor_draw_limits = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -25.0
+margin_top = -209.0
+margin_right = 18.0
+margin_bottom = -195.0
+text = "level 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}

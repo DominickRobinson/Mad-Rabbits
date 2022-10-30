@@ -44,7 +44,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 346.0
-margin_bottom = -4.0
+margin_bottom = 346.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false

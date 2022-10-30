@@ -67,7 +67,7 @@ func _process(delta):
 	
 	match SlingshotState:
 		SlingState.idle:
-			pass
+			player.showAbilitySelection(true)
 		SlingState.pulling:
 			#finds player
 			
@@ -77,7 +77,6 @@ func _process(delta):
 			#finds current player
 			player = currentLevel.get_player()
 			#shows ability selection
-			player.showAbilitySelection(true)
 			
 			#position of slingshot rope relative to center
 			var pullPositionGlobal = get_global_mouse_position()
@@ -141,6 +140,7 @@ func _process(delta):
 				player.linear_velocity = velocity
 				player.angular_velocity = player.initial_angular_velocity
 				
+				player.showAbilitySelection(false)
 				SlingshotState = SlingState.thrown
 				currentLevel.CurrentGameState = currentLevel.GameState.Play
 				reset_slingshot()

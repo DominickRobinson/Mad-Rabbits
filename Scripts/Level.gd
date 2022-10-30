@@ -95,26 +95,27 @@ func _process(delta):
 				if gaveUp:
 					CurrentGameState = GameState.Lose
 			
-			#updates score	
-			get_tree().get_nodes_in_group("InterfaceController")[0].SetScore()
+
 		
 		GameState.Win:
 			#level win endscreen
-			get_tree().get_nodes_in_group("InterfaceController")[0].PopupLevelCompleted(true, Score)
+			get_tree().get_nodes_in_group("InterfaceController")[0].PopupLevelCompleted(true)
 			
 		GameState.Lose:
 			#level lose endscreen
-			get_tree().get_nodes_in_group("InterfaceController")[0].PopupLevelCompleted(false, 0)
+			get_tree().get_nodes_in_group("InterfaceController")[0].PopupLevelCompleted(false)
 
 
 func RestartLevel():
 	#reloads scene
 	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
+	speedup()
 	
 	
 func NextLevel():
 	Manager.LevelIndex += 1
 	RestartLevel()
+	speedup()
 
 func ConvertLevelToFile(level):
 	var file = str("res://Scenes/Levels/" + Manager.Levels[level] + ".tscn")
