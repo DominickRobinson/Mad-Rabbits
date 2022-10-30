@@ -46,29 +46,47 @@ MaxLaunchVelocity = 800
 position = Vector2( 910, -84 )
 
 [node name="WoodSquare" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -26, 39 )
+position = Vector2( -523, -13 )
 
 [node name="WoodLong" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( 113, 12 )
+position = Vector2( -201, 55 )
 
 [node name="WoodRectangle" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -351, 41 )
+position = Vector2( -443, -16 )
+
+[node name="WoodRectangle3" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -443, -77 )
+
+[node name="WoodRectangle4" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -444, -138 )
+
+[node name="WoodRectangle5" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -353, 45 )
+
+[node name="WoodRectangle6" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -353, -16 )
+
+[node name="WoodRectangle7" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -356, -78 )
+
+[node name="WoodRectangle8" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -355, -142 )
 
 [node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -375, -95 )
+position = Vector2( -439, -270 )
 rotation = 1.5708
 
 [node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -427, -24 )
+position = Vector2( -521, 47 )
 
 [node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -436, -221 )
+position = Vector2( -398, -387 )
 
 [node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -504, 35 )
+position = Vector2( -443, 45 )
 
 [node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -494, -101 )
+position = Vector2( -352, -274 )
 rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
@@ -97,10 +115,10 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 530, -172 )
+position = Vector2( 570, -269 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 364, -69 )
+position = Vector2( 759, -62 )
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -118,13 +136,3 @@ position = Vector2( -103, -560 )
 position = Vector2( 340, -182 )
 zoom = Vector2( 1.5, 1.4 )
 editor_draw_limits = true
-
-[node name="Label" type="Label" parent="."]
-margin_left = -25.0
-margin_top = -209.0
-margin_right = 18.0
-margin_bottom = -195.0
-text = "level 2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
