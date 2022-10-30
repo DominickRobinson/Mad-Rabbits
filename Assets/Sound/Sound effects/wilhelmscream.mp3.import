@@ -11,5 +11,5 @@ dest_files=[ "res://.import/wilhelmscream.mp3-3cb8670e20f6c75c590628eb3dafe1cf.m
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
