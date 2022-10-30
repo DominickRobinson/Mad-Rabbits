@@ -13,8 +13,9 @@ func _ready() -> void:
 
 func _on_Button_pressed(button: Button) -> void:
 	var num = get_button_number(button)
-	print("Ability selected: ", num)
-	Manager.get_level().get_player().set_ability(num)
+	#print("Ability selected: ", num)
+	#Manager.get_level().get_player().set_ability(num)
+	Manager.get_player().set_ability(num)
 	
 	for b in buttons:
 		b.pressed = (button == b)

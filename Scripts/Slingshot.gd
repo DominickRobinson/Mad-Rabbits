@@ -10,7 +10,8 @@ enum SlingState {
 export var MaxSlingshotPull := 100
 export var MaxLaunchVelocity := 400
 
-onready var currentLevel = get_tree().current_scene
+#onready var currentLevel = get_tree().current_scene
+onready var currentLevel = Manager.get_level()
 
 var SlingshotState
 var LeftLine
@@ -31,7 +32,7 @@ func _ready():
 	RightLine = $RightLine
 	CenterOfSlingshot = $CenterOfSlingshot.position
 	CenterOfSlingshotGlobal = $CenterOfSlingshot.global_position
-	print(currentLevel.get_name())
+	#print(currentLevel.get_name())
 	player = currentLevel.get_player()
 	reset_slingshot()
 	
@@ -43,7 +44,7 @@ func _ready():
 	lastRabbitThrown = player
 	
 
-	print(str(player.position))
+	#print(str(player.position))
 	#player.position = CenterOfSlingshot
 
 

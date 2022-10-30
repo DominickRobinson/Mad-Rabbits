@@ -99,7 +99,7 @@ func unfollow_player():
 
 
 func trackPlayerPosition():
-	posTween.interpolate_property(self, "global_position", null, Manager.get_level().get_player().global_position, abilityZoomInSpeed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	posTween.interpolate_property(self, "global_position", null, Manager.get_player().global_position, abilityZoomInSpeed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	posTween.start()
 
 func untrackPlayerPosition():
@@ -140,10 +140,10 @@ func _on_zoomTween_completed():
 	match currentCameraZoom:
 		ZoomMode.zooming_in:
 			currentCameraZoom = ZoomMode.zoomed_in
-			print("zoomed in")
+			#print("zoomed in")
 		ZoomMode.zooming_out:
 			currentCameraZoom = ZoomMode.zoomed_out
-			print("zoomed out")
+			#print("zoomed out")
 		
 	zoomTween.remove_all()
 
@@ -163,5 +163,5 @@ func set_limits():
 	var lims = [limit_left, limit_right, limit_top, limit_bottom]
 	var limc = ['l', 'r', 't', 'b']
 	
-	for x in range(4):
-		print(str(limc[x]), ": ", str(lims[x]))
+#	for x in range(4):
+#		print(str(limc[x]), ": ", str(lims[x]))

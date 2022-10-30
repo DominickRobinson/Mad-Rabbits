@@ -23,10 +23,11 @@ func _init():
 	currentCameraZoom = ZoomMode.zoomed_out
 	add_child(zoomTween)
 	prepare_signals()
-	print("cam")
+	#print("cam")
 
 func _ready():
-	print("cam is ready")
+	#print("cam is ready")
+	pass
 
 func _process(delta):
 	#print(zoom)
@@ -72,7 +73,7 @@ func zoom_out(zoom_amt, speed):
 			#currentCameraZoom = ZoomMode.zoomed_out
 
 func _on_zoom_completed():
-	print("dabb")
+	#print("dabb")
 	match currentCameraZoom:
 		ZoomMode.zooming_in:
 			currentCameraZoom = ZoomMode.zoomed_in

@@ -62,7 +62,7 @@ func _on_HurtZone_body_entered(body):
 	
 	if not can_take_damage:
 		return false
-	print(body)
+	#print(body)
 	if is_instance_valid(body):
 		if body is RigidBody2D or body.is_in_group("Rabbits"):
 			#if body.is_in_group("Player"):
@@ -72,7 +72,7 @@ func _on_HurtZone_body_entered(body):
 			
 			var damage = abs(body.linear_velocity.length()) + abs(last_linear_velocity.length())
 			#damage *= 0.1
-			print(damage)
+			#print(damage)
 			
 			health -= damage
 			Manager.Score += damage

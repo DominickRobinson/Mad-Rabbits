@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_Button_toggled(button_pressed):
-	print("plz pause")
+	#print("plz pause")
 	get_parent().get_parent().pause(button_pressed)

@@ -71,7 +71,7 @@ margin_bottom = 175.0
 custom_colors/default_color = Color( 0, 1, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center]Epic Vegetable Quest"
+bbcode_text = "[center][shake]Epic Vegetable Quest"
 text = "Epic Vegetable Quest"
 fit_content_height = true
 
@@ -81,7 +81,7 @@ margin_right = 926.0
 margin_bottom = 210.0
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[center]and the Legend of the Infinity Carrot"
+bbcode_text = "[center][wave]and the Legend of the Infinity Carrot"
 text = "and the Legend of the Infinity Carrot"
 fit_content_height = true
 

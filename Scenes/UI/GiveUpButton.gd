@@ -11,5 +11,5 @@ func _ready():
 
 
 func _on_Button_pressed():
-	print("plz give up")
+	#print("plz give up")
 	Manager.get_level().gaveUp = true

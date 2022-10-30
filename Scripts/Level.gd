@@ -120,7 +120,7 @@ func NextLevel():
 
 func ConvertLevelToFile(level):
 	var file = str("res://Scenes/Levels/" + Manager.Levels[level] + ".tscn")
-	print(file)
+	#print(file)
 	return file
 	
 
@@ -153,6 +153,7 @@ func last_rabbit_thrown():
 		return null
 
 func get_player():
+	#print("YEEEET")
 	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		return players[0]

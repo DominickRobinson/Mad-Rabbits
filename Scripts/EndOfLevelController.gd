@@ -41,12 +41,12 @@ func popupLevelCompleted(win):
 
 
 func _on_RestartLevelButton_button_down():
-	print("1")
+	#print("1")
 	Manager.reload()
 	pass # Replace with function body.
 
 
 func _on_NextLevelButton_button_down():
-	print("2")
+	#print("2")
 	Manager.NextLevel()
 	pass # Replace with function body.

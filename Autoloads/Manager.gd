@@ -125,8 +125,4 @@ func makePOW(node, word, color, location, rng_range):
 
 func get_level():
 	var currScene = get_tree().current_scene
-	if currScene.get_name() == "MainLoop":
-		get_tree().current_scene.get_node("MainLoop/Viewport").get_children()[0]
-	else:
-		get_tree().current_scene
-		
+	return currScene

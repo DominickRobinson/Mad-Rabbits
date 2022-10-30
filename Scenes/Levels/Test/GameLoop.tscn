@@ -98,10 +98,12 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 681, -145 )
+position = Vector2( 334, -81 )
+health = 100
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 364, -69 )
+position = Vector2( 276, -70 )
+health = 100
 
 [node name="Ground" type="Node2D" parent="."]
 
