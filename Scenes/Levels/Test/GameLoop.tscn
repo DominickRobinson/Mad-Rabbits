@@ -106,9 +106,9 @@ position = Vector2( 364, -69 )
 [node name="Ground" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2( 513, 62 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2( 526, 263 )
 rotation = -0.00523599
 shape = SubResource( 10 )
 
