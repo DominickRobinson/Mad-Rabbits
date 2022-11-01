@@ -49,4 +49,5 @@ catchphraseOutlineColor = Color( 0.619608, 0.231373, 0, 1 )
 
 [node name="AbilitySelectionPanel" parent="." instance=ExtResource( 5 )]
 
+[connection signal="body_entered" from="." to="." method="_bounce"]
 [connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]
