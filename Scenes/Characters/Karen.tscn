@@ -1,0 +1,186 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/Characters/Karen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Characters/Badbearrr.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Characters/test/bruh-ear.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sound/Sound effects/dom_screaming.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Gun.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 12.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 2.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 2.0
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/BodySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.237501, -0.8725 ), Vector2( -0.238, -1.5 ), Vector2( -0.238, 0.5 ), Vector2( -0.237501, -0.8725 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "walk"
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/BodySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/BodySprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.0, 25.0, 0.0 ]
+}
+
+[node name="Karen" type="RigidBody2D" groups=["Bear", "Player", "Rabbits"]]
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
+initial_angular_velocity = 6
+ability_slowmo_scale = 0.8
+zoom_in_duration = 1.2
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="BodySprite" type="Sprite" parent="Body"]
+show_behind_parent = true
+position = Vector2( -0.237501, -0.8725 )
+scale = Vector2( 0.022, 0.022 )
+texture = ExtResource( 2 )
+
+[node name="EarStuff" type="Node2D" parent="Body/BodySprite"]
+position = Vector2( 7.76937, 27.1503 )
+scale = Vector2( 32.713, 31.1178 )
+
+[node name="Ear1" type="RigidBody2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( -6, -17 )
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+angular_damp = 15.0
+
+[node name="Collision" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/Ear1"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Body/BodySprite/EarStuff/Ear1/Collision"]
+visible = false
+show_behind_parent = true
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 3 )
+
+[node name="Ear2" type="RigidBody2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( 6, -17 )
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+angular_damp = 15.0
+
+[node name="Collision" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/Ear2"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Body/BodySprite/EarStuff/Ear2/Collision"]
+visible = false
+show_behind_parent = true
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 3 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( -6, -10 )
+node_a = NodePath("../../../..")
+node_b = NodePath("../Ear1")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( 6, -10 )
+node_a = NodePath("../../../..")
+node_b = NodePath("../Ear2")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( -6, -19 )
+node_a = NodePath("../EarNeutral")
+node_b = NodePath("../Ear1")
+length = 5.0
+stiffness = 64.0
+damping = 0.01
+
+[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( 6, -19 )
+node_a = NodePath("../EarNeutral2")
+node_b = NodePath("../Ear2")
+length = 5.0
+stiffness = 64.0
+damping = 0.01
+
+[node name="EarNeutral" type="StaticBody2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( -6, -19 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/EarNeutral"]
+shape = SubResource( 3 )
+
+[node name="EarNeutral2" type="StaticBody2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( 6, -19 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/EarNeutral2"]
+shape = SubResource( 3 )
+
+[node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
+stream = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 4 )
+anims/walk = SubResource( 5 )
+
+[node name="AbilitySelectionPanel" parent="." instance=ExtResource( 5 )]
+
+[node name="Control" parent="AbilitySelectionPanel" index="0"]
+visible = false
+
+[node name="Gun" parent="." instance=ExtResource( 6 )]
+position = Vector2( 11, -1 )
+
+[node name="Sprite" parent="Gun/GunPoint" index="0"]
+visible = false
+
+[connection signal="body_entered" from="." to="." method="stop_floating"]
+[connection signal="shot_bullet" from="Gun" to="." method="recoil"]
+[connection signal="animation_finished" from="Gun/AnimationPlayer" to="." method="stop_shooting"]
+
+[editable path="AbilitySelectionPanel"]
+[editable path="Gun"]

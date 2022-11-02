@@ -24,6 +24,7 @@
 [ext_resource path="res://addons/rmsmartshape/materials/edge_material.gd" type="Script" id=22]
 [ext_resource path="res://Assets/tiles/grass_edge.png" type="Texture" id=23]
 
+
 [sub_resource type="Resource" id=33]
 script = ExtResource( 15 )
 texture_idx = 0

@@ -5,7 +5,7 @@ var buttons
 
 func _ready() -> void:
 	toggle_visibility(false)
-	buttons = $Control/HBoxContainer.get_children()
+	buttons = $Control/Container.get_children()
 	for button in buttons:
 		button.connect("pressed", self, "_on_Button_pressed", [button])
 		if get_button_number(button) > get_parent().totalAbilities:

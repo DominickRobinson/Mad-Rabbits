@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/ScoreController.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Level_GUI.gd" type="Script" id=8]
 
+
 [node name="Level_GUI" type="CanvasLayer" groups=["InterfaceController"]]
 pause_mode = 2
 layer = 99

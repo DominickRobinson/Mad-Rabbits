@@ -13,17 +13,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
-anchor_right = 0.878261
-anchor_bottom = 1.0
-margin_right = -14.0
-margin_bottom = -12.0
+[node name="Container" type="VBoxContainer" parent="Control"]
+anchor_right = 0.354167
+anchor_bottom = 3.03226
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Ability1" type="Button" parent="Control/HBoxContainer"]
-margin_right = 60.0
+[node name="Ability1" type="Button" parent="Control/Container"]
+margin_right = 68.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 60, 60 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
@@ -34,10 +32,10 @@ pressed = true
 text = "1"
 expand_icon = true
 
-[node name="Ability2" type="Button" parent="Control/HBoxContainer"]
-margin_left = 64.0
-margin_right = 124.0
-margin_bottom = 60.0
+[node name="Ability2" type="Button" parent="Control/Container"]
+margin_top = 64.0
+margin_right = 68.0
+margin_bottom = 124.0
 rect_min_size = Vector2( 60, 60 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 1, 1 )
@@ -46,10 +44,10 @@ toggle_mode = true
 text = "2"
 expand_icon = true
 
-[node name="Ability3" type="Button" parent="Control/HBoxContainer"]
-margin_left = 128.0
-margin_right = 188.0
-margin_bottom = 60.0
+[node name="Ability3" type="Button" parent="Control/Container"]
+margin_top = 128.0
+margin_right = 68.0
+margin_bottom = 188.0
 rect_min_size = Vector2( 60, 60 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 1, 1 )

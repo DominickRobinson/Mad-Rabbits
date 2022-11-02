@@ -94,7 +94,7 @@ func speedup():
 func dampAllAudio(p=0.2):
 	var audioPlayers = get_tree().get_nodes_in_group("dampable")
 	for audio in audioPlayers:
-		if audio is AudioStreamPlayer and audio != null:
+		if audio != null and audio is AudioStreamPlayer:
 			audio = audio as AudioStreamPlayer
 			audio.volume_db = -1
 			audio.pitch_scale = p

@@ -21,7 +21,7 @@ func _ready():
 	#print(totalChars)
 	#print(label.visible_characters)
 	
-	show_all_chars(5)
+	show_all_chars(totalChars * 0.1)
 
 func _physics_process(delta):
 	visible = Options.storytextVisible
