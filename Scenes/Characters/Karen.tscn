@@ -64,12 +64,13 @@ tracks/1/keys = {
 }
 
 [node name="Karen" type="RigidBody2D" groups=["Bear", "Player", "Rabbits"]]
+mass = 0.5
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
 initial_angular_velocity = 6
-ability_slowmo_scale = 0.8
-zoom_in_duration = 1.2
+ability_slowmo_scale = 0.9
+zoom_in_duration = 1.55
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -174,9 +175,6 @@ visible = false
 
 [node name="Gun" parent="." instance=ExtResource( 6 )]
 position = Vector2( 11, -1 )
-
-[node name="Sprite" parent="Gun/GunPoint" index="0"]
-visible = false
 
 [connection signal="body_entered" from="." to="." method="stop_floating"]
 [connection signal="shot_bullet" from="Gun" to="." method="recoil"]

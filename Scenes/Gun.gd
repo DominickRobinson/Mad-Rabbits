@@ -1,7 +1,7 @@
 extends Node2D
 
 export var initially_visible := false
-export var bullet_speed := 1000
+export var bullet_speed := 600
 
 signal shot_bullet(velocity, direction, mass)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Slingshot.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Props/Slingshot2.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 39.0512
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.630435, 1 )
+colors = PoolColorArray( 0.27769, 0.406953, 0.914063, 1, 0.576471, 0.721998, 0.94902, 0.952941, 1, 1, 1, 0 )
 
 [node name="Slingshot" type="Node2D" groups=["Slingshot"]]
 script = ExtResource( 1 )
@@ -48,6 +52,7 @@ default_color = Color( 0, 0, 0, 1 )
 z_index = 2
 points = PoolVector2Array( 672, -242 )
 default_color = Color( 0.4, 0.501961, 1, 1 )
+gradient = SubResource( 2 )
 
 [node name="Arrow" type="Sprite" parent="."]
 visible = false

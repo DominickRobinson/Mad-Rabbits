@@ -126,7 +126,7 @@ func _process(delta):
 					velocity.y += grav * delta / Engine.time_scale
 					velocity += -c * velocity
 					pointPosition += velocity * delta / Engine.time_scale
-					if pointPosition.y + global_position.y > 0:
+					if pointPosition.y  + global_position.y > 0 and velocity.y > 0:
 						#print(str(i))
 						break
 			

@@ -8,8 +8,8 @@ func ability1():
 	
 	var copy = load(self.filename)
 	
-	newNinja(Vector2(0, -10), Color(0, 1, 0), 1.5)
-	newNinja(Vector2(0, 10), Color(0, 0, 1), 1.5)
+	newNinja(Vector2(0, -20), Color(0, 1, 0), 1.5)
+	newNinja(Vector2(0, 20), Color(0, 0, 1), 1.5)
 	
 	self.modulate = Color(1, 0, 0)
 	
