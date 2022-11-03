@@ -175,6 +175,7 @@ visible = false
 
 [node name="Gun" parent="." instance=ExtResource( 6 )]
 position = Vector2( 11, -1 )
+initially_visible = false
 
 [connection signal="body_entered" from="." to="." method="stop_floating"]
 [connection signal="shot_bullet" from="Gun" to="." method="recoil"]

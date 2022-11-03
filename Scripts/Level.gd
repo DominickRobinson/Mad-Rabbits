@@ -52,7 +52,6 @@ func _unhandled_input(event):
 	
 
 
-
 func _process(delta):
 	
 	if not get_tree().current_scene.is_in_group("Level"):

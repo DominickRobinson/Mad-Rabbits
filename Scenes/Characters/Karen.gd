@@ -4,6 +4,7 @@ extends Rabbit
 export (float) var floatiness := 0.2
 
 var og_gravity_scale = gravity_scale
+var shoot_angle = null
 
 func _ready():
 	pass
@@ -11,6 +12,11 @@ func _ready():
 #func _integrate_forces(state):
 #	if $Gun.visible == true:
 #		global_rotation = get_angle_to(get_global_mouse_position())
+
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("ability"):
+		shoot_angle = rad2deg(get_global_mouse_position().angle_to_point(global_position))
+		print(shoot_angle)
 
 func ability1():
 	$Gun.fire()
@@ -21,7 +27,9 @@ func ability1():
 	
 
 	freeze()
-	rotation = get_angle_to(get_global_mouse_position())
+	if shoot_angle != null:
+		global_rotation_degrees = shoot_angle
+		print("shooting at: ", shoot_angle)
 	angular_damp = 10
 	
 	ability_used = true
