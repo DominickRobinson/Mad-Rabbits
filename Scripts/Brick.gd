@@ -25,6 +25,7 @@ func _init():
 	yield(t, "timeout")
 	can_take_damage = true
 	contact_monitor = true
+	contacts_reported = 1
 #
 #func _ready2():
 #	pass

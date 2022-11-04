@@ -39,7 +39,7 @@ func ability1():
 	yield(get_tree().create_timer(zoom_in_duration), "timeout")
 	unfreeze()
 	stop_shooting()
-	linear_velocity = temp_lin_vel
+	#linear_velocity = temp_lin_vel
 
 func stop_shooting():
 	#print("anim done")

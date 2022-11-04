@@ -19,6 +19,7 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 60, 60 )
 toggle_mode = true
 icon = ExtResource( 2 )
+flat = true
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false

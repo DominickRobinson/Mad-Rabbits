@@ -17,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_clip_content = true
 icon = ExtResource( 1 )
+flat = true
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false

@@ -49,3 +49,8 @@ func _on_RestartLevel_pressed():
 
 func _on_QuitGame_pressed():
 	Manager.quit()
+
+
+
+func _on_Unpause_button_down():
+	set_is_paused(false)

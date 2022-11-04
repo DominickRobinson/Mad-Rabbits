@@ -74,16 +74,16 @@ rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
 
+[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 4 )]
+position = Vector2( -411, -14 )
+totalAbilities = 2
+
 [node name="Karen" parent="Rabbits" instance=ExtResource( 19 )]
 position = Vector2( -142, -67 )
 initial_angular_velocity = 0
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 16 )]
 position = Vector2( -228, -9 )
-
-[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 4 )]
-position = Vector2( -411, -14 )
-totalAbilities = 2
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 12 )]
 position = Vector2( -149, -9 )
