@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Solemn-Choral-Piece-No.-1.mp3-13e3ade353695be5b678e41a4fc8767d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Solemn-Choral-Piece-No.-1.mp3"
+dest_files=[ "res://.import/Solemn-Choral-Piece-No.-1.mp3-13e3ade353695be5b678e41a4fc8767d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -3,7 +3,7 @@ extends Node
 var rng = RandomNumberGenerator.new()
 var bubble_root = load("res://Scenes/Bubble.tscn")
 
-var Levels = ["Test/GameLoop", "Test/GameLoop"]
+var Levels = ["Test/level01", "Test/level02", "Test/level03", "Test/level04", "Test/level05", ]
 var LevelIndex = 0
 
 enum GameModes {
@@ -42,7 +42,10 @@ func RestartLevel():
 
 func next_level():
 	Manager.LevelIndex += 1
-	RestartLevel()
+	#RestartLevel()
+	if Manager.LevelIndex >= Levels.size():
+		Manager.LevelIndex = 0
+	ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
 	speedup()
 
 func ConvertLevelToFile(level):
@@ -79,6 +82,9 @@ func playAudio(file, vol = 0, dampable = true):
 	
 	yield(a, "finished")
 	a.queue_free()
+
+func playMusic(music):
+	playAudio(music, -5, false)
 
 
 func slowdown(p=0.2):

@@ -16,7 +16,7 @@ func _ready():
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("ability"):
 		shoot_angle = rad2deg(get_global_mouse_position().angle_to_point(global_position))
-		print(shoot_angle)
+		#print(shoot_angle)
 
 func ability1():
 	$Gun.fire()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/EndOfLevelController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/GUI.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Menus/Transition.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/GiveUpButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI/PauseButton.tscn" type="PackedScene" id=6]
@@ -164,6 +165,9 @@ anchor_bottom = 0.0
 margin_left = 964.0
 margin_right = 1024.0
 margin_bottom = 60.0
+
+[node name="Transition" parent="." instance=ExtResource( 3 )]
+layer = 128
 
 [connection signal="button_down" from="EndOfLevel/Popup/RestartLevelButton" to="EndOfLevel" method="_on_RestartLevelButton_button_down"]
 [connection signal="button_down" from="EndOfLevel/Popup/NextLevelButton" to="EndOfLevel" method="_on_NextLevelButton_button_down"]

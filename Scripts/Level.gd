@@ -28,7 +28,7 @@ onready var screen = $ScreenEffects
 func _ready():
 	Manager.set_level_mode()
 	self.add_to_group("Level")
-	Manager.playAudio(music, -5, false)
+	Manager.playMusic(music)
 	if not get_tree().current_scene.is_in_group("Level"):
 		return
 	currentPlayer = Manager.get_player()
@@ -50,7 +50,6 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed("slowmo_off"):
 		speedup()
 	
-
 
 func _process(delta):
 	

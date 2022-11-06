@@ -21,7 +21,7 @@ size = 40
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 36
+size = 48
 outline_size = 1
 outline_color = Color( 1, 0.843137, 0, 1 )
 font_data = ExtResource( 7 )
@@ -190,6 +190,7 @@ margin_bottom = 25.0
 rect_min_size = Vector2( 0, 25 )
 
 [node name="Mad Rabbits" type="RichTextLabel" parent="Text"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 29.0
 margin_right = 926.0
 margin_bottom = 123.0
@@ -204,6 +205,7 @@ __meta__ = {
 }
 
 [node name="Epic Vegetable Quest" type="RichTextLabel" parent="Text"]
+visible = false
 margin_top = 127.0
 margin_right = 926.0
 margin_bottom = 175.0
@@ -219,19 +221,22 @@ stream = ExtResource( 5 )
 volume_db = -15.0
 
 [node name="Legend of the Infinity Carrot" type="RichTextLabel" parent="Text"]
-margin_top = 179.0
+margin_top = 127.0
 margin_right = 926.0
-margin_bottom = 210.0
+margin_bottom = 158.0
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center]and the Legend of the [rainbow]Infinity Carrot"
+visible_characters = 0
+percent_visible = 0.0
 text = "and the Legend of the Infinity Carrot"
 fit_content_height = true
 
 [node name="of Legendary Legend" type="RichTextLabel" parent="Text"]
-margin_top = 214.0
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 162.0
 margin_right = 926.0
-margin_bottom = 251.0
+margin_bottom = 211.0
 rect_clip_content = false
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -244,9 +249,10 @@ text = "of Legendary Legend"
 fit_content_height = true
 
 [node name="ft Winnie" type="RichTextLabel" parent="Text"]
-margin_top = 255.0
+visible = false
+margin_top = 267.0
 margin_right = 926.0
-margin_bottom = 272.0
+margin_bottom = 284.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
@@ -258,6 +264,7 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -370,4 +377,5 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/start = SubResource( 5 )
 
+[connection signal="pressed" from="Buttons/Classic" to="." method="_on_Classic_pressed"]
 [connection signal="toggled" from="Buttons/OptionButton" to="Buttons/OptionButton" method="_on_OptionButton_toggled"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Paweł Feszczuk - King.mp3-fab685f4cfb53105ea1067a79b93b060.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Paweł Feszczuk - King.mp3"
+dest_files=[ "res://.import/Paweł Feszczuk - King.mp3-fab685f4cfb53105ea1067a79b93b060.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

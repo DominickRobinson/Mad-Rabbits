@@ -15,17 +15,14 @@ func _init():
 	#_ready2()
 	
 	health = max_health
+	#health = 1000
 	
 	last_linear_velocity = linear_velocity
-	var t = Timer.new()
-	t.set_wait_time(3)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
-	yield(t, "timeout")
 	can_take_damage = true
 	contact_monitor = true
 	contacts_reported = 1
+	self.connect("body_entered", self, "on_body_entered")
+	#print("brick")
 #
 #func _ready2():
 #	pass
@@ -50,34 +47,33 @@ func calculate_linear_velocity():
 		calculate_yet = true
 
 
-func _on_Brick_body_entered(body):
-	#print("body entered :0")
+
+func on_body_entered(body):
+	if not can_take_damage:
+		return false
+	#print(body)
 	if is_instance_valid(body):
-		if body is RigidBody2D:
+		if body is RigidBody2D or body.is_in_group("Rabbits"):
+			#if body.is_in_group("Player"):
+			#	queue_free()
+			#else:
+			#Manager.makePOW(get_tree().get_root(), "dab", Color(0, 1, 0, 0.5), global_position, 25)
 			
-			if not can_take_damage:
-				return false
+			var damage = abs(body.linear_velocity.length()) + abs(last_linear_velocity.length())
+			damage *= 0.1
+			print(damage)
 			
-			Manager.playAudio(damageNoise)
-			
-			#print(health)
-			body = body as RigidBody2D
-			#var damage = body.linear_velocity.length()
-			var damage = abs(body.mass * body.linear_velocity.length()) + abs(last_linear_velocity.length())
-			#print("Damage: ", damage)
-			#audio.play()
 			health -= damage
-			
-#			if is_instance_valid($Bubble):
-#				#print("bubble!")
-#				$Bubble.activate()
-			
+			Manager.Score += damage
+			#print(health)
 			if health <= 0:
-				#if audio != null:
-				#body's linear velocity will slow significantly if it just barely destroys a block
-				#body.linear_velocity *= 1 - abs(damage + health) / abs(damage)
 				queue_free()
-
-
-func _on_body_entered():
-	pass # Replace with function body.
+				
+		elif body is TileMap:
+			var damage = abs(last_linear_velocity.length()) * 0.1
+			health -= damage
+			Manager.Score += damage
+			#print(health)
+			if health <= 0:
+				queue_free()
+				pass # Replace with function body.

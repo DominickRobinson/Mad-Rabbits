@@ -6,7 +6,6 @@
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=5]
 
-
 [sub_resource type="Animation" id=2]
 resource_name = "cutscene"
 length = 20.0
@@ -111,7 +110,6 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 [node name="Chip" parent="." instance=ExtResource( 4 )]
 position = Vector2( 610, -55 )
 cutsceneMode = true
-counter = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 725, -61 )

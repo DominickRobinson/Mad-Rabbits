@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dee Yan-Key - Second Ambient Sonata.mp3-7c9edfcc65ed9fc01733df49018b5d41.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Dee Yan-Key - Second Ambient Sonata.mp3"
+dest_files=[ "res://.import/Dee Yan-Key - Second Ambient Sonata.mp3-7c9edfcc65ed9fc01733df49018b5d41.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

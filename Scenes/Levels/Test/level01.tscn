@@ -24,7 +24,7 @@ extents = Vector2( 1000.26, 64.25 )
 
 [node name="GameLoop3" type="Node2D" groups=["Level"]]
 script = ExtResource( 18 )
-music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
+music = "res://Assets/Sound/Music/Advent_Chamber_Orchestra_-_04_-_Handel_-_Entrance_to_the_Queen_of_Sheba_for_Two_Oboes_Strings_and_Continuo_allegro.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
 

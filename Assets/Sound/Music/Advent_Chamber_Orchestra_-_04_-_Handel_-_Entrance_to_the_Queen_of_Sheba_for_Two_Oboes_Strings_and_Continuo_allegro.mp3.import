@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Advent_Chamber_Orchestra_-_04_-_Handel_-_Entrance_to_the_Queen_of_Sheba_for_Two_Oboes_Strings_and_Continuo_allegro.mp3-9dda6fda28556ad9581950657a59b65e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Advent_Chamber_Orchestra_-_04_-_Handel_-_Entrance_to_the_Queen_of_Sheba_for_Two_Oboes_Strings_and_Continuo_allegro.mp3"
+dest_files=[ "res://.import/Advent_Chamber_Orchestra_-_04_-_Handel_-_Entrance_to_the_Queen_of_Sheba_for_Two_Oboes_Strings_and_Continuo_allegro.mp3-9dda6fda28556ad9581950657a59b65e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
