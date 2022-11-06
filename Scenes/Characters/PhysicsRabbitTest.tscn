@@ -78,6 +78,7 @@ tracks/1/keys = {
 
 [node name="PhysicsRabbitTest" type="RigidBody2D" groups=["Player", "Rabbits"]]
 script = ExtResource( 3 )
+initial_angular_velocity = 10
 catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
@@ -85,7 +86,7 @@ shape = SubResource( 1 )
 
 [node name="BodySprite" type="Sprite" parent="Body"]
 show_behind_parent = true
-position = Vector2( -0.238, -0.5 )
+position = Vector2( -0.237501, -0.8725 )
 scale = Vector2( 0.0305689, 0.0321359 )
 texture = ExtResource( 1 )
 
@@ -270,10 +271,20 @@ anims/walk = SubResource( 9 )
 [node name="AbilitySelectionPanel" parent="." instance=ExtResource( 5 )]
 
 [node name="RichTextLabel" parent="AbilitySelectionPanel/Control/Container" index="0"]
-text = "[center]AbilitySelect"
+margin_right = 71.0
+
+[node name="Control" parent="AbilitySelectionPanel/Control/Container" index="1"]
+margin_right = 71.0
 
 [node name="Ability1" parent="AbilitySelectionPanel/Control/Container" index="2"]
+margin_right = 71.0
 theme = SubResource( 11 )
 icon = ExtResource( 6 )
+
+[node name="Ability2" parent="AbilitySelectionPanel/Control/Container" index="3"]
+margin_right = 71.0
+
+[node name="Ability3" parent="AbilitySelectionPanel/Control/Container" index="4"]
+margin_right = 71.0
 
 [editable path="AbilitySelectionPanel"]

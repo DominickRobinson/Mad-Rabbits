@@ -28,7 +28,8 @@ func _physics_process(delta):
 
 func ability1():
 	modulate = Color(1,0,0)
-	linear_velocity *= speedboost
+	var speed = linear_velocity.length()
+	linear_velocity = speedboost * Vector2(speed, 0).rotated(rotation)
 	ability_used = true
 	blur()
 	self.modulate = Color.red
