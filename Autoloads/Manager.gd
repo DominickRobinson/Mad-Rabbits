@@ -3,7 +3,7 @@ extends Node
 var rng = RandomNumberGenerator.new()
 var bubble_root = load("res://Scenes/Bubble.tscn")
 
-var Levels = ["Test/level01", "Test/level02", "Test/level03", "Test/level04", "Test/level05", ]
+var Levels = ["Test/level01", "Test/level02", "Test/level03", "Test/level04", "Test/level05"]
 var LevelIndex = 0
 
 enum GameModes {

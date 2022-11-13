@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodSuperLong.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=12]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Assets/Backgrounds/Grassland.png" type="Texture" id=18]
 [ext_resource path="res://Scenes/InterfaceController.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scripts/PolyGround.gd" type="Script" id=20]
+
 
 
 [node name="Test2" type="Node2D"]

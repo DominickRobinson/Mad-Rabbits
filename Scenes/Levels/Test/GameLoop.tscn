@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodSuperLong.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=8]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=19]
+
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )
