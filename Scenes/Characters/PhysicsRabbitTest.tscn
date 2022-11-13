@@ -270,21 +270,8 @@ anims/walk = SubResource( 9 )
 
 [node name="AbilitySelectionPanel" parent="." instance=ExtResource( 5 )]
 
-[node name="RichTextLabel" parent="AbilitySelectionPanel/Control/Container" index="0"]
-margin_right = 71.0
-
-[node name="Control" parent="AbilitySelectionPanel/Control/Container" index="1"]
-margin_right = 71.0
-
 [node name="Ability1" parent="AbilitySelectionPanel/Control/Container" index="2"]
-margin_right = 71.0
 theme = SubResource( 11 )
 icon = ExtResource( 6 )
-
-[node name="Ability2" parent="AbilitySelectionPanel/Control/Container" index="3"]
-margin_right = 71.0
-
-[node name="Ability3" parent="AbilitySelectionPanel/Control/Container" index="4"]
-margin_right = 71.0
 
 [editable path="AbilitySelectionPanel"]

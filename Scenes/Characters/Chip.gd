@@ -2,13 +2,13 @@ extends Rabbit
 
 
 var big = false
-export var big_bounces := 2
+export var big_bounces := 10
 export var big_bounce_vel_scale := 1.3
 
 
 func _ready():
 	catchphrase_text = "OOGA BOOGA"
-	$LargeSprite.visible = false
+	$LargeBody.visible = false
 	$LargeBody.disabled = true
 	#connect("body_shape_entered", self, "bounce")
 	
@@ -19,9 +19,9 @@ func ability1():
 
 
 func make_big():
-	$Sprite.visible = false
+	$Body.visible = false
 	$Body.set_deferred("disabled", true)
-	$LargeSprite.visible = true
+	$LargeBody.visible = true
 	$LargeBody.set_deferred("disabled", false)
 	set_bounce(1)
 	mass = 4
@@ -30,9 +30,9 @@ func make_big():
 	big = true
 
 func make_small():
-	$LargeSprite.visible = false
+	$LargeBody.visible = false
 	$LargeBody.set_deferred("disabled", true)
-	$Sprite.visible = true
+	$Body.visible = true
 	$Body.set_deferred("disabled", false)
 	set_bounce(0.2)
 	mass = 1

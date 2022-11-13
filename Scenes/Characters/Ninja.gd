@@ -19,7 +19,6 @@ func _ready():
 		
 	#print("Sprites", sprites)
 	#will stop blurring once rabbit collides with something
-	connect("body_entered", self, "stop_blur")
 
 func _physics_process(delta):
 	if blur:
@@ -37,7 +36,9 @@ func ability1():
 
 #ninja kick!
 func ability2():
+	connect("body_entered", self, "stop_blur")
 	$Foot.visible = true
+	angular_velocity = 0
 	modulate = Color(1,0,0)
 	var speed = linear_velocity.length()
 	linear_velocity = speedboost * Vector2(speed, 0).rotated(rotation)

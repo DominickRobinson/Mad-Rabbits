@@ -119,6 +119,11 @@ func _process(delta):
 				var pointPosition = pullPositionLocal
 				var grav = ProjectSettings.get_setting("physics/2d/default_gravity")
 				#draws trajectory
+				if Input.is_action_just_pressed("return_to_slingshot"):
+					SlingshotState = SlingState.idle
+					reset_slingshot()
+					player.global_position = CenterOfSlingshotGlobal
+					return
 				$ShotArc.clear_points()
 				var c = 0.005
 				for i in 500:

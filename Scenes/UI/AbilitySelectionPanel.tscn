@@ -50,7 +50,7 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/Container"]
-margin_right = 72.0
+margin_right = 71.0
 margin_bottom = 58.0
 bbcode_enabled = true
 bbcode_text = "[center]AbilitySelect"
@@ -59,13 +59,13 @@ fit_content_height = true
 
 [node name="Control" type="Control" parent="Control/Container"]
 margin_top = 62.0
-margin_right = 72.0
+margin_right = 71.0
 margin_bottom = 82.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="Ability1" type="Button" parent="Control/Container"]
 margin_top = 86.0
-margin_right = 72.0
+margin_right = 71.0
 margin_bottom = 146.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
@@ -77,7 +77,7 @@ expand_icon = true
 
 [node name="Ability2" type="Button" parent="Control/Container"]
 margin_top = 150.0
-margin_right = 72.0
+margin_right = 71.0
 margin_bottom = 210.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
@@ -88,7 +88,7 @@ expand_icon = true
 
 [node name="Ability3" type="Button" parent="Control/Container"]
 margin_top = 214.0
-margin_right = 72.0
+margin_right = 71.0
 margin_bottom = 274.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
