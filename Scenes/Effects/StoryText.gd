@@ -18,10 +18,10 @@ func _ready():
 	currChars = 0
 	label.visible_characters = 0
 	
-	print(totalChars)
-	print(label.visible_characters)
+	#print(totalChars)
+	#print(label.visible_characters)
 	
-	show_all_chars(5)
+	show_all_chars(totalChars * 0.1)
 
 func _physics_process(delta):
 	visible = Options.storytextVisible
@@ -30,10 +30,10 @@ func _physics_process(delta):
 func show_chars(newChars, time):
 	tween.interpolate_property(label, "visible_characters", currChars, newChars, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
-	print("start")
+	#print("start")
 	
 	yield(tween, "tween_completed")
-	print("done")
+	#print("done")
 	currChars = newChars
 
 func show_all_chars(time):

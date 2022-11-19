@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Prelude-I-Steven-OBrien-Must-Credit-CC-BY-www.steven-obrien.net_.mp3-18f875c311b79a0e312ae46b4fc1a3af.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Prelude-I-Steven-OBrien-Must-Credit-CC-BY-www.steven-obrien.net_.mp3"
+dest_files=[ "res://.import/Prelude-I-Steven-OBrien-Must-Credit-CC-BY-www.steven-obrien.net_.mp3-18f875c311b79a0e312ae46b4fc1a3af.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

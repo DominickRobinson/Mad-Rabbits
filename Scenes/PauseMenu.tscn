@@ -23,6 +23,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Unpause" type="Button" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -32,6 +40,7 @@ margin_left = -216.0
 margin_top = -258.0
 margin_right = 216.0
 margin_bottom = 240.0
+mouse_filter = 2
 texture = ExtResource( 4 )
 expand = true
 __meta__ = {
@@ -41,6 +50,7 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -161,6 +171,7 @@ margin_bottom = 384.0
 rect_min_size = Vector2( 0, 30 )
 text = "Quit"
 
+[connection signal="button_down" from="Unpause" to="." method="_on_Unpause_button_down"]
 [connection signal="toggled" from="CenterContainer/VBoxContainer/OptionsList/NarratorButton" to="." method="_on_NarratorButton_toggled"]
 [connection signal="toggled" from="CenterContainer/VBoxContainer/OptionsList/StorytextButton" to="." method="_on_StorytextButton_toggled"]
 [connection signal="toggled" from="CenterContainer/VBoxContainer/OptionsList/AbilityZoomButton" to="." method="_on_AbilityZoomButton_toggled"]

@@ -1,107 +1,115 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Backgrounds/Grassland.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Backgrounds/Grassland.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/Rex.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodSuperLong.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
-[ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=19]
+
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )
 
-[node name="GameLoop" type="Node2D" groups=["Level"]]
+[node name="GameLoop2" type="Node2D" groups=["Level"]]
 position = Vector2( 4, 33 )
 script = ExtResource( 18 )
 music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
 
-[node name="GUI" parent="." instance=ExtResource( 1 )]
-
-[node name="ScreenEffects" parent="." instance=ExtResource( 12 )]
+[node name="GUI" parent="." instance=ExtResource( 3 )]
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 535, -183 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -99
-texture = ExtResource( 3 )
+texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 4000, 2000 )
 
-[node name="Slingshot" parent="." instance=ExtResource( 6 )]
+[node name="ScreenEffects" parent="." instance=ExtResource( 14 )]
+
+[node name="Slingshot" parent="." instance=ExtResource( 11 )]
 MaxSlingshotPull = 150
 MaxLaunchVelocity = 800
 
 [node name="Bricks" type="Node2D" parent="."]
 position = Vector2( 910, -84 )
 
-[node name="WoodSquare" parent="Bricks" instance=ExtResource( 4 )]
+[node name="WoodSquare" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( -26, 39 )
 
-[node name="WoodLong" parent="Bricks" instance=ExtResource( 14 )]
+[node name="WoodLong" parent="Bricks" instance=ExtResource( 8 )]
 position = Vector2( 113, 12 )
 
-[node name="WoodRectangle" parent="Bricks" instance=ExtResource( 13 )]
+[node name="WoodRectangle" parent="Bricks" instance=ExtResource( 15 )]
 position = Vector2( -143, 32 )
 
-[node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
+[node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 5 )]
 position = Vector2( -173, -102 )
 rotation = 1.5708
 
-[node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
+[node name="WoodSquare2" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( -444, -222 )
 
-[node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
+[node name="WoodLong2" parent="Bricks" instance=ExtResource( 8 )]
 position = Vector2( -258, -38 )
 
-[node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
+[node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 15 )]
 position = Vector2( -504, 35 )
 
-[node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
+[node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 5 )]
 position = Vector2( -506, -95 )
 rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
 
-[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
+[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 4 )]
 position = Vector2( -411, -14 )
 totalAbilities = 2
 
-[node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
+[node name="Karen" parent="Rabbits" instance=ExtResource( 19 )]
+position = Vector2( -142, -67 )
+initial_angular_velocity = 0
+
+[node name="Chip" parent="Rabbits" instance=ExtResource( 16 )]
 position = Vector2( -228, -9 )
 
-[node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 12 )]
 position = Vector2( -149, -9 )
 
 [node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
 position = Vector2( -284, -15 )
 catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
 
-[node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 17 )]
+[node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 10 )]
 position = Vector2( -349, -18 )
 
-[node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 17 )]
 position = Vector2( -80, -9 )
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )
 
-[node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 681, -145 )
+[node name="Bear" parent="Bears" instance=ExtResource( 7 )]
+position = Vector2( 334, -81 )
+health = 100
 
-[node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 364, -69 )
+[node name="Bear2" parent="Bears" instance=ExtResource( 7 )]
+position = Vector2( 276, -70 )
+health = 100
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -112,10 +120,12 @@ position = Vector2( 513, 62 )
 rotation = -0.00523599
 shape = SubResource( 10 )
 
-[node name="StoryText" parent="." instance=ExtResource( 19 )]
-position = Vector2( -103, -560 )
+[node name="StoryText" parent="." instance=ExtResource( 6 )]
+position = Vector2( -255, -567 )
+text = "“Hey, I’m Sarge! I am on an Epic Vegetable Quest to avenge my people. Who are you?” asks Sarge. “BOEWUBREUWXJMZH 3RKMUWGCHIPB[ODSUBGFUBWRUGBR,” responds the farmer. “I’m sorry, could you repeat that? I couldn’t quite understand you there…” asks Sarge. “OBUEUBUEBGU4ZVUK4GR7EGCHIPBRGUHURG,” replies the farmer. “Hmmm, I think I heard Chip in there, so let’s go with that! Nice to meet you Chip!” says Sarge. “UBYBUBER9UBPWGMUAWEGF83PHWR9SGFF7RT7098PUHGRTJ5679UIHGJDRRT78,” Chip replies. “Would you like to join me on my quest, Chip? I am trying to reclaim carrots for all of the rabbits in the land, and  I could really use your help,” asks Sarge. Chip looks around at his devastated farm, and sighs, then nods and says, “IYDBVFYIW,”. Chip enlarges, showcasing his cool rabbit ability. Sarge replies, “Great! Then let’s go!” And with that, Sarge and Chip set off on their Epic Vegetable Quest.
+"
 
-[node name="LevelCamera" parent="." instance=ExtResource( 8 )]
+[node name="LevelCamera" parent="." instance=ExtResource( 13 )]
 position = Vector2( 340, -182 )
 zoom = Vector2( 1.5, 1.4 )
 editor_draw_limits = true

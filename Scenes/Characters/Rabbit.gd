@@ -11,6 +11,9 @@ export var catchphrase_text := "*insert catchphrase text here*"
 export var counter := 4
 export (int) var totalAbilities := 1
 
+export (float) var ability_slowmo_scale := 0.2
+export (float) var zoom_in_duration := 0.4
+
 export(String, FILE) var catchphrase_filename := ""
 
 #different abilities
@@ -92,7 +95,7 @@ func useAbility():
 	if Options.zoomInDuringAbility:
 		Manager.findCamera().abilityZoomIn()
 		yield(Manager.findCamera().posTween, "tween_completed")
-		Manager.slowdown(0.2)
+		Manager.slowdown(ability_slowmo_scale)
 
 	#ability
 	ability()
@@ -109,11 +112,11 @@ func useAbility():
 		ability_used = true
 	
 	#dramatic zoom out
-	yield(get_tree().create_timer(0.4), "timeout")
+	yield(get_tree().create_timer(zoom_in_duration), "timeout")
 	if not Manager.slowmo:
 		Manager.speedup()
 	if Options.zoomInDuringAbility:
-		Manager.get_scene().get_camera().abilityZoomOut()
+		Manager.get_level().get_camera().abilityZoomOut()
 	hideCatchphrase()
 
 

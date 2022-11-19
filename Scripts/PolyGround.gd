@@ -6,7 +6,7 @@ export(String, FILE, "*.png") var fill := "res://icon.png"
 func _ready():
 	
 	var polyList = get_children()
-	print(polyList)
+	#print(polyList)
 	
 	#basically just covers all collision bodies with a texture (like Angry Birds terrain)
 	for p in polyList:

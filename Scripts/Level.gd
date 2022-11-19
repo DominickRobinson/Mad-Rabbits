@@ -28,10 +28,11 @@ onready var screen = $ScreenEffects
 func _ready():
 	Manager.set_level_mode()
 	self.add_to_group("Level")
-	Manager.playAudio(music, -5, false)
+	Manager.playMusic(music)
 	if not get_tree().current_scene.is_in_group("Level"):
 		return
 	currentPlayer = Manager.get_player()
+	speedup()
 
 func slowdown(p=0.2):
 	Engine.time_scale = p
@@ -49,8 +50,6 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed("slowmo_off"):
 		speedup()
 	
-
-
 
 func _process(delta):
 	
@@ -106,22 +105,22 @@ func _process(delta):
 			get_tree().get_nodes_in_group("InterfaceController")[0].PopupLevelCompleted(false)
 
 
-func RestartLevel():
-	#reloads scene
-	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
-	speedup()
-	
-	
-func NextLevel():
-	Manager.LevelIndex += 1
-	RestartLevel()
-	speedup()
+#func RestartLevel():
+#	#reloads scene
+#	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
+#	speedup()
+#
+#
+#func NextLevel():
+#	Manager.LevelIndex += 1
+#	RestartLevel()
+#	speedup()
+#
+#func ConvertLevelToFile(level):
+#	var file = str("res://Scenes/Levels/" + Manager.Levels[level] + ".tscn")
+#	#print(file)
+#	return file
 
-func ConvertLevelToFile(level):
-	var file = str("res://Scenes/Levels/" + Manager.Levels[level] + ".tscn")
-	print(file)
-	return file
-	
 
 func makePOW(node, word, color, location, rng_range):
 	
@@ -152,6 +151,7 @@ func last_rabbit_thrown():
 		return null
 
 func get_player():
+	#print("YEEEET")
 	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		return players[0]

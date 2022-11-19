@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Characters/test/bruh-body.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/test/bruh-ear.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sound/Sound effects/dom_screaming.mp3" type="AudioStream" id=4]
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Icons/abilities/physics_test_ability1.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 12.0
@@ -73,8 +74,11 @@ tracks/1/keys = {
 "values": [ 0.0, -25.0, 25.0, 0.0 ]
 }
 
+[sub_resource type="Theme" id=11]
+
 [node name="PhysicsRabbitTest" type="RigidBody2D" groups=["Player", "Rabbits"]]
 script = ExtResource( 3 )
+initial_angular_velocity = 10
 catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
@@ -82,7 +86,7 @@ shape = SubResource( 1 )
 
 [node name="BodySprite" type="Sprite" parent="Body"]
 show_behind_parent = true
-position = Vector2( -0.238, -0.5 )
+position = Vector2( -0.237501, -0.8725 )
 scale = Vector2( 0.0305689, 0.0321359 )
 texture = ExtResource( 1 )
 
@@ -265,3 +269,9 @@ anims/idle = SubResource( 10 )
 anims/walk = SubResource( 9 )
 
 [node name="AbilitySelectionPanel" parent="." instance=ExtResource( 5 )]
+
+[node name="Ability1" parent="AbilitySelectionPanel/Control/Container" index="2"]
+theme = SubResource( 11 )
+icon = ExtResource( 6 )
+
+[editable path="AbilitySelectionPanel"]

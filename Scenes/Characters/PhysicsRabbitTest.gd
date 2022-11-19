@@ -12,7 +12,7 @@ var sprites : Array
 func _ready():
 	#adds shader to all sprites
 	sprites = get_all_sprites($Body)
-	print("Sprites: ", sprites)
+	#print("Sprites: ", sprites)
 	for s in sprites:
 		s.material = ShaderMaterial.new()
 		s.material.shader = MotionBlurShader
@@ -28,7 +28,8 @@ func _physics_process(delta):
 
 func ability1():
 	modulate = Color(1,0,0)
-	linear_velocity *= speedboost
+	var speed = linear_velocity.length()
+	linear_velocity = speedboost * Vector2(speed, 0).rotated(rotation)
 	ability_used = true
 	blur()
 	self.modulate = Color.red
@@ -63,6 +64,6 @@ func get_all_sprites(in_node,arr:=[]):
 	for child in in_node.get_children():
 		arr = get_all_sprites(child,arr)
 	if in_node is Sprite:
-		print(in_node.get_name(), " is a Sprite!!!")
+		#(in_node.get_name(), " is a Sprite!!!")
 		arr.push_back(in_node)
 	return arr

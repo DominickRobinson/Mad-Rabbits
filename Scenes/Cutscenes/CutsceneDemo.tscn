@@ -110,7 +110,6 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 [node name="Chip" parent="." instance=ExtResource( 4 )]
 position = Vector2( 610, -55 )
 cutsceneMode = true
-counter = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 725, -61 )

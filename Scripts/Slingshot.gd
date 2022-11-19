@@ -10,7 +10,8 @@ enum SlingState {
 export var MaxSlingshotPull := 100
 export var MaxLaunchVelocity := 400
 
-onready var currentLevel = get_tree().current_scene
+#onready var currentLevel = get_tree().current_scene
+onready var currentLevel = Manager.get_level()
 
 var SlingshotState
 var LeftLine
@@ -31,7 +32,7 @@ func _ready():
 	RightLine = $RightLine
 	CenterOfSlingshot = $CenterOfSlingshot.position
 	CenterOfSlingshotGlobal = $CenterOfSlingshot.global_position
-	print(currentLevel.get_name())
+	#print(currentLevel.get_name())
 	player = currentLevel.get_player()
 	reset_slingshot()
 	
@@ -43,7 +44,7 @@ func _ready():
 	lastRabbitThrown = player
 	
 
-	print(str(player.position))
+	#print(str(player.position))
 	#player.position = CenterOfSlingshot
 
 
@@ -118,6 +119,11 @@ func _process(delta):
 				var pointPosition = pullPositionLocal
 				var grav = ProjectSettings.get_setting("physics/2d/default_gravity")
 				#draws trajectory
+				if Input.is_action_just_pressed("return_to_slingshot"):
+					SlingshotState = SlingState.idle
+					reset_slingshot()
+					player.global_position = CenterOfSlingshotGlobal
+					return
 				$ShotArc.clear_points()
 				var c = 0.005
 				for i in 500:
@@ -125,7 +131,7 @@ func _process(delta):
 					velocity.y += grav * delta / Engine.time_scale
 					velocity += -c * velocity
 					pointPosition += velocity * delta / Engine.time_scale
-					if pointPosition.y > $ShotArc.position.y:
+					if pointPosition.y  + global_position.y > 0 and velocity.y > 0:
 						#print(str(i))
 						break
 			

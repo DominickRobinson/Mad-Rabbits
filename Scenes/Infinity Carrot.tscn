@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Shaders/rainbow.tres" type="Shader" id=1]
+[ext_resource path="res://carrot_cursor.png" type="Texture" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/strength = 0.713
+shader_param/speed = 0.5
+shader_param/angle = 0.0
+
+[node name="Infinity Carrot" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
+texture = ExtResource( 2 )

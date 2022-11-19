@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Scott Holmes Music - Beyond Dreams.mp3-a3f6e8340c812c31965e0daadba31c41.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Scott Holmes Music - Beyond Dreams.mp3"
+dest_files=[ "res://.import/Scott Holmes Music - Beyond Dreams.mp3-a3f6e8340c812c31965e0daadba31c41.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

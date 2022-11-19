@@ -20,7 +20,7 @@ func explode():
 	get_parent().add_child(flame)
 	flame.position = global_position
 	
-	print("kaboom")
+	#print("kaboom")
 	
 	sayCatchphrase()
 	if self == Manager.last_rabbit_thrown():

@@ -1,5 +1,6 @@
 extends Cam
 
 func _ready():
-	print("far camera")
+	#print("far camera")
+	pass
 

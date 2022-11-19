@@ -13,9 +13,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
+#	if $Button.pressed:
+#		modulate = Color.green
+#	else:
+#		modulate = Color.white
+
+
 
 
 func _on_Button_toggled(button_pressed):
-	print("plz pause")
-	get_parent().get_parent().pause(button_pressed)
+	get_parent().get_parent().get_parent().pause(button_pressed)

@@ -1,30 +1,132 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/AbilityPanel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Ninja.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sound/Sound effects/guy-yelling-among-us-sound-effect.mp3" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Characters/Ninja round2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/Bodies/ninja.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/foot.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/Right Ear/rightEar0009.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Characters/Left Ear/leftEar0009.png" type="Texture" id=8]
 
 [sub_resource type="PhysicsMaterial" id=2]
 bounce = 0.6
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=4]
 radius = 12.0
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 2.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 2.0
+
+[sub_resource type="Theme" id=3]
 
 [node name="Ninja" type="RigidBody2D" groups=["Player", "Rabbits"]]
 mass = 0.7
 physics_material_override = SubResource( 2 )
 script = ExtResource( 2 )
-initial_angular_velocity = 5
+initial_angular_velocity = 20
+totalAbilities = 2
 catchphrase_filename = "res://Assets/Sound/Sound effects/guy-yelling-among-us-sound-effect.mp3"
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -5, -8 )
-scale = Vector2( 0.03, 0.03 )
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[node name="BodySprite" type="Sprite" parent="Body"]
+show_behind_parent = true
+position = Vector2( -1.05879e-22, -10 )
+scale = Vector2( 0.013, 0.015 )
 texture = ExtResource( 4 )
 
-[node name="Body" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="EarStuff" type="Node2D" parent="Body/BodySprite"]
+position = Vector2( 7.76937, 27.1503 )
+scale = Vector2( 32.713, 31.1178 )
+
+[node name="Ear1" type="RigidBody2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( -7.29186, -11.5845 )
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+angular_damp = 15.0
+
+[node name="Collision" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/Ear1"]
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="Body/BodySprite/EarStuff/Ear1/Collision"]
+show_behind_parent = true
+position = Vector2( 2.35147, 10.7119 )
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 8 )
+
+[node name="Ear2" type="RigidBody2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( 6.81686, -11.5845 )
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+angular_damp = 15.0
+
+[node name="Collision" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/Ear2"]
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="Body/BodySprite/EarStuff/Ear2/Collision"]
+show_behind_parent = true
+position = Vector2( -2.35144, 10.7119 )
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 6 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( -7.29186, -5.15729 )
+node_a = NodePath("../../../..")
+node_b = NodePath("../Ear1")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( 6.81686, -5.15729 )
+node_a = NodePath("../../../..")
+node_b = NodePath("../Ear2")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( -6, -19 )
+node_a = NodePath("../EarNeutral")
+node_b = NodePath("../Ear1")
+length = 5.0
+stiffness = 64.0
+damping = 0.01
+
+[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( 6, -19 )
+node_a = NodePath("../EarNeutral2")
+node_b = NodePath("../Ear2")
+length = 5.0
+stiffness = 64.0
+damping = 0.01
+
+[node name="EarNeutral" type="StaticBody2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( -6, -19 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/EarNeutral"]
+shape = SubResource( 6 )
+
+[node name="EarNeutral2" type="StaticBody2D" parent="Body/BodySprite/EarStuff"]
+position = Vector2( 6, -19 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/EarNeutral2"]
+shape = SubResource( 6 )
+
+[node name="Foot" type="Sprite" parent="."]
+visible = false
+position = Vector2( 17, -5 )
+rotation = 1.5708
+scale = Vector2( 0.03, -0.03 )
+texture = ExtResource( 5 )
 
 [node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
 stream = ExtResource( 3 )
@@ -35,4 +137,30 @@ portraitFilename = "res://Assets/Characters/Ninja round2.png"
 catchphrase = "[tornado]TRIPLE THREAT... HIYA"
 catchphraseOutlineColor = Color( 1, 0, 0, 1 )
 
+[node name="AbilitySelectionPanel" parent="." instance=ExtResource( 7 )]
+
+[node name="VScrollBar2" type="VScrollBar" parent="AbilitySelectionPanel/Control/Container/RichTextLabel" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+max_value = 58.0
+step = 1.0
+page = 58.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="AbilitySelectionPanel/Control/Container/RichTextLabel" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="Ability1" parent="AbilitySelectionPanel/Control/Container" index="2"]
+theme = SubResource( 3 )
+text = "x3"
+
+[node name="Ability2" parent="AbilitySelectionPanel/Control/Container" index="3"]
+text = ""
+icon = ExtResource( 5 )
+
 [connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]
+
+[editable path="AbilitySelectionPanel"]

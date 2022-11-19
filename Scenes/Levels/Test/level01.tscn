@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=2]
@@ -13,8 +13,7 @@
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodSuperLong.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=19]
@@ -22,10 +21,9 @@
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )
 
-[node name="GameLoop" type="Node2D" groups=["Level"]]
-position = Vector2( 4, 33 )
+[node name="GameLoop3" type="Node2D" groups=["Level"]]
 script = ExtResource( 18 )
-music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
+music = "res://Assets/Sound/Music/Advent_Chamber_Orchestra_-_04_-_Handel_-_Entrance_to_the_Queen_of_Sheba_for_Two_Oboes_Strings_and_Continuo_allegro.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
 
@@ -42,6 +40,12 @@ region_rect = Rect2( 0, 0, 4000, 2000 )
 position = Vector2( 5, -168 )
 MaxSlingshotPull = 150
 MaxLaunchVelocity = 800
+
+[node name="Front" parent="Slingshot" index="3"]
+visible = false
+
+[node name="Back" parent="Slingshot" index="4"]
+visible = false
 
 [node name="Bricks" type="Node2D" parent="."]
 position = Vector2( 910, -84 )
@@ -88,9 +92,6 @@ rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
 
-[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
-position = Vector2( -411, -14 )
-
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
 
@@ -128,8 +129,11 @@ shape = SubResource( 10 )
 
 [node name="StoryText" parent="." instance=ExtResource( 19 )]
 position = Vector2( -103, -560 )
+text = "“Work on your aim, Sarge!” says Rex, the village chief, “When those mean, bad, evil bears attack, we must be able to defend ourselves. They could strike at any moment.” Rex trains his pupil, Sarge, at a training grounds. “Yes chief!” replies Sarge, who is next in line to become the village chief. "
 
 [node name="LevelCamera" parent="." instance=ExtResource( 8 )]
 position = Vector2( 340, -182 )
 zoom = Vector2( 1.5, 1.4 )
 editor_draw_limits = true
+
+[editable path="Slingshot"]

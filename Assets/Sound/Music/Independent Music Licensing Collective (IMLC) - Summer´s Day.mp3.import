@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Independent Music Licensing Collective (IMLC) - Summer´s Day.mp3-6d26587a5a0a240d04d880bcb1fdd0d1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Independent Music Licensing Collective (IMLC) - Summer´s Day.mp3"
+dest_files=[ "res://.import/Independent Music Licensing Collective (IMLC) - Summer´s Day.mp3-6d26587a5a0a240d04d880bcb1fdd0d1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,16 +1,25 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Characters/Chip.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Characters/Chewy.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Characters/Right Ear/rightEar0003.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sound/Sound effects/fart-meme-sound.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/AbilityPanel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Characters/Bodies/chip.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/Left Ear/leftEar0003.png" type="Texture" id=7]
 
 [sub_resource type="PhysicsMaterial" id=2]
 bounce = 0.2
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 13.0
+[sub_resource type="CircleShape2D" id=3]
+radius = 12.0
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 2.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 2.0
 
 [node name="Chip" type="RigidBody2D" groups=["Player", "Rabbits"]]
 mass = 2.0
@@ -18,25 +27,194 @@ physics_material_override = SubResource( 2 )
 script = ExtResource( 1 )
 catchphrase_filename = "res://Assets/Sound/Sound effects/fart-meme-sound.mp3"
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2, -12 )
-scale = Vector2( 0.055, 0.06 )
-texture = ExtResource( 2 )
-
 [node name="Body" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+scale = Vector2( 1.1, 1.1 )
+shape = SubResource( 3 )
 
-[node name="LargeSprite" type="Sprite" parent="."]
-visible = false
-modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 5, -28 )
-scale = Vector2( 0.14, 0.14 )
+[node name="BodySprite" type="Sprite" parent="Body"]
+show_behind_parent = true
+position = Vector2( 0, -6.66667 )
+scale = Vector2( 0.014, 0.013 )
+texture = ExtResource( 6 )
+
+[node name="EarStuff" type="Node2D" parent="Body"]
+position = Vector2( 0.108771, -6.31372 )
+scale = Vector2( 0.457982, 0.404531 )
+
+[node name="Ear1" type="RigidBody2D" parent="Body/EarStuff"]
+position = Vector2( -5.69623, -19.4725 )
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+angular_damp = 15.0
+
+[node name="Collision" type="CollisionShape2D" parent="Body/EarStuff/Ear1"]
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Body/EarStuff/Ear1/Collision"]
+show_behind_parent = true
+position = Vector2( -0.532837, 5.85156 )
+rotation = 0.560038
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 7 )
+offset = Vector2( 250, 400 )
+
+[node name="Ear2" type="RigidBody2D" parent="Body/EarStuff"]
+position = Vector2( 6.30377, -19.4725 )
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+angular_damp = 15.0
+
+[node name="Collision" type="CollisionShape2D" parent="Body/EarStuff/Ear2"]
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Body/EarStuff/Ear2/Collision"]
+show_behind_parent = true
+position = Vector2( 0.823608, 6.19739 )
+rotation = -0.65152
+scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 2 )
+offset = Vector2( -250, 400 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Body/EarStuff"]
+position = Vector2( -5.69623, -12.4725 )
+node_a = NodePath("../../..")
+node_b = NodePath("../Ear1")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Body/EarStuff"]
+position = Vector2( 6.30377, -12.4725 )
+node_a = NodePath("../../..")
+node_b = NodePath("../Ear2")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Body/EarStuff"]
+position = Vector2( -5.69623, -21.4725 )
+node_a = NodePath("../EarNeutral")
+node_b = NodePath("../Ear1")
+length = 5.0
+stiffness = 64.0
+damping = 0.01
+
+[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="Body/EarStuff"]
+position = Vector2( 6.30377, -21.4725 )
+node_a = NodePath("../EarNeutral2")
+node_b = NodePath("../Ear2")
+length = 5.0
+stiffness = 64.0
+damping = 0.01
+
+[node name="EarNeutral" type="StaticBody2D" parent="Body/EarStuff"]
+position = Vector2( -5.69623, -21.4725 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/EarStuff/EarNeutral"]
+shape = SubResource( 5 )
+
+[node name="EarNeutral2" type="StaticBody2D" parent="Body/EarStuff"]
+position = Vector2( 6.30377, -21.4725 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/EarStuff/EarNeutral2"]
+shape = SubResource( 5 )
 
 [node name="LargeBody" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 1 )
-disabled = true
+scale = Vector2( 2, 2 )
+shape = SubResource( 3 )
+
+[node name="BodySprite" type="Sprite" parent="LargeBody"]
+show_behind_parent = true
+position = Vector2( 0, -6.66667 )
+scale = Vector2( 0.014, 0.013 )
+texture = ExtResource( 6 )
+
+[node name="EarStuff" type="Node2D" parent="LargeBody"]
+position = Vector2( 0.108771, -6.31372 )
+scale = Vector2( 0.457982, 0.404531 )
+
+[node name="Ear1" type="RigidBody2D" parent="LargeBody/EarStuff"]
+position = Vector2( -5.69623, -19.4725 )
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+angular_damp = 15.0
+
+[node name="Collision" type="CollisionShape2D" parent="LargeBody/EarStuff/Ear1"]
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="LargeBody/EarStuff/Ear1/Collision"]
+show_behind_parent = true
+position = Vector2( -0.0517578, 6.24622 )
+rotation = 0.560038
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 7 )
+offset = Vector2( 250, 400 )
+
+[node name="Ear2" type="RigidBody2D" parent="LargeBody/EarStuff"]
+position = Vector2( 6.30377, -19.4725 )
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+angular_damp = 15.0
+
+[node name="Collision" type="CollisionShape2D" parent="LargeBody/EarStuff/Ear2"]
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="LargeBody/EarStuff/Ear2/Collision"]
+show_behind_parent = true
+position = Vector2( 0.823608, 6.19739 )
+rotation = -0.65152
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 2 )
+offset = Vector2( -250, 400 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="LargeBody/EarStuff"]
+position = Vector2( -5.69623, -12.4725 )
+node_a = NodePath("../../..")
+node_b = NodePath("../Ear1")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="LargeBody/EarStuff"]
+position = Vector2( 6.30377, -12.4725 )
+node_a = NodePath("../../..")
+node_b = NodePath("../Ear2")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="LargeBody/EarStuff"]
+position = Vector2( -5.69623, -21.4725 )
+node_a = NodePath("../EarNeutral")
+node_b = NodePath("../Ear1")
+length = 5.0
+stiffness = 64.0
+damping = 0.01
+
+[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="LargeBody/EarStuff"]
+position = Vector2( 6.30377, -21.4725 )
+node_a = NodePath("../EarNeutral2")
+node_b = NodePath("../Ear2")
+length = 5.0
+stiffness = 64.0
+damping = 0.01
+
+[node name="EarNeutral" type="StaticBody2D" parent="LargeBody/EarStuff"]
+position = Vector2( -5.69623, -21.4725 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargeBody/EarStuff/EarNeutral"]
+shape = SubResource( 5 )
+
+[node name="EarNeutral2" type="StaticBody2D" parent="LargeBody/EarStuff"]
+position = Vector2( 6.30377, -21.4725 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LargeBody/EarStuff/EarNeutral2"]
+shape = SubResource( 5 )
 
 [node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
 stream = ExtResource( 3 )
@@ -49,4 +227,7 @@ catchphraseOutlineColor = Color( 0.619608, 0.231373, 0, 1 )
 
 [node name="AbilitySelectionPanel" parent="." instance=ExtResource( 5 )]
 
+[connection signal="body_entered" from="." to="." method="_bounce"]
 [connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]
+
+[editable path="AbilityPanel"]

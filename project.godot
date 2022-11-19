@@ -195,7 +195,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Mad Rabbits"
-run/main_scene="res://Scenes/Levels/Test/GameLoop.tscn"
+run/main_scene="res://Scenes/Levels/Test/level01.tscn"
 config/icon="res://carrot_cursor.png"
 
 [autoload]
@@ -203,6 +203,7 @@ config/icon="res://carrot_cursor.png"
 MapManager="res://Autoloads/MapManager.gd"
 Manager="*res://Autoloads/Manager.gd"
 Options="*res://Autoloads/Options.gd"
+ChangeScene="*res://Autoloads/ChangeScene.gd"
 
 [display]
 

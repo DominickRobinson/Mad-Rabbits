@@ -5,7 +5,7 @@ var posTween = Tween.new()
 var followingPlayer = false
 
 func _ready():
-	print("close camera")
+	#print("close camera")
 	add_child(posTween)
 
 func follow_player():

@@ -126,7 +126,7 @@ func NextLevel():
 
 func ConvertLevelToFile(level):
 	var file = str("res://Scenes/Levels/" + Manager.Levels[level] + ".tscn")
-	print(file)
+	#print(file)
 	return file
 	
 	

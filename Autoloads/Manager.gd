@@ -3,7 +3,7 @@ extends Node
 var rng = RandomNumberGenerator.new()
 var bubble_root = load("res://Scenes/Bubble.tscn")
 
-var Levels = ["Test/GameLoop", "Test/GameLoop"]
+var Levels = ["Test/level01", "Test/level02", "Test/level03", "Test/level04", "Test/level05"]
 var LevelIndex = 0
 
 enum GameModes {
@@ -34,6 +34,27 @@ func _unhandled_input(event):
 		speedup()
 
 
+#helper level
+func RestartLevel():
+	#reloads scene
+	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
+	speedup()
+
+func next_level():
+	Manager.LevelIndex += 1
+	#RestartLevel()
+	if Manager.LevelIndex >= Levels.size():
+		Manager.LevelIndex = 0
+	ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
+	speedup()
+
+func ConvertLevelToFile(level):
+	var file = str("res://Scenes/Levels/" + Manager.Levels[level] + ".tscn")
+	#print(file)
+	return file
+#helper level
+
+
 
 func set_level_mode():
 	CurrentGameMode = GameModes.Level
@@ -62,6 +83,9 @@ func playAudio(file, vol = 0, dampable = true):
 	yield(a, "finished")
 	a.queue_free()
 
+func playMusic(music):
+	playAudio(music, -5, false)
+
 
 func slowdown(p=0.2):
 	Engine.time_scale = p
@@ -76,7 +100,7 @@ func speedup():
 func dampAllAudio(p=0.2):
 	var audioPlayers = get_tree().get_nodes_in_group("dampable")
 	for audio in audioPlayers:
-		if audio is AudioStreamPlayer and audio != null:
+		if audio != null and audio is AudioStreamPlayer:
 			audio = audio as AudioStreamPlayer
 			audio.volume_db = -1
 			audio.pitch_scale = p
@@ -121,6 +145,8 @@ func makePOW(node, word, color, location, rng_range):
 	bubble.rect_global_position = location
 	bubble.rect_position.x += rand1
 	bubble.rect_position.y += rand2
-	
-func get_scene():
-	return get_tree().current_scene
+
+
+func get_level():
+	var currScene = get_tree().current_scene
+	return currScene

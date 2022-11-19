@@ -11,19 +11,20 @@
 [ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodSuperLong.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=19]
 
+
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )
 
-[node name="GameLoop" type="Node2D" groups=["Level"]]
+[node name="GameLoop3" type="Node2D" groups=["Level"]]
 position = Vector2( 4, 33 )
 script = ExtResource( 18 )
-music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
+music = "res://Assets/Sound/Music/Independent Music Licensing Collective (IMLC) - Summer´s Day.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
 
