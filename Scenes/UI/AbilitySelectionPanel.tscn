@@ -71,7 +71,6 @@ rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
 pressed = true
-text = "1"
 flat = true
 expand_icon = true
 
@@ -82,7 +81,6 @@ margin_bottom = 210.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
-text = "2"
 flat = true
 expand_icon = true
 
@@ -93,6 +91,5 @@ margin_bottom = 274.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
-text = "3"
 flat = true
 expand_icon = true
