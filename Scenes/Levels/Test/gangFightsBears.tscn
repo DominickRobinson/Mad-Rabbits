@@ -19,7 +19,6 @@
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=19]
 
-
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )
 
@@ -47,35 +46,85 @@ MaxLaunchVelocity = 800
 position = Vector2( 910, -84 )
 
 [node name="WoodSquare" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -26, 39 )
+position = Vector2( -540, -163 )
 
 [node name="WoodLong" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( 113, 12 )
+position = Vector2( -205, 52 )
 
 [node name="WoodRectangle" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -351, 41 )
+position = Vector2( -405, 4 )
+
+[node name="WoodRectangle3" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -443, -65 )
+
+[node name="WoodRectangle4" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -407, -141 )
+
+[node name="WoodRectangle5" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -185, -64 )
+
+[node name="WoodRectangle6" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -220, -132 )
+
+[node name="WoodRectangle7" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -197, -199 )
+
+[node name="WoodRectangle8" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -446, -205 )
+
+[node name="WoodRectangle9" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -2, 32 )
+
+[node name="WoodRectangle10" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( 0, -37 )
 
 [node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -375, -95 )
+position = Vector2( -337, -32 )
 rotation = 1.5708
 
 [node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -427, -24 )
+position = Vector2( -95, -167 )
+
+[node name="WoodSquare3" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -312, -167 )
 
 [node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -436, -221 )
+position = Vector2( -426, 48 )
+
+[node name="WoodLong3" parent="Bricks" instance=ExtResource( 14 )]
+position = Vector2( -426, -266 )
+
+[node name="WoodLong4" parent="Bricks" instance=ExtResource( 14 )]
+position = Vector2( -197, -264 )
 
 [node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -504, 35 )
+position = Vector2( -227, 1 )
 
 [node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -494, -101 )
+position = Vector2( -513, -24 )
+rotation = 1.5708
+
+[node name="WoodSuperLong3" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -124, -33 )
+rotation = 1.5708
+
+[node name="WoodSuperLong4" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -572, -27 )
+rotation = 1.5708
+
+[node name="WoodSuperLong5" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -291, -31 )
+rotation = 1.5708
+
+[node name="WoodSuperLong6" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -71, -30 )
 rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
 
 [node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
 position = Vector2( -411, -14 )
+totalAbilities = 2
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
@@ -84,7 +133,7 @@ position = Vector2( -228, -9 )
 position = Vector2( -149, -9 )
 
 [node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
-position = Vector2( -284, -7 )
+position = Vector2( -284, -15 )
 catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
 
 [node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 17 )]
@@ -98,17 +147,17 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 530, -172 )
+position = Vector2( 649, -302 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 364, -69 )
+position = Vector2( 759, -382 )
 
 [node name="Ground" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2( 513, 62 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2( 530.77, 62.0743 )
 rotation = -0.00523599
 shape = SubResource( 10 )
 
@@ -117,15 +166,6 @@ position = Vector2( -103, -560 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 8 )]
 position = Vector2( 340, -182 )
+current = false
 zoom = Vector2( 1.5, 1.4 )
 editor_draw_limits = true
-
-[node name="Label" type="Label" parent="."]
-margin_left = -25.0
-margin_top = -209.0
-margin_right = 18.0
-margin_bottom = -195.0
-text = "level 2"
-__meta__ = {
-"_edit_use_anchors_": false
-}

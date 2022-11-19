@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 [ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=19]
@@ -22,8 +23,9 @@
 extents = Vector2( 1000.26, 64.25 )
 
 [node name="GameLoop3" type="Node2D" groups=["Level"]]
+position = Vector2( 4, 33 )
 script = ExtResource( 18 )
-music = "res://Assets/Sound/Music/Advent_Chamber_Orchestra_-_04_-_Handel_-_Entrance_to_the_Queen_of_Sheba_for_Two_Oboes_Strings_and_Continuo_allegro.mp3"
+music = "res://Assets/Sound/Music/Prelude-I-Steven-OBrien-Must-Credit-CC-BY-www.steven-obrien.net_.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
 
@@ -37,60 +39,86 @@ texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="Slingshot" parent="." instance=ExtResource( 6 )]
-position = Vector2( 5, -168 )
+position = Vector2( 59, -110 )
 MaxSlingshotPull = 150
 MaxLaunchVelocity = 800
-
-[node name="Front" parent="Slingshot" index="3"]
-visible = false
-
-[node name="Back" parent="Slingshot" index="4"]
-visible = false
 
 [node name="Bricks" type="Node2D" parent="."]
 position = Vector2( 910, -84 )
 
 [node name="WoodSquare" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -224, -13 )
+position = Vector2( 46, -86 )
 
 [node name="WoodLong" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -32, -138 )
+position = Vector2( -48, -350 )
+
+[node name="WoodLong3" parent="Bricks" instance=ExtResource( 14 )]
+position = Vector2( -19, -322 )
 
 [node name="WoodRectangle" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -237, 50 )
-
-[node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -365, -16 )
-rotation = 1.5708
-
-[node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -155, 48 )
-
-[node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -416, -132 )
-
-[node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -904, 48 )
+position = Vector2( -37, -17 )
 
 [node name="WoodRectangle3" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -904, -73 )
+position = Vector2( -33, -211 )
+
+[node name="WoodRectangle9" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -902, 48 )
+
+[node name="WoodRectangle10" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -813, 45 )
+
+[node name="WoodRectangle11" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -850, -16 )
 
 [node name="WoodRectangle4" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -904, -14 )
+position = Vector2( -34, -147 )
 
-[node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -476, -19 )
+[node name="WoodRectangle12" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -319, 46 )
+
+[node name="WoodRectangle13" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -187, 49 )
+
+[node name="WoodRectangle5" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -35, -279 )
+
+[node name="WoodRectangle6" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -37, -80 )
+
+[node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -96, -236 )
 rotation = 1.5708
 
 [node name="WoodSuperLong3" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -89, -24 )
+position = Vector2( -375, -26 )
 rotation = 1.5708
 
-[node name="WoodSuperLong4" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( 15, -26 )
+[node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 43, -149 )
+
+[node name="WoodSquare3" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 47, -216 )
+
+[node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
+position = Vector2( -41, -380 )
+
+[node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( -39, 48 )
+
+[node name="WoodRectangle7" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( 58, 48 )
+
+[node name="WoodRectangle8" parent="Bricks" instance=ExtResource( 13 )]
+position = Vector2( 61, -21 )
+
+[node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -97, -30 )
 rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
+
+[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
+position = Vector2( -411, -14 )
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
@@ -113,10 +141,10 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 547, -26 )
+position = Vector2( 643, -84 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 935, -34 )
+position = Vector2( 769, -80 )
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -129,11 +157,8 @@ shape = SubResource( 10 )
 
 [node name="StoryText" parent="." instance=ExtResource( 19 )]
 position = Vector2( -103, -560 )
-text = "“Work on your aim, Sarge!” says Rex, the village chief, “When those mean, bad, evil bears attack, we must be able to defend ourselves. They could strike at any moment.” Rex trains his pupil, Sarge, at a training grounds. “Yes chief!” replies Sarge, who is next in line to become the village chief. "
 
 [node name="LevelCamera" parent="." instance=ExtResource( 8 )]
 position = Vector2( 340, -182 )
 zoom = Vector2( 1.5, 1.4 )
 editor_draw_limits = true
-
-[editable path="Slingshot"]
