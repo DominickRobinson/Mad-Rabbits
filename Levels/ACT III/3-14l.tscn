@@ -38,7 +38,7 @@ texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="Slingshot" parent="." instance=ExtResource( 6 )]
-position = Vector2( 59, -110 )
+position = Vector2( 35, -110 )
 MaxSlingshotPull = 150
 MaxLaunchVelocity = 800
 
@@ -61,19 +61,20 @@ position = Vector2( -37, -17 )
 position = Vector2( -33, -211 )
 
 [node name="WoodRectangle9" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -902, 48 )
+position = Vector2( -915, 48 )
 
 [node name="WoodRectangle10" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -813, 45 )
+position = Vector2( -824, 48 )
 
 [node name="WoodRectangle11" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -850, -16 )
+position = Vector2( -872, -16 )
 
 [node name="WoodRectangle4" parent="Bricks" instance=ExtResource( 13 )]
 position = Vector2( -34, -147 )
 
 [node name="WoodRectangle12" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -319, 46 )
+position = Vector2( -417, -105 )
+gravity_scale = 0.0
 
 [node name="WoodRectangle13" parent="Bricks" instance=ExtResource( 13 )]
 position = Vector2( -187, 49 )
@@ -89,8 +90,9 @@ position = Vector2( -96, -236 )
 rotation = 1.5708
 
 [node name="WoodSuperLong3" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -375, -26 )
+position = Vector2( -478, -175 )
 rotation = 1.5708
+gravity_scale = 0.0
 
 [node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
 position = Vector2( 43, -149 )
@@ -121,26 +123,32 @@ position = Vector2( -411, -14 )
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
+gravity_scale = 0.0
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
 position = Vector2( -149, -9 )
+gravity_scale = 0.0
 
 [node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
 position = Vector2( -284, -7 )
+gravity_scale = 0.0
 catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
 
 [node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 17 )]
 position = Vector2( -349, -18 )
+gravity_scale = 0.0
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
 position = Vector2( -80, -9 )
+gravity_scale = 0.0
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 643, -84 )
+position = Vector2( 539, -241 )
+gravity_scale = 0.0
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
 position = Vector2( 769, -80 )
