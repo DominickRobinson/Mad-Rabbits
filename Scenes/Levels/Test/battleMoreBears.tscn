@@ -90,14 +90,14 @@ rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
 
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 6 )]
+position = Vector2( -149, -9 )
+
 [node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 13 )]
 position = Vector2( -411, -14 )
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 7 )]
 position = Vector2( -228, -9 )
-
-[node name="Ninja" parent="Rabbits" instance=ExtResource( 6 )]
-position = Vector2( -149, -9 )
 
 [node name="Rex" parent="Rabbits" instance=ExtResource( 18 )]
 position = Vector2( -284, -7 )

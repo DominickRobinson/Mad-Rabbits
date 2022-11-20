@@ -27,7 +27,7 @@ func _physics_process(delta):
 		blur()
 	if $Chain.hooked:
 		# `to_local($Chain.tip).normalized()` is the direction that the chain is pulling
-		var chain_velocity = to_local($Chain.tip).normalized() * chain_pull
+		var chain_velocity = ($Chain.tip.position - position).normalized() * chain_pull
 		chain_velocity = chain_velocity.rotated(PI / 2)
 		set_axis_velocity(chain_velocity)
 
@@ -56,7 +56,6 @@ func ability2():
 func ability3():
 	$Chain.visible = true
 	$Chain.shoot(get_viewport().get_mouse_position() - get_viewport().size * 0.5)
-	#mode = MODE_KINEMATIC
 
 func newNinja(offset, color, vel_mult):
 	var dup = load(self.filename)
