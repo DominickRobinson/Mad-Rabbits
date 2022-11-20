@@ -2,6 +2,8 @@ extends Rabbit
 
 export (int) var speedboost := 6
 export (float) var speedcrash := -.25
+export (float) var chain_pull := 105
+
 onready var MotionBlurShader = preload("res://Assets/Shaders/motion_blur.tres")
 
 var blur = false
@@ -23,6 +25,11 @@ func _ready():
 func _physics_process(delta):
 	if blur:
 		blur()
+	if $Chain.hooked:
+		# `to_local($Chain.tip).normalized()` is the direction that the chain is pulling
+		var chain_velocity = to_local($Chain.tip).normalized() * chain_pull
+		chain_velocity = chain_velocity.rotated(PI / 2)
+		set_axis_velocity(chain_velocity)
 
 #split into 3
 func ability1():
@@ -46,6 +53,10 @@ func ability2():
 	blur()
 	self.modulate = Color.red
 
+func ability3():
+	$Chain.visible = true
+	$Chain.shoot(get_viewport().get_mouse_position() - get_viewport().size * 0.5)
+	#mode = MODE_KINEMATIC
 
 func newNinja(offset, color, vel_mult):
 	var dup = load(self.filename)

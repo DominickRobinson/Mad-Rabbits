@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/AbilityPanel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Ninja.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Assets/Characters/Right Ear/rightEar0009.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Characters/Left Ear/leftEar0009.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/GrapplingHook.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Props/hook.png" type="Texture" id=10]
 
 [sub_resource type="PhysicsMaterial" id=2]
 bounce = 0.6
@@ -29,7 +31,7 @@ mass = 0.7
 physics_material_override = SubResource( 2 )
 script = ExtResource( 2 )
 initial_angular_velocity = 20
-totalAbilities = 2
+totalAbilities = 3
 catchphrase_filename = "res://Assets/Sound/Sound effects/guy-yelling-among-us-sound-effect.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
@@ -128,6 +130,9 @@ rotation = 1.5708
 scale = Vector2( 0.03, -0.03 )
 texture = ExtResource( 5 )
 
+[node name="Chain" parent="." instance=ExtResource( 9 )]
+position = Vector2( 0, -54 )
+
 [node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
 stream = ExtResource( 3 )
 
@@ -158,8 +163,10 @@ theme = SubResource( 3 )
 text = "x3"
 
 [node name="Ability2" parent="AbilitySelectionPanel/Control/Container" index="3"]
-text = ""
 icon = ExtResource( 5 )
+
+[node name="Ability3" parent="AbilitySelectionPanel/Control/Container" index="4"]
+icon = ExtResource( 10 )
 
 [connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]
 
