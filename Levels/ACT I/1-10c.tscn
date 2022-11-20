@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Assets/Backgrounds/Forest.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Act I/Dark woods/Dark forest simple.png" type="Texture" id=1]
 [ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=4]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Act I/Plains/Foreground plains.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "cutscene"
@@ -252,5 +253,17 @@ position = Vector2( -22, 503 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
 position = Vector2( 529, 65 )
 shape = SubResource( 2 )
+
+[node name="ForegroundPlains" type="Sprite" parent="Ground"]
+position = Vector2( 406.066, -201 )
+rotation = -0.0174533
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="ForegroundPlains2" type="Sprite" parent="Ground"]
+position = Vector2( 1327.07, -213 )
+rotation = 3.14159
+scale = Vector2( 0.5, -0.5 )
+texture = ExtResource( 9 )
 
 [editable path="GUI"]
