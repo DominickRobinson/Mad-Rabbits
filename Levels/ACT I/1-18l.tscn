@@ -1,21 +1,16 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Characters/Winnie (playable).tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Backgrounds/Grassland.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Characters/Rex.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=10]
@@ -45,61 +40,46 @@ MaxLaunchVelocity = 800
 position = Vector2( 910, -84 )
 
 [node name="WoodSquare" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -26, 39 )
+position = Vector2( -172, 38 )
 
 [node name="WoodLong" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( 113, 12 )
+position = Vector2( -75, 21 )
 
 [node name="WoodRectangle" parent="Bricks" instance=ExtResource( 13 )]
 position = Vector2( -351, 41 )
 
 [node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -375, -95 )
+position = Vector2( -283, -37 )
 rotation = 1.5708
 
 [node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -427, -24 )
+position = Vector2( -433, 35 )
 
 [node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -436, -221 )
+position = Vector2( -73, 50 )
 
 [node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -504, 35 )
+position = Vector2( -513, 35 )
 
 [node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -494, -101 )
+position = Vector2( -220, -33 )
 rotation = 1.5708
 
 [node name="Rabbits" type="Node2D" parent="."]
 
-[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 16 )]
-position = Vector2( -411, -14 )
-
-[node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
-position = Vector2( -228, -9 )
-
-[node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
-position = Vector2( -149, -9 )
-
-[node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
-position = Vector2( -284, -7 )
-catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
-
-[node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 17 )]
-position = Vector2( -349, -18 )
-
-[node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
-position = Vector2( -80, -9 )
-catchphrase_text = "[wave] PEEPEE POOPOO !!"
+[node name="Winnie (playable)" parent="Rabbits" instance=ExtResource( 2 )]
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 530, -172 )
+position = Vector2( 448, -100 )
+
+[node name="Bear3" parent="Bears" instance=ExtResource( 5 )]
+position = Vector2( 794, -90 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 364, -69 )
+position = Vector2( 603, -93 )
 
 [node name="Ground" type="Node2D" parent="."]
 
