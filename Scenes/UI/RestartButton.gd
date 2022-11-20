@@ -20,4 +20,5 @@ func _process(delta):
 
 
 func _on_Button_pressed():
+	Engine.time_scale = 1
 	Manager.reload()

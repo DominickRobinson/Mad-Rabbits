@@ -30,7 +30,7 @@ func set_button(button):
 		if b.pressed:
 			b.modulate = Color.green
 		else:
-			b.modulate = Color.white
+			b.modulate = Color.black
 
 func toggle_visibility(show):
 	if show:

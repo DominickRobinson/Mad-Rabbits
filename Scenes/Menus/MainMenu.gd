@@ -26,3 +26,8 @@ func _on_Classic_pressed():
 	var level_file = Manager.ConvertLevelToFile(level_num)
 	
 	ChangeScene.change_scene(level_file)
+
+
+func _on_SpinBox_value_changed(value):
+	print(value)
+	Manager.LevelIndex = value - 1

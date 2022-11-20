@@ -30,7 +30,7 @@ mass = 0.7
 physics_material_override = SubResource( 2 )
 script = ExtResource( 2 )
 initial_angular_velocity = 20
-totalAbilities = 2
+totalAbilities = 3
 catchphrase_filename = "res://Assets/Sound/Sound effects/guy-yelling-among-us-sound-effect.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
@@ -143,6 +143,9 @@ catchphraseOutlineColor = Color( 1, 0, 0, 1 )
 
 [node name="AbilitySelectionPanel" parent="." instance=ExtResource( 7 )]
 
+[node name="Control" parent="AbilitySelectionPanel" index="0"]
+visible = true
+
 [node name="VScrollBar2" type="VScrollBar" parent="AbilitySelectionPanel/Control/Container/RichTextLabel" index="0"]
 visible = false
 anchor_right = 1.0
@@ -162,7 +165,6 @@ theme = SubResource( 3 )
 text = "x3"
 
 [node name="Ability2" parent="AbilitySelectionPanel/Control/Container" index="3"]
-text = ""
 icon = ExtResource( 5 )
 
 [connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]

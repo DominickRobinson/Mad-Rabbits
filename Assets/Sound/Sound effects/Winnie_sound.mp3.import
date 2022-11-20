@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Winnie_sound.mp3-15dc8b11b7c82c9de1a5a939b4a80917.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound effects/Winnie_sound.mp3"
+dest_files=[ "res://.import/Winnie_sound.mp3-15dc8b11b7c82c9de1a5a939b4a80917.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
