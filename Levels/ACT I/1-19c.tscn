@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Act I/Icy mountain/Snow sky.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Act I/Icy mountain/earth.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Effects/SpeechBubble.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "cutscene"
@@ -19,12 +20,9 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1, 20.19, 20.26, 23.51, 23.58 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 20.19, 20.26, 23.51, 23.58 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
-"args": [ "MWAHAHAh", 10.0 ],
-"method": "speak"
-}, {
 "args": [  ],
 "method": "unfreeze"
 }, {
@@ -49,6 +47,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0.0, 50.0, 50.0 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../Enemies/Winnie (enemy)/SpeechBubble")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "begin"
+} ]
 }
 
 [sub_resource type="Shader" id=2]
@@ -384,5 +396,15 @@ shape = SubResource( 4 )
 position = Vector2( 1020, -82 )
 mode = 1
 
+[node name="SpeechBubble" parent="Enemies/Winnie (enemy)" instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 3, 57 )
+scale = Vector2( 4, 4 )
+dialogue = "MWAHAHAHAH"
+
+[node name="Label" parent="Enemies/Winnie (enemy)/SpeechBubble/VBoxContainer" index="0"]
+text = "MWAHAHAH"
+
 [editable path="GUI"]
 [editable path="GUI/StoryText"]
+[editable path="Enemies/Winnie (enemy)/SpeechBubble"]
