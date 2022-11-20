@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Backgrounds/Grassland.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=7]
@@ -118,11 +117,6 @@ position = Vector2( 513, 62 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
 rotation = -0.00523599
 shape = SubResource( 10 )
-
-[node name="StoryText" parent="." instance=ExtResource( 4 )]
-position = Vector2( -255, -567 )
-text = "“Hey, I’m Sarge! I am on an Epic Vegetable Quest to avenge my people. Who are you?” asks Sarge. “BOEWUBREUWXJMZH 3RKMUWGCHIPB[ODSUBGFUBWRUGBR,” responds the farmer. “I’m sorry, could you repeat that? I couldn’t quite understand you there…” asks Sarge. “OBUEUBUEBGU4ZVUK4GR7EGCHIPBRGUHURG,” replies the farmer. “Hmmm, I think I heard Chip in there, so let’s go with that! Nice to meet you Chip!” says Sarge. “UBYBUBER9UBPWGMUAWEGF83PHWR9SGFF7RT7098PUHGRTJ5679UIHGJDRRT78,” Chip replies. “Would you like to join me on my quest, Chip? I am trying to reclaim carrots for all of the rabbits in the land, and  I could really use your help,” asks Sarge. Chip looks around at his devastated farm, and sighs, then nods and says, “IYDBVFYIW,”. Chip enlarges, showcasing his cool rabbit ability. Sarge replies, “Great! Then let’s go!” And with that, Sarge and Chip set off on their Epic Vegetable Quest.
-"
 
 [node name="LevelCamera" parent="." instance=ExtResource( 11 )]
 position = Vector2( 340, -182 )

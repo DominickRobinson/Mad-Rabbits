@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Backgrounds/Grassland.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=9]
@@ -110,9 +109,6 @@ position = Vector2( 364, -69 )
 position = Vector2( 530.77, 62.0743 )
 rotation = -0.00523599
 shape = SubResource( 10 )
-
-[node name="StoryText" parent="." instance=ExtResource( 6 )]
-position = Vector2( -103, -560 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 4 )]
 position = Vector2( 340, -182 )

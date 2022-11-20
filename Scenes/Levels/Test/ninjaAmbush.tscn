@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Backgrounds/Grassland.png" type="Texture" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=15]
@@ -126,10 +125,6 @@ position = Vector2( 935, -34 )
 position = Vector2( 530.77, 62.0743 )
 rotation = -0.00523599
 shape = SubResource( 10 )
-
-[node name="StoryText" parent="." instance=ExtResource( 12 )]
-position = Vector2( -103, -560 )
-text = "“Work on your aim, Sarge!” says Rex, the village chief, “When those mean, bad, evil bears attack, we must be able to defend ourselves. They could strike at any moment.” Rex trains his pupil, Sarge, at a training grounds. “Yes chief!” replies Sarge, who is next in line to become the village chief. "
 
 [node name="LevelCamera" parent="." instance=ExtResource( 7 )]
 position = Vector2( 340, -182 )
