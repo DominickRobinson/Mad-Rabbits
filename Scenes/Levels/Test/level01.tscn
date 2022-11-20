@@ -132,8 +132,6 @@ rotation = -0.00523599
 shape = SubResource( 10 )
 
 [node name="StoryText" parent="." instance=ExtResource( 19 )]
-position = Vector2( -103, -560 )
-text = "“Work on your aim, Sarge!” says Rex, the village chief, “When those mean, bad, evil bears attack, we must be able to defend ourselves. They could strike at any moment.” Rex trains his pupil, Sarge, at a training grounds. “Yes chief!” replies Sarge, who is next in line to become the village chief. "
 
 [node name="LevelCamera" parent="." instance=ExtResource( 8 )]
 position = Vector2( 340, -182 )

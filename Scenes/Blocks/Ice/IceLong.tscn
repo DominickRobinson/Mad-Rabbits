@@ -1,17 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Sound/Sound effects/dom_screaming.mp3" type="AudioStream" id=1]
-[ext_resource path="res://Assets/Blocks/Wood/Longskinny crate.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Blocks/Steel/Steel.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Blocks/Ice/Ice Long and little wide skinny.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Blocks/Ice/Ice.gd" type="Script" id=3]
+
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 0.0
+rough = true
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 60, 10 )
 
-[node name="SteelLong" type="RigidBody2D"]
+[node name="IceLong" type="RigidBody2D"]
+physics_material_override = SubResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -6, 4 )
+position = Vector2( 3, 7 )
 rotation = 0.00872665
 scale = Vector2( 0.101, 0.17 )
 texture = ExtResource( 2 )

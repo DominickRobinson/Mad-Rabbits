@@ -18,6 +18,7 @@
 [ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=19]
 
 
+
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )
 

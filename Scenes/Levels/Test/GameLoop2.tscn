@@ -17,7 +17,8 @@
 [ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
-[ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Effects/StoryText (cutscene).tscn" type="PackedScene" id=19]
+
 
 
 [sub_resource type="RectangleShape2D" id=10]

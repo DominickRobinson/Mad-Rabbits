@@ -11,6 +11,9 @@ onready var speechBubble = preload("res://Scenes/Effects/SpeechBubble.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
+func _ready():
+	if cutsceneMode:
+		unfreeze()
 
 #useful functions for cutscenes
 func change_animation(anim : String):
