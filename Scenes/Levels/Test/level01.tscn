@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
-[ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=19]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )
@@ -130,8 +129,6 @@ position = Vector2( 935, -34 )
 position = Vector2( 530.77, 62.0743 )
 rotation = -0.00523599
 shape = SubResource( 10 )
-
-[node name="StoryText" parent="." instance=ExtResource( 19 )]
 
 [node name="LevelCamera" parent="." instance=ExtResource( 8 )]
 position = Vector2( 340, -182 )

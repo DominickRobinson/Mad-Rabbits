@@ -1,6 +1,5 @@
 extends Node2D
 
-
 onready var cutscene = $CutscenePlayer
 
 func _ready():
