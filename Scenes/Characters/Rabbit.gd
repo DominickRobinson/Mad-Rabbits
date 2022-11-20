@@ -44,9 +44,6 @@ func _init():
 
 	connect("body_entered", self, "collide_with_rabbit")
 	prepareAbilityPopup()
-	
-	if cutsceneMode:
-		unfreeze()
 
 
 func _physics_process(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/EndOfLevelController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/GUI.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scenes/UI/RestartButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/UI/SlomoButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Effects/gameplay_utility_bar.tres" type="Theme" id=9]
+[ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/UI/NextLevelButton.tscn" type="PackedScene" id=11]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.270588, 0.270588, 0.270588, 0.831373 )
@@ -98,33 +100,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="StoryText" parent="." instance=ExtResource( 10 )]
+
 [node name="PauseMenu" parent="." instance=ExtResource( 4 )]
 visible = false
 
-[node name="GameplayUtilityBar" type="Control" parent="."]
-anchor_right = 1.0
-margin_left = -28.0
-margin_top = 21.0
-margin_right = -28.0
-margin_bottom = 21.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="GameplayUtilityBar"]
-anchor_left = 0.730469
-anchor_right = 1.0
-margin_left = 4.0
-margin_bottom = 63.0
-rect_min_size = Vector2( 272, 63 )
+[node name="GameplayUtilityBar2" type="Panel" parent="."]
+anchor_left = 0.90918
+anchor_top = 0.0216667
+anchor_right = 0.982422
+anchor_bottom = 0.496667
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GameplayUtilityBar"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="GameplayUtilityBar2"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 70.0
+margin_bottom = 275.0
 rect_min_size = Vector2( 0, 60 )
 theme = ExtResource( 9 )
 custom_constants/separation = 10
@@ -133,38 +128,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="GameplayUtilityBar/HBoxContainer"]
-margin_left = 744.0
-margin_right = 744.0
-margin_bottom = 60.0
-
-[node name="SlomoButton" parent="GameplayUtilityBar/HBoxContainer" instance=ExtResource( 8 )]
+[node name="PauseButton" parent="GameplayUtilityBar2/VBoxContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 754.0
-margin_right = 814.0
+margin_right = 60.0
 margin_bottom = 60.0
 
-[node name="RestartButton" parent="GameplayUtilityBar/HBoxContainer" instance=ExtResource( 7 )]
+[node name="GiveUpButton" parent="GameplayUtilityBar2/VBoxContainer" instance=ExtResource( 5 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 824.0
-margin_right = 884.0
-margin_bottom = 60.0
+margin_top = 70.0
+margin_right = 60.0
+margin_bottom = 130.0
 
-[node name="GiveUpButton" parent="GameplayUtilityBar/HBoxContainer" instance=ExtResource( 5 )]
+[node name="RestartButton" parent="GameplayUtilityBar2/VBoxContainer" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 894.0
-margin_right = 954.0
-margin_bottom = 60.0
+margin_top = 70.0
+margin_right = 60.0
+margin_bottom = 130.0
 
-[node name="PauseButton" parent="GameplayUtilityBar/HBoxContainer" instance=ExtResource( 6 )]
+[node name="NextLevelButton" parent="GameplayUtilityBar2/VBoxContainer" instance=ExtResource( 11 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 964.0
-margin_right = 1024.0
-margin_bottom = 60.0
+margin_top = 140.0
+margin_right = 60.0
+margin_bottom = 200.0
+
+[node name="SlomoButton" parent="GameplayUtilityBar2/VBoxContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 210.0
+margin_right = 60.0
+margin_bottom = 270.0
 
 [node name="Transition" parent="." instance=ExtResource( 3 )]
 layer = 128

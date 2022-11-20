@@ -1,7 +1,7 @@
 extends Node2D
 
-var dialogue = "*insert text here*"
-var time = 5
+export var dialogue := "*insert text here"
+export var time := 5
 
 var characterToFollow
 
@@ -10,8 +10,9 @@ var characterToFollow
 onready var label = $VBoxContainer/Label
 
 func _process(delta):
-	global_position = characterToFollow.global_position
-	pass
+	if is_instance_valid(characterToFollow):
+		global_position = characterToFollow.global_position
+
 
 func begin():
 	start()

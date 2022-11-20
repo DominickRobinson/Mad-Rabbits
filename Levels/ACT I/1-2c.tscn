@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Act I/Plains/To training grounds.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Characters/Rex (good).tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1000.26, 64.25 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "cutscene"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("Rabbits/Sarge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 6.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ Vector2( 1000, 0 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Rabbits/Rex (good)")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.9, 6.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "oh no! we gotta go", 3.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 1000, 0 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+
+[node name="1-2" type="Node2D"]
+script = ExtResource( 18 )
+
+[node name="GUI" parent="." instance=ExtResource( 8 )]
+
+[node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
+margin_top = 0.0
+margin_bottom = 1445.0
+text = "Sarge and Rex walk back to the village after their successful training session. Sarge asks, “Chief Rex, why do we even need to defend ourselves? What do those bad bears want with us? Why can’t we be their friends?” Rex replies, “They are trying to steal all of the carrots in Happy Land to forge an ultimate weapon, the Infinity Carrot, which will grant its wielder an untold power, enough to conquer Happy Land.” Sarge responds, “Wow, that sounds scary!” Rex, “Yes, it is. That is why we cannot lose…” BANG!!! As if on cue, Rex and Sarge hear an explosion in the distance. “The village is under attack!” yells Rex. They race back to the village."
+
+[node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
+margin_top = 1449.0
+margin_bottom = 1449.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
+
+[node name="LevelCamera" parent="." instance=ExtResource( 2 )]
+anchor_mode = 0
+editor_draw_limits = true
+
+[node name="ScreenEffects" parent="." instance=ExtResource( 13 )]
+position = Vector2( -22, 503 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 505, 285 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -99
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 11 )]
+position = Vector2( 40, 481 )
+cutsceneMode = true
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Rex (good)" parent="Rabbits" instance=ExtResource( 4 )]
+position = Vector2( 108, 481 )
+scale = Vector2( -1, 1 )
+cutsceneMode = true
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( -22, 503 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 530.77, 62.0743 )
+rotation = 0.00872665
+shape = SubResource( 1 )
+
+[node name="CutscenePlayer" type="AnimationPlayer" parent="."]
+anims/cutscene = SubResource( 2 )
+
+[editable path="GUI"]
+[editable path="GUI/StoryText"]

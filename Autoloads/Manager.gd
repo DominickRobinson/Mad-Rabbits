@@ -3,7 +3,8 @@ extends Node
 var rng = RandomNumberGenerator.new()
 var bubble_root = load("res://Scenes/Bubble.tscn")
 
-var Levels = ["Test/level01", "Test/level02", "Test/level03", "Test/level04", "Test/level05"]
+var Levels = ["ACT I/1-2c", "ACT I/1-4c", "ACT I/1-6c", "ACT I/1-8c", "ACT I/1-10c", "ACT I/1-12c", "ACT I/1-14c", "ACT I/1-15c", "ACT I/1-17c", "ACT I/1-19c",
+				]
 var LevelIndex = 0
 
 enum GameModes {
@@ -37,19 +38,21 @@ func _unhandled_input(event):
 #helper level
 func RestartLevel():
 	#reloads scene
-	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
 	speedup()
+	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
+	
 
 func next_level():
+	speedup()
 	Manager.LevelIndex += 1
 	#RestartLevel()
 	if Manager.LevelIndex >= Levels.size():
 		Manager.LevelIndex = 0
 	ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
-	speedup()
+
 
 func ConvertLevelToFile(level):
-	var file = str("res://Scenes/Levels/" + Manager.Levels[level] + ".tscn")
+	var file = str("res://Levels/" + Manager.Levels[level] + ".tscn")
 	#print(file)
 	return file
 #helper level
@@ -65,9 +68,11 @@ func set_cutscene_mode():
 
 
 func reload():
+	speedup()
 	get_tree().reload_current_scene()
 
 func quit():
+	speedup()
 	get_tree().quit()
 
 

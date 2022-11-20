@@ -7,6 +7,8 @@
 extents = Vector2( 4, 4 )
 
 [node name="Rope" type="Node2D"]
+position = Vector2( 162, 71 )
+rotation = 1.5708
 
 [node name="RopeHolder" type="StaticBody2D" parent="."]
 
