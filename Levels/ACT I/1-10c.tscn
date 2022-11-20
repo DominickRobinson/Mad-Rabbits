@@ -22,7 +22,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 1.1, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ "rabbits suck! bunnies cool! lmao", 5.0 ],
+"args": [ "rabbits lame! bunnies cool!!", 5.0 ],
 "method": "speak"
 }, {
 "args": [ "ok", 2.0 ],
@@ -64,10 +64,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 8.6 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 8.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 50.0 ]
+"values": [ 0.0, 50.0 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Rabbits/Chip:angular_velocity")
@@ -76,10 +76,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 8.6 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 8.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 75.0 ]
+"values": [ 0.0, 75.0 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("../Rabbits/Ninja:angular_velocity")
@@ -88,10 +88,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 8.6 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 8.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 50.0 ]
+"values": [ 0.0, 50.0 ]
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -233,18 +233,15 @@ position = Vector2( -22, 503 )
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 3 )]
 position = Vector2( 690, 481 )
 scale = Vector2( -1, 1 )
-angular_velocity = 50.0
 cutsceneMode = true
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 6 )]
 position = Vector2( 743, 480 )
-angular_velocity = 75.0
 cutsceneMode = true
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 5 )]
 position = Vector2( 541, 481 )
-angular_velocity = 50.0
 cutsceneMode = true
 
 [node name="Ground" type="Node2D" parent="."]
@@ -253,8 +250,7 @@ position = Vector2( -22, 503 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2( 530.77, 62.0743 )
-rotation = 0.00872665
+position = Vector2( 529, 65 )
 shape = SubResource( 2 )
 
 [editable path="GUI"]

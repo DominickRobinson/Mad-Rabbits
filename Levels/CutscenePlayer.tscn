@@ -12,14 +12,25 @@ anims/cutscene = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 16.0
-margin_top = 11.0
+margin_left = 11.0
+margin_top = 6.0
 margin_right = 71.0
-margin_bottom = 71.0
+margin_bottom = 66.0
 toggle_mode = true
 icon = ExtResource( 1 )
 flat = true
 expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Button"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -2.0
+mouse_filter = 1
+color = Color( 0.219608, 0.219608, 0.219608, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

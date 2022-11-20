@@ -1,0 +1,338 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Act I/Icy mountain/Snow sky.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Act I/Icy mountain/Winnie’s castle.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Act I/Icy mountain/Mountain.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "cutscene"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Rabbits/Sarge:mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Rabbits/Chip:mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Rabbits/Ninja:mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+	vec2 uv = fragCoord.xy / iResolution.xy;
+    
+    float o = texture(iChannel1, uv * 0.25 + vec2(0.0, iTime * 0.025)).r;
+    float d = (texture(iChannel0, uv * 0.25 - vec2(0.0, iTime * 0.02 + o * 0.02)).r * 2.0 - 1.0);
+    
+    float v = uv.y + d * 0.1;
+    v = 1.0 - abs(v * 2.0 - 1.0);
+    v = pow(v, 2.0 + sin((iTime * 0.2 + d * 0.25) * TAU) * 0.5);
+    
+    vec3 color = vec3(0.0);
+    
+    float x = (1.0 - uv.x * 0.75);
+    float y = 1.0 - abs(uv.y * 2.0 - 1.0);
+    color += vec3(x * 0.5, y, x) * v;
+    
+    vec2 seed = fragCoord.xy;
+    vec2 r;
+    r.x = fract(sin((seed.x * 12.9898) + (seed.y * 78.2330)) * 43758.5453);
+    r.y = fract(sin((seed.x * 53.7842) + (seed.y * 47.5134)) * 43758.5453);
+
+    float s = mix(r.x, (sin((iTime * 2.5 + 60.0) * r.y) * 0.5 + 0.5) * ((r.y * r.y) * (r.y * r.y)), 0.04); 
+    color += pow(s, 70.0) * (1.0 - v);
+    
+    fragColor.rgb = color;
+    fragColor.a = 1.0;
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+
+[sub_resource type="PhysicsMaterial" id=4]
+friction = 0.86
+rough = true
+
+[node name="1-14" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="GUI" parent="." instance=ExtResource( 9 )]
+
+[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar8" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="6"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar9" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="7"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar10" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="8"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar11" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="9"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar8" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="6"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar9" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="7"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar10" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="8"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar11" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="9"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar8" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="6"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar9" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="7"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar10" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="8"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar11" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="9"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 7 )]
+anims/cutscene = SubResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 5137, 3365 )
+scale = Vector2( 5, 5 )
+z_index = -99
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 6 )]
+position = Vector2( -468, -349 )
+anchor_mode = 0
+zoom = Vector2( 7, 7 )
+editor_draw_limits = true
+
+[node name="ScreenEffects" parent="." instance=ExtResource( 8 )]
+position = Vector2( -22, 503 )
+
+[node name="Props" type="Node2D" parent="."]
+position = Vector2( -470, -339 )
+
+[node name="Mountain" type="Sprite" parent="Props"]
+position = Vector2( 3485, 4286 )
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Mountain"]
+physics_material_override = SubResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Mountain/StaticBody2D"]
+position = Vector2( 6.10352e-05, 1.42834 )
+polygon = PoolVector2Array( -18.8571, -580.857, -92.8571, -574.286, -142, -564.857, -167.143, -551.715, -231.714, -473.143, -268.286, -466.286, -316.388, -412.385, -340.857, -347.714, -412.571, -332.571, -487.143, -262.286, -604, -198.571, -666.571, -165.715, -768.286, -54.0002, -1035.71, -31.1431, -1005.14, -5.14307, -771.714, -5.42871, 538, 5.14282, 1286, -216.857, 596.571, -1179.43, -455.143, -1187.71, -268.286, -1080.86, 257.143, -985.714, 551.714, -35.4288, 139.714, -586.286 )
+
+[node name="Winnie’sCastle" type="Sprite" parent="Props"]
+position = Vector2( 3564, 1551 )
+texture = ExtResource( 3 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( 2425, 1260 )
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 5 )]
+position = Vector2( 528, 636 )
+mode = 1
+gravity_scale = 2.0
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Chip" parent="Rabbits" instance=ExtResource( 11 )]
+position = Vector2( 385, 633 )
+scale = Vector2( -1, 1 )
+mode = 1
+gravity_scale = 2.0
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
+position = Vector2( 465, 638 )
+mode = 1
+mass = 1.22
+gravity_scale = 2.0
+
+[editable path="GUI"]

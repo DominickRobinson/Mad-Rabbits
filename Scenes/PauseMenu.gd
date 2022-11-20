@@ -49,7 +49,7 @@ func _on_RestartLevel_pressed():
 
 func _on_QuitGame_pressed():
 	Manager.quit()
-
+	#get_tree().change_scene("res://Scenes/Menus/MainMenu.tscn")
 
 
 func _on_Unpause_button_down():

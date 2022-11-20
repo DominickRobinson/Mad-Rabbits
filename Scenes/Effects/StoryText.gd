@@ -16,7 +16,7 @@ func _ready():
 	totalChars = len(label.text)
 	label.visible_characters = 0
 	set_visibility(visibilityButton.pressed)
-	show_all_chars(totalChars * 0.1)
+	show_all_chars(totalChars * 0.05)
 
 
 func _process(delta):

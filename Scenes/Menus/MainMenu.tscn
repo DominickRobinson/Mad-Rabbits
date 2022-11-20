@@ -190,7 +190,6 @@ margin_bottom = 25.0
 rect_min_size = Vector2( 0, 25 )
 
 [node name="Mad Rabbits" type="RichTextLabel" parent="Text"]
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 29.0
 margin_right = 926.0
 margin_bottom = 123.0
@@ -227,13 +226,10 @@ margin_bottom = 158.0
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center]and the Legend of the [rainbow]Infinity Carrot"
-visible_characters = 0
-percent_visible = 0.0
 text = "and the Legend of the Infinity Carrot"
 fit_content_height = true
 
 [node name="of Legendary Legend" type="RichTextLabel" parent="Text"]
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 162.0
 margin_right = 926.0
 margin_bottom = 211.0
@@ -250,9 +246,9 @@ fit_content_height = true
 
 [node name="ft Winnie" type="RichTextLabel" parent="Text"]
 visible = false
-margin_top = 267.0
+margin_top = 215.0
 margin_right = 926.0
-margin_bottom = 284.0
+margin_bottom = 232.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
@@ -264,45 +260,95 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -185.0
-margin_top = 60.0
-margin_right = 185.0
-margin_bottom = 300.0
+margin_left = -225.0
+margin_top = 16.0
+margin_right = 208.0
+margin_bottom = 256.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Classic" type="Button" parent="Buttons"]
-margin_right = 370.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons"]
+margin_right = 433.0
+margin_bottom = 158.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="Classic" type="Button" parent="Buttons/HBoxContainer/VBoxContainer"]
+margin_right = 300.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
 action_mode = 0
 text = "Classic Mode"
 
-[node name="Storybook" type="Button" parent="Buttons"]
+[node name="Storybook" type="Button" parent="Buttons/HBoxContainer/VBoxContainer"]
 margin_top = 54.0
-margin_right = 370.0
+margin_right = 300.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 0, 50 )
 text = "Storybook Mode"
 
-[node name="LevelRush" type="Button" parent="Buttons"]
+[node name="LevelRush" type="Button" parent="Buttons/HBoxContainer/VBoxContainer"]
 margin_top = 108.0
-margin_right = 370.0
+margin_right = 300.0
 margin_bottom = 158.0
 rect_min_size = Vector2( 0, 50 )
 text = "Level Rush"
 
+[node name="Control" type="Control" parent="Buttons/HBoxContainer"]
+margin_left = 304.0
+margin_right = 329.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Buttons/HBoxContainer"]
+margin_left = 333.0
+margin_right = 433.0
+margin_bottom = 158.0
+
+[node name="Control" type="Control" parent="Buttons/HBoxContainer/VBoxContainer2"]
+margin_right = 100.0
+
+[node name="Label" type="Label" parent="Buttons/HBoxContainer/VBoxContainer2"]
+margin_top = 4.0
+margin_right = 100.0
+margin_bottom = 18.0
+text = "Level number"
+
+[node name="ColorRect" type="ColorRect" parent="Buttons/HBoxContainer/VBoxContainer2/Label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_top = -2.0
+margin_right = -7.0
+margin_bottom = 2.0
+color = Color( 0.105882, 0.105882, 0.105882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpinBox" type="SpinBox" parent="Buttons/HBoxContainer/VBoxContainer2"]
+margin_top = 22.0
+margin_right = 100.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 100, 0 )
+min_value = 1.0
+max_value = 75.0
+value = 1.0
+
 [node name="OptionButton" type="Button" parent="Buttons"]
 visible = false
-margin_top = 72.0
-margin_right = 370.0
-margin_bottom = 92.0
+margin_top = 162.0
+margin_right = 433.0
+margin_bottom = 182.0
 toggle_mode = true
 text = "Options"
 script = ExtResource( 3 )
@@ -377,5 +423,6 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/start = SubResource( 5 )
 
-[connection signal="pressed" from="Buttons/Classic" to="." method="_on_Classic_pressed"]
+[connection signal="pressed" from="Buttons/HBoxContainer/VBoxContainer/Classic" to="." method="_on_Classic_pressed"]
+[connection signal="value_changed" from="Buttons/HBoxContainer/VBoxContainer2/SpinBox" to="." method="_on_SpinBox_value_changed"]
 [connection signal="toggled" from="Buttons/OptionButton" to="Buttons/OptionButton" method="_on_OptionButton_toggled"]

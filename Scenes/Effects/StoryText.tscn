@@ -94,3 +94,15 @@ expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorRect" type="ColorRect" parent="ToggleVisibility"]
+show_behind_parent = true
+margin_left = -47.0
+margin_top = -67.0
+margin_right = 400.0
+margin_bottom = 313.0
+mouse_filter = 1
+color = Color( 0.219608, 0.219608, 0.219608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

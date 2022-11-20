@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=1]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Act I/Plains/Plains(1).png" type="Texture" id=3]
 [ext_resource path="res://Assets/Act I/Plains/Burnt hut.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=6]
@@ -8,6 +9,45 @@
 [ext_resource path="res://Scenes/Characters/Rex (good).tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Animation" id=3]
+resource_name = "cutscene"
+length = 20.0
+step = 0.01
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Rabbits/Sarge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.77, 5.15, 7.35 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "darn chief is ded :(", 3.0 ],
+"method": "speak"
+}, {
+"args": [ "i must avenge my people", 3.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 600, -200 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Rabbits/Rex (good)")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.15 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Xp", 3.0 ],
+"method": "speak"
+} ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000.26, 64.25 )
@@ -99,6 +139,9 @@ text = "However, Rex gets seriously injured. Only Sarge makes it out relatively 
 [node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
 margin_top = 1284.0
 margin_bottom = 1284.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 2 )]
+anims/cutscene = SubResource( 3 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 505, 285 )
