@@ -35,4 +35,5 @@ func show_all_chars(time):
 
 
 func set_visibility(button_pressed):
-	label.visible = Options.storytextVisible and button_pressed
+	label.visible = button_pressed
+	visible = Options.storytextVisible

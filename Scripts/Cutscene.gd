@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var cutscene = $CutscenePlayer
+#onready var cutscene = $CutscenePlayer
 
 func _ready():
 	Manager.set_cutscene_mode()

@@ -131,6 +131,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 step = 1.0
 
+[node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
+margin_top = 0.0
+margin_bottom = 2105.0
+text = "“Hey, I’m Sarge! I am on an Epic Vegetable Quest to avenge my people. Who are you?” asks Sarge. “BOEWUBREUWXJMZH 3RKMUWGCHIPB[ODSUBGFUBWRUGBR,” responds the farmer. “I’m sorry, could you repeat that? I couldn’t quite understand you there…” asks Sarge. “OBUEUBUEBGU4ZVCHIPUK41PGR7EGCHIRG,” replies the farmer. “Hmmm, I think I heard Chip somewhere in there, so let’s go with that! Nice to meet you, Chip!” says Sarge. “UBYBUR9UBPWGMUAWEGF83PHWR998PUHGRTJ5679UIHGJDRRT78,” Chip replies. “Would you like to join me on my quest, Chip? I am trying to reclaim carrots for all of the rabbits in the land, and  I could really use your help,” asks Sarge. Chip looks around at his devastated farm, and sighs, then nods and says, “IYDBVFYIW.” Chip enlarges, showcasing his cool rabbit ability. Sarge replies, “Great! Then let’s go!” And with that, Sarge and Chip set off on their Epic Vegetable Quest."
+
+[node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
+margin_top = 2109.0
+margin_bottom = 2109.0
+
 [node name="CutscenePlayer" parent="GUI" instance=ExtResource( 9 )]
 anims/cutscene = SubResource( 2 )
 
@@ -270,3 +279,4 @@ rotation = 0.00872665
 shape = SubResource( 1 )
 
 [editable path="GUI"]
+[editable path="GUI/StoryText"]
