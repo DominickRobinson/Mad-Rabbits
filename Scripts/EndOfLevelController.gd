@@ -24,13 +24,13 @@ func popupLevelCompleted(win):
 	
 	if win:
 		$Popup/NextLevelButton.show()
-		$Popup/WinLose.text = "You win!"
+		$Popup/WinLose.bbcode_text = "[center]You win!"
 		
 		if idk_state == idk.nothing:
 			idk_state = idk.winning
 	else:
 		$Popup/NextLevelButton.hide()
-		$Popup/WinLose.text = "You lose..."
+		$Popup/WinLose.bbcode_text = "[center]You lose..."
 		
 		if idk_state == idk.nothing:
 			idk_state = idk.losing

@@ -1,23 +1,22 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Backgrounds/Grassland.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Act I/Farmland/Farm field.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Act I/Farmland/Corn stalk.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Act I/Farmland/Corn.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Act I/Farmland/Foreground_farmland.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Characters/Rex.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Act I/Plains/Burnt hut.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Effects/StoryText.tscn" type="PackedScene" id=16]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000.26, 64.25 )
 
 [node name="GameLoop3" type="Node2D" groups=["Level"]]
@@ -27,21 +26,114 @@ music = "res://Assets/Sound/Music/Independent Music Licensing Collective (IMLC) 
 
 [node name="GUI" parent="." instance=ExtResource( 11 )]
 
-[node name="ScreenEffects" parent="." instance=ExtResource( 15 )]
-
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 535, -183 )
+position = Vector2( 472, -267 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -99
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="Slingshot" parent="." instance=ExtResource( 5 )]
-MaxSlingshotPull = 150
-MaxLaunchVelocity = 800
+position = Vector2( 78, -4 )
+MaxLaunchVelocity = 600
+
+[node name="Props" type="Node2D" parent="."]
+position = Vector2( -73, -502 )
+
+[node name="Corn" type="Node2D" parent="Props"]
+
+[node name="CornStalk" type="Sprite" parent="Props/Corn"]
+position = Vector2( 413.4, 387.6 )
+scale = Vector2( 0.08, 0.08 )
+texture = ExtResource( 7 )
+
+[node name="CornStalk2" type="Sprite" parent="Props/Corn"]
+position = Vector2( 372.2, 410.8 )
+scale = Vector2( 0.09, 0.09 )
+texture = ExtResource( 7 )
+
+[node name="CornStalk3" type="Sprite" parent="Props/Corn"]
+position = Vector2( 339, 437 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 7 )
+
+[node name="CornStalk4" type="Sprite" parent="Props/Corn"]
+position = Vector2( 575.4, 390.6 )
+scale = Vector2( 0.08, 0.08 )
+texture = ExtResource( 7 )
+
+[node name="CornStalk5" type="Sprite" parent="Props/Corn"]
+position = Vector2( 567, 411 )
+scale = Vector2( 0.09, 0.09 )
+texture = ExtResource( 7 )
+
+[node name="CornStalk6" type="Sprite" parent="Props/Corn"]
+position = Vector2( 554, 437 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 7 )
+
+[node name="CornStalk7" type="Sprite" parent="Props/Corn"]
+position = Vector2( 769, 389 )
+scale = Vector2( 0.08, 0.08 )
+texture = ExtResource( 7 )
+
+[node name="CornStalk8" type="Sprite" parent="Props/Corn"]
+position = Vector2( 800, 415 )
+scale = Vector2( 0.09, 0.09 )
+texture = ExtResource( 7 )
+
+[node name="CornStalk9" type="Sprite" parent="Props/Corn"]
+position = Vector2( 830, 439 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 7 )
+
+[node name="Corn" type="Sprite" parent="Props/Corn"]
+position = Vector2( 688, 461 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="Corn2" type="Sprite" parent="Props/Corn"]
+position = Vector2( 565, 449 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="Corn3" type="Sprite" parent="Props/Corn"]
+position = Vector2( 452, 482 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="Corn4" type="Sprite" parent="Props/Corn"]
+position = Vector2( 329, 470 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="Corn5" type="Sprite" parent="Props/Corn"]
+position = Vector2( 617, 425 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="Corn6" type="Sprite" parent="Props/Corn"]
+position = Vector2( 797, 434 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="Corn7" type="Sprite" parent="Props/Corn"]
+position = Vector2( 387, 456 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="Corn8" type="Sprite" parent="Props/Corn"]
+position = Vector2( 258, 434 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
+
+[node name="BurntHut" type="Sprite" parent="Props"]
+position = Vector2( 926, 405 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 14 )
 
 [node name="Bricks" type="Node2D" parent="."]
-position = Vector2( 910, -84 )
+position = Vector2( 823, -91 )
 
 [node name="WoodLong" parent="Bricks" instance=ExtResource( 12 )]
 position = Vector2( 27, -138 )
@@ -68,34 +160,8 @@ position = Vector2( -187, -133 )
 [node name="WoodLong3" parent="Bricks" instance=ExtResource( 12 )]
 position = Vector2( 32, -162 )
 
-[node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -542, -19 )
-rotation = 1.5708
-
-[node name="Rabbits" type="Node2D" parent="."]
-
-[node name="PhysicsRabbitTest3" parent="Rabbits" instance=ExtResource( 10 )]
-position = Vector2( -411, -14 )
-
-[node name="Chip" parent="Rabbits" instance=ExtResource( 9 )]
-position = Vector2( -228, -9 )
-
-[node name="Ninja" parent="Rabbits" instance=ExtResource( 7 )]
-position = Vector2( -149, -9 )
-
-[node name="Rex" parent="Rabbits" instance=ExtResource( 14 )]
-position = Vector2( -284, -7 )
-catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
-
-[node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 8 )]
-position = Vector2( -349, -18 )
-
-[node name="Sarge" parent="Rabbits" instance=ExtResource( 6 )]
-position = Vector2( -80, -9 )
-catchphrase_text = "[wave] PEEPEE POOPOO !!"
-
 [node name="Bears" type="Node2D" parent="."]
-position = Vector2( -53, -7 )
+position = Vector2( -140, -14 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 3 )]
 position = Vector2( 897, -19 )
@@ -103,18 +169,37 @@ position = Vector2( 897, -19 )
 [node name="Bear2" parent="Bears" instance=ExtResource( 3 )]
 position = Vector2( 1101, -22 )
 
+[node name="LevelCamera" parent="." instance=ExtResource( 13 )]
+position = Vector2( 456, -244 )
+zoom = Vector2( 1.1, 1.1 )
+editor_draw_limits = true
+
+[node name="ScreenEffects" parent="." instance=ExtResource( 15 )]
+position = Vector2( -95, 1 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( -73, -502 )
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 6 )]
+position = Vector2( 76, 474 )
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Chip" parent="Rabbits" instance=ExtResource( 9 )]
+position = Vector2( 2, 477 )
+
 [node name="Ground" type="Node2D" parent="."]
+position = Vector2( -93, -7 )
+
+[node name="Sprite" type="Sprite" parent="Ground"]
+position = Vector2( 520, -176 )
+rotation = 0.0174533
+scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 10 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2( 1, 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
 position = Vector2( 530.77, 62.0743 )
-rotation = -0.00523599
-shape = SubResource( 10 )
-
-[node name="StoryText" parent="." instance=ExtResource( 16 )]
-
-[node name="LevelCamera" parent="." instance=ExtResource( 13 )]
-position = Vector2( 340, -182 )
-zoom = Vector2( 1.5, 1.4 )
-editor_draw_limits = true
+rotation = 0.00872665
+shape = SubResource( 1 )

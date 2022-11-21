@@ -131,6 +131,7 @@ scale = Vector2( 0.03, -0.03 )
 texture = ExtResource( 5 )
 
 [node name="Chain" parent="." instance=ExtResource( 9 )]
+visible = false
 
 [node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
 stream = ExtResource( 3 )

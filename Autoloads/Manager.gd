@@ -3,8 +3,9 @@ extends Node
 var rng = RandomNumberGenerator.new()
 var bubble_root = load("res://Scenes/Bubble.tscn")
 
-var Levels = ["ACT I/1-2c", "ACT I/1-4c", "ACT I/1-6c", "ACT I/1-8c", "ACT I/1-10c", "ACT I/1-12c", "ACT I/1-14c", "ACT I/1-15c", "ACT I/1-17c", "ACT I/1-19c",
-				]
+var Levels = ["ACT I/1-1l", "ACT I/1-2c", "ACT I/1-3l", "ACT I/1-4c", "ACT I/1-5l", "ACT I/1-6c", "ACT I/1-7l" , 
+			  "ACT I/1-8c", "ACT I/1-9l", "ACT I/1-10c", "ACT I/1-11l", "ACT I/1-12c", "ACT I/1-13l", "ACT I/1-14c", 
+			  "ACT I/1-15c", "ACT I/1-17c", "ACT I/1-18l", "ACT I/1-19c"]
 var LevelIndex = 0
 
 enum GameModes {
@@ -48,6 +49,23 @@ func next_level():
 	#RestartLevel()
 	if Manager.LevelIndex >= Levels.size():
 		Manager.LevelIndex = 0
+	ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
+
+func last_level():
+	speedup()
+	Manager.LevelIndex -= 1
+	#RestartLevel()
+	if Manager.LevelIndex < 0:
+		Manager.LevelIndex = 0
+		return
+	ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
+
+func go_to_level(num):
+	speedup()
+	Manager.LevelIndex = num 
+	#RestartLevel()
+	if Manager.LevelIndex >= Levels.size() or Manager.LevelIndex <= 0:
+		return
 	ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
 
 

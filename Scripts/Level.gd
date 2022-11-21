@@ -26,6 +26,7 @@ onready var screen = $ScreenEffects
 
 
 func _ready():
+	get_tree().paused = false
 	Manager.set_level_mode()
 	self.add_to_group("Level")
 	Manager.playMusic(music)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Act I/Plains/To training grounds.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Effects/ExplosionTNT.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Characters/Rex (good).tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=8]
@@ -9,43 +10,46 @@
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=18]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1000.26, 64.25 )
-
 [sub_resource type="Animation" id=2]
 resource_name = "cutscene"
 length = 10.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("Rabbits/Sarge")
+tracks/0/path = NodePath("../Rabbits/Sarge")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 6.7 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 4, 7.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ Vector2( 1000, 0 ) ],
+"args": [ "ok", 2.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 800, 0 ) ],
 "method": "apply_central_impulse"
 } ]
 }
 tracks/1/type = "method"
-tracks/1/path = NodePath("Rabbits/Rex (good)")
+tracks/1/path = NodePath("../Rabbits/Rex (good)")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.9, 6.7 ),
+"times": PoolRealArray( 1.9, 7.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ "oh no! we gotta go", 3.0 ],
+"args": [ "uh oh. we gotta go", 3.0 ],
 "method": "speak"
 }, {
-"args": [ Vector2( 1000, 0 ) ],
+"args": [ Vector2( 900, 0 ) ],
 "method": "apply_central_impulse"
 } ]
 }
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1000.26, 64.25 )
 
 [node name="1-2" type="Node2D"]
 script = ExtResource( 18 )
@@ -62,6 +66,7 @@ margin_top = 1449.0
 margin_bottom = 1449.0
 
 [node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
+anims/cutscene = SubResource( 2 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 2 )]
 anchor_mode = 0
@@ -99,8 +104,8 @@ position = Vector2( 530.77, 62.0743 )
 rotation = 0.00872665
 shape = SubResource( 1 )
 
-[node name="CutscenePlayer" type="AnimationPlayer" parent="."]
-anims/cutscene = SubResource( 2 )
+[node name="ExplosionTNT" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1054, 402 )
 
 [editable path="GUI"]
 [editable path="GUI/StoryText"]

@@ -102,78 +102,6 @@ extents = Vector2( 1000.26, 64.25 )
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
 
-[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="0"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="1"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="2"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="3"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="4"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreLabel" index="5"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="0"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="1"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="2"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="3"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="4"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/ScoreValue" index="5"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false
 anchor_right = 1.0
@@ -221,8 +149,7 @@ texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 4 )]
-position = Vector2( 400, 219 )
-anchor_mode = 0
+position = Vector2( 675, 391 )
 zoom = Vector2( 0.5, 0.5 )
 editor_draw_limits = true
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scenes/Characters/Sarge.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Characters/Bear.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Characters/Right Ear/rightEar0000.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Characters/Bodies/sarge.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Characters/Left Ear/leftEar0000.png" type="Texture" id=6]
@@ -18,10 +18,10 @@ height = 12.0
 [sub_resource type="CircleShape2D" id=8]
 radius = 2.0
 
-[node name="Sarge" type="RigidBody2D" groups=["Player", "Rabbits"]]
+[node name="Sarge (enemy)" type="RigidBody2D" groups=["Bears"]]
 physics_material_override = SubResource( 2 )
 script = ExtResource( 2 )
-catchphrase_filename = "res://Assets/Sound/Sound effects/oh_yeah.mp3"
+health = 50
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource( 6 )

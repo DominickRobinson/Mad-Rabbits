@@ -63,7 +63,9 @@ func wait(time):
 func _process(delta):
 	
 	#print(str(SlingState.pulling))
-	#print(CenterOfSlingshotGlobal)
+	if Input.is_action_just_pressed("pull_in_slingshot"):
+		print(get_global_mouse_position())
+		print(CenterOfSlingshotGlobal)
 	#print(player.global_position)
 	
 	match SlingshotState:

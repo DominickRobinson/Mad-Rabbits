@@ -22,8 +22,10 @@ func _ready():
 	t.start()
 	yield(t, "timeout")
 	contact_monitor = true
+	contacts_reported = 1
 	can_take_damage = true
 	#calculate_yet = true
+	self.connect("body_entered", self, "_on_body_entered")
 
 
 func _process(delta):
@@ -58,7 +60,7 @@ func _on_AnimatedSprite_animation_finished():
 		$AnimatedSprite.animation = "bad"
 
 
-func _on_HurtZone_body_entered(body):
+func _on_body_entered(body):
 	
 	if not can_take_damage:
 		return false
@@ -72,25 +74,25 @@ func _on_HurtZone_body_entered(body):
 			
 			var damage = abs(body.linear_velocity.length()) + abs(last_linear_velocity.length())
 			#damage *= 0.1
-			#print(damage)
-			
+			damage *= body.mass
 			take_damage(damage)
-			Manager.Score += damage
-			#print(health)
-			if health <= 0:
-				die()
+
 				
 		elif body is StaticBody2D:
 			var damage = abs(last_linear_velocity.length()) * 0.1
 			take_damage(damage)
-			Manager.Score += damage
-			#print(health)
-			if health <= 0:
-				die()
+
 
 func take_damage(amt):
+	if amt <= 5:
+		return
 	health -= amt
+	print("Damage: ", amt)
+	print("Health remaining: ", health)
+	if health <= 0:
+		die()
 
 func die():
+	print("die")
 	Manager.playAudio(deathNoise)
 	queue_free()

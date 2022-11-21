@@ -34,7 +34,7 @@ shape = SubResource( 3 )
 [node name="BodySprite" type="Sprite" parent="Body"]
 show_behind_parent = true
 position = Vector2( 0, -6.66667 )
-scale = Vector2( 0.014, 0.013 )
+scale = Vector2( -0.014, 0.013 )
 texture = ExtResource( 6 )
 
 [node name="EarStuff" type="Node2D" parent="Body"]
