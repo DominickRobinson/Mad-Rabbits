@@ -1,7 +1,7 @@
 extends Rabbit
-const Explosion = preload("../Effects/Explosion.tscn")
-const Kaboom = preload("../Effects/Kaboom.tscn")
-
+#const Explosion = preload("../Effects/Explosion.tscn")
+#const Kaboom = preload("../Effects/Kaboom.tscn")
+const Explosion = preload("res://Scenes/Effects/ExplosionTNT.tscn")
 
 export (float) var floatiness := 0.2
 
@@ -57,13 +57,19 @@ func ability3():
 	
 
 func explode():
-	var cloud = Explosion.instance()
-	get_parent().add_child(cloud)
-	cloud.position = global_position
+#	var cloud = Explosion.instance()
+#	get_parent().add_child(cloud)
+#	cloud.position = global_position
+#
+#	var flame = Kaboom.instance()
+#	get_parent().add_child(flame)
+#	flame.position = global_position
 	
-	var flame = Kaboom.instance()
-	get_parent().add_child(flame)
-	flame.position = global_position
+	var e = Explosion.instance()
+	get_tree().current_scene.add_child(e)
+	e.global_position = global_position
+	e.scale = Vector2(6,6)
+	e.power = 500
 	
 	#print("kaboom")
 	

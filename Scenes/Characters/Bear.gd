@@ -74,24 +74,23 @@ func _on_HurtZone_body_entered(body):
 			#damage *= 0.1
 			#print(damage)
 			
-			health -= damage
+			take_damage(damage)
 			Manager.Score += damage
 			#print(health)
 			if health <= 0:
-				Manager.playAudio(deathNoise)
-				queue_free()
+				die()
 				
-		elif body is TileMap:
+		elif body is StaticBody2D:
 			var damage = abs(last_linear_velocity.length()) * 0.1
-			health -= damage
+			take_damage(damage)
 			Manager.Score += damage
 			#print(health)
 			if health <= 0:
-				queue_free()
-				pass # Replace with function body.
-		elif body.is_in_group("Explosion"):
-			var cloud = Kaboom.instance()
-			get_parent().add_child(cloud)
-			cloud.position = global_position
-			queue_free()
+				die()
 
+func take_damage(amt):
+	health -= amt
+
+func die():
+	Manager.playAudio(deathNoise)
+	queue_free()

@@ -28,3 +28,5 @@ func pushback():
 			
 			body.apply_central_impulse(dir)
 			
+			if body.has_method("take_damage"):
+				body.take_damage(40)

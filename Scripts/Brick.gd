@@ -65,13 +65,15 @@ func on_body_entered(body):
 			damage *= 0.1
 			#print(damage)
 			
-			health -= damage
+			take_damage(damage)
 			Manager.Score += damage
 			#print(health)
 			if health <= 0:
 				destroy_block()
 				
-				
+
+func take_damage(amt):
+	health -= amt
 
 func destroy_block():
 	#print("block")

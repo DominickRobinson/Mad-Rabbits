@@ -24,7 +24,6 @@
 extents = Vector2( 1000.26, 64.25 )
 
 [node name="GameLoop" type="Node2D" groups=["Level"]]
-position = Vector2( 4, 33 )
 script = ExtResource( 18 )
 music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
 
@@ -75,7 +74,23 @@ rotation = 1.5708
 [node name="TNT" parent="Bricks" instance=ExtResource( 19 )]
 position = Vector2( -556, -714 )
 
+[node name="TNT2" parent="Bricks" instance=ExtResource( 19 )]
+position = Vector2( -547, -26 )
+
+[node name="TNT3" parent="Bricks" instance=ExtResource( 19 )]
+position = Vector2( -550, -69 )
+
+[node name="TNT4" parent="Bricks" instance=ExtResource( 19 )]
+position = Vector2( -590, 47 )
+
+[node name="TNT5" parent="Bricks" instance=ExtResource( 19 )]
+position = Vector2( -593, 4 )
+
 [node name="Rabbits" type="Node2D" parent="."]
+
+[node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
+position = Vector2( -284, -7 )
+catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
 position = Vector2( -149, -9 )
@@ -85,10 +100,6 @@ position = Vector2( -411, -14 )
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -228, -9 )
-
-[node name="Rex" parent="Rabbits" instance=ExtResource( 9 )]
-position = Vector2( -284, -7 )
-catchphrase_filename = "res://Assets/Sound/Sound effects/dom_screaming.mp3"
 
 [node name="Amogus" parent="Rabbits" groups=["Player", "Rabbits"] instance=ExtResource( 17 )]
 position = Vector2( -349, -18 )
@@ -107,7 +118,7 @@ position = Vector2( -53, -7 )
 position = Vector2( 530, -172 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-position = Vector2( 364, -69 )
+position = Vector2( 330, -42 )
 
 [node name="Ground" type="Node2D" parent="."]
 
