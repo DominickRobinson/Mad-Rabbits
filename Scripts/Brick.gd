@@ -53,27 +53,26 @@ func on_body_entered(body):
 		return false
 	#print(body)
 	if is_instance_valid(body):
-		if body is RigidBody2D or body.is_in_group("Rabbits"):
+		if body is RigidBody2D or body is StaticBody2D or body.is_in_group("Rabbits"):
 			#if body.is_in_group("Player"):
 			#	queue_free()
 			#else:
 			#Manager.makePOW(get_tree().get_root(), "dab", Color(0, 1, 0, 0.5), global_position, 25)
 			
-			var damage = abs(body.linear_velocity.length()) + abs(last_linear_velocity.length())
+			var damage = abs(last_linear_velocity.length())
+			if not (body is StaticBody2D):
+				damage += abs(body.linear_velocity.length())
 			damage *= 0.1
-			print(damage)
+			#print(damage)
 			
 			health -= damage
 			Manager.Score += damage
 			#print(health)
 			if health <= 0:
-				queue_free()
+				destroy_block()
 				
-		elif body is TileMap:
-			var damage = abs(last_linear_velocity.length()) * 0.1
-			health -= damage
-			Manager.Score += damage
-			#print(health)
-			if health <= 0:
-				queue_free()
-				pass # Replace with function body.
+				
+
+func destroy_block():
+	#print("block")
+	queue_free()

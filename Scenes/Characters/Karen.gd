@@ -29,7 +29,7 @@ func ability1():
 	freeze()
 	if shoot_angle != null:
 		global_rotation_degrees = shoot_angle
-		print("shooting at: ", shoot_angle)
+		#print("shooting at: ", shoot_angle)
 	angular_damp = 10
 	
 	ability_used = true

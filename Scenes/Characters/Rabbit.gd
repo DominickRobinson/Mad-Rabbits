@@ -119,7 +119,7 @@ func useAbility():
 
 
 func ability1():
-	pass
+	$CatchphraseAudio.play()
 
 func ability2():
 	pass
