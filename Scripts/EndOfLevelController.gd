@@ -12,8 +12,12 @@ var idk_state = idk.nothing
 
 func _ready():
 	$Popup.hide()
-	
-func popupLevelCompleted(win):	
+	#$Popup.show()
+
+
+
+func popupLevelCompleted(win):
+	Manager.slowdown(0.1)
 	match idk_state:
 		idk.winning:
 			#print("You win!")

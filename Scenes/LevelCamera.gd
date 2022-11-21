@@ -50,9 +50,11 @@ func _ready():
 	yield(get_tree().create_timer(0.1), "timeout")
 	startingPos = global_position
 	startingZoom = zoom
+	#print(global_position)
+	
 
 func _process(delta):
-	
+	#print(global_position)
 	match currentCameraFollow:
 		FollowMode.following:
 			if is_instance_valid(Manager.last_rabbit_thrown()):
@@ -160,8 +162,8 @@ func set_limits():
 	limit_top = background.global_position.y - background.scale.y * background.texture.get_height()/2
 	limit_bottom = background.global_position.y + background.scale.y * background.texture.get_height()/2
 	
-	var lims = [limit_left, limit_right, limit_top, limit_bottom]
-	var limc = ['l', 'r', 't', 'b']
-	
+#	var lims = [limit_left, limit_right, limit_top, limit_bottom]
+#	var limc = ['l', 'r', 't', 'b']
+#
 #	for x in range(4):
 #		print(str(limc[x]), ": ", str(lims[x]))

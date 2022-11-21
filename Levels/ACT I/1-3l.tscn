@@ -20,7 +20,6 @@
 extents = Vector2( 1000.26, 64.25 )
 
 [node name="GameLoop" type="Node2D" groups=["Level"]]
-position = Vector2( 4, 33 )
 script = ExtResource( 2 )
 music = "res://Assets/Sound/Music/Solemn-Choral-Piece-No.-1.mp3"
 
@@ -67,11 +66,6 @@ texture = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-
-[node name="Slingshot" parent="." instance=ExtResource( 11 )]
-position = Vector2( 59, -5 )
-MaxSlingshotPull = 150
-MaxLaunchVelocity = 600
 
 [node name="Bricks" type="Node2D" parent="."]
 position = Vector2( 993, -76 )
@@ -179,3 +173,8 @@ editor_draw_limits = true
 
 [node name="ScreenEffects" parent="." instance=ExtResource( 6 )]
 position = Vector2( -125, -4 )
+
+[node name="Slingshot" parent="." instance=ExtResource( 11 )]
+position = Vector2( 59, -5 )
+MaxSlingshotPull = 150
+MaxLaunchVelocity = 800

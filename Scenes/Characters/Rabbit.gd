@@ -44,6 +44,10 @@ func _init():
 
 	connect("body_entered", self, "collide_with_rabbit")
 	prepareAbilityPopup()
+	
+	if totalAbilities == 0:
+		if is_instance_valid($AbilitySelectionPanel):
+			$AbilitySelectionPanel.visible = false
 
 
 func _physics_process(delta):

@@ -63,9 +63,10 @@ func wait(time):
 func _process(delta):
 	
 	#print(str(SlingState.pulling))
-	if Input.is_action_just_pressed("pull_in_slingshot"):
-		print(get_global_mouse_position())
-		print(CenterOfSlingshotGlobal)
+	#print(SlingshotState)
+#	if Input.is_action_just_pressed("pull_in_slingshot"):
+#		print(get_global_mouse_position())
+#		print(CenterOfSlingshotGlobal)
 	#print(player.global_position)
 	
 	match SlingshotState:
@@ -240,7 +241,7 @@ func movePlayerToSlingshot(t = 0.1):
 
 #when player presses on catapult to drag character
 func _on_TouchArea_input_event(viewport, event, shape_idx):
-	
+	print("1")
 	if not can_start:
 		return false
 	

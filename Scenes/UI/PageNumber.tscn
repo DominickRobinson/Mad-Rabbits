@@ -9,14 +9,14 @@
 font_data = ExtResource( 2 )
 
 [node name="PageNumber" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -716.0
-margin_bottom = -524.0
+anchor_right = 0.150391
+anchor_bottom = 0.0633333
+margin_right = 154.0
+margin_bottom = 38.0
 rect_scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]

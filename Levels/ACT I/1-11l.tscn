@@ -19,7 +19,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1079.46, 64.25 )
 
-[node name="GameLoop" type="Node2D" groups=["Level"]]
+[node name="GameLoop2" type="Node2D" groups=["Level"]]
 position = Vector2( 4, 33 )
 script = ExtResource( 2 )
 music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
@@ -28,6 +28,7 @@ music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-All
 
 [node name="LevelCamera" parent="." instance=ExtResource( 6 )]
 position = Vector2( 386, -139 )
+current = false
 zoom = Vector2( 1.4, 1.4 )
 editor_draw_limits = true
 

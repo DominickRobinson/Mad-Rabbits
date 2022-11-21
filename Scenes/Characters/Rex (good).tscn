@@ -90,6 +90,7 @@ margin_left = -79.0
 margin_top = 48.0
 margin_right = 107.0
 margin_bottom = 48.0
+rect_clip_content = false
 custom_fonts/normal_font = SubResource( 7 )
 bbcode_enabled = true
 bbcode_text = "[wave][tornado][shake]KABOOM !!
