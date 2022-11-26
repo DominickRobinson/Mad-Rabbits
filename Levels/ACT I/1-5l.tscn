@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Act I/Farmland/Farm field.png" type="Texture" id=2]
@@ -10,11 +10,10 @@
 [ext_resource path="res://Assets/Act I/Farmland/Corn.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Act I/Farmland/Foreground_farmland.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Act I/Plains/Burnt hut.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000.26, 64.25 )
@@ -173,9 +172,6 @@ position = Vector2( 1101, -22 )
 position = Vector2( 456, -244 )
 zoom = Vector2( 1.1, 1.1 )
 editor_draw_limits = true
-
-[node name="ScreenEffects" parent="." instance=ExtResource( 15 )]
-position = Vector2( -95, 1 )
 
 [node name="Rabbits" type="Node2D" parent="."]
 position = Vector2( -73, -502 )

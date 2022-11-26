@@ -5,13 +5,26 @@ var big = false
 export var big_bounces := 10
 export var big_bounce_vel_scale := 1.3
 
+export var rainbow := false
+
+onready var RainbowShader = preload("res://Assets/Shaders/rainbow.tres")
+
 
 func _ready():
 	catchphrase_text = "OOGA BOOGA"
 	$LargeBody.visible = false
 	$LargeBody.disabled = true
 	#connect("body_shape_entered", self, "bounce")
-	
+
+	if rainbow:
+		var sprites = get_all_sprites($Body)
+		for s in sprites:
+			if s.name == "Halo":
+				break
+			s.material = ShaderMaterial.new()
+			s.material.shader = RainbowShader
+
+
 func ability1():
 	make_big()
 	self.modulate = Color.red
@@ -48,3 +61,12 @@ func _bounce(body):
 		if big_bounces == 0:
 			make_small()
 
+
+func get_all_sprites(in_node,arr:=[]):
+	#print("Currently checking: ", in_node, ". Here are its children: ", in_node.get_children())
+	for child in in_node.get_children():
+		arr = get_all_sprites(child,arr)
+	if in_node is Sprite and in_node.get_name() != "Foot":
+		#(in_node.get_name(), " is a Sprite!!!")
+		arr.push_back(in_node)
+	return arr

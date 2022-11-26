@@ -5,7 +5,11 @@ var bubble_root = load("res://Scenes/Bubble.tscn")
 
 var Levels = ["ACT I/1-1l", "ACT I/1-2c", "ACT I/1-3l", "ACT I/1-4c", "ACT I/1-5l", "ACT I/1-6c", "ACT I/1-7l" , 
 			  "ACT I/1-8c", "ACT I/1-9l", "ACT I/1-10c", "ACT I/1-11l", "ACT I/1-12c", "ACT I/1-13l", "ACT I/1-14c", 
-			  "ACT I/1-15c", "ACT I/1-17c", "ACT I/1-18l", "ACT I/1-19c"]
+			  "ACT I/1-15c", "ACT I/1-17c", "ACT I/1-18l", "ACT I/1-19c",
+			  "ACT III/3-1c", "ACT III/3-2c", "ACT III/3-3c", "ACT III/3-4c", "ACT III/3-5l", "ACT III/3-6c", "ACT III/3-7l", 
+			  "ACT III/3-8c", "ACT III/3-9c", "ACT III/3-10l", "ACT III/3-11l", "ACT III/3-12l", "ACT III/3-13c", "ACT III/3-14l", 
+			  "ACT III/3-15c", "ACT III/3-16l", "ACT III/3-17c", "ACT III/3-19c"
+			  ]
 var LevelIndex = 0
 
 enum GameModes {
@@ -41,8 +45,8 @@ func RestartLevel():
 	#reloads scene
 	speedup()
 	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
-	
 
+#page flip animation - goes to next level in array
 func next_level():
 	speedup()
 	Manager.LevelIndex += 1
@@ -51,6 +55,7 @@ func next_level():
 		Manager.LevelIndex = 0
 	ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
 
+#page flip animation - goes to last level in array
 func last_level():
 	speedup()
 	Manager.LevelIndex -= 1
@@ -60,6 +65,7 @@ func last_level():
 		return
 	ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
 
+#page flip animaton - goes to given level with index num
 func go_to_level(num):
 	speedup()
 	Manager.LevelIndex = num 

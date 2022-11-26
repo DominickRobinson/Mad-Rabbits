@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Blocks/Wood/Baby long skinny crate.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Blocks/Steel/Steel long and skinny.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Blocks/Steel/Steel.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sound/Sound effects/dom_screaming.mp3" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 100, 10 )
+extents = Vector2( 100, 9.5 )
 
 [node name="SteelSuperLong" type="RigidBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 11, 17 )
+position = Vector2( 13, -1.19209e-07 )
 rotation = -0.00872665
-scale = Vector2( 0.325, 0.55 )
+scale = Vector2( 0.325, 0.325 )
 texture = ExtResource( 1 )
 
 [node name="CollisionBody2D" type="CollisionShape2D" parent="."]

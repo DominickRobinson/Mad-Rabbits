@@ -3,6 +3,8 @@ class_name Character
 
 export var cutsceneMode := false
 
+export (bool) var show_halo := false
+
 onready var speechBubble = preload("res://Scenes/Effects/SpeechBubble.tscn")
 
 # Declare member variables here. Examples:
@@ -14,6 +16,9 @@ onready var speechBubble = preload("res://Scenes/Effects/SpeechBubble.tscn")
 func _ready():
 	if cutsceneMode:
 		unfreeze()
+	
+	if show_halo and is_instance_valid($Halo):
+		$Halo.visible = true
 
 #useful functions for cutscenes
 func change_animation(anim : String):

@@ -22,7 +22,7 @@ onready var currentPlayer
 onready var cameraController
 onready var currentCamera
 
-onready var screen = $ScreenEffects
+export var space_level := false
 
 
 func _ready():
@@ -34,6 +34,15 @@ func _ready():
 		return
 	currentPlayer = Manager.get_player()
 	speedup()
+#	print(Physics2DServer.AREA_PARAM_GRAVITY_VECTOR)
+	if space_level:
+		Physics2DServer.area_set_param(get_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.ZERO)
+	else:
+		Physics2DServer.area_set_param(get_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
+		
+	print(space_level)
+	print(Physics2DServer.area_get_param(get_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR))
+
 
 func slowdown(p=0.2):
 	Engine.time_scale = p
@@ -70,10 +79,11 @@ func _process(delta):
 	elif Input.is_action_just_released("slowmo"):
 		speedup()
 		
-	if Input.is_action_pressed("spin_up"):
-		currentPlayer.angular_velocity += 1
-	elif Input.is_action_pressed("spin_down"):
-		currentPlayer.angular_velocity -= 1
+	if is_instance_valid(currentPlayer):
+		if Input.is_action_pressed("spin_up"):
+			currentPlayer.angular_velocity += 1
+		elif Input.is_action_pressed("spin_down"):
+			currentPlayer.angular_velocity -= 1
 	
 	
 	match CurrentGameState:

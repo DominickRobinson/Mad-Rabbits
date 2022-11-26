@@ -10,11 +10,12 @@
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Characters/PhysicsRabbitTest.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Characters/Rex.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=15]
+
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )

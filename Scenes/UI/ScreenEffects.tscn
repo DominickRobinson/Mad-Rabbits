@@ -1,6 +1,3 @@
-[gd_scene load_steps=2 format=2]
-
-[sub_resource type="ShaderMaterial" id=1]
+[gd_scene format=2]
 
 [node name="ScreenEffects" type="CanvasModulate"]
-material = SubResource( 1 )

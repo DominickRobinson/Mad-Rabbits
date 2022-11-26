@@ -1,21 +1,19 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Act I/Farmland/Farm field.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Act I/Farmland/Corn stalk.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Act I/Farmland/Corn.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Act I/Farmland/Foreground_farmland.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Blocks/Corn.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -130,15 +128,8 @@ position = Vector2( 344, -243 )
 zoom = Vector2( 1.1, 1.1 )
 editor_draw_limits = true
 
-[node name="ScreenEffects" parent="." instance=ExtResource( 12 )]
-position = Vector2( -95, 1 )
-
 [node name="Rabbits" type="Node2D" parent="."]
 position = Vector2( -199, -491 )
-
-[node name="Sarge" parent="Rabbits" instance=ExtResource( 5 )]
-position = Vector2( 104, 472 )
-catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 9 )]
 position = Vector2( 30, 475 )
@@ -223,40 +214,52 @@ position = Vector2( -420, -179 )
 position = Vector2( -264, -1 )
 
 [node name="Corn5" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -877, -801 )
+position = Vector2( -877, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn6" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -834, -805 )
+position = Vector2( -834, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn7" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -788, -798 )
+position = Vector2( -788, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn8" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -735, -802 )
+position = Vector2( -735, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn9" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -692, -806 )
+position = Vector2( -692, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn10" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -646, -799 )
+position = Vector2( -646, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn11" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -585, -803 )
+position = Vector2( -585, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn12" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -542, -807 )
+position = Vector2( -542, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn13" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -496, -800 )
+position = Vector2( -496, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn14" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -443, -804 )
+position = Vector2( -443, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn15" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -400, -808 )
+position = Vector2( -400, -10000 )
+gravity_scale = 0.2
 
 [node name="Corn16" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -354, -801 )
+position = Vector2( -354, -10000 )
+gravity_scale = 0.2
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )

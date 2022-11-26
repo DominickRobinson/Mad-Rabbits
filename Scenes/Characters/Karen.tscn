@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Characters/Karen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Bodies/karen.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Gun.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Characters/Left Ear/leftEar0012.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Props/glock.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Effects/Halo.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 2.0
@@ -262,8 +264,8 @@ anims/walk = SubResource( 5 )
 
 [node name="AbilitySelectionPanel" parent="." instance=ExtResource( 5 )]
 
-[node name="Control" parent="AbilitySelectionPanel" index="0"]
-visible = false
+[node name="Ability1" parent="AbilitySelectionPanel/Control/Container" index="2"]
+icon = ExtResource( 8 )
 
 [node name="Gun" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -272,6 +274,10 @@ initially_visible = false
 
 [node name="AnimationPlayer" parent="Gun" index="2"]
 anims/fire = SubResource( 6 )
+
+[node name="Halo" parent="." instance=ExtResource( 9 )]
+position = Vector2( 0, -20 )
+scale = Vector2( 0.05, 0.05 )
 
 [connection signal="body_entered" from="." to="." method="stop_floating"]
 

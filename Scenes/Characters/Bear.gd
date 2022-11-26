@@ -1,4 +1,5 @@
 extends Character
+class_name Bear
 
 
 var rng = RandomNumberGenerator.new()
@@ -13,7 +14,7 @@ const Kaboom = preload("../Effects/Kaboom.tscn")
 #var deathNoise = "res://Assets/Sound/Sound effects/dying.mp3"
 var deathNoise = "res://Assets/Sound/Sound effects/wilhelmscream.mp3"
 
-func _ready():
+func _init():
 	last_linear_velocity = linear_velocity
 	var t = Timer.new()
 	t.set_wait_time(3)
@@ -87,12 +88,12 @@ func take_damage(amt):
 	if amt <= 5:
 		return
 	health -= amt
-	print("Damage: ", amt)
-	print("Health remaining: ", health)
+#	print("Damage: ", amt)
+#	print("Health remaining: ", health)
 	if health <= 0:
 		die()
 
 func die():
-	print("die")
+#	print("die")
 	Manager.playAudio(deathNoise)
 	queue_free()

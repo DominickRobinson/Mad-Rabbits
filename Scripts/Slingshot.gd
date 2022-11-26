@@ -67,7 +67,8 @@ func _process(delta):
 #	if Input.is_action_just_pressed("pull_in_slingshot"):
 #		print(get_global_mouse_position())
 #		print(CenterOfSlingshotGlobal)
-	#print(player.global_position)
+#		print(Manager.findCamera().global_position)
+#	#print(player.global_position)
 	
 	match SlingshotState:
 		SlingState.idle:
@@ -121,6 +122,8 @@ func _process(delta):
 				player.global_position = pullPositionGlobal
 				var pointPosition = pullPositionLocal
 				var grav = ProjectSettings.get_setting("physics/2d/default_gravity")
+				grav *= Physics2DServer.area_get_param(get_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR).y
+				#print(grav)
 				#draws trajectory
 				if Input.is_action_just_pressed("return_to_slingshot"):
 					SlingshotState = SlingState.idle
@@ -241,7 +244,7 @@ func movePlayerToSlingshot(t = 0.1):
 
 #when player presses on catapult to drag character
 func _on_TouchArea_input_event(viewport, event, shape_idx):
-	print("1")
+#	print("1")
 	if not can_start:
 		return false
 	

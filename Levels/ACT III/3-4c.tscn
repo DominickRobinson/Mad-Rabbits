@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Act III/alien planet/alien4.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "cutscene"
+length = 20.0
+step = 0.01
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Rabbits/Sarge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.18, 1.6, 6.5, 8.59 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "unfreeze"
+}, {
+"args": [ Vector2( 100, -100 ) ],
+"method": "apply_central_impulse"
+}, {
+"args": [ Vector2( 250, -175 ) ],
+"method": "apply_central_impulse"
+}, {
+"args": [ Vector2( 400, -1000 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+
+[node name="3-4" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="GUI" parent="." instance=ExtResource( 2 )]
+
+[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
+anims/cutscene = SubResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 505, 285 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -99
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Rabbits" type="Node2D" parent="."]
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 4 )]
+position = Vector2( -276, 145 )
+mode = 1
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( 431, 260 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+position = Vector2( -110, 273 )
+rotation = 0.00872665
+polygon = PoolVector2Array( -725.219, -365.685, -638.283, -373.444, -540.147, -358.3, -545.304, -376.256, -293, -342.456, -166.978, -340.556, -113.893, -331.019, -182.341, -267.419, -179.105, -240.446, -108.663, -190.059, -117.549, -176.981, -176.128, -128.468, -199.127, -128.267, -249.61, -68.8244, -234.532, -59.9556, -332.848, 18.9053, -329.83, 20.8791, -403.051, 110.521, -400.833, 135.503, -282.448, 64.4673, -270.283, 83.3618, -330.513, 171.891, -284.122, 216.488, -130.066, 222.143, -39.1346, 99.3453, 39.845, 96.656, 25.4564, 166.784, -34.0701, 221.306, -2.21964, 204.027, 22.8231, 208.809, -0.905518, 240.017, 208.279, 260.192, 279.468, 281.572, 283.843, 324.535, 353.797, 318.925, 355.596, 295.908, 403.542, 289.49, 420.602, 296.341, 429.654, 302.262, 472.644, 300.887, 499.59, 294.652, 582.648, 300.927, 619.472, 280.605, 652, 226.319, 540.899, 215.288, 564.567, 177.08, 518.652, 72.4767, 513.408, 44.5214, 566.926, -10.9477, 675.311, -81.8962, 680.587, -164.945, 722.114, -219.31, 742.453, -180.486, 729.047, -112.366, 773.923, -126.758, 796.027, -114.951, 786.979, -5.8678, 833.925, -12.2777, 840.439, 46.6677, 790.977, 223.106, 771.545, 288.278, 817.072, 233.879, 843.434, 160.646, 865.372, 153.454, 920.581, -52.0354, 936.345, -79.1741, 918.328, -81.0169, 882.3, -198.707, 914.098, -221.985, 884.645, -273.73, 836.219, -322.31, 863.633, -389.551, 880.607, -392.7, 889.484, -406.778, 807.182, -441.061, 794.182, -440.947, 531.93, -468.66, 531.843, -478.659, 409.813, -481.595, 381.605, -505.349, 402.15, -557.531, 398.011, -573.495, 485.562, -625.261, 547.652, -729.807, 584.546, -742.129, 603.943, -811.301, 1467.12, -794.833, 1670.37, 722.451, -1131.4, 646.898, -942.083, 109.225, -807.573, 167.054, -667.247, 203.831, -684.525, 171.98, -693.066, 110.052, -707.153, 100.175, -737.719, 35.4391, -746.068, -4.48956, -646.81, 24.6454, -541.967, 120.734, -579.425, 183.063, -562.128, 216.914, -524.13, 216.582, -526.339, 192.6, -491.376, 188.295, -487.1, 105.255, -467.171, 97.0804, -509.19, -19.5573, -494.383, -41.6873, -562.148, -129.099, -503.464, -165.613, -515.586, -179.508, -594.347, -151.819, -616.355, -152.627, -668.217, -251.178, -655.34, -265.291, -664.532, -287.212, -680.548, -289.072, -710.704, -306.81 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 30, 19, 46, 39, 88, 39, 98, 9, 122, 1, 198, -115, 194, -137, 78, -125, -51, -93, -47, -47, 11, 21 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( -140, 115, -97, 131, -79, 142, -87, 153, -132, 172, -143, 168, -159, 134 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 3 )]
+position = Vector2( -626, -407 )
+anchor_mode = 0
+zoom = Vector2( 2.3, 2.3 )
+editor_draw_limits = true
+
+[editable path="GUI"]

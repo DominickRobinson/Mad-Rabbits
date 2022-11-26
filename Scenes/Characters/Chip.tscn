@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Characters/Chip.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Right Ear/rightEar0003.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Characters/Bodies/chip.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Characters/Left Ear/leftEar0003.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Effects/Halo.tscn" type="PackedScene" id=8]
+
+[sub_resource type="ShaderMaterial" id=7]
 
 [sub_resource type="PhysicsMaterial" id=2]
 bounce = 0.2
@@ -22,6 +25,7 @@ height = 12.0
 radius = 2.0
 
 [node name="Chip" type="RigidBody2D" groups=["Player", "Rabbits"]]
+material = SubResource( 7 )
 mass = 2.0
 physics_material_override = SubResource( 2 )
 script = ExtResource( 1 )
@@ -226,6 +230,8 @@ catchphrase = "[shake rate=10 level=10] OOGA BOOGA !!"
 catchphraseOutlineColor = Color( 0.619608, 0.231373, 0, 1 )
 
 [node name="AbilitySelectionPanel" parent="." instance=ExtResource( 5 )]
+
+[node name="Halo" parent="." instance=ExtResource( 8 )]
 
 [connection signal="body_entered" from="." to="." method="_bounce"]
 [connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]

@@ -16,6 +16,7 @@ export (float) var zoom_in_duration := 0.4
 
 export(String, FILE) var catchphrase_filename := ""
 
+
 #different abilities
 var currentAbility = 1
 

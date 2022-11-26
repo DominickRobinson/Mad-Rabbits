@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Act I/Farmland/Corn.png" type="Texture" id=1]
 
 [node name="Corn" type="RigidBody2D"]
-mass = 0.5
+mass = 0.01
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 29, -3 )

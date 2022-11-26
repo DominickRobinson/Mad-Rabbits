@@ -12,6 +12,7 @@ anims/cutscene = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.27451 )
 margin_left = 11.0
 margin_top = 6.0
 margin_right = 71.0
@@ -25,6 +26,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Button"]
+visible = false
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0

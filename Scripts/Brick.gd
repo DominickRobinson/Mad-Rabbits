@@ -18,15 +18,17 @@ func _init():
 	#health = 1000
 	
 	last_linear_velocity = linear_velocity
-	can_take_damage = true
-	contact_monitor = true
-	contacts_reported = 1
-	self.connect("body_entered", self, "on_body_entered")
+	activate()
 	#print("brick")
 #
 #func _ready2():
 #	pass
 
+func activate():
+	can_take_damage = true
+	contact_monitor = true
+	contacts_reported = 1
+	self.connect("body_entered", self, "on_body_entered")
 
 func _process(delta):
 	calculate_linear_velocity()
@@ -73,6 +75,8 @@ func on_body_entered(body):
 				
 
 func take_damage(amt):
+	if amt <= 5:
+		return
 	health -= amt
 
 func destroy_block():

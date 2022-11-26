@@ -50,11 +50,9 @@ func _ready():
 	yield(get_tree().create_timer(0.1), "timeout")
 	startingPos = global_position
 	startingZoom = zoom
-	#print(global_position)
 	
 
 func _process(delta):
-	#print(global_position)
 	match currentCameraFollow:
 		FollowMode.following:
 			if is_instance_valid(Manager.last_rabbit_thrown()):
@@ -76,6 +74,7 @@ func abilityZoomIn():
 	get_tree().paused = true
 	zoom_in(abilityZoom, abilityZoomInSpeed)
 	trackPlayerPosition()
+	
 	
 	yield(zoomTween, "tween_completed")
 	get_tree().paused = false
@@ -157,13 +156,17 @@ func prepare_signals():
 
 
 func set_limits():
-	limit_left = background.global_position.x - background.scale.x * background.texture.get_width()/2
-	limit_right = background.global_position.x + background.scale.x * background.texture.get_width()/2
-	limit_top = background.global_position.y - background.scale.y * background.texture.get_height()/2
-	limit_bottom = background.global_position.y + background.scale.y * background.texture.get_height()/2
+	var scale_x = abs(background.scale.x)
+	var scale_y = abs(background.scale.y)
+	limit_left = background.global_position.x - scale_x * background.texture.get_width()/2
+	limit_right = background.global_position.x + scale_x * background.texture.get_width()/2
+	limit_top = background.global_position.y - scale_y * background.texture.get_height()/2
+	limit_bottom = background.global_position.y + scale_y * background.texture.get_height()/2
 	
-#	var lims = [limit_left, limit_right, limit_top, limit_bottom]
-#	var limc = ['l', 'r', 't', 'b']
-#
-#	for x in range(4):
-#		print(str(limc[x]), ": ", str(lims[x]))
+	var lims = [limit_left, limit_right, limit_top, limit_bottom]
+	var limc = ['l', 'r', 't', 'b']
+
+#	print("Background texture width: ", background.texture.get_width()/2)
+#	print("Background texture height: ", background.texture.get_height()/2)
+	for x in range(4):
+		print(str(limc[x]), ": ", str(lims[x]))

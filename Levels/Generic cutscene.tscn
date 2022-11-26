@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Characters/Rex.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=11]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=18]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000.26, 64.25 )

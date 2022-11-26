@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Act I/Plains/To training grounds.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Effects/ExplosionTNT.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Characters/Rex (good).tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=18]
 
 [sub_resource type="Animation" id=2]
@@ -71,9 +70,6 @@ anims/cutscene = SubResource( 2 )
 [node name="LevelCamera" parent="." instance=ExtResource( 2 )]
 anchor_mode = 0
 editor_draw_limits = true
-
-[node name="ScreenEffects" parent="." instance=ExtResource( 13 )]
-position = Vector2( -22, 503 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 505, 285 )
