@@ -82,28 +82,28 @@ position = Vector2( 910, -84 )
 position = Vector2( -540, -163 )
 
 [node name="WoodLong" parent="Bricks" instance=ExtResource( 17 )]
-position = Vector2( -205, 52 )
+position = Vector2( -204, 67 )
 
 [node name="WoodRectangle" parent="Bricks" instance=ExtResource( 12 )]
-position = Vector2( -405, 4 )
+position = Vector2( -405, 22 )
 
 [node name="WoodRectangle3" parent="Bricks" instance=ExtResource( 12 )]
-position = Vector2( -443, -65 )
+position = Vector2( -443, -43 )
 
 [node name="WoodRectangle4" parent="Bricks" instance=ExtResource( 12 )]
-position = Vector2( -407, -141 )
+position = Vector2( -407, -107 )
 
 [node name="WoodRectangle5" parent="Bricks" instance=ExtResource( 12 )]
-position = Vector2( -185, -64 )
+position = Vector2( -185, -46 )
 
 [node name="WoodRectangle6" parent="Bricks" instance=ExtResource( 12 )]
-position = Vector2( -220, -132 )
+position = Vector2( -218, -111 )
 
 [node name="WoodRectangle7" parent="Bricks" instance=ExtResource( 12 )]
-position = Vector2( -197, -199 )
+position = Vector2( -197, -181 )
 
 [node name="WoodRectangle8" parent="Bricks" instance=ExtResource( 12 )]
-position = Vector2( -446, -205 )
+position = Vector2( -444, -172 )
 
 [node name="WoodRectangle9" parent="Bricks" instance=ExtResource( 12 )]
 position = Vector2( -2, 32 )
@@ -122,7 +122,7 @@ position = Vector2( -95, -167 )
 position = Vector2( -312, -167 )
 
 [node name="WoodLong2" parent="Bricks" instance=ExtResource( 17 )]
-position = Vector2( -426, 48 )
+position = Vector2( -426, 63 )
 
 [node name="WoodLong3" parent="Bricks" instance=ExtResource( 17 )]
 position = Vector2( -426, -266 )
@@ -131,7 +131,7 @@ position = Vector2( -426, -266 )
 position = Vector2( -197, -264 )
 
 [node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 12 )]
-position = Vector2( -227, 1 )
+position = Vector2( -226, 25 )
 
 [node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 18 )]
 position = Vector2( -513, -24 )
