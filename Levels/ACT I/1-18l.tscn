@@ -68,12 +68,15 @@ position = Vector2( -53, -7 )
 
 [node name="Ninja (enemy)" parent="Bears" instance=ExtResource( 4 )]
 position = Vector2( 457, -27 )
+health = 1
 
 [node name="Sarge (enemy)" parent="Bears" instance=ExtResource( 5 )]
 position = Vector2( 548, -25 )
+health = 1
 
 [node name="Chip (enemy)" parent="Bears" instance=ExtResource( 7 )]
 position = Vector2( 642, -30 )
+health = 1
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 0.176471, 0.176471, 0.176471, 1 )

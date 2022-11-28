@@ -8,7 +8,9 @@ var Levels = ["ACT I/1-1l", "ACT I/1-2c", "ACT I/1-3l", "ACT I/1-4c", "ACT I/1-5
 			  "ACT I/1-15c", "ACT I/1-17c", "ACT I/1-18l", "ACT I/1-19c",
 			  "ACT III/3-1c", "ACT III/3-2c", "ACT III/3-3c", "ACT III/3-4c", "ACT III/3-5l", "ACT III/3-6c", "ACT III/3-7l", 
 			  "ACT III/3-8c", "ACT III/3-9c", "ACT III/3-10l", "ACT III/3-11l", "ACT III/3-12l", "ACT III/3-13c", "ACT III/3-14l", 
-			  "ACT III/3-15c", "ACT III/3-16l", "ACT III/3-17c", "ACT III/3-19c"
+			  "ACT III/3-15c", "ACT III/3-16l", "ACT III/3-17c", "ACT III/3-19c",
+			  "ACT IV/4-1c", "ACT IV/4-2c", "ACT IV/4-3c", "ACT IV/4-4l", "ACT IV/4-5c", "ACT IV/4-6l", "ACT IV/4-7c", 
+			  "ACT IV/4-8c" 
 			  ]
 var LevelIndex = 0
 
@@ -38,6 +40,11 @@ func _unhandled_input(event):
 		slowdown()
 	if Input.is_action_just_pressed("slowmo_off"):
 		speedup()
+	
+	if Input.is_action_just_pressed("zoom_in_test"):
+		findCamera().zoom *= .9
+	if Input.is_action_just_pressed("zoom_out_test"):
+		findCamera().zoom *= 1.1
 
 
 #helper level

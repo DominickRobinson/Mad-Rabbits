@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Characters/Right Ear/RexRightEar.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Characters/Bodies/RexBody.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Characters/Left Ear/RexLeftEar.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Act IV/halo.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Effects/Halo.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CircleShape2D" id=10]
 radius = 11.0
@@ -51,87 +51,86 @@ position = Vector2( -1.05879e-22, -10 )
 scale = Vector2( 0.015, 0.015 )
 texture = ExtResource( 10 )
 
-[node name="EarStuff" type="Node2D" parent="Body/BodySprite"]
-position = Vector2( 7.76937, 27.1503 )
-scale = Vector2( 32.713, 31.1178 )
+[node name="EarStuff" type="Node2D" parent="Body"]
+position = Vector2( 0.116541, -9.59275 )
 
-[node name="Ear1" type="RigidBody2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( -8.3892, -8.45376 )
+[node name="Ear1" type="RigidBody2D" parent="Body/EarStuff"]
+position = Vector2( -4.119, -3.948 )
 collision_layer = 0
 collision_mask = 0
 mass = 0.01
 gravity_scale = 0.0
 angular_damp = 15.0
 
-[node name="Collision" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/Ear1"]
+[node name="Collision" type="CollisionShape2D" parent="Body/EarStuff/Ear1"]
 shape = SubResource( 11 )
 
-[node name="Sprite" type="Sprite" parent="Body/BodySprite/EarStuff/Ear1/Collision"]
+[node name="Sprite" type="Sprite" parent="Body/EarStuff/Ear1/Collision"]
 show_behind_parent = true
-position = Vector2( 0, 7.5813 )
-scale = Vector2( 0.02, 0.02 )
+position = Vector2( 0, 3.54 )
+scale = Vector2( 0.01, 0.009 )
 texture = ExtResource( 11 )
 offset = Vector2( 300, 0 )
 
-[node name="Ear2" type="RigidBody2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( 6.69313, -8.45376 )
+[node name="Ear2" type="RigidBody2D" parent="Body/EarStuff"]
+position = Vector2( 3.286, -3.948 )
 collision_layer = 0
 collision_mask = 0
 mass = 0.01
 gravity_scale = 0.0
 angular_damp = 15.0
 
-[node name="Collision" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/Ear2"]
+[node name="Collision" type="CollisionShape2D" parent="Body/EarStuff/Ear2"]
 shape = SubResource( 11 )
 
-[node name="Sprite" type="Sprite" parent="Body/BodySprite/EarStuff/Ear2/Collision"]
+[node name="Sprite" type="Sprite" parent="Body/EarStuff/Ear2/Collision"]
 show_behind_parent = true
-position = Vector2( 1.23358, 3.29797 )
+position = Vector2( 1.234, 1.54 )
 rotation = -0.121585
-scale = Vector2( 0.02, 0.02 )
+scale = Vector2( 0.01, 0.009 )
 texture = ExtResource( 9 )
 offset = Vector2( -400, 150 )
 
-[node name="PinJoint2D" type="PinJoint2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( -8.3892, -2.02657 )
-node_a = NodePath("../../../..")
+[node name="PinJoint2D" type="PinJoint2D" parent="Body/EarStuff"]
+position = Vector2( -4.119, -0.947 )
+node_a = NodePath("../../..")
 node_b = NodePath("../Ear1")
 
-[node name="PinJoint2D2" type="PinJoint2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( 6.69313, -2.02657 )
-node_a = NodePath("../../../..")
+[node name="PinJoint2D2" type="PinJoint2D" parent="Body/EarStuff"]
+position = Vector2( 3.286, -0.947 )
+node_a = NodePath("../../..")
 node_b = NodePath("../Ear2")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( -7.09735, -15.8693 )
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Body/EarStuff"]
+position = Vector2( -3.485, -7.411 )
 node_a = NodePath("../EarNeutral")
 node_b = NodePath("../Ear1")
 length = 5.0
 stiffness = 64.0
 damping = 0.01
 
-[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( 5.87628, -15.8693 )
+[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="Body/EarStuff"]
+position = Vector2( 2.885, -7.411 )
 node_a = NodePath("../EarNeutral2")
 node_b = NodePath("../Ear2")
 length = 5.0
 stiffness = 64.0
 damping = 0.01
 
-[node name="EarNeutral" type="StaticBody2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( -7.09735, -15.8693 )
+[node name="EarNeutral" type="StaticBody2D" parent="Body/EarStuff"]
+position = Vector2( -3.485, -7.411 )
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/EarNeutral"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/EarStuff/EarNeutral"]
 shape = SubResource( 12 )
 
-[node name="EarNeutral2" type="StaticBody2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( 5.87628, -15.8693 )
+[node name="EarNeutral2" type="StaticBody2D" parent="Body/EarStuff"]
+position = Vector2( 2.885, -7.411 )
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/EarNeutral2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/EarStuff/EarNeutral2"]
 shape = SubResource( 12 )
 
 [node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
@@ -260,10 +259,7 @@ rotation = 1.27803
 scale = Vector2( 0.43319, 0.132308 )
 texture = ExtResource( 4 )
 
-[node name="Halo" type="Sprite" parent="."]
-position = Vector2( 0, -33 )
-scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 12 )
+[node name="Halo" parent="." instance=ExtResource( 12 )]
 
 [connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]
 

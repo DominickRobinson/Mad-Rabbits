@@ -117,6 +117,7 @@ collision_mask = 0
 shape = SubResource( 8 )
 
 [node name="Halo" type="Sprite" parent="."]
+visible = false
 position = Vector2( 0, -31 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 1 )

@@ -60,11 +60,11 @@ rotation = 1.5708
 [node name="Rabbits" type="Node2D" parent="."]
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
-position = Vector2( -67, -10 )
+position = Vector2( -66, -22 )
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
 [node name="Rex (good)" parent="Rabbits" instance=ExtResource( 2 )]
-position = Vector2( -130, -10 )
+position = Vector2( -129, -22 )
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )

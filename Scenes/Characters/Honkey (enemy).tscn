@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Characters/Honkey (enemy).gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Honkey/HonkeyIdle04.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Characters/Honkey/HonkeyAttack01.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Characters/Honkey/HonkeyAttack03.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Characters/Honkey/HonkeyAttack02.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Characters/Honkey/HonkeyAttack06.png" type="Texture" id=14]
 
 [sub_resource type="PhysicsMaterial" id=4]
 rough = true
@@ -23,6 +24,11 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": false,
@@ -38,6 +44,7 @@ gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
+health = 500
 
 [node name="Body" type="CollisionPolygon2D" parent="."]
 position = Vector2( 6, 51 )
@@ -49,5 +56,5 @@ position = Vector2( -1, 0 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 7 )
 animation = "idle"
-frame = 4
+frame = 6
 playing = true

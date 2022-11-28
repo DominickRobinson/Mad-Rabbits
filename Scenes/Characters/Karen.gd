@@ -18,6 +18,7 @@ func _unhandled_input(event):
 		shoot_angle = rad2deg(get_global_mouse_position().angle_to_point(global_position))
 		#print(shoot_angle)
 
+#shoot
 func ability1():
 	$Gun.fire()
 	angular_velocity = 0

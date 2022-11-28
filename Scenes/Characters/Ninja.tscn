@@ -43,84 +43,86 @@ position = Vector2( -1.05879e-22, -10 )
 scale = Vector2( 0.013, 0.015 )
 texture = ExtResource( 4 )
 
-[node name="EarStuff" type="Node2D" parent="Body/BodySprite"]
-position = Vector2( 7.76937, 27.1503 )
-scale = Vector2( 32.713, 31.1178 )
+[node name="EarStuff" type="Node2D" parent="Body"]
+position = Vector2( 0.116541, -9.59275 )
 
-[node name="Ear1" type="RigidBody2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( -7.29186, -11.5845 )
+[node name="Ear1" type="RigidBody2D" parent="Body/EarStuff"]
+position = Vector2( -4.119, -3.948 )
 collision_layer = 0
 collision_mask = 0
 mass = 0.01
 gravity_scale = 0.0
 angular_damp = 15.0
 
-[node name="Collision" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/Ear1"]
+[node name="Collision" type="CollisionShape2D" parent="Body/EarStuff/Ear1"]
 shape = SubResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="Body/BodySprite/EarStuff/Ear1/Collision"]
+[node name="Sprite" type="Sprite" parent="Body/EarStuff/Ear1/Collision"]
 show_behind_parent = true
-position = Vector2( 2.35147, 10.7119 )
-scale = Vector2( 0.02, 0.02 )
+position = Vector2( -1.99753, 3.54077 )
+scale = Vector2( 0.01, 0.009 )
 texture = ExtResource( 8 )
+offset = Vector2( 300, 0 )
 
-[node name="Ear2" type="RigidBody2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( 6.81686, -11.5845 )
+[node name="Ear2" type="RigidBody2D" parent="Body/EarStuff"]
+position = Vector2( 3.286, -3.948 )
 collision_layer = 0
 collision_mask = 0
 mass = 0.01
 gravity_scale = 0.0
 angular_damp = 15.0
 
-[node name="Collision" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/Ear2"]
+[node name="Collision" type="CollisionShape2D" parent="Body/EarStuff/Ear2"]
 shape = SubResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="Body/BodySprite/EarStuff/Ear2/Collision"]
+[node name="Sprite" type="Sprite" parent="Body/EarStuff/Ear2/Collision"]
 show_behind_parent = true
-position = Vector2( -2.35144, 10.7119 )
-scale = Vector2( 0.02, 0.02 )
+position = Vector2( 3.59744, 1.54077 )
+rotation = -0.121585
+scale = Vector2( 0.01, 0.009 )
 texture = ExtResource( 6 )
+offset = Vector2( -400, 150 )
 
-[node name="PinJoint2D" type="PinJoint2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( -7.29186, -5.15729 )
-node_a = NodePath("../../../..")
+[node name="PinJoint2D" type="PinJoint2D" parent="Body/EarStuff"]
+position = Vector2( -4.119, -0.947 )
+node_a = NodePath("../../..")
 node_b = NodePath("../Ear1")
 
-[node name="PinJoint2D2" type="PinJoint2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( 6.81686, -5.15729 )
-node_a = NodePath("../../../..")
+[node name="PinJoint2D2" type="PinJoint2D" parent="Body/EarStuff"]
+position = Vector2( 3.286, -0.947 )
+node_a = NodePath("../../..")
 node_b = NodePath("../Ear2")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( -6, -19 )
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Body/EarStuff"]
+position = Vector2( -3.485, -7.411 )
 node_a = NodePath("../EarNeutral")
 node_b = NodePath("../Ear1")
 length = 5.0
 stiffness = 64.0
 damping = 0.01
 
-[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( 6, -19 )
+[node name="DampedSpringJoint2D2" type="DampedSpringJoint2D" parent="Body/EarStuff"]
+position = Vector2( 2.885, -7.411 )
 node_a = NodePath("../EarNeutral2")
 node_b = NodePath("../Ear2")
 length = 5.0
 stiffness = 64.0
 damping = 0.01
 
-[node name="EarNeutral" type="StaticBody2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( -6, -19 )
+[node name="EarNeutral" type="StaticBody2D" parent="Body/EarStuff"]
+position = Vector2( -3.485, -7.411 )
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/EarNeutral"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/EarStuff/EarNeutral"]
 shape = SubResource( 6 )
 
-[node name="EarNeutral2" type="StaticBody2D" parent="Body/BodySprite/EarStuff"]
-position = Vector2( 6, -19 )
+[node name="EarNeutral2" type="StaticBody2D" parent="Body/EarStuff"]
+position = Vector2( 2.885, -7.411 )
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/BodySprite/EarStuff/EarNeutral2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/EarStuff/EarNeutral2"]
 shape = SubResource( 6 )
 
 [node name="Foot" type="Sprite" parent="."]

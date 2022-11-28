@@ -37,6 +37,8 @@ var zoomTween
 var posTween
 
 func _ready():
+	if not is_instance_valid(background):
+		background = get_parent().get_node("Background2")
 	#global_position = background.global_position
 	currentCameraZoom = ZoomMode.zoomed_out
 	currentCameraFollow = FollowMode.notFollowing
@@ -46,11 +48,13 @@ func _ready():
 	add_child(posTween)
 	prepare_signals()
 	set_limits()
+	set_collision_boundaries()
 	
 	yield(get_tree().create_timer(0.1), "timeout")
 	startingPos = global_position
 	startingZoom = zoom
 	
+
 
 func _process(delta):
 	match currentCameraFollow:
@@ -170,3 +174,28 @@ func set_limits():
 #	print("Background texture height: ", background.texture.get_height()/2)
 	for x in range(4):
 		print(str(limc[x]), ": ", str(lims[x]))
+
+
+func set_collision_boundaries():
+	#draw collision shape boundary
+	yield(get_tree().create_timer(1.0), "timeout")
+	var area = StaticBody2D.new()
+	get_tree().get_current_scene().add_child(area)
+	
+	#left collision rectangle
+	var l_shape = RectangleShape2D.new()
+	l_shape.set_extents(Vector2(100, 3000))
+	var l_collision = CollisionShape2D.new()
+	l_collision.global_position.x = limit_left - 50
+	l_collision.set_shape(l_shape)
+	area.add_child(l_collision)
+	
+	#right collision rectangle
+	var r_shape = RectangleShape2D.new()
+	r_shape.set_extents(Vector2(100, 2000))
+	var r_collision = CollisionShape2D.new()
+	r_collision.global_position.x = limit_right + 50
+	r_collision.set_shape(r_shape)
+	area.add_child(r_collision)
+
+

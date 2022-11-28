@@ -4,7 +4,7 @@ extends Rabbit
 const Explosion = preload("res://Scenes/Effects/ExplosionTNT.tscn")
 
 export (float) var floatiness := 0.2
-
+export var show_infinity_carrot := false
 
 
 var og_gravity_scale = gravity_scale
@@ -16,22 +16,24 @@ func _ready():
 	$Sword.disabled = true
 	ability_slowmo_scale = 0.9
 	zoom_in_duration = 1.55
+	
+	if show_infinity_carrot:
+		get_node("Infinity Carrot").visible = true
+	else:
+		get_node("Infinity Carrot").visible = false
 
 
 #glock
 func ability1():
-
 	$Gun.fire()
 	angular_velocity = 0
 	var temp_lin_vel = linear_velocity
 	linear_velocity *= 0
 	linear_damp = 10
-	
 
 	freeze()
 	if shoot_angle != null:
 		global_rotation_degrees = shoot_angle
-		print("shooting at: ", shoot_angle)
 	angular_damp = 10
 	
 	ability_used = true
@@ -42,6 +44,7 @@ func ability1():
 	unfreeze()
 	stop_shooting()
 	#linear_velocity = temp_lin_vel
+
 
 
 #lightsaber

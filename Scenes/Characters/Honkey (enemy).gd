@@ -1,17 +1,11 @@
 extends Bear
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var dead := false
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimatedSprite.animation = "idle"
+	if dead:
+		$AnimatedSprite.animation = "dead"
+	else:
+		$AnimatedSprite.animation = "idle"
 	$AnimatedSprite.play()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

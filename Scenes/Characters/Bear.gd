@@ -14,14 +14,10 @@ const Kaboom = preload("../Effects/Kaboom.tscn")
 #var deathNoise = "res://Assets/Sound/Sound effects/dying.mp3"
 var deathNoise = "res://Assets/Sound/Sound effects/wilhelmscream.mp3"
 
-func _init():
+func _ready():
 	last_linear_velocity = linear_velocity
-	var t = Timer.new()
-	t.set_wait_time(3)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
-	yield(t, "timeout")
+	yield(get_tree().create_timer(1.0), "timeout")
+	print(health)
 	contact_monitor = true
 	contacts_reported = 1
 	can_take_damage = true

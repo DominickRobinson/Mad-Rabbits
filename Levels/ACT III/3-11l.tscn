@@ -109,6 +109,5 @@ texture = ExtResource( 3 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2( 530.77, 62.0743 )
-rotation = -0.00523599
+position = Vector2( 530, 65 )
 shape = SubResource( 1 )

@@ -3,7 +3,7 @@ extends Brick
 
 # Declare member variables here. Examples:
 func _ready():
-	health = 500
+	#health = 500
 #	contact_monitor = true
 #	contacts_reported = 1
 	pass # Replace with function body.

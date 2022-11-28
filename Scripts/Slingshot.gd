@@ -132,8 +132,14 @@ func _process(delta):
 					return
 				$ShotArc.clear_points()
 				var c = 0.005
+#				c = 0
+				var linear_damping = ProjectSettings.get_setting("physics/2d/default_linear_damp")
 				for i in 500:
+#					print(pointPosition)
 					$ShotArc.add_point(pointPosition)
+#					print("Before: ", velocity)
+					velocity *= (1.0 - delta * linear_damping)
+#					print("After: ", velocity)
 					velocity.y += grav * delta / Engine.time_scale
 					velocity += -c * velocity
 					pointPosition += velocity * delta / Engine.time_scale

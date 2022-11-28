@@ -20,5 +20,3 @@ shape = SubResource( 1 )
 
 [node name="SoundEffect" type="AudioStreamPlayer2D" parent="." groups=["dampable"]]
 stream = ExtResource( 3 )
-
-[connection signal="body_entered" from="." to="." method="_on_Wood_body_entered"]
