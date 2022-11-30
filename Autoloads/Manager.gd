@@ -10,8 +10,8 @@ var Levels = ["ACT I/1-1l", "ACT I/1-2c", "ACT I/1-3l", "ACT I/1-4c", "ACT I/1-5
 			  "ACT III/3-8c", "ACT III/3-9c", "ACT III/3-10l", "ACT III/3-11l", "ACT III/3-12l", "ACT III/3-13c", "ACT III/3-14l", 
 			  "ACT III/3-15c", "ACT III/3-16l", "ACT III/3-17c", "ACT III/3-19c",
 			  "ACT IV/4-1c", "ACT IV/4-2c", "ACT IV/4-3c", "ACT IV/4-4l", "ACT IV/4-5c", "ACT IV/4-6l", "ACT IV/4-7c", 
-			  "ACT IV/4-8c" 
-			  ]
+			  "ACT IV/4-8c", "ACT IV/4-10c", "ACT IV/4-11c", "ACT IV/4-12c",
+			  "ACT V/5-1c", "ACT V/5-2c"]
 var LevelIndex = 0
 
 enum GameModes {
