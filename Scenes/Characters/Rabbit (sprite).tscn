@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Characters/Left Ear/CivilianLeftEar.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Characters/Bodies/CivilianBody.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Characters/Right Ear/CivilianRightEar.png" type="Texture" id=3]
+
+[node name="Rabbit (sprite)" type="Node2D"]
+
+[node name="BodySprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( -1.05879e-22, -10 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 2 )
+
+[node name="EarStuff" type="Node2D" parent="."]
+position = Vector2( 0.116541, -9.59275 )
+
+[node name="Ear1" type="Sprite" parent="EarStuff"]
+show_behind_parent = true
+position = Vector2( -4.119, -0.408 )
+scale = Vector2( 0.01, 0.009 )
+texture = ExtResource( 1 )
+offset = Vector2( 300, 0 )
+
+[node name="Ear2" type="Sprite" parent="EarStuff"]
+show_behind_parent = true
+position = Vector2( 4.52, -2.408 )
+rotation = -0.121585
+scale = Vector2( 0.01, 0.009 )
+texture = ExtResource( 3 )
+offset = Vector2( -400, 150 )

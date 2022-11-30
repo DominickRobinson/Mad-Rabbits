@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Shaders/rainbow.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/Characters/Right Ear/rightEar0003.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Characters/Bodies/chip.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/Left Ear/leftEar0003.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Effects/Halo.tscn" type="PackedScene" id=8]
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 1 )
+shader_param/strength = 0.5
+shader_param/speed = 0.5
+shader_param/angle = 0.0
+
+[node name="Chip" type="Node2D" groups=["Player", "Rabbits"]]
+material = SubResource( 7 )
+
+[node name="Halo" parent="." instance=ExtResource( 8 )]
+visible = true
+position = Vector2( 0, -21 )
+scale = Vector2( 0.05, 0.05 )
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( -6, -9 )
+rotation = 0.261799
+scale = Vector2( 0.011, 0.0099 )
+texture = ExtResource( 7 )
+offset = Vector2( 300, 0 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 7, -11 )
+rotation = -0.337153
+scale = Vector2( 0.011, 0.0099 )
+texture = ExtResource( 2 )
+offset = Vector2( -400, 150 )
+
+[node name="BodySprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 0, -7.33334 )
+rotation = 3.14159
+scale = Vector2( 0.0154, -0.0143 )
+texture = ExtResource( 6 )
