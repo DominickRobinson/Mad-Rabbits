@@ -3,15 +3,15 @@
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Act III/space1.jpg" type="Texture" id=3]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelSquare.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelLong.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/UFO.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelRectangle.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 
@@ -37,37 +37,6 @@ MaxLaunchVelocity = 800
 [node name="Bricks" type="Node2D" parent="."]
 position = Vector2( 1033, -72 )
 
-[node name="WoodSquare" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 46, -86 )
-
-[node name="WoodLong" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -48, -350 )
-
-[node name="WoodLong3" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -19, -322 )
-
-[node name="WoodRectangle" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -37, -17 )
-
-[node name="WoodRectangle3" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -33, -211 )
-
-[node name="WoodRectangle4" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -34, -147 )
-
-[node name="WoodRectangle12" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -417, -105 )
-
-[node name="WoodRectangle13" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -187, 49 )
-
-[node name="WoodRectangle5" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -35, -279 )
-
-[node name="WoodRectangle6" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -37, -80 )
-gravity_scale = 0.0
-
 [node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
 position = Vector2( -96, -236 )
 rotation = 1.5708
@@ -78,33 +47,73 @@ position = Vector2( -478, -175 )
 rotation = 1.5708
 gravity_scale = 0.0
 
-[node name="WoodSquare2" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 43, -149 )
-gravity_scale = 0.0
-
-[node name="WoodSquare3" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 47, -216 )
-gravity_scale = 0.0
-
-[node name="WoodLong2" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -41, -380 )
-gravity_scale = 0.0
-
-[node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -39, 48 )
-gravity_scale = 0.0
-
-[node name="WoodRectangle7" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( 58, 48 )
-gravity_scale = 0.0
-
-[node name="WoodRectangle8" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( 61, -21 )
-gravity_scale = 0.0
-
 [node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
 position = Vector2( -97, -30 )
 rotation = 1.5708
+gravity_scale = 0.0
+
+[node name="SteelRectangle" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( -33, -277 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle2" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( -36, -213 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle3" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( -37, -149 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle4" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( -36, -83 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle5" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( -36, -20 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle6" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( -37, 46 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle7" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( 57, 47 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle8" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( 60, -20 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle9" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( -189, 48 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle10" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( -411, -104 )
+gravity_scale = 0.0
+
+[node name="SteelSquare" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 49, -87 )
+gravity_scale = 0.0
+
+[node name="SteelSquare2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 49, -154 )
+gravity_scale = 0.0
+
+[node name="SteelSquare3" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 50, -219 )
+gravity_scale = 0.0
+
+[node name="SteelLong" parent="Bricks" instance=ExtResource( 9 )]
+position = Vector2( -20, -324 )
+gravity_scale = 0.0
+
+[node name="SteelLong2" parent="Bricks" instance=ExtResource( 9 )]
+position = Vector2( -24, -351 )
+gravity_scale = 0.0
+
+[node name="SteelLong3" parent="Bricks" instance=ExtResource( 9 )]
+position = Vector2( -23, -377 )
 gravity_scale = 0.0
 
 [node name="Rabbits" type="Node2D" parent="."]
