@@ -21,8 +21,14 @@ physics_material_override = SubResource( 2 )
 script = ExtResource( 2 )
 health = 50
 
+[node name="Halo" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -34 )
+scale = Vector2( 0.08, 0.08 )
+texture = ExtResource( 5 )
+
 [node name="Body" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -9, 5, -8, -3, -9, -3, -7, -6, -3, -8, 3, -8, 6, -7, 9, -3, 8, -3, 9, 5, 5, 7, -4, 7 )
+polygon = PoolVector2Array( -9, 11, -8, 4, -10, 3, -7, 0, -3, -2, 2, -2, 6, -1, 9, 3, 8, 4, 9, 11, 5, 13, -4, 13 )
 
 [node name="BodySprite" type="Sprite" parent="Body"]
 show_behind_parent = true
@@ -111,9 +117,3 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/EarStuff/EarNeutral2"]
 shape = SubResource( 4 )
-
-[node name="Halo" type="Sprite" parent="."]
-visible = false
-position = Vector2( 0, -34 )
-scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 5 )

@@ -94,11 +94,11 @@ editor_draw_limits = true
 [node name="Rabbits" type="Node2D" parent="."]
 position = Vector2( -82, -15 )
 
-[node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
-position = Vector2( -88, -10 )
-
 [node name="Karen" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -173, -14 )
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
+position = Vector2( -88, -10 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
 position = Vector2( -223, -15 )
