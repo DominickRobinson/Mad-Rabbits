@@ -70,7 +70,7 @@ func ability3():
 		s.modulate = Color.red
 	var e = Egg.instance()
 	e.global_position = global_position + Vector2(0, 25)
-	e.linear_velocity = Vector2(0, 500)
+	e.linear_velocity = Vector2(0, 0)
 	get_tree().get_current_scene().add_child(e)
 	self.linear_velocity.y -= 200
 

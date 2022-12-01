@@ -4,11 +4,11 @@ extends Brick
 const explosion = preload("res://Scenes/Effects/ExplosionTNT.tscn")
 
 func _ready():
-	pass # Replace with function body.
+	angular_velocity = 10
 
 
 
-func destroy_block():
+func on_body_entered(body):
 	var e = explosion.instance()
 	get_tree().current_scene.add_child(e)
 	e.global_position = global_position
