@@ -1,7 +1,7 @@
 extends Node
 
 var rng = RandomNumberGenerator.new()
-var bubble_root = load("res://Scenes/Bubble.tscn")
+onready var bubble_root = preload("res://Scenes/Bubble.tscn")
 
 var Levels = ["ACT I/1-1l", "ACT I/1-2c", "ACT I/1-3l", "ACT I/1-4c", "ACT I/1-5l", "ACT I/1-6c", "ACT I/1-7l" , 
 			  "ACT I/1-8c", "ACT I/1-9l", "ACT I/1-10c", "ACT I/1-11l", "ACT I/1-12c", "ACT I/1-13l", "ACT I/1-14c", 
@@ -173,14 +173,15 @@ func makePOW(node, word, color, location, rng_range):
 	var rand1 = rng.randf_range(-rng_range, rng_range)
 	var rand2 = rng.randf_range(-rng_range, rng_range)
 	var bubble = bubble_root.instance()
-	node.add_child(bubble)
 	bubble = bubble as Control
+	node.add_child(bubble)
 	bubble.text = word
 	bubble.bubble_color = color
 	bubble.update()
 	bubble.rect_global_position = location
 	bubble.rect_position.x += rand1
 	bubble.rect_position.y += rand2
+
 
 
 func get_level():

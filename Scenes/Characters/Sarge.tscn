@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/AbilityPanel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Sarge.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Characters/Right Ear/rightEar0000.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Characters/Bodies/sarge.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Characters/Left Ear/leftEar0000.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Icons/abilities/friendship.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=9]
 
 [sub_resource type="PhysicsMaterial" id=2]
@@ -26,7 +27,6 @@ radius = 2.0
 [node name="Sarge" type="RigidBody2D" groups=["Player", "Rabbits"]]
 physics_material_override = SubResource( 2 )
 script = ExtResource( 2 )
-totalAbilities = 0
 catchphrase_filename = "res://Assets/Sound/Sound effects/oh_yeah.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
@@ -128,36 +128,12 @@ catchphraseOutlineColor = Color( 0.215686, 0.380392, 0.968627, 1 )
 
 [node name="AbilitySelectionPanel" parent="." instance=ExtResource( 9 )]
 
-[node name="VScrollBar2" type="VScrollBar" parent="AbilitySelectionPanel/Control/Container/RichTextLabel" index="0"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-max_value = 58.0
-step = 1.0
-page = 58.0
-
-[node name="VScrollBar3" type="VScrollBar" parent="AbilitySelectionPanel/Control/Container/RichTextLabel" index="1"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
-
-[node name="VScrollBar4" type="VScrollBar" parent="AbilitySelectionPanel/Control/Container/RichTextLabel" index="2"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-max_value = 58.0
-step = 1.0
-page = 58.0
-
-[node name="VScrollBar5" type="VScrollBar" parent="AbilitySelectionPanel/Control/Container/RichTextLabel" index="3"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-step = 1.0
+[node name="Control" parent="AbilitySelectionPanel" index="0"]
+visible = true
 
 [node name="Ability1" parent="AbilitySelectionPanel/Control/Container" index="2"]
 theme = SubResource( 9 )
+icon = ExtResource( 7 )
 
 [node name="Halo" type="Sprite" parent="."]
 visible = false

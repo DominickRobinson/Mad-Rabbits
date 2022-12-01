@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Characters/Chip.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Right Ear/rightEar0003.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Assets/Characters/Bodies/chip.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Characters/Left Ear/leftEar0003.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Effects/Halo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Icons/abilities/expand.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Icons/abilities/ground_pound.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Icons/abilities/egg_drop.png" type="Texture" id=11]
 
 [sub_resource type="ShaderMaterial" id=7]
 
@@ -36,6 +39,7 @@ material = SubResource( 7 )
 mass = 2.0
 physics_material_override = SubResource( 2 )
 script = ExtResource( 1 )
+totalAbilities = 3
 catchphrase_filename = "res://Assets/Sound/Sound effects/fart-meme-sound.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
@@ -236,9 +240,19 @@ catchphraseOutlineColor = Color( 0.619608, 0.231373, 0, 1 )
 
 [node name="AbilitySelectionPanel" parent="." instance=ExtResource( 5 )]
 
+[node name="Ability1" parent="AbilitySelectionPanel/Control/Container" index="2"]
+icon = ExtResource( 9 )
+
+[node name="Ability2" parent="AbilitySelectionPanel/Control/Container" index="4"]
+icon = ExtResource( 10 )
+
+[node name="Ability3" parent="AbilitySelectionPanel/Control/Container" index="6"]
+icon = ExtResource( 11 )
+
 [node name="Halo" parent="." instance=ExtResource( 8 )]
 
 [connection signal="body_entered" from="." to="." method="_bounce"]
 [connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]
 
 [editable path="AbilityPanel"]
+[editable path="AbilitySelectionPanel"]

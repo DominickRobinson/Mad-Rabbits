@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/true-crimes.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Effects/ability_select_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Icons/bookmark2.png" type="Texture" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -30,9 +29,9 @@ modulate = Color( 1, 1, 1, 0.631373 )
 anchor_left = -0.230089
 anchor_top = -0.580645
 anchor_right = 0.765487
-anchor_bottom = 5.69516
+anchor_bottom = 5.86936
 margin_right = 262.5
-margin_bottom = 907.9
+margin_bottom = 933.1
 rect_scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 4 )
 patch_margin_left = 165
@@ -94,28 +93,37 @@ rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
 pressed = true
-icon = ExtResource( 5 )
 flat = true
 expand_icon = true
 
-[node name="Ability2" type="Button" parent="Control/Container"]
+[node name="Control2" type="Control" parent="Control/Container"]
 margin_top = 150.0
 margin_right = 71.0
-margin_bottom = 210.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Ability2" type="Button" parent="Control/Container"]
+margin_top = 164.0
+margin_right = 71.0
+margin_bottom = 224.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
-icon = ExtResource( 5 )
 flat = true
 expand_icon = true
 
-[node name="Ability3" type="Button" parent="Control/Container"]
-margin_top = 214.0
+[node name="Control3" type="Control" parent="Control/Container"]
+margin_top = 228.0
 margin_right = 71.0
-margin_bottom = 274.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Ability3" type="Button" parent="Control/Container"]
+margin_top = 242.0
+margin_right = 71.0
+margin_bottom = 302.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
-icon = ExtResource( 5 )
 flat = true
 expand_icon = true

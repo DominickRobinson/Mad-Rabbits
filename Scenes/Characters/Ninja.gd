@@ -102,11 +102,3 @@ func stop_blur(body):
 	linear_velocity *= speedcrash
 	$Foot.visible = false
 
-func get_all_sprites(in_node,arr:=[]):
-	#print("Currently checking: ", in_node, ". Here are its children: ", in_node.get_children())
-	for child in in_node.get_children():
-		arr = get_all_sprites(child,arr)
-	if in_node is Sprite and in_node.get_name() != "Foot":
-		#(in_node.get_name(), " is a Sprite!!!")
-		arr.push_back(in_node)
-	return arr

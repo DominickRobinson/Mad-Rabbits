@@ -32,7 +32,8 @@ func set_button(button):
 			continue
 		b.pressed = (button == b)
 		if b.pressed:
-			b.modulate = Color.green
+			#b.modulate = Color.green
+			b.modulate = Color.white
 		else:
 			b.modulate = Color.black
 

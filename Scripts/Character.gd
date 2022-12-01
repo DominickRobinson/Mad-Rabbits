@@ -74,5 +74,15 @@ func walk_to(final_x : int = position.x, final_y : int = position.y, time : floa
 
 	linear_velocity = Vector2(0,0)
 	angular_velocity = 0
-	
 	#unfreeze()
+
+
+func get_all_sprites(in_node,arr:=[]):
+	#print("Currently checking: ", in_node, ". Here are its children: ", in_node.get_children())
+	for child in in_node.get_children():
+		arr = get_all_sprites(child,arr)
+	if in_node is Sprite and in_node.get_name() != "Foot":
+		#(in_node.get_name(), " is a Sprite!!!")
+		arr.push_back(in_node)
+	return arr
+

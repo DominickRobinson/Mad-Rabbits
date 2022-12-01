@@ -67,7 +67,6 @@ func _on_body_entered(body):
 			#if body.is_in_group("Player"):
 			#	queue_free()
 			#else:
-			Manager.makePOW(get_tree().get_root(), "dab", Color(0, 1, 0, 0.5), global_position, 25)
 			
 			var damage = abs(body.linear_velocity.length()) + abs(last_linear_velocity.length())
 			#damage *= 0.1
@@ -83,6 +82,7 @@ func _on_body_entered(body):
 func take_damage(amt):
 	if amt <= 5:
 		return
+	Manager.makePOW(get_tree().get_root(), "POW", Color(1, 1, 1, 0.5), global_position, 25)
 	health -= amt
 #	print("Damage: ", amt)
 #	print("Health remaining: ", health)
