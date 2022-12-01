@@ -18,7 +18,7 @@
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 1000.26, 64.25 )
+extents = Vector2( 649, 64.25 )
 
 [node name="GameLoop" type="Node2D" groups=["Level"]]
 script = ExtResource( 18 )
@@ -61,19 +61,19 @@ position = Vector2( -378, 6 )
 [node name="Rabbits" type="Node2D" parent="."]
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 15 )]
-position = Vector2( -215, -37 )
+position = Vector2( -139, -455 )
 
 [node name="Karen" parent="Rabbits" instance=ExtResource( 2 )]
-position = Vector2( -82, -38 )
+position = Vector2( -144, -231 )
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 4 )]
-position = Vector2( -151, -37 )
+position = Vector2( -143, -329 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 13 )]
-position = Vector2( -115, -37 )
+position = Vector2( -142, -276 )
 
 [node name="Rex (good)" parent="Rabbits" instance=ExtResource( 11 )]
-position = Vector2( -185, -37 )
+position = Vector2( -140, -398 )
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )
@@ -98,7 +98,7 @@ position = Vector2( 587, -123 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2( 526, 63 )
+position = Vector2( 373, 63 )
 shape = SubResource( 10 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 8 )]
