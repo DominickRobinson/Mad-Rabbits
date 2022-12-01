@@ -1,46 +1,33 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scenes/AbilityPanel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Characters/Sarge.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Act IV/halo.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Characters/Right Ear/rightEar0000.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Characters/Bodies/sarge.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Characters/Left Ear/leftEar0000.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Icons/abilities/friendship.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Characters/Portraits/Sarge.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Characters/RobotRabbit (enemy).gd" type="Script" id=1]
+[ext_resource path="res://Assets/Act IV/halo.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Characters/Bodies/RobotRedBody.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/Right Ear/rightEar0015.png" type="Texture" id=5]
 
 [sub_resource type="PhysicsMaterial" id=2]
-bounce = 0.4
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=3]
 radius = 11.0
 
-[sub_resource type="CapsuleShape2D" id=10]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 2.0
 height = 12.0
 
-[sub_resource type="CircleShape2D" id=11]
+[sub_resource type="CircleShape2D" id=5]
 radius = 2.0
 
-[sub_resource type="Theme" id=9]
-
-[node name="Sarge" type="RigidBody2D" groups=["Player", "Rabbits"]]
+[node name="RobotRabbit (enemy)" type="RigidBody2D" groups=["Player", "Rabbits"]]
 physics_material_override = SubResource( 2 )
-script = ExtResource( 2 )
-catchphrase_filename = "res://Assets/Sound/Sound effects/oh_yeah.mp3"
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
 
 [node name="Body" type="CollisionShape2D" parent="."]
-shape = SubResource( 6 )
-
-[node name="BodySprite" type="Sprite" parent="Body"]
-show_behind_parent = true
-position = Vector2( -1.05879e-22, -10 )
-scale = Vector2( 0.015, 0.015 )
-texture = ExtResource( 5 )
+shape = SubResource( 3 )
 
 [node name="EarStuff" type="Node2D" parent="Body"]
-position = Vector2( 0.116541, -9.59275 )
+position = Vector2( 1, -9 )
 
 [node name="Ear1" type="RigidBody2D" parent="Body/EarStuff"]
 position = Vector2( -4.119, -3.948 )
@@ -51,14 +38,14 @@ gravity_scale = 0.0
 angular_damp = 15.0
 
 [node name="Collision" type="CollisionShape2D" parent="Body/EarStuff/Ear1"]
-shape = SubResource( 10 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Body/EarStuff/Ear1/Collision"]
 show_behind_parent = true
-position = Vector2( 0, 3.54 )
-scale = Vector2( 0.01, 0.009 )
-texture = ExtResource( 6 )
-offset = Vector2( 300, 0 )
+position = Vector2( 0.00244141, 5.54077 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 5 )
+offset = Vector2( -400, 150 )
 
 [node name="Ear2" type="RigidBody2D" parent="Body/EarStuff"]
 position = Vector2( 3.286, -3.948 )
@@ -69,14 +56,13 @@ gravity_scale = 0.0
 angular_damp = 15.0
 
 [node name="Collision" type="CollisionShape2D" parent="Body/EarStuff/Ear2"]
-shape = SubResource( 10 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Body/EarStuff/Ear2/Collision"]
 show_behind_parent = true
-position = Vector2( 1.234, 1.54 )
-rotation = -0.121585
-scale = Vector2( 0.01, 0.009 )
-texture = ExtResource( 4 )
+position = Vector2( 0.597458, 5.54077 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 5 )
 offset = Vector2( -400, 150 )
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Body/EarStuff"]
@@ -111,7 +97,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/EarStuff/EarNeutral"]
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
 [node name="EarNeutral2" type="StaticBody2D" parent="Body/EarStuff"]
 position = Vector2( 2.885, -7.411 )
@@ -119,27 +105,16 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/EarStuff/EarNeutral2"]
-shape = SubResource( 11 )
+shape = SubResource( 5 )
 
-[node name="AbilityPanel" parent="." instance=ExtResource( 1 )]
-panelColor = Color( 0.266667, 0.301961, 0.337255, 1 )
-catchphrase = "I shall avenge my people..."
-catchphraseOutlineColor = Color( 0.215686, 0.380392, 0.968627, 1 )
-
-[node name="Sprite" parent="AbilityPanel/Control/SpritePanel" index="1"]
-texture = ExtResource( 8 )
-
-[node name="AbilitySelectionPanel" parent="." instance=ExtResource( 9 )]
-
-[node name="Ability1" parent="AbilitySelectionPanel/Control/Container" index="2"]
-theme = SubResource( 9 )
-icon = ExtResource( 7 )
+[node name="BodySprite" type="Sprite" parent="Body"]
+show_behind_parent = true
+position = Vector2( -6.85453e-07, -7.5 )
+scale = Vector2( -0.013, 0.013 )
+texture = ExtResource( 3 )
 
 [node name="Halo" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -34 )
 scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 3 )
-
-[editable path="AbilityPanel"]
-[editable path="AbilitySelectionPanel"]
+texture = ExtResource( 2 )

@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Characters/Rabbit.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sound/Sound effects/Winnie_sound.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Characters/Portraits/winnie.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/AbilityPanel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Characters/winnie.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -22,3 +24,12 @@ shape = SubResource( 12 )
 
 [node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
 stream = ExtResource( 2 )
+
+[node name="AbilityPanel" parent="." instance=ExtResource( 4 )]
+panelColor = Color( 0, 0, 0, 1 )
+catchphraseOutlineColor = Color( 1, 0.352941, 0, 1 )
+
+[node name="Sprite" parent="AbilityPanel/Control/SpritePanel" index="1"]
+texture = ExtResource( 3 )
+
+[editable path="AbilityPanel"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Characters/Karen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Bodies/karen.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/Characters/Left Ear/leftEar0012.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Props/glock.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Effects/Halo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Characters/Portraits/Good ear.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/AbilityPanel.tscn" type="PackedScene" id=11]
 
 [sub_resource type="CapsuleShape2D" id=7]
 radius = 2.0
@@ -280,7 +282,15 @@ anims/fire = SubResource( 6 )
 position = Vector2( 0, -20 )
 scale = Vector2( 0.05, 0.05 )
 
+[node name="AbilityPanel" parent="." instance=ExtResource( 11 )]
+panelColor = Color( 0.219608, 0.435294, 0.254902, 1 )
+catchphrase = "Let me bake you some cookies :D"
+
+[node name="Sprite" parent="AbilityPanel/Control/SpritePanel" index="1"]
+texture = ExtResource( 10 )
+
 [connection signal="body_entered" from="." to="." method="stop_floating"]
 
 [editable path="AbilitySelectionPanel"]
 [editable path="Gun"]
+[editable path="AbilityPanel"]

@@ -96,7 +96,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Control/SpritePanel"]
-position = Vector2( 134, 136 )
-scale = Vector2( 0.12, 0.12 )
+[node name="Sprite" type="TextureRect" parent="Control/SpritePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 17.0
+margin_top = 14.0
+margin_right = -15.0
+margin_bottom = -16.0
 texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
