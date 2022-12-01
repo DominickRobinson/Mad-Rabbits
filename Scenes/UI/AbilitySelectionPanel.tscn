@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/true-crimes.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Effects/ability_select_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Icons/bookmark2.png" type="Texture" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -14,16 +16,35 @@ script = ExtResource( 1 )
 
 [node name="Control" type="Control" parent="."]
 visible = false
-margin_left = 20.0
-margin_top = 14.0
-margin_right = 133.0
-margin_bottom = 76.0
+margin_left = 37.0
+margin_top = 9.0
+margin_right = 150.0
+margin_bottom = 71.0
 theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0.631373 )
+anchor_left = -0.230089
+anchor_top = -0.580645
+anchor_right = 0.765487
+anchor_bottom = 5.69516
+margin_right = 262.5
+margin_bottom = 907.9
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+patch_margin_left = 165
+patch_margin_top = 173
+patch_margin_right = 157
+patch_margin_bottom = 759
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="Panel" type="Panel" parent="Control"]
+visible = false
 margin_left = -7.0
 margin_top = -4.0
 margin_right = 77.0
@@ -34,6 +55,7 @@ __meta__ = {
 }
 
 [node name="Panel2" type="Panel" parent="Control"]
+visible = false
 margin_left = -7.0
 margin_top = -4.0
 margin_right = 77.0
@@ -45,7 +67,7 @@ __meta__ = {
 
 [node name="Container" type="VBoxContainer" parent="Control"]
 anchor_right = 0.637168
-anchor_bottom = 4.03226
+margin_right = -7.62939e-06
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -72,6 +94,7 @@ rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
 pressed = true
+icon = ExtResource( 5 )
 flat = true
 expand_icon = true
 
@@ -82,6 +105,7 @@ margin_bottom = 210.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
+icon = ExtResource( 5 )
 flat = true
 expand_icon = true
 
@@ -92,5 +116,6 @@ margin_bottom = 274.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
+icon = ExtResource( 5 )
 flat = true
 expand_icon = true

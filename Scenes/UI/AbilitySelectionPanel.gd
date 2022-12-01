@@ -6,12 +6,16 @@ var buttons
 func _ready() -> void:
 	toggle_visibility(false)
 	buttons = $Control/Container.get_children()
-	for button in buttons:
-		if button is Button:
-			button.connect("pressed", self, "_on_Button_pressed", [button])
-			if get_button_number(button) > get_parent().totalAbilities:
-				button.hide()
-	
+	if get_parent().totalAbilities == 0:
+		$Control/NinePatchRect.hide()
+		$Control/Container.hide()
+	else:
+		for button in buttons:
+			if button is Button:
+				button.connect("pressed", self, "_on_Button_pressed", [button])
+				if get_button_number(button) > get_parent().totalAbilities:
+					button.hide()
+					$Control/NinePatchRect.rect_size.y -= 250
 	set_button($Control/Container/Ability1)
 
 func _on_Button_pressed(button: Button) -> void:

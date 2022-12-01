@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Act I/Plains/Training grounds.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Blocks/Ice/IceRectangle.tscn" type="PackedScene" id=4]
@@ -38,6 +38,21 @@ MaxLaunchVelocity = 600
 [node name="Bricks" type="Node2D" parent="."]
 position = Vector2( 910, -84 )
 
+[node name="IceRectangle" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -340, 42 )
+
+[node name="IceRectangle2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -176, 45 )
+
+[node name="IceSuperLong" parent="Bricks" instance=ExtResource( 7 )]
+position = Vector2( -231, 0 )
+
+[node name="TNT" parent="Bricks" instance=ExtResource( 9 )]
+position = Vector2( -327, -30 )
+
+[node name="IceSuperLong2" parent="Bricks" instance=ExtResource( 7 )]
+position = Vector2( -431, 2 )
+
 [node name="Rabbits" type="Node2D" parent="."]
 
 [node name="Karen" parent="Rabbits" instance=ExtResource( 2 )]
@@ -50,30 +65,13 @@ position = Vector2( -150, -27 )
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 532, -38 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 709, -40 )
 
-[node name="IceRectangle" parent="Bears/Bear2" instance=ExtResource( 4 )]
-position = Vector2( -86, 5 )
-
-[node name="IceRectangle" parent="Bears/Bear2/IceRectangle" instance=ExtResource( 4 )]
-position = Vector2( 164, 3 )
-
-[node name="IceSuperLong" parent="Bears/Bear2/IceRectangle" instance=ExtResource( 7 )]
-position = Vector2( 109, -42 )
-
-[node name="Bear" parent="Bears/Bear2/IceRectangle" instance=ExtResource( 5 )]
-position = Vector2( 13, -114 )
-
-[node name="TNT" parent="Bears/Bear2/IceRectangle" instance=ExtResource( 9 )]
-position = Vector2( 13, -72 )
-
-[node name="IceSuperLong" parent="Bears/Bear2" instance=ExtResource( 7 )]
-position = Vector2( -177, -35 )
+[node name="Bear3" parent="Bears" instance=ExtResource( 5 )]
+position = Vector2( 636, -149 )
 
 [node name="Ground" type="Node2D" parent="."]
 

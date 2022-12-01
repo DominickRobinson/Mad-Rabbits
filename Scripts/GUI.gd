@@ -10,6 +10,7 @@ var children = [Score, EndOfLevel]
 func _ready():
 	#EndOfLevel.visible = false
 	$GameplayUtilityBar.visible = true
+	$PageNumber.visible = true
 	pass
 
 func PopupLevelCompleted(win):

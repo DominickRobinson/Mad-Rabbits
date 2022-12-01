@@ -4,6 +4,8 @@ export (int) var speedboost := 6
 export (float) var speedcrash := -.25
 export (float) var chain_pull := 105
 
+export (float) var kickSpin := 40
+
 onready var MotionBlurShader = preload("res://Assets/Shaders/motion_blur.tres")
 
 var blur = false
@@ -58,6 +60,14 @@ func ability3():
 #	$Chain.visible = true
 #	$Chain.shoot(get_viewport().get_mouse_position() - get_viewport().size * 0.5)
 	pass
+
+
+func ThrowRabbit():
+	mode = RigidBody2D.MODE_RIGID
+	state = RabbitState.thrown
+	showAbilitySelection(false)
+	if currentAbility == 2:
+		initial_angular_velocity = kickSpin
 
 
 func newNinja(offset, color, vel_mult):
