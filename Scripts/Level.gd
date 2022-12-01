@@ -43,8 +43,8 @@ func _ready():
 	else:
 		Physics2DServer.area_set_param(get_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
 		
-	print(space_level)
-	print(Physics2DServer.area_get_param(get_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR))
+#	print(space_level)
+#	print(Physics2DServer.area_get_param(get_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR))
 
 
 func slowdown(p=0.2):

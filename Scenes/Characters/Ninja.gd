@@ -101,4 +101,5 @@ func stop_blur(body):
 	#shrinks velocity
 	linear_velocity *= speedcrash
 	$Foot.visible = false
+	disconnect("body_entered", self, "stop_blur")
 

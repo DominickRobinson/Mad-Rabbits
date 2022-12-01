@@ -6,7 +6,7 @@ var blur = false
 export var big_bounces := 10
 export var big_bounce_vel_scale := 1.3
 
-export (int) var speedboost := 1000
+export (int) var speedboost := 1500
 export (float) var speedcrash := -.25
 
 export var rainbow := false
@@ -14,6 +14,9 @@ export var rainbow := false
 onready var RainbowShader = preload("res://Assets/Shaders/rainbow.tres")
 onready var MotionBlurShader = preload("res://Assets/Shaders/motion_blur.tres")
 onready var Egg = preload("res://Scenes/Egg.tscn")
+onready var Smoke = preload("res://Scenes/Effects/GunSmoke.tscn")
+const explosion = preload("res://Scenes/Effects/ExplosionTNT.tscn")
+
 
 var sprites : Array
 
@@ -111,7 +114,7 @@ func blur():
 	blur = true
 	for s in sprites:
 		var dir = linear_velocity.angle()
-		#dir  = rotation - dir
+		dir  = rotation - dir
 		var shaderDir = Vector2(cos(dir), sin(dir))
 		s.get_material().set_shader_param("dir", shaderDir/2)
 
@@ -122,3 +125,24 @@ func stop_blur(body):
 		s.get_material().set_shader_param("dir", Vector2(0,0))
 	#shrinks velocity
 	linear_velocity *= speedcrash
+	make_explosion(0.5, 1.5)
+	disconnect("body_entered", self, "stop_blur")
+
+
+
+func make_explosion(s,s2):
+	var e = explosion.instance()
+	e.global_position = global_position
+	e.scale *= s
+	get_tree().get_current_scene().add_child(e)
+	shoot_smoke(s2)
+	shoot_smoke(s2*1.5)
+
+
+func shoot_smoke(s):
+	var smoke = Smoke.instance()
+	smoke.scale *= s
+	smoke.global_position = global_position
+	smoke.emitting = true
+	get_tree().get_current_scene().add_child(smoke)
+

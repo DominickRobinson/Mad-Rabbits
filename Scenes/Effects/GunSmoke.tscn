@@ -34,8 +34,10 @@ scale_curve = SubResource( 8 )
 color_ramp = SubResource( 4 )
 
 [node name="GunSmoke" type="Particles2D"]
+emitting = false
 amount = 100
 lifetime = 5.0
+one_shot = true
 explosiveness = 0.95
 randomness = 0.4
 local_coords = false

@@ -120,6 +120,10 @@ position = Vector2( -1374, 22 )
 [node name="UFO" parent="Props" instance=ExtResource( 9 )]
 position = Vector2( 1132, -199 )
 
+[node name="StaticBody2D" parent="Props/UFO" index="0"]
+collision_layer = 0
+collision_mask = 0
+
 [node name="Ground" type="Node2D" parent="."]
 position = Vector2( -57, -14 )
 
@@ -128,3 +132,5 @@ physics_material_override = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D2"]
 polygon = PoolVector2Array( -369, -5, -373, -593, 1164, -584, 1167, 10, -369, -3, -636, 262, 1521, 300, 1508, -813, -664, -792, -679, 317 )
+
+[editable path="Props/UFO"]

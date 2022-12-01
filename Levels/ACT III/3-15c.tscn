@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Act III/space2.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
@@ -21,6 +21,60 @@
 resource_name = "cutscene"
 length = 20.0
 step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Props/UFO:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.04, 9.99 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 145, 478 ), Vector2( 750, 300 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+length = 2.0
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath("StaticBody2D/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -20 ), Vector2( 0, 0 ), Vector2( 0, 20 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("StaticBody2D/Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1 ), Vector2( 1, 1 ), Vector2( 1.05, 1 ), Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1, 1 ), Vector2( 1.05, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("StaticBody2D/Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.625, 1.375, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 3.0, -2.0, 0.0 ]
+}
 
 [node name="3-15" type="Node2D"]
 script = ExtResource( 9 )
@@ -71,16 +125,11 @@ position = Vector2( 35, 26 )
 
 [node name="UFO" parent="Props" instance=ExtResource( 10 )]
 position = Vector2( 145, 478 )
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.07, 0.07 )
+engine_on = true
 
 [node name="StaticBody2D" parent="Props/UFO" index="0"]
-mode = 0
 angular_velocity = 20.0
-
-[node name="Sprite" parent="Props/UFO/StaticBody2D" index="1"]
-position = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
 
 [node name="Rabbits2" type="Node2D" parent="Props/UFO/StaticBody2D/Sprite" index="1"]
 modulate = Color( 1, 1, 1, 0.521569 )
@@ -121,9 +170,66 @@ texture = ExtResource( 13 )
 [node name="ear2" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit3"]
 texture = ExtResource( 15 )
 
-[node name="Sprite" type="Sprite" parent="Props"]
-position = Vector2( 945, 301 )
+[node name="UFO2" parent="Props" instance=ExtResource( 10 )]
+position = Vector2( 145, 478 )
+scale = Vector2( 0.07, 0.07 )
+
+[node name="StaticBody2D" parent="Props/UFO2" index="0"]
+angular_velocity = 20.0
+
+[node name="CollisionPolygon2D" parent="Props/UFO2/StaticBody2D" index="0"]
+visible = false
+
+[node name="Sprite" parent="Props/UFO2/StaticBody2D" index="1"]
+visible = false
+
+[node name="Rabbits2" type="Node2D" parent="Props/UFO2/StaticBody2D/Sprite" index="1"]
+modulate = Color( 1, 1, 1, 0.521569 )
+position = Vector2( -189.429, -18.0854 )
+rotation = -0.0285647
+scale = Vector2( 2.42131, 2.49987 )
+
+[node name="Rabbit" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2"]
+position = Vector2( 79, 4 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 3 )
+
+[node name="ear1" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit"]
+texture = ExtResource( 4 )
+
+[node name="ear2" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit"]
+texture = ExtResource( 6 )
+
+[node name="Rabbit2" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2"]
+position = Vector2( 41, -1 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 7 )
+
+[node name="ear1" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit2"]
+texture = ExtResource( 12 )
+
+[node name="ear2" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit2"]
+texture = ExtResource( 11 )
+
+[node name="Rabbit3" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2"]
+position = Vector2( 121, -3 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 14 )
+
+[node name="ear1" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit3"]
+texture = ExtResource( 13 )
+
+[node name="ear2" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit3"]
+texture = ExtResource( 15 )
+
+[node name="Sprite2" type="Sprite" parent="Props/UFO2/StaticBody2D" index="2"]
+position = Vector2( 11264.9, -3045.04 )
+rotation = -0.0473889
+scale = Vector2( 14.2456, 14.2856 )
 texture = ExtResource( 16 )
+
+[node name="AnimationPlayer" parent="Props/UFO2" index="1"]
+anims/idle = SubResource( 2 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 8 )]
 position = Vector2( 48, -5 )
@@ -141,3 +247,4 @@ region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [editable path="GUI"]
 [editable path="Props/UFO"]
+[editable path="Props/UFO2"]

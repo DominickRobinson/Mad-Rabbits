@@ -79,9 +79,6 @@ polygon = PoolVector2Array( -190, -10, -172.5, -70, -127.5, -122.5, -67.5, -155,
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
 show_behind_parent = true
-position = Vector2( 0.0166298, 14.0692 )
-rotation = -0.0196448
-scale = Vector2( 1.02963, 1.00002 )
 texture = ExtResource( 1 )
 
 [node name="Engine" type="AnimatedSprite" parent="StaticBody2D/Sprite"]
