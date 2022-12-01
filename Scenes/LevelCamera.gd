@@ -36,6 +36,8 @@ var blur_amount = 0
 var zoomTween
 var posTween
 
+var b = false
+
 func _ready():
 	if not is_instance_valid(background):
 		background = get_parent().get_node("Background2")
@@ -48,22 +50,27 @@ func _ready():
 	add_child(posTween)
 	prepare_signals()
 	set_limits()
-	set_collision_boundaries()
 	
 	yield(get_tree().create_timer(0.1), "timeout")
 	startingPos = global_position
 	startingZoom = zoom
-	
+
 
 
 func _process(delta):
+	if b == false:
+		if Manager.CurrentGameMode == Manager.GameModes.Level:
+			set_collision_boundaries()
+		b = true
+		
 	match currentCameraFollow:
 		FollowMode.following:
 			if is_instance_valid(Manager.last_rabbit_thrown()):
 				global_position = Manager.last_rabbit_thrown().global_position
 			else:
 				currentCameraFollow = FollowMode.notFollowing
-			
+
+
 
 func slowMotion():
 	#zoom_in(slomoZoom, slomoZoomInSpeed)

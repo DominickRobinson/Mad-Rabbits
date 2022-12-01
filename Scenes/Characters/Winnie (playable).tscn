@@ -13,6 +13,7 @@ extents = Vector2( 43.5, 98.5 )
 [node name="Winnie (playable)" type="RigidBody2D" groups=["Player", "Rabbits"]]
 mass = 74.13
 script = ExtResource( 5 )
+totalAbilities = 0
 catchphrase_filename = "res://Assets/Sound/Sound effects/Winnie_sound.mp3"
 
 [node name="Winnie" type="Sprite" parent="."]

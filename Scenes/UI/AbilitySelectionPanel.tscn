@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/true-crimes.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Effects/ability_select_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Icons/bookmark2.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -25,13 +29,15 @@ __meta__ = {
 }
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0.631373 )
-anchor_left = -0.230089
-anchor_top = -0.580645
-anchor_right = 0.765487
-anchor_bottom = 5.86936
-margin_right = 262.5
-margin_bottom = 933.1
+self_modulate = Color( 1, 1, 1, 0.501961 )
+anchor_left = -0.0175781
+anchor_top = -0.475167
+anchor_right = 0.0418945
+anchor_bottom = -0.475167
+margin_left = -29.0137
+margin_top = -121.54
+margin_right = 290.266
+margin_bottom = 1631.46
 rect_scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 4 )
 patch_margin_left = 165
@@ -39,7 +45,7 @@ patch_margin_top = 173
 patch_margin_right = 157
 patch_margin_bottom = 759
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="Control"]
@@ -65,30 +71,36 @@ __meta__ = {
 }
 
 [node name="Container" type="VBoxContainer" parent="Control"]
-anchor_right = 0.637168
-margin_right = -7.62939e-06
+anchor_left = -0.19469
+anchor_top = 0.0806452
+anchor_right = 0.442478
+anchor_bottom = 0.0806452
+margin_left = 10.0
+margin_right = -1.99998
+margin_bottom = 302.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/Container"]
-margin_right = 71.0
-margin_bottom = 58.0
+margin_right = 60.0
+margin_bottom = 36.0
+custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center]AbilitySelect"
+bbcode_text = "[center]Ability[center]Select"
 text = "AbilitySelect"
 fit_content_height = true
 
 [node name="Control" type="Control" parent="Control/Container"]
-margin_top = 62.0
-margin_right = 71.0
-margin_bottom = 82.0
+margin_top = 40.0
+margin_right = 60.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="Ability1" type="Button" parent="Control/Container"]
-margin_top = 86.0
-margin_right = 71.0
-margin_bottom = 146.0
+margin_top = 64.0
+margin_right = 60.0
+margin_bottom = 124.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
@@ -97,15 +109,15 @@ flat = true
 expand_icon = true
 
 [node name="Control2" type="Control" parent="Control/Container"]
-margin_top = 150.0
-margin_right = 71.0
-margin_bottom = 160.0
+margin_top = 128.0
+margin_right = 60.0
+margin_bottom = 138.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Ability2" type="Button" parent="Control/Container"]
-margin_top = 164.0
-margin_right = 71.0
-margin_bottom = 224.0
+margin_top = 142.0
+margin_right = 60.0
+margin_bottom = 202.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
@@ -113,15 +125,15 @@ flat = true
 expand_icon = true
 
 [node name="Control3" type="Control" parent="Control/Container"]
-margin_top = 228.0
-margin_right = 71.0
-margin_bottom = 238.0
+margin_top = 206.0
+margin_right = 60.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Ability3" type="Button" parent="Control/Container"]
-margin_top = 242.0
-margin_right = 71.0
-margin_bottom = 302.0
+margin_top = 220.0
+margin_right = 60.0
+margin_bottom = 280.0
 rect_min_size = Vector2( 60, 60 )
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true

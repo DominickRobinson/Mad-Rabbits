@@ -8,7 +8,7 @@ var totalChars
 
 onready var tween = $Tween
 onready var label = $VBoxContainer/Label
-onready var visibilityButton = $ToggleVisibility
+onready var visibilityButton = $Control/NinePatchRect/ToggleVisibility
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,3 +37,8 @@ func show_all_chars(time):
 func set_visibility(button_pressed):
 	label.visible = button_pressed
 	visible = Options.storytextVisible
+	
+	if not button_pressed:
+		modulate.a8 = 128
+	else:
+		modulate.a8 = 255

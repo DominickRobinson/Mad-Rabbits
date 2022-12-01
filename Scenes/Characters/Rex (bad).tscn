@@ -372,7 +372,8 @@ shape = SubResource( 13 )
 stream = ExtResource( 4 )
 
 [node name="AbilityPanel" parent="." instance=ExtResource( 14 )]
-catchphrase = "..."
+panelColor = Color( 0.215686, 0.215686, 0.215686, 1 )
+catchphrase = "Revenge..."
 
 [node name="Sprite" parent="AbilityPanel/Control/SpritePanel" index="1"]
 texture = ExtResource( 1 )

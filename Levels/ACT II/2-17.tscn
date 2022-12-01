@@ -18,7 +18,7 @@
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 649, 64.25 )
+extents = Vector2( 605.5, 64.25 )
 
 [node name="GameLoop" type="Node2D" groups=["Level"]]
 script = ExtResource( 18 )
@@ -98,7 +98,7 @@ position = Vector2( 587, -123 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2( 373, 63 )
+position = Vector2( 362.5, 63 )
 shape = SubResource( 10 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 8 )]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://carrot_cursor.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Shaders/tree_sway.tres" type="Shader" id=2]
+[ext_resource path="res://Assets/Act II/Cherry Blossoms/Cherry tree 2.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 2 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.126
+shader_param/maxStrength = 0.242
+shader_param/strengthScale = 70.0
+shader_param/interval = 3.5
+shader_param/detail = 2.0
+shader_param/distortion = 0.0
+shader_param/heightOffset = null
+shader_param/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id=9]
+
+[sub_resource type="Gradient" id=10]
+offsets = PoolRealArray( 0, 0.67366, 0.899767 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.819608, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+lifetime_randomness = 0.08
+emission_shape = 1
+emission_sphere_radius = 600.0
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 30.0
+flatness = 0.17
+gravity = Vector3( 200, -10, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.1
+angular_velocity = 217.02
+angular_velocity_random = 0.25
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 200.0
+radial_accel = 100.0
+tangential_accel = -100.0
+angle = 177.8
+angle_random = 0.21
+scale = 0.5
+color_ramp = SubResource( 8 )
+
+[node name="CherryBlossom2" type="Sprite"]
+material = SubResource( 4 )
+texture = ExtResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+material = SubResource( 9 )
+position = Vector2( -1, -64 )
+scale = Vector2( 0.2, 0.2 )
+amount = 3
+lifetime = 3.0
+explosiveness = 0.23
+randomness = 1.0
+process_material = SubResource( 11 )
+texture = ExtResource( 1 )

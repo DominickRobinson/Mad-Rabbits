@@ -26,6 +26,9 @@ export var space_level := false
 
 
 func _ready():
+	if has_node("LevelCamera"):
+		$LevelCamera.current = true
+		
 	get_tree().paused = false
 	Manager.set_level_mode()
 	self.add_to_group("Level")
