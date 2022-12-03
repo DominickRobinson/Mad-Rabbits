@@ -94,6 +94,7 @@ rough = true
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 9 )]
+text = "The gang prevails over all obstacles along their hike up the mountain. They arrive at the bear king’s front gates. Interestingly, no guards stand outside. “This looks like the place! Ninja, I sure hope what you said about never losing to a bear is true,” says Sarge. Ninja replies, “Umm… I mean PSH, OF COURSE IT IS! A proud NINJA BUNNY like ME, LOSE?! IMPOSSIBLE!” The gang opens the unlocked gates and enters the ice palace."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false

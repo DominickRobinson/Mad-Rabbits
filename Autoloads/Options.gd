@@ -4,9 +4,9 @@ extends Node
 var storytextVisible = true
 var storytextNarrator = true
 
-var zoomInDuringAbility = false
+var zoomInDuringAbility = not false
 var soundEffects = true
 
-var abilityCatchphraseVisible = false
+var abilityCatchphraseVisible = not false
 
 var rollMode = true

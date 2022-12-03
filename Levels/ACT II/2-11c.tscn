@@ -1,0 +1,157 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Act II/Dojo/Dojo building.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Act II/Dojo/Cherry level no dojo.png" type="Texture" id=10]
+
+[sub_resource type="Animation" id=2]
+resource_name = "cutscene"
+length = 15.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Rabbits/Ninja")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "VROOM", 10.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 2000, 0 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Rabbits/Chip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.8, 14.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "VROOM", 10.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 2500, 0 ) ],
+"method": "apply_central_impulse"
+}, {
+"args": [ "iunjefh;kEWNMKJzJ<HQE:FLHKJEF>", 10.0 ],
+"method": "speak"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../Rabbits/Sarge")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "VROOM", 10.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 2000, 0 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../Rabbits/Karen")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "VROOOM", 10.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 2000, 0 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+
+[node name="2-11" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="GUI" parent="." instance=ExtResource( 6 )]
+text = "The gang enters a beautiful cherry-blossom forest. “Wow, this place is beautiful, but where are we going?” asks Sarge. “Oh, you’ll see,” replies Ninja. "
+
+[node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
+margin_top = 0.0
+margin_bottom = 1445.0
+text = "Sarge and Rex walk back to the village after their successful training session. Sarge asks, “Chief Rex, why do we even need to defend ourselves? What do those bad bears want with us? Why can’t we be their friends?” Rex replies, “They are trying to steal all of the carrots in Happy Land to forge an ultimate weapon, the Infinity Carrot, which will grant its wielder an untold power, enough to conquer Happy Land.” Sarge responds, “Wow, that sounds scary!” Rex, “Yes, it is. That is why we cannot lose…” BANG!!! As if on cue, Rex and Sarge hear an explosion in the distance. “The village is under attack!” yells Rex. They race back to the village."
+
+[node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
+margin_top = 1449.0
+margin_bottom = 1449.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
+anims/cutscene = SubResource( 2 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( -3440, -729 )
+
+[node name="Karen" parent="Rabbits" instance=ExtResource( 2 )]
+position = Vector2( 685, 568 )
+
+[node name="Chip" parent="Rabbits" instance=ExtResource( 7 )]
+position = Vector2( 755, 591 )
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 4 )]
+position = Vector2( 614, 557 )
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 3 )]
+position = Vector2( 834, 615 )
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+position = Vector2( 526, 63 )
+polygon = PoolVector2Array( -3712, -234, -3621, -197, -3533, -185, -3473, -193, -3380, -220, -3336, -217, -3055, -135, -3003, -128, -2928, -136, -2834, -156, -2731, -198, -2654, -213, -2595, -216, -2535, -200, -2484, -174, -2433, -134, -2390, -98, -2323, -63, -2270, -42, -2215, -28, -2167, -21, -2118, -20, -2074, -32, -2004, -70, -1932, -112, -1866, -146, -1810, -168, -1749, -186, -1704, -196, -1663, -198, -1599, -197, -1543, -192, -1490, -181, -1409, -155, -1342, -126, -1259, -85, -1176, -46, -1088, -9, -1004, 14, -958, 21, -886, 23, -809, 3, -735, -18, -653, -40, -586, -56, -538, -60, -480, -63, -429, -60, -372, -54, -285, -40, -168, -21, -90, -15, -31, -21, 17, -31, 93, -62, 169, -97, 213, -122, 279, -162, 347, -213, 425, -270, 472, -302, 533, -337, 596, -369, 651, -391, 721, -414, 788, -431, 865, -448, 923, -457, 974, -462, 1085, -463, 1084, 385, -3714, 383 )
+
+[node name="LevelCamera2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1522, -195 )
+zoom = Vector2( 2, 2 )
+editor_draw_limits = true
+
+[node name="Props" type="Node2D" parent="."]
+position = Vector2( 41, -17 )
+
+[node name="DojoBuilding" type="Sprite" parent="Props"]
+position = Vector2( -647, -270 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/DojoBuilding"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/DojoBuilding/StaticBody2D"]
+position = Vector2( 340.5, 83 )
+polygon = PoolVector2Array( -81.5, 71.5, -80.5, 21.5, -98.5, 17.5, -79.5, 13.5, -65.5, -6, -66.5, -51.5, -102, -56, -99.5, -60, -81, -56, -56.5, -60.5, -20.5, -77.5, -1, -91, 3, -106.5, 6, -96, 33.5, -75, 48.5, -63.5, 82.5, -55, 92, -55, 101.5, -56.5, 102.5, -54, 86.5, -51, 68, -51, 69.5, -5.5, 78, 10, 89.5, 17, 101, 16, 99, 18.5, 81.5, 23, 85, 72 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( -789, -451 )
+scale = Vector2( -3, 3 )
+z_index = -99
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[editable path="GUI"]
+[editable path="GUI/StoryText"]

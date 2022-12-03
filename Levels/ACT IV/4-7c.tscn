@@ -23,6 +23,7 @@ extents = Vector2( 835.344, 64.25 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+text = "“I surrender, chief. I am no match. Just please, spare my friends. It’s me you want,” pleads Sarge. “Sarge, I will offer you one more time to stand down and join me. I don’t want to kill you. But we have to do this. It’s only fair. And besides, there is nothing you can do to stop me. Why not join the right side of history?” explains Rex. Sarge thinks and then answers his former master, “Chief… I’m sorry, but I can’t. Actually, I can’t say that I’m even sorry. You are so wrong. What you are doing is wrong.” Rex sighs, then cocks his glock, and says, “So be it.” He takes aim at Sarge. BANG!"
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false
@@ -92,7 +93,6 @@ position = Vector2( 178, 521 )
 rotation = 0.0854524
 scale = Vector2( -1, 1 )
 mode = 1
-cutsceneMode = true
 show_halo = true
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/battling_god.mp3-989d26eaea1e4dd08bdd71de36fcf124.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/battling_god.mp3"
+dest_files=[ "res://.import/battling_god.mp3-989d26eaea1e4dd08bdd71de36fcf124.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

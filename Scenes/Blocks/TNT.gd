@@ -8,7 +8,7 @@ func _ready():
 
 
 
-func on_body_entered(body):
+func destroy_block():
 	var e = explosion.instance()
 	get_tree().current_scene.add_child(e)
 	e.global_position = global_position

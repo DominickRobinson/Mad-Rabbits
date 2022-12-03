@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/church_death.mp3-147a54ba6bd4e12bc3794d1904371493.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/church_death.mp3"
+dest_files=[ "res://.import/church_death.mp3-147a54ba6bd4e12bc3794d1904371493.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

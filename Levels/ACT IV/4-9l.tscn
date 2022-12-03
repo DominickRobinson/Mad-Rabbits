@@ -1,0 +1,357 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/GoldenSlingshot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Act IV/Honk throne room.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Characters/Rabbit.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Characters/Bear (playable).tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Characters/Winnie (playable).tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Characters/Rex (enemy).tscn" type="PackedScene" id=13]
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/BodySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.237501, -0.8725 ), Vector2( -0.238, -1.5 ), Vector2( -0.238, 0.5 ), Vector2( -0.237501, -0.8725 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "walk"
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/BodySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/BodySprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.0, 25.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "fire"
+length = 11.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( -0.7, 0, 0.55, 1.1, 1.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -90.0, -90.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.55, 0.75, 0.95, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, -5 ), Vector2( 20, -5 ), Vector2( 20, 1 ), Vector2( 20, -5 ), Vector2( 20, -5 ), Vector2( 10, -5 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.55, 1.85, 2.1, 2.45, 2.7, 3.05, 3.4, 3.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "fire_bullet"
+}, {
+"args": [  ],
+"method": "fire_bullet"
+}, {
+"args": [  ],
+"method": "fire_bullet"
+}, {
+"args": [  ],
+"method": "fire_bullet"
+}, {
+"args": [  ],
+"method": "fire_bullet"
+}, {
+"args": [  ],
+"method": "fire_bullet"
+}, {
+"args": [  ],
+"method": "fire_bullet"
+}, {
+"args": [  ],
+"method": "fire_bullet"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0.3, 4.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 2.0
+rough = true
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 835.344, 64.25 )
+
+[node name="4-9" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ -564.0, -366.0, -738.0 ]
+}
+
+[node name="GUI" parent="." instance=ExtResource( 6 )]
+text = "Quickly, terror overtakes Rex. He knows that he is in trouble. Unsure of what else he can do, he runs away, rolling. Scarlett easily catches up with him, however, nailing him with a kick. Rex tries to fight back by shooting his glock at her, but Karen, with her deadly accuracy, shoots all of Rex’s bullets with her own. Rex is out of ammo. He runs again. This time, Chip, using his divine Infinity Carrot energy, summons the fallen. Random civilian rabbits and bears whom Winnie and Rex killed, as well as even Winnie the Pooh himself, appear. “If I’m going to Hell, then I may as well take my revenge and go out with a bang!” says Winnie, who attacks Rex. Rex is damaged, but escapes him. Then, Chip grows to 20x his normal size, and rolls after Rex. He is too fast in his enlarged state, catching up to and squishing Rex like a pancake. Rex is almost defeated. Finally, Sarge catches up to the gang, and, on his command, they all attack Rex at once with an epic team-attack with the power of friendship. Rex screams, “NOOOOOO!!!!” He has been defeated."
+
+[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar8" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="6"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar9" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="7"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 333, 339 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -99
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( 6, -8 )
+
+[node name="Chip" parent="Rabbits" instance=ExtResource( 4 )]
+position = Vector2( 47, 501 )
+rotation = -0.308343
+mode = 1
+gravity_scale = 0.2
+show_halo = true
+rainbow = true
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 8 )]
+position = Vector2( -7.00002, 508 )
+rotation = 0.0806219
+mode = 1
+show_halo = true
+
+[node name="Winnie (playable)" parent="Rabbits" instance=ExtResource( 12 )]
+position = Vector2( -98, 446 )
+rotation = 2.97883
+scale = Vector2( 1, -1 )
+mode = 1
+show_halo = true
+
+[node name="Karen" parent="Rabbits" instance=ExtResource( 5 )]
+position = Vector2( -174, 529 )
+rotation = -0.163115
+mode = 1
+show_halo = true
+
+[node name="AnimationPlayer" parent="Rabbits/Karen" index="2"]
+anims/idle = SubResource( 3 )
+anims/walk = SubResource( 4 )
+
+[node name="VScrollBar2" type="VScrollBar" parent="Rabbits/Karen/AbilitySelectionPanel/Control/Container/RichTextLabel" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+max_value = 36.0
+step = 1.0
+page = 36.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="Rabbits/Karen/AbilitySelectionPanel/Control/Container/RichTextLabel" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="Gun" parent="Rabbits/Karen" index="4"]
+visible = true
+
+[node name="AnimationPlayer" parent="Rabbits/Karen/Gun" index="2"]
+anims/fire = SubResource( 5 )
+
+[node name="VScrollBar2" type="VScrollBar" parent="Rabbits/Karen/AbilityPanel/Control/DialoguePanel/Catchphrase" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="Rabbits/Karen/AbilityPanel/Control/DialoguePanel/Catchphrase" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="Bear" parent="Rabbits" instance=ExtResource( 11 )]
+position = Vector2( -237, 539 )
+mode = 1
+show_halo = true
+
+[node name="Rabbit" parent="Rabbits" instance=ExtResource( 10 )]
+position = Vector2( -288, 542 )
+mode = 1
+show_halo = true
+
+[node name="Ninja2" parent="Rabbits" instance=ExtResource( 8 )]
+position = Vector2( -347, 554 )
+rotation = 0.0806219
+mode = 1
+show_halo = true
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 9 )]
+position = Vector2( -411, 555 )
+rotation = 0.0305653
+mode = 1
+show_halo = true
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( 70, 413 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2( 352, -108 )
+rotation = -0.0698132
+physics_material_override = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( -115.647, 277.609 )
+rotation = 0.00872665
+shape = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 294.958, 139.916, 331.638, 131.454, 369.922, 100.048, 364.739, 16.483, 496.996, 31.746, 539.619, -147.718, 485.603, -249.734, 553.577, -246.986, 686.546, -184.559, 573.237, 131.307, 638.302, 189.988, 639.411, 217.132, 244.139, 221.57, 247.529, 201.758, 289.894, 183.669 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 3 )]
+position = Vector2( 336, 305 )
+zoom = Vector2( 1.6, 1.6 )
+editor_draw_limits = true
+
+[node name="Bricks" type="Node2D" parent="."]
+position = Vector2( 910, -84 )
+
+[node name="Bears" type="Node2D" parent="."]
+position = Vector2( -53, -7 )
+
+[node name="Rex (enemy)" parent="Bears" instance=ExtResource( 13 )]
+position = Vector2( 853, 287 )
+scale = Vector2( -1, 1 )
+health = 1000
+
+[node name="GoldenSlingshot" parent="." instance=ExtResource( 2 )]
+position = Vector2( 192, 525 )
+
+[editable path="GUI"]
+[editable path="Rabbits/Karen"]
+[editable path="Rabbits/Karen/AbilitySelectionPanel"]
+[editable path="Rabbits/Karen/Gun"]
+[editable path="Rabbits/Karen/AbilityPanel"]

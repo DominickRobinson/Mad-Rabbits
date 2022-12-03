@@ -1,14 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/Blocks/TNT.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Egg.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Props/Egg.png" type="Texture" id=2]
 
 [node name="Egg" type="RigidBody2D"]
 mass = 100.0
-gravity_scale = 0.2
+gravity_scale = 0.4
+contacts_reported = 1
+contact_monitor = true
 angular_damp = 0.0
 script = ExtResource( 1 )
-max_health = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.08, 0.08 )
@@ -16,3 +17,5 @@ texture = ExtResource( 2 )
 
 [node name="Collision" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 0, -7, 4, -4, 5, 0, 5, 4, 4, 6, 0, 7, -4, 6, -5, 4, -5, 0, -4, -4 )
+
+[connection signal="body_entered" from="." to="." method="_on_Egg_body_entered"]

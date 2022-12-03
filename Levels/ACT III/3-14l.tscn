@@ -18,10 +18,10 @@
 [node name="3-14" type="Node2D" groups=["Level"]]
 position = Vector2( 4, 33 )
 script = ExtResource( 18 )
-music = "res://Assets/Sound/Music/Prelude-I-Steven-OBrien-Must-Credit-CC-BY-www.steven-obrien.net_.mp3"
 space_level = true
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+text = "As the gang heads for Rex’s space station, some robotic space rabbits ambush the team, trying to break inside of the ship. The gang gears up, and they head outside of the ship to take them down. The gang successfully fends them off, and, thanks to Scarlett’s grappling hook, they don’t drift out into space after attacking the rabbits. They continue for Rex."
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 535, -183 )

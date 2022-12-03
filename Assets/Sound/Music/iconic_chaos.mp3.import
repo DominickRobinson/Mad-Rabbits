@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/iconic_chaos.mp3-3869f6a02bbc3cec0234e1c2925bff23.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/iconic_chaos.mp3"
+dest_files=[ "res://.import/iconic_chaos.mp3-3869f6a02bbc3cec0234e1c2925bff23.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

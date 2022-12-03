@@ -41,12 +41,13 @@ radius = 110.005
 offsets = PoolRealArray( 0, 0.630435, 1 )
 colors = PoolColorArray( 0.27769, 0.406953, 0.914063, 1, 0.576471, 0.721998, 0.94902, 0.952941, 1, 1, 1, 0 )
 
-[node name="GameLoop3" type="Node2D" groups=["Level"]]
+[node name="1-18" type="Node2D" groups=["Level"]]
 position = Vector2( 4, 33 )
 script = ExtResource( 18 )
 music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+text = "“Time for the finishing blow. You should all feel honored, having witnessed my UNLIMITED POWER!” proclaims Winnie. Sarge and Ninja lay in defeat, while Chip attempts to roll away. However, no one can escape King Winnie the Pooh’s signature Infinite Honey Charge Attack, which sends them all flying off of the cliff. The gang falls down into the Deep and Shimmering Caverns of Epic Beauty below the Icy Mountain of Doom and Freezing Cold, never to be seen again."
 
 [node name="Props" type="Node2D" parent="."]
 position = Vector2( -1063, -676 )

@@ -11,3 +11,6 @@ func _ready():
 	
 	pass
 
+
+func take_damage(amt):
+	pass

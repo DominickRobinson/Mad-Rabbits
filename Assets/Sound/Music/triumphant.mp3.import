@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/triumphant.mp3-94589968165d7cdad5780053359a43c1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/triumphant.mp3"
+dest_files=[ "res://.import/triumphant.mp3-94589968165d7cdad5780053359a43c1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/elegant_happy.mp3-c1358ba40b0eddad0d408c8bd1f1f329.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/elegant_happy.mp3"
+dest_files=[ "res://.import/elegant_happy.mp3-c1358ba40b0eddad0d408c8bd1f1f329.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -30,6 +30,7 @@ extents = Vector2( 835.344, 64.25 )
 script = ExtResource( 6 )
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
+text = "Sarge awakens. \"Ugh... where am I?\" He wanders off, searching for any life, any of his friends, anything..."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/decisive_battle.mp3-725047e696c78687589f9eafa7fc1e97.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/decisive_battle.mp3"
+dest_files=[ "res://.import/decisive_battle.mp3-725047e696c78687589f9eafa7fc1e97.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,6 +1,6 @@
 extends Node2D
 
-export (String, FILE, "*.mp3") var music := ""
+#export (String, FILE, "*.mp3") var music := ""
 
 enum GameState {
 	Start,
@@ -32,7 +32,6 @@ func _ready():
 	get_tree().paused = false
 	Manager.set_level_mode()
 	self.add_to_group("Level")
-	Manager.playMusic(music)
 	if not get_tree().current_scene.is_in_group("Level"):
 		return
 	currentPlayer = Manager.get_player()
@@ -50,12 +49,14 @@ func _ready():
 func slowdown(p=0.2):
 	Engine.time_scale = p
 	Manager.dampAllAudio(p)
-	Manager.findCamera().slowMotion()
+	if Manager.findCamera() != null:
+		Manager.findCamera().slowMotion()
 	
 func speedup():
 	Manager.normalAllAudio()
 	Engine.time_scale = 1
-	Manager.findCamera().normalMotion()
+	if Manager.findCamera() != null:
+		Manager.findCamera().normalMotion()
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("slowmo_on"):

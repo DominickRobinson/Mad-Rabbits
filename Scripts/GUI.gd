@@ -1,5 +1,17 @@
 extends CanvasLayer
 
+#export (String, "triumphant", "elegant", "ambient", "happy/slightly chill",
+#				"tense/ominous", "hopeful", "title", "church", "iconic/chaotic",
+#				"villainous", "none") var music := "none"
+
+export (String, "battling_god", "brutal_battle", "chapter_card", "chill_happy", "church_death",
+				"decisive_battle", "elegant_happy", "epic_boss", "fun_piano", "graceful_classical",
+				"iconic_chaoes", "lowkey_sad", "opera", "optimistic_flowy_adventuring", "royal_sophisticated",
+				"sad_choir", "tense_ominous", "title_hopeful", "triumphant", "villain",
+				"none") var music := "none"
+
+
+export (String, MULTILINE) var text := "There once was a rabbit..."
 
 onready var Score = $Score
 onready var EndOfLevel = $EndOfLevel
@@ -8,10 +20,16 @@ onready var pauseMenu = $PauseMenu
 var children = [Score, EndOfLevel]
 
 func _ready():
+#	Manager.play_music(music)
+	play_music()
+	$StoryText/VBoxContainer/Label.text = text
+	if text == "":
+		$StoryText.visible = false
 	#EndOfLevel.visible = false
 	$GameplayUtilityBar.visible = true
 	$PageNumber.visible = true
 	pass
+
 
 func PopupLevelCompleted(win):
 	EndOfLevel.popupLevelCompleted(win)
@@ -26,3 +44,10 @@ func showOnlyOneChild(child):
 
 func pause(toggle):
 	pauseMenu.set_is_paused(toggle)
+
+func play_music():
+	var song_filename = "res://Assets/Sound/Music/" + music + ".mp3"
+#	song_filename =  "res://Assets/Sound/Music/iconic_chaos.mp3"
+	#print(song_filename)
+	$Music.stream = load(song_filename)
+	$Music.play()

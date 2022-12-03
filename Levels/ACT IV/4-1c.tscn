@@ -92,7 +92,7 @@ step = 1.0
 anims/cutscene = SubResource( 1 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 333, 339 )
+position = Vector2( 332, 339 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -99
 texture = ExtResource( 6 )
@@ -112,7 +112,7 @@ show_halo = true
 rainbow = true
 
 [node name="Honkey (enemy)" parent="Rabbits" instance=ExtResource( 7 )]
-position = Vector2( 754, 128 )
+position = Vector2( 742, 135 )
 
 [node name="Ground" type="Node2D" parent="."]
 position = Vector2( 70, 413 )
@@ -130,9 +130,8 @@ shape = SubResource( 2 )
 polygon = PoolVector2Array( 294.958, 139.916, 331.638, 131.454, 335.893, 70.6027, 363.176, 67.4983, 368.61, 32.7928, 477.045, 30.3509, 555.405, -215.783, 611.896, -220.854, 683.275, -180.778, 581.67, 53.7061, 609.763, 67.6998, 573.237, 131.307, 638.302, 189.988, 639.411, 217.132, 244.139, 221.57, 247.529, 201.758, 289.894, 183.669 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 4 )]
-position = Vector2( -483, -265 )
-anchor_mode = 0
-zoom = Vector2( 1.6, 1.6 )
+position = Vector2( 328, 274 )
+zoom = Vector2( 1.55, 1.55 )
 editor_draw_limits = true
 
 [editable path="GUI"]

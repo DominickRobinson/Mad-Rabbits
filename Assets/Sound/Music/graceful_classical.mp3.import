@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/graceful_classical.mp3-ef17d00af24edbe19c9dc544606c3935.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/graceful_classical.mp3"
+dest_files=[ "res://.import/graceful_classical.mp3-ef17d00af24edbe19c9dc544606c3935.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

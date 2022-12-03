@@ -89,6 +89,8 @@ func despawnConditionsMet():
 
 
 func useAbility():
+	if totalAbilities == 0:
+		return
 	#dont use if ability already used
 	if ability_used:
 		return false
@@ -136,6 +138,8 @@ func set_ability(num):
 	currentAbility = num
 
 func ability():
+	if totalAbilities == 0:
+		return
 	match currentAbility:
 		1:	ability1()
 		2:	ability2()

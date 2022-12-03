@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Act I/Farmland/Farm field.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=15]
@@ -20,12 +21,15 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000.26, 64.25 )
 
-[node name="GameLoop3" type="Node2D" groups=["Level"]]
+[node name="1-7" type="Node2D" groups=["Level"]]
 position = Vector2( 4, 33 )
 script = ExtResource( 2 )
-music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 17 )]
+text = "Sarge and Chip travel across the lands. They encounter more bears and fight them. “You know, Chip, I’m happy that I was able to help you out back there,” says Sarge, “I failed my own people, and now they are all gone…” Chip frowns and is sad. Sarge continues, “But that is why I want to fight. I don’t want this to happen to anyone else.” “UEBFUBEG,” says Chip."
+
+[node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
+text = "Sarge and Chip travel across the lands. They encounter more bears and fight them. “You know, Chip, I’m happy that I was able to help you out back there,” says Sarge, “I failed my own people, and now they are all gone…” Chip frowns and is sad. Sarge continues, “But that is why I want to fight. I don’t want this to happen to anyone else.” “UEBFUBEG,” says Chip."
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 346, -256 )
@@ -130,10 +134,14 @@ zoom = Vector2( 1.1, 1.1 )
 editor_draw_limits = true
 
 [node name="Rabbits" type="Node2D" parent="."]
-position = Vector2( -199, -491 )
+position = Vector2( -211, -487 )
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 9 )]
-position = Vector2( 30, 475 )
+position = Vector2( 118, 474 )
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 12 )]
+position = Vector2( 46, 477 )
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
 [node name="Ground" type="Node2D" parent="."]
 position = Vector2( -219, 4 )
@@ -159,35 +167,29 @@ MaxLaunchVelocity = 800
 position = Vector2( 910, -84 )
 
 [node name="WoodSquare" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -523, -13 )
-
-[node name="WoodLong" parent="Bricks" instance=ExtResource( 18 )]
-position = Vector2( -201, 55 )
+position = Vector2( -538, 55 )
 
 [node name="WoodRectangle3" parent="Bricks" instance=ExtResource( 10 )]
-position = Vector2( -443, -77 )
+position = Vector2( -398, -63 )
 
-[node name="WoodRectangle4" parent="Bricks" instance=ExtResource( 10 )]
-position = Vector2( -350, -144 )
+[node name="Sprite" parent="Bricks/WoodRectangle3" index="0"]
+scale = Vector2( 0.32, 0.16 )
 
-[node name="WoodRectangle7" parent="Bricks" instance=ExtResource( 10 )]
-position = Vector2( -348, -78 )
-
-[node name="WoodRectangle8" parent="Bricks" instance=ExtResource( 10 )]
-position = Vector2( -442, -142 )
+[node name="CollisionBody2D" parent="Bricks/WoodRectangle3" index="1"]
+position = Vector2( 4.5, 0 )
 
 [node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -439, -270 )
+position = Vector2( -440, -204 )
 rotation = 1.5708
 
 [node name="WoodSquare2" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -521, 47 )
+position = Vector2( -627, 57 )
 
 [node name="WoodLong2" parent="Bricks" instance=ExtResource( 18 )]
-position = Vector2( -398, -387 )
+position = Vector2( -399, -321 )
 
 [node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( -350, -268 )
+position = Vector2( -351, -202 )
 rotation = 1.5708
 
 [node name="Corn" parent="Bricks" instance=ExtResource( 7 )]
@@ -251,22 +253,26 @@ position = Vector2( -354, -10000 )
 gravity_scale = 0.2
 
 [node name="SteelRectangle" parent="Bricks" instance=ExtResource( 5 )]
-position = Vector2( -353, 47 )
+position = Vector2( -343, 62 )
 
 [node name="SteelRectangle2" parent="Bricks" instance=ExtResource( 5 )]
-position = Vector2( -445, 50 )
+position = Vector2( -442, 61 )
 
 [node name="SteelRectangle3" parent="Bricks" instance=ExtResource( 5 )]
-position = Vector2( -443, -14 )
+position = Vector2( -442, -1 )
 
 [node name="SteelRectangle4" parent="Bricks" instance=ExtResource( 5 )]
-position = Vector2( -352, -16 )
+position = Vector2( -344, 1 )
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 8 )]
-position = Vector2( 570, -269 )
+position = Vector2( 569, -203 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 8 )]
 position = Vector2( 759, -62 )
+
+[editable path="GUI"]
+[editable path="GUI/StoryText"]
+[editable path="Bricks/WoodRectangle3"]

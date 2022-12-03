@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tense_ominous.mp3-c383d2cbcebab822ac2bc726f7164158.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/tense_ominous.mp3"
+dest_files=[ "res://.import/tense_ominous.mp3-c383d2cbcebab822ac2bc726f7164158.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -10,13 +10,19 @@ onready var tween = $Tween
 onready var label = $VBoxContainer/Label
 onready var visibilityButton = $Control/NinePatchRect/ToggleVisibility
 
+export var disable := false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	label.text = "     " + label.text
+	if disable:
+		queue_free()
+	#label.text = "     " + label.text
+	yield(get_tree().create_timer(0.1), "timeout")
 	totalChars = len(label.text)
+	print(totalChars)
 	label.visible_characters = 0
 	set_visibility(visibilityButton.pressed)
-	show_all_chars(totalChars * 0.05)
+	show_all_chars(totalChars * 0.025)
 
 
 func _process(delta):

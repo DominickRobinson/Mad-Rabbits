@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Props/Slingshot2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Props/Slingshot1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Shaders/rainbow.tres" type="Shader" id=5]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 5 )
+shader_param/strength = 0.5
+shader_param/speed = 0.5
+shader_param/angle = 0.0
+
+[node name="GoldenSlingshot" type="Node2D"]
+
+[node name="LeftLine" type="Line2D" parent="."]
+z_index = 1
+points = PoolVector2Array( 7.99999, -146, -52, -143 )
+width = 3.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Front" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( -5, -80 )
+scale = Vector2( 0.15, 0.15 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="Back" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( -5, -80 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 2 )
+
+[node name="RightLine" type="Line2D" parent="."]
+points = PoolVector2Array( -29, -138, -52, -144 )
+width = 3.0
+default_color = Color( 0, 0, 0, 1 )

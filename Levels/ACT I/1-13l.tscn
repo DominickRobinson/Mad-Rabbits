@@ -1,0 +1,393 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Effects/DeathZone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Blocks/Ice/IceSuperLong.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://carrot_cursor.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Act I/Icy mountain/Winnie’s castle.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelRectangle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Shaders/space2.tres" type="Shader" id=12]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Act I/Icy mountain/Mountain.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=16]
+[ext_resource path="res://Assets/Act I/Icy mountain/Snow sky.png" type="Texture" id=18]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 12 )
+shader_param/iterations = 20
+shader_param/formuparam = 1.0
+shader_param/volsteps = 20
+shader_param/stepsize = 0.1
+shader_param/zoom = 0.8
+shader_param/tile = 0.5
+shader_param/speed = 0.001
+shader_param/brightness = 0.002
+shader_param/darkmatter = 0.1
+shader_param/distfading = 0.65
+shader_param/saturation = 0.75
+shader_param/iResolution = Vector2( 192, 192 )
+shader_param/iMouse = Vector2( 0, 0 )
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.86
+rough = true
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1295.64, 140.429 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 2.38455
+height = 39.6375
+
+[node name="1-13" type="Node2D" groups=["Level"]]
+script = ExtResource( 16 )
+
+[node name="GUI" parent="." instance=ExtResource( 14 )]
+music = "brutal_battle"
+text = "Despite freezing cold and unrelenting hail, the gang soldiers on. “Man, it sure is real icy and freezing cold and full of doom here, isn’t it?” says Sarge. Ninja replies, “MAYBE FOR–” but Chip interjects mockingly, “YUVRSYGRYOWUJNNEGINE!” “Yeah, I feel ya, Chipperoni…” says Sarge. As they approach the bear king’s castle, the gang comes across many bear soldiers. They are fighting an uphill battle."
+
+[node name="Background" type="Sprite" parent="."]
+material = SubResource( 4 )
+position = Vector2( 3398, -3621 )
+scale = Vector2( 4.70127, 2.03659 )
+z_index = -99
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Background2" type="Sprite" parent="."]
+position = Vector2( 3466, -369 )
+scale = Vector2( 4.70127, 2.9 )
+z_index = -99
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( -48, -4040 )
+
+[node name="Mountain" type="Sprite" parent="Ground"]
+position = Vector2( 3461, 4272 )
+scale = Vector2( 3.5, 3.5 )
+z_index = -1
+texture = ExtResource( 15 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground/Mountain"]
+position = Vector2( 8.28571, 3.14285 )
+physics_material_override = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/Mountain/StaticBody2D"]
+polygon = PoolVector2Array( -1060.29, -8.57156, -1026, -29.143, -991.143, -52.2858, -940.571, -91.4287, -893.714, -138.286, -870.571, -151.714, -836.286, -195.714, -824.857, -208, -811.428, -210, -779.428, -215.429, -768.857, -214.857, -761.428, -210.857, -744.286, -225.714, -734.286, -257.714, -688.286, -266, -671.143, -294, -632.857, -328.572, -605.714, -362.857, -571.143, -372.286, -540, -418.857, -503.143, -462.286, -470.571, -490.286, -454, -497.714, -437.714, -496.572, -423.429, -477.714, -396, -454.572, -372.286, -435.714, -356.571, -426, -334.571, -420.857, -299.143, -461.429, -280.286, -474.286, -248.286, -476.857, -231.429, -490, -188, -544.286, -164.571, -574, -132, -585.714, 144.857, -573.429, 185.714, -552, 251.714, -458, 338.571, -360, 373.429, -333.429, 474.286, -407.714, 527.143, -455.429, 539.714, -454.286, 552.857, -415.714, 702.571, -286.857, 768.571, -258.286, 826.286, -185.429, 948.857, -103.143, 1029.71, -13.7144, 1048.29, 17.1427 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Mountain/StaticBody2D"]
+position = Vector2( 17.7144, -1693.14 )
+shape = SubResource( 3 )
+
+[node name="Slingshot" parent="." instance=ExtResource( 6 )]
+position = Vector2( 36, 35 )
+MaxLaunchVelocity = 600
+
+[node name="Bricks" type="Node2D" parent="."]
+position = Vector2( 910, -84 )
+
+[node name="SteelSuperLong4" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( -500, -145 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong7" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( -348, -304 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong8" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 707, -1082 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong9" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 844, -1266 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong10" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1440, -1283 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong11" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1623, -1364 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong12" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( -1151, 225 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong13" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( -683, 18 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong14" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( -617, -132 )
+rotation = 0.201222
+mode = 1
+
+[node name="SteelSuperLong5" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( -336, -345 )
+rotation = 1.99183
+mode = 1
+max_health = 100
+
+[node name="SteelSuperLong6" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 184, -635 )
+rotation = 1.02821
+mode = 1
+max_health = 100
+
+[node name="SteelRectangle" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( -191, -549 )
+rotation = 0.208754
+mode = 1
+
+[node name="SteelRectangle3" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( -28, -539 )
+mode = 1
+
+[node name="SteelRectangle2" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( -109, -540 )
+mode = 1
+
+[node name="SteelRectangle4" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 430, -963 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle5" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 596, -961 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle6" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 515, -962 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle7" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1768, -1554 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle8" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1716, -1461 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle9" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1840, -1659 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle10" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1844, -1708 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle11" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1846, -1754 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle12" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1844, -1798 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle13" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1840, -1851 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle14" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1834, -1911 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle15" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1612, -1761 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle16" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1611, -1817 )
+rotation = 0.0174533
+mode = 1
+
+[node name="SteelRectangle17" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 1557, -1866 )
+rotation = 0.0174533
+mode = 1
+
+[node name="IceSuperLong" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -131, -572 )
+rotation = 0.199581
+mode = 1
+max_health = 100
+
+[node name="IceSuperLong4" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -9, -571 )
+mode = 1
+max_health = 100
+
+[node name="IceSuperLong2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 246, -761 )
+rotation = -0.722267
+mode = 1
+max_health = 100
+
+[node name="IceSuperLong3" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 327, -852 )
+rotation = -0.951403
+mode = 1
+max_health = 100
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( -71, 355 )
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 5 )]
+position = Vector2( -92, -220 )
+linear_damp = 0.15
+totalAbilities = 0
+
+[node name="Sword" type="CollisionShape2D" parent="Rabbits/Sarge"]
+show_behind_parent = true
+position = Vector2( 24, -16 )
+rotation = 0.940108
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Rabbits/Sarge/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="Rabbits/Sarge"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+
+[node name="Bears" type="Node2D" parent="."]
+position = Vector2( -114, -306 )
+
+[node name="Bear" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 890, -227 )
+health = 50
+
+[node name="Bear2" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 1126, -402 )
+mode = 3
+health = 20
+
+[node name="Bear6" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 1440, -798 )
+
+[node name="Bear7" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 1494, -801 )
+
+[node name="Bear8" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 1998, -1207 )
+mode = 3
+
+[node name="Bear9" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 2381, -1056 )
+mode = 3
+
+[node name="Bear10" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 2285, -1011 )
+mode = 3
+
+[node name="Bear11" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 2349, -1021 )
+mode = 3
+
+[node name="Bear12" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 2862, -1739 )
+mode = 3
+
+[node name="Bear18" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 3583, -1509 )
+z_index = 2
+mode = 3
+
+[node name="Bear13" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 2490, -1160 )
+mode = 3
+
+[node name="Bear14" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 2254, -1028 )
+mode = 3
+
+[node name="Bear15" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 2125, -1126 )
+mode = 3
+
+[node name="Bear16" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 2321, -986 )
+mode = 3
+
+[node name="Bear17" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 2201, -1069 )
+mode = 3
+
+[node name="Bear3" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 778, -225 )
+health = 100
+
+[node name="Bear4" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 832, -225 )
+health = 100
+
+[node name="Bear5" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 517, -13 )
+
+[node name="ScreenEffects" parent="." instance=ExtResource( 9 )]
+position = Vector2( -22, 503 )
+
+[node name="Amogus" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5311, -1366 )
+scale = Vector2( -1, 1 )
+mode = 1
+
+[node name="Winnie’sCastle" type="Sprite" parent="."]
+position = Vector2( 3533, -2482 )
+rotation = 0.0417125
+z_index = -1
+texture = ExtResource( 10 )
+
+[node name="DeathZone" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1015, 365 )
+
+[node name="CollisionShape2D" parent="DeathZone" index="0"]
+position = Vector2( 4146.5, 203 )
+
+[node name="DeathZone2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1037, -4045 )
+rotation = 1.55787
+
+[node name="CollisionShape2D" parent="DeathZone2" index="0"]
+position = Vector2( 3503, 177.29 )
+
+[node name="DeathZone3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7487, -4197 )
+rotation = 1.55787
+
+[node name="CollisionShape2D" parent="DeathZone3" index="0"]
+position = Vector2( 3499.96, -747.826 )
+
+[editable path="DeathZone"]
+[editable path="DeathZone2"]
+[editable path="DeathZone3"]

@@ -12,16 +12,19 @@ var can_take_damage = false
 const Kaboom = preload("../Effects/Kaboom.tscn")
 
 #var deathNoise = "res://Assets/Sound/Sound effects/dying.mp3"
-var deathNoise = "res://Assets/Sound/Sound effects/wilhelmscream.mp3"
+export (String, FILE) var deathNoise := "res://Assets/Sound/Sound effects/wilhelmscream.mp3"
 
 func _ready():
 	last_linear_velocity = linear_velocity
+	yield(self,"ready")
+	activate()
+
+func activate():
 	yield(get_tree().create_timer(1.0), "timeout")
-	print(health)
+#	print(self.name, " is ready!")
+	can_take_damage = true
 	contact_monitor = true
 	contacts_reported = 1
-	can_take_damage = true
-	#calculate_yet = true
 	self.connect("body_entered", self, "_on_body_entered")
 
 
@@ -68,9 +71,8 @@ func _on_body_entered(body):
 			#	queue_free()
 			#else:
 			
-			var damage = abs(body.linear_velocity.length()) + abs(last_linear_velocity.length())
+			var damage = abs(body.linear_velocity.length())*body.mass + abs(last_linear_velocity.length())
 			#damage *= 0.1
-			damage *= body.mass
 			take_damage(damage)
 
 				
@@ -80,7 +82,7 @@ func _on_body_entered(body):
 
 
 func take_damage(amt):
-	if amt <= 5:
+	if amt <= 10:
 		return
 	Manager.makePOW(get_tree().get_root(), "POW", Color(1, 1, 1, 0.5), global_position, 25)
 	health -= amt

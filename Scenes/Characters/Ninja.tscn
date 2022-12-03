@@ -42,7 +42,7 @@ shape = SubResource( 4 )
 
 [node name="BodySprite" type="Sprite" parent="Body"]
 show_behind_parent = true
-position = Vector2( -1.05879e-22, -10 )
+position = Vector2( -1.49012e-08, -10 )
 scale = Vector2( 0.013, 0.015 )
 texture = ExtResource( 4 )
 

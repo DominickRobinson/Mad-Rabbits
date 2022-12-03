@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=1]
 [ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=2]
@@ -11,11 +11,41 @@
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Characters/Rex (bad).tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Infinity Carrot.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "cutscene"
 length = 20.0
 step = 0.01
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Rabbits/Rex (bad)")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.79, 1.69 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "HIYA!", 5.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( -2000, 0 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Rabbits/Rex (bad):mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 835.344, 64.25 )
@@ -92,7 +122,6 @@ show_halo = true
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 9 )]
 position = Vector2( -170, 540 )
 mode = 1
-cutsceneMode = true
 show_halo = true
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
@@ -109,6 +138,10 @@ show_halo = true
 [node name="Rex (bad)" parent="Rabbits" instance=ExtResource( 11 )]
 position = Vector2( 826, 295 )
 mode = 1
+
+[node name="Infinity Carrot2" parent="Rabbits/Rex (bad)" instance=ExtResource( 12 )]
+position = Vector2( -17, -9 )
+scale = Vector2( 0.2, 0.2 )
 
 [node name="Ground" type="Node2D" parent="."]
 position = Vector2( 70, 413 )

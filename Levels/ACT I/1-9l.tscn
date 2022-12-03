@@ -13,11 +13,11 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000.26, 64.25 )
 
-[node name="GameLoop3" type="Node2D" groups=["Level"]]
+[node name="1-9" type="Node2D" groups=["Level"]]
 script = ExtResource( 18 )
-music = "res://Assets/Sound/Music/Advent_Chamber_Orchestra_-_04_-_Handel_-_Entrance_to_the_Queen_of_Sheba_for_Two_Oboes_Strings_and_Continuo_allegro.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+text = "Sarge and Chip walk carefully through The Very Scary Dark Woods. They hear twigs snap and bushes rustle, but they ignore them and press on. However, a mysterious ninja bear readies herself from high above in the trees. She pounces at the gang, using her cool ninja ability to split into three to surprise both of them at once!"
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 154, -196 )

@@ -1,0 +1,175 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Rex (bad).tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Act II/Dojo/Cherry level no dojo.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Blocks/Ice/IceSuperLong.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/Ninja (enemy).tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Act II/Dojo/Dojo building.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
+
+[node name="2-7" type="Node2D" groups=["Level"]]
+script = ExtResource( 18 )
+
+[node name="GUI" parent="." instance=ExtResource( 1 )]
+text = ""
+
+[node name="ScreenEffects" parent="." instance=ExtResource( 12 )]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( -789, -451 )
+scale = Vector2( -3, 3 )
+z_index = -99
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Slingshot" parent="." instance=ExtResource( 6 )]
+position = Vector2( -2091, -149 )
+MaxSlingshotPull = 200
+MaxLaunchVelocity = 1000
+
+[node name="Bricks" type="Node2D" parent="."]
+position = Vector2( -677, -214 )
+
+[node name="IceSuperLong" parent="Bricks" instance=ExtResource( 7 )]
+position = Vector2( -419, 65 )
+
+[node name="WoodLong" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -361, 6 )
+rotation = 0.785398
+
+[node name="WoodLong2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -475, 4.00005 )
+rotation = -0.785398
+
+[node name="WoodLong3" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -416, -4.99997 )
+rotation = 1.5708
+
+[node name="WoodRectangle" parent="Bricks" instance=ExtResource( 5 )]
+position = Vector2( -571, 64 )
+rotation = -0.278669
+mode = 1
+
+[node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 5 )]
+position = Vector2( -268, 68 )
+rotation = 0.303539
+mode = 1
+
+[node name="Bricks2" type="Node2D" parent="."]
+position = Vector2( 41, -64 )
+
+[node name="IceSuperLong" parent="Bricks2" instance=ExtResource( 7 )]
+position = Vector2( -427, 55 )
+
+[node name="WoodLong" parent="Bricks2" instance=ExtResource( 4 )]
+position = Vector2( -369, -4.00003 )
+rotation = 0.785398
+
+[node name="WoodLong2" parent="Bricks2" instance=ExtResource( 4 )]
+position = Vector2( -484, -6.99998 )
+rotation = -0.785398
+
+[node name="WoodLong3" parent="Bricks2" instance=ExtResource( 4 )]
+position = Vector2( -424, -15 )
+rotation = 1.5708
+
+[node name="WoodRectangle" parent="Bricks2" instance=ExtResource( 5 )]
+position = Vector2( -548, 99 )
+rotation = 0.285252
+mode = 1
+
+[node name="WoodRectangle2" parent="Bricks2" instance=ExtResource( 5 )]
+position = Vector2( -292, 88 )
+rotation = -0.282194
+mode = 1
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( -2144, -114 )
+
+[node name="Rex (bad)" parent="Rabbits" instance=ExtResource( 2 )]
+position = Vector2( -68, -38 )
+
+[node name="Bears" type="Node2D" parent="."]
+position = Vector2( -1640, -137 )
+
+[node name="Ninja (enemy)" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 581, -33 )
+scale = Vector2( -1, 1 )
+
+[node name="Ninja (enemy)2" parent="Bears" instance=ExtResource( 9 )]
+modulate = Color( 0, 1, 0, 1 )
+position = Vector2( 502, -35 )
+scale = Vector2( -1, 1 )
+
+[node name="Ninja (enemy)5" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 1298, 104 )
+scale = Vector2( -1, 1 )
+
+[node name="Ninja (enemy)6" parent="Bears" instance=ExtResource( 9 )]
+modulate = Color( 0, 1, 0, 1 )
+position = Vector2( 1219, 102 )
+scale = Vector2( -1, 1 )
+
+[node name="Ninja (enemy)7" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 1278, 207 )
+scale = Vector2( -1, 1 )
+
+[node name="Ninja (enemy)8" parent="Bears" instance=ExtResource( 9 )]
+modulate = Color( 0, 1, 0, 1 )
+position = Vector2( 1199, 205 )
+scale = Vector2( -1, 1 )
+
+[node name="Ninja (enemy)9" parent="Bears" instance=ExtResource( 9 )]
+modulate = Color( 0, 0, 1, 1 )
+position = Vector2( 1323, 191 )
+scale = Vector2( -1, 1 )
+
+[node name="Ninja (enemy)10" parent="Bears" instance=ExtResource( 9 )]
+modulate = Color( 0, 0, 1, 1 )
+position = Vector2( 1235, 210 )
+scale = Vector2( -1, 1 )
+
+[node name="Ninja (enemy)3" parent="Bears" instance=ExtResource( 9 )]
+modulate = Color( 0, 0, 1, 1 )
+position = Vector2( 1539, 31 )
+scale = Vector2( -1, 1 )
+
+[node name="Ninja (enemy)4" parent="Bears" instance=ExtResource( 9 )]
+modulate = Color( 0, 1, 0, 1 )
+position = Vector2( 1558, -108 )
+scale = Vector2( -1, 1 )
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+position = Vector2( 526, 63 )
+polygon = PoolVector2Array( -3712, -234, -3621, -197, -3533, -185, -3473, -193, -3380, -220, -3336, -217, -3055, -135, -3003, -128, -2928, -136, -2834, -156, -2731, -198, -2654, -213, -2595, -216, -2535, -200, -2484, -174, -2433, -134, -2390, -98, -2323, -63, -2270, -42, -2215, -28, -2167, -21, -2118, -20, -2074, -32, -2004, -70, -1932, -112, -1866, -146, -1810, -168, -1749, -186, -1704, -196, -1663, -198, -1599, -197, -1543, -192, -1490, -181, -1409, -155, -1342, -126, -1259, -85, -1176, -46, -1088, -9, -1004, 14, -958, 21, -886, 23, -809, 3, -735, -18, -653, -40, -586, -56, -538, -60, -480, -63, -429, -60, -372, -54, -285, -40, -168, -21, -90, -15, -31, -21, 17, -31, 93, -62, 169, -97, 213, -122, 279, -162, 347, -213, 425, -270, 472, -302, 533, -337, 596, -369, 651, -391, 721, -414, 788, -431, 865, -448, 923, -457, 974, -462, 1085, -463, 1084, 385, -3714, 383 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1052, -434 )
+zoom = Vector2( 2.8, 2.8 )
+editor_draw_limits = true
+
+[node name="Props" type="Node2D" parent="."]
+position = Vector2( 41, -17 )
+
+[node name="DojoBuilding" type="Sprite" parent="Props"]
+position = Vector2( -647, -270 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/DojoBuilding"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/DojoBuilding/StaticBody2D"]
+position = Vector2( 340.5, 83 )
+polygon = PoolVector2Array( -81.5, 71.5, -80.5, 21.5, -98.5, 17.5, -79.5, 13.5, -65.5, -6, -66.5, -51.5, -102, -56, -99.5, -60, -81, -56, -56.5, -60.5, -20.5, -77.5, -1, -91, 3, -106.5, 6, -96, 33.5, -75, 48.5, -63.5, 82.5, -55, 92, -55, 101.5, -56.5, 102.5, -54, 86.5, -51, 68, -51, 69.5, -5.5, 78, 10, 89.5, 17, 101, 16, 99, 18.5, 81.5, 23, 85, 72 )
+
+[editable path="Slingshot"]

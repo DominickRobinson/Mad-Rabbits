@@ -144,6 +144,7 @@ height = 324.301
 script = ExtResource( 6 )
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
+text = "Now that the gang is out of the way, Rex takes over the entire universe. Still, Rex is unsatisfied. He craves more power. “They say that history repeats itself. That is why I will carve my own path. I will become more powerful than any being ever has been. I will become unstoppable. I do this to ensure justice for my people.” Rex sets course in his space station into the unknown regions of the universe."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false
@@ -208,7 +209,6 @@ step = 1.0
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
 margin_top = 0.0
 margin_bottom = 1610.0
-text = "6900 years have passed since the gang’s defeat. In that time, the bear empire rose up and took over the land, enslaving the rabbits, instituting bear supremacy, and making sure that all carrots grown went to Emperor Winnie the Pooh. The kingdom becomes a strict, dystopian dictatorship, as new robot bears are used to surveil its citizens. Yet, rumors of a certain ragtag gang that once challenged Emperor Winnie the Pooh before he rose to power are passed down through the generations, although many dismiss these as unfounded myths meant to inspire hope for a rabbit uprising. Emperor Winnie the Pooh also renames Glad Land to Sad Land, because those rabbits he killed would probably be sad that they got killed."
 
 [node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
 margin_top = 1614.0

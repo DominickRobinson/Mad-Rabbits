@@ -101,6 +101,7 @@ extents = Vector2( 1000.26, 64.25 )
 [node name="1-10" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
+text = "“HAHAHA! GOT YOU!! Only feeble rabbits would get scared. I, NINJA, a PROUD NINJA BUNNY, the most elite of carrot nibblers, I NEVER get scared,” boasts Ninja. “AAAAAAAASDRTFGYAJKjgAAHAHHAFT… ,” Chip retorts. “What are rabbits like you doing out in these woods?” asks Ninja. “You see, we are on a quest to reclaim carrots for all rabbits across the land. The bears attacked my own people, so I must avenge them,” says Sarge. “Pshh, no ninja bunny like myself would ever lose to a bear,” says Ninja. “Well, Ninja, do you think you could help us out? We could certainly use someone who could never lose to a bear!”  asks Sarge. “Well… ok… but only to show you the true power of the NINJA BUNNY,” replies Ninja. “It’s a deal!” exclaims Sarge."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false
@@ -182,13 +183,13 @@ position = Vector2( 529, 65 )
 shape = SubResource( 2 )
 
 [node name="ForegroundPlains" type="Sprite" parent="Ground"]
-position = Vector2( 406.066, -201 )
+position = Vector2( 408.066, -214.999 )
 rotation = -0.0174533
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
 
 [node name="ForegroundPlains2" type="Sprite" parent="Ground"]
-position = Vector2( 1327.07, -213 )
+position = Vector2( 1329.07, -226.999 )
 rotation = 3.14159
 scale = Vector2( 0.5, -0.5 )
 texture = ExtResource( 9 )

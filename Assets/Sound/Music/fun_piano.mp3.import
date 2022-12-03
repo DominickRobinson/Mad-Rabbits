@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fun_piano.mp3-07d3a20d507fa21b20cbbf5b1bba5dea.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/fun_piano.mp3"
+dest_files=[ "res://.import/fun_piano.mp3-07d3a20d507fa21b20cbbf5b1bba5dea.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

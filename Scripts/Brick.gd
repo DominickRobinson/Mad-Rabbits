@@ -18,6 +18,7 @@ func _init():
 	#health = 1000
 	
 	last_linear_velocity = linear_velocity
+	yield(self,"ready")
 	activate()
 	#print("brick")
 #
@@ -25,10 +26,13 @@ func _init():
 #	pass
 
 func activate():
+	yield(get_tree().create_timer(1.0), "timeout")
+#	print(self.name, " is ready!")
 	can_take_damage = true
 	contact_monitor = true
-	contacts_reported = 1
+	contacts_reported = 3
 	self.connect("body_entered", self, "on_body_entered")
+	
 
 func _process(delta):
 	calculate_linear_velocity()
@@ -51,6 +55,7 @@ func calculate_linear_velocity():
 
 
 func on_body_entered(body):
+#	print("hit")
 	if not can_take_damage:
 		return false
 	#print(body)
@@ -68,16 +73,17 @@ func on_body_entered(body):
 			#print(damage)
 			
 			take_damage(damage)
-			Manager.Score += damage
-			#print(health)
-			if health <= 0:
-				destroy_block()
 				
 
 func take_damage(amt):
 	if amt <= 5:
 		return
 	health -= amt
+	Manager.Score += amt
+	#print(health)
+	if health <= 0:
+		destroy_block()
+
 
 func destroy_block():
 	#print("block")

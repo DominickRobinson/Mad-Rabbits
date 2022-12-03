@@ -20,9 +20,9 @@ extents = Vector2( 1000.26, 64.25 )
 [node name="3-11" type="Node2D" groups=["Level"]]
 position = Vector2( 4, 33 )
 script = ExtResource( 18 )
-music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+text = "However, a second wave takes the place of the first. Yet, the gang defeats them as they did the first wave."
 
 [node name="Slingshot" parent="." instance=ExtResource( 6 )]
 MaxSlingshotPull = 150

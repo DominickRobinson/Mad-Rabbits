@@ -18,9 +18,9 @@
 [node name="3-12" type="Node2D" groups=["Level"]]
 position = Vector2( 4, 33 )
 script = ExtResource( 18 )
-music = "res://Assets/Sound/Music/Prelude-I-Steven-OBrien-Must-Credit-CC-BY-www.steven-obrien.net_.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+text = "And yet another wave follows. But again, the gang fights with vigor and passion unseen before. They have newfound power. By the power of friendship, they overcome the entire army. “For Chip,” Sarge says. “For Chip,” the gang repeats in unison."
 
 [node name="Slingshot" parent="." instance=ExtResource( 6 )]
 position = Vector2( -82, -15 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://carrot_cursor.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Act II/Cherry Blossoms/Petal.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Shaders/tree_sway.tres" type="Shader" id=2]
 [ext_resource path="res://Assets/Act II/Cherry Blossoms/Cherry tree 2.png" type="Texture" id=3]
 

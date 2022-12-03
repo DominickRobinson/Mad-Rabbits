@@ -15,6 +15,7 @@ var page
 var img
 var transition_sprite
 
+var flip_left = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,12 +26,12 @@ func change_scene(new_scene:String):
 	var image = get_viewport().get_texture().get_data()
 	image.flip_y()
 	image.save_png("res://transition.png")
+#	print("Change scene - flip_left: ", flip_left)
 	get_tree().change_scene(new_scene)
 	
 	var texture = ImageTexture.new()
 	texture.create_from_image(image)
 	transition_sprite = texture
-
 
 
 

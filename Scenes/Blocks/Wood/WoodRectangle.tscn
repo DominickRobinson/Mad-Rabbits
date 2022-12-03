@@ -9,6 +9,7 @@ extents = Vector2( 45, 30 )
 
 [node name="WoodRectangle" type="RigidBody2D"]
 script = ExtResource( 2 )
+max_health = 200
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -5, 3 )

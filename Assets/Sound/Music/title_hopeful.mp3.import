@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/title_hopeful.mp3-9c58f48760774d6758a98161ccf491ec.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/title_hopeful.mp3"
+dest_files=[ "res://.import/title_hopeful.mp3-9c58f48760774d6758a98161ccf491ec.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

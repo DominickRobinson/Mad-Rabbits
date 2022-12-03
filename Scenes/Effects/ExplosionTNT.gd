@@ -30,3 +30,5 @@ func pushback():
 			
 			if body.has_method("take_damage"):
 				body.take_damage(40)
+		if body.is_in_group("Bears"):
+			body.take_damage(500)

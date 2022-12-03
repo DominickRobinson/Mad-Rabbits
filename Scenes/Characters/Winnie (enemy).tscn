@@ -11,15 +11,15 @@ rough = true
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "bad",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "good",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "bad",
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
@@ -63,6 +63,7 @@ position = Vector2( -0.5, -94.5 )
 shape = SubResource( 6 )
 
 [node name="Halo" type="Sprite" parent="."]
+visible = false
 position = Vector2( 9.53674e-07, -34 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 5 )

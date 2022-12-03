@@ -148,7 +148,6 @@ region_rect = Rect2( 0, 0, 4000, 2000 )
 position = Vector2( 207, 55 )
 scale = Vector2( -1, 1 )
 mode = 1
-cutsceneMode = true
 show_halo = true
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 

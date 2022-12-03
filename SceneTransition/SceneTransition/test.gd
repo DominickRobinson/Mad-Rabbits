@@ -10,7 +10,8 @@ var tex2 := preload("res://Scenes/SceneTransition/book/01.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("loading")
+#	print("loading")
+	pass
 
 func _process(_delta):
 	if Input.is_key_pressed(KEY_SPACE):

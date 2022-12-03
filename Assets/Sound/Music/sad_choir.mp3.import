@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sad_choir.mp3-b31ec10c32260890186297306bc4aeb9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/sad_choir.mp3"
+dest_files=[ "res://.import/sad_choir.mp3-b31ec10c32260890186297306bc4aeb9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

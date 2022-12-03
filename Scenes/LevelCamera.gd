@@ -41,6 +41,8 @@ var b = false
 func _ready():
 	if not is_instance_valid(background):
 		background = get_parent().get_node("Background2")
+	if not is_instance_valid(background):
+		background = get_parent().get_parent().get_node("Background")
 	#global_position = background.global_position
 	currentCameraZoom = ZoomMode.zoomed_out
 	currentCameraFollow = FollowMode.notFollowing
@@ -58,6 +60,7 @@ func _ready():
 
 
 func _process(delta):
+#	print(current)
 	if b == false:
 		if Manager.CurrentGameMode == Manager.GameModes.Level:
 			set_collision_boundaries()
@@ -167,6 +170,8 @@ func prepare_signals():
 
 
 func set_limits():
+	if background == null:
+		return
 	var scale_x = abs(background.scale.x)
 	var scale_y = abs(background.scale.y)
 	limit_left = background.global_position.x - scale_x * background.texture.get_width()/2
@@ -174,13 +179,12 @@ func set_limits():
 	limit_top = background.global_position.y - scale_y * background.texture.get_height()/2
 	limit_bottom = background.global_position.y + scale_y * background.texture.get_height()/2
 	
-	var lims = [limit_left, limit_right, limit_top, limit_bottom]
-	var limc = ['l', 'r', 't', 'b']
-
+#	var lims = [limit_left, limit_right, limit_top, limit_bottom]
+#	var limc = ['l', 'r', 't', 'b']
 #	print("Background texture width: ", background.texture.get_width()/2)
 #	print("Background texture height: ", background.texture.get_height()/2)
-	for x in range(4):
-		print(str(limc[x]), ": ", str(lims[x]))
+#	for x in range(4):
+#		print(str(limc[x]), ": ", str(lims[x]))
 
 
 func set_collision_boundaries():

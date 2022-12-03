@@ -24,6 +24,7 @@ extents = Vector2( 835.344, 64.25 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+text = "Rex turns around. Smoke exhales from Karen’s glock, aimed at Rex. “I think you missed the memo, granny, I am invincible with my Infinity Carrot,” says Rex. “What Infinity Carrot?” replies Karen. On cue, Sarge tackles Rex, knocking it out of his hand. The carrot flies into the air. Rex and Sarge leap, racing to get the Infinity Carrot. But before they can get to it, Scarlett beats them to it with a well-timed jump kick, knocking it further away. The carrot flies high into the air, then it descends. Chip wakes up to see everyone rolling towards him. “Come, children! Come, and you shall be free! For I share the word of God!” exclaims Chip. However, the Infinity Carrot lands right inside of Chip’s mouth! Chip chokes, “WHAT THE HIB HVE LKJVBUBIUPKRE?!?!” Chip’s body glows, and he exudes a new aura of divine energy. The tables have turned."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false
@@ -99,7 +100,6 @@ position = Vector2( 152, 452 )
 rotation = 0.500494
 scale = Vector2( -1, 1 )
 mode = 1
-cutsceneMode = true
 show_halo = true
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
@@ -143,3 +143,4 @@ editor_draw_limits = true
 [editable path="Rabbits/Karen"]
 [editable path="Rabbits/Karen/AbilitySelectionPanel"]
 [editable path="Rabbits/Karen/Gun"]
+[editable path="Rabbits/Karen/AbilityPanel"]

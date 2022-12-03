@@ -22,10 +22,10 @@ bounce = 1.15
 [node name="3-16" type="Node2D" groups=["Level"]]
 position = Vector2( 4, 33 )
 script = ExtResource( 18 )
-music = "res://Assets/Sound/Music/Prelude-I-Steven-OBrien-Must-Credit-CC-BY-www.steven-obrien.net_.mp3"
 space_level = true
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+text = "Karen lands the ship in the hanger. “Alright guys, let’s go take down Rex, once and for all,” Sarge states, “for Chip.” “For Chip!” Karen and Scarlett repeat. They exit the ship."
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 329, -287 )

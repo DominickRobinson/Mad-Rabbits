@@ -19,9 +19,9 @@ extents = Vector2( 1000.26, 64.25 )
 [node name="3-10" type="Node2D" groups=["Level"]]
 position = Vector2( 4, 33 )
 script = ExtResource( 18 )
-music = "res://Assets/Sound/Music/Symphony-no.-40-in-G-minor-K.-550-I.-Molto-Allegro.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+text = "The gang fully trusts Sarge’s leadership. Sarge now has the ability to activate all of the gang members’ abilities on command. The gang fights the first wave."
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 431, -275 )

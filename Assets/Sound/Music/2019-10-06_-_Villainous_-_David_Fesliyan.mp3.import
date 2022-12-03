@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2019-10-06_-_Villainous_-_David_Fesliyan.mp3-b1eab13b827b1e921846ec1b43856119.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/2019-10-06_-_Villainous_-_David_Fesliyan.mp3"
+dest_files=[ "res://.import/2019-10-06_-_Villainous_-_David_Fesliyan.mp3-b1eab13b827b1e921846ec1b43856119.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

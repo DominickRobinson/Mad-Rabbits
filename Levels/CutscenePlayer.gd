@@ -5,6 +5,7 @@ export var AUTO_START := false
 onready var button = $Control/NinePatchRect/Button
 
 func _ready():
+	$Control.visible = true
 	if AUTO_START:
 		button.pressed = true
 

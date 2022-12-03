@@ -61,7 +61,8 @@ func wait(time):
 
 
 func _process(delta):
-	
+#	print(SlingshotState)
+#	print(player.get_name())
 	#print(str(SlingState.pulling))
 	#print(SlingshotState)
 #	if Input.is_action_just_pressed("pull_in_slingshot"):
@@ -186,6 +187,8 @@ func _process(delta):
 
 			#reloads slingshot on button press
 			if Input.is_action_pressed("return_to_slingshot"):
+				if get_tree().get_nodes_in_group("Player").size() <= 1:
+					return
 				nextPlayer()
 				return_to_slingshot()
 
@@ -193,7 +196,7 @@ func _process(delta):
 		SlingState.reset:
 			var lives = get_tree().get_nodes_in_group("Player")
 			
-			if lives.size() > 0:
+			if lives.size() >= 1:
 				player = lives[0]
 				#$Tween.interpolate_property(player, "global_position", player.position, CenterOfSlingshotGlobal, 0.1)
 				#$Tween.start()
@@ -214,7 +217,8 @@ func reset_slingshot():
 	
 
 func return_to_slingshot():
-	
+#	if Manager.get_number_of_rabbits_left() <= 0:
+#		return
 	SlingshotState = SlingState.reset
 	
 	#var cams = get_tree().get_nodes_in_group("Cameras")
@@ -226,13 +230,16 @@ func return_to_slingshot():
 
 #finds next available character in line
 func nextPlayer():
+#	if Manager.get_number_of_rabbits_left() <= 0:
+#		return
 	#removes ability catchphrase if still up
 	if is_instance_valid(player):
 		player.hideCatchphrase()
 		player.remove_from_group("Player")
 	
 	#resets camera
-	currentLevel.currentCamera.abilityZoomOut()
+	if Manager.findCamera() != null:
+		currentLevel.currentCamera.abilityZoomOut()
 	if not Manager.slowmo:
 		Manager.speedup()
 		

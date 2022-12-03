@@ -8,7 +8,9 @@
 extents = Vector2( 100, 9.5 )
 
 [node name="SteelSuperLong" type="RigidBody2D"]
+mass = 5.0
 script = ExtResource( 2 )
+max_health = 200
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 13, -1.19209e-07 )

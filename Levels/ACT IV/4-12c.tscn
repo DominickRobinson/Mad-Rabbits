@@ -21,10 +21,12 @@ step = 0.01
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 835.344, 64.25 )
 
-[node name="4-11" type="Node2D"]
+[node name="4-12" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+text = "“Fuenufuefef8h huehg iu3r,” says Chip solemnly. He turns around to the rest of the gang. “Ienriune,” he points at the throne room. Sarge knows what Chip means, “Are you sure you want to stay here, Chip? We are going to miss you.” Chip affirms, “ubefu.” The gang knows that Chip, serving as the new God, will always watch over them and protect them. “Bye Chip, I will miss your incomprehensible blabber,” says Scarlett, crying. “Uergbueirygbiyerg,” remarks Chip. “Soo… ummm… God…. Since I, yanno, helped out in this here final battle, am I going to Heaven?” asks Karen. Chip shakes his head no. He is omniscient now, he knows every war crime she committed. “Aww diggity. Looks like I really gotta use up my retirement funds then.” Winnie opens his mouth to speak, but Chip interrupts, “No.” Winnie closes his mouth and remains silent. 
+Lastly, Chip turns to Sarge. “I’m gonna miss you, buddy. I’m proud of you. Thank you, Chip,” thanks Sarge, who nods his head. Chip smiles, and says, “urwungune.” Everyone is crying, but they are happy. The gang starts to fade away. Sarge says, “For Chip!” In unison, the gang says, “For Chip!” They are gone. "
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false
@@ -91,7 +93,6 @@ position = Vector2( 359, 514 )
 rotation = 0.0305653
 scale = Vector2( -1, 1 )
 mode = 1
-cutsceneMode = true
 show_halo = true
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
@@ -158,3 +159,4 @@ editor_draw_limits = true
 [editable path="Rabbits/Karen"]
 [editable path="Rabbits/Karen/AbilitySelectionPanel"]
 [editable path="Rabbits/Karen/Gun"]
+[editable path="Rabbits/Karen/AbilityPanel"]

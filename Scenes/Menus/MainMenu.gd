@@ -16,7 +16,7 @@ func _ready():
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("ability"):
-		print("hello")
+#		print("hello")
 		$AnimationPlayer.advance(100.0)
 
 
@@ -29,5 +29,5 @@ func _on_Classic_pressed():
 
 
 func _on_SpinBox_value_changed(value):
-	print(value)
+#	print(value)
 	Manager.LevelIndex = value - 1

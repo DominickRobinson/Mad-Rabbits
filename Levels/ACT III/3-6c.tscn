@@ -1,33 +1,23 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Act III/alien planet/alien6 - chip death.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/Characters/Chip (enemy).tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Act III/alien planet/2206_w023_n003_2469b_p1_2469.jpg" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "cutscene"
 length = 20.0
 step = 0.01
-tracks/0/type = "method"
-tracks/0/path = NodePath("../Rabbits/Sarge")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
-}
 
 [node name="3-6" type="Node2D"]
 script = ExtResource( 7 )
 
 [node name="GUI" parent="." instance=ExtResource( 3 )]
+text = "\"Chip... buddy... no...\" Sarge sobs."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false
@@ -68,44 +58,72 @@ step = 1.0
 [node name="CutscenePlayer" parent="GUI" instance=ExtResource( 2 )]
 anims/cutscene = SubResource( 1 )
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 505, 285 )
-scale = Vector2( 0.5, 0.5 )
-z_index = -99
-texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 4000, 2000 )
-
 [node name="Props" type="Node2D" parent="."]
 
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 669, 373 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -99
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
 [node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( 494, -130 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 4 )]
-position = Vector2( 1266, 217 )
-scale = Vector2( -1, 1 )
-cutsceneMode = true
+position = Vector2( 583, 569 )
+mode = 1
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
-
-[node name="Chip" parent="Rabbits" instance=ExtResource( 5 )]
-position = Vector2( 1219, 210 )
-
-[node name="LevelCamera" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1033, 3 )
-anchor_mode = 0
-zoom = Vector2( 0.5, 0.5 )
-editor_draw_limits = true
 
 [node name="Ground" type="Node2D" parent="."]
 position = Vector2( 368, 542 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
-position = Vector2( -110, 273 )
-rotation = 0.00872665
-polygon = PoolVector2Array( -1257.64, -68.0276, -1064.74, -79.7115, -1077.01, -111.606, -1001.16, -128.268, -889.865, -95.2381, -888.717, -78.2475, -620.753, -83.5861, -628.91, -101.516, -524.01, -113.431, -538.323, -149.308, -450.589, -180.075, -98.3227, -151.148, -107.628, -186.068, 18.3499, -189.167, -7.26871, -259.946, 556.898, -357.873, 659.92, -355.772, 642.733, -262.619, 673.967, -235.89, 660.273, -200.77, 648.212, -207.665, 607.418, -69.3033, 794.577, -51.9358, 804.297, -84.0219, 907.232, -91.9205, 977.265, -88.5315, 1133.61, -49.8943, 1121.85, -21.7906, 1202.97, -8.49805, 1752.6, -53.2961, 1750.2, 129.732, -1247.69, 155.894 )
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
-position = Vector2( 0, 1 )
-polygon = PoolVector2Array( 522, -250, 545, -198, 570, -191, 604, -100, 615, -102, 619, -86, 784, -44, 797, -25, 846, -19, 869, -83, 890, -88, 960, -165, 1036, -172, 1057, -223, 1094, -227, 1141, -249, 1155, -284, 915, -313, 911, -317, 907, -312, 875, -316, 872, -324, 870.025, -317.679, 825, -323, 812, -337, 680, -363, 676, -310, 541, -296, 572, -264 )
+polygon = PoolVector2Array( -1451, 156, -890, 157, -903, 138, -809, 144, -788, 146, -764, 121, -687, 146, -471, 154, -488, 124, 7, 52, 2, 32, 106, 13, 310, 6, 312, -21, 390, -31, 411.659, -27.2293, 793, -104, 740, -45, 715, -44, 710, -31, 784, -24, 756, 36, 811, 39, 786, 62, 770, 114, 750, 120, 714, 103, 692, 98, 686, 53, 636, 157, 585, 193, 545, 180, 531, 76, 497, 192, 634, 224, 673, 204, 913, 236, 931, 245, 1109, 246, 1115, 224, 1124, 226, 1128, 244, 1454, 172, 1489, 192, 1493, 249, 1500, 241, 1551, 237, 2050, 258, 2051, 414, -1447, 409 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 1001, 111, 978, 220, 996, 234, 1047, 235, 1111, 177, 1110, 140, 1092, 140, 1064, 168, 1092, 122, 1087, 95 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 891, 102, 897, 129, 915, 136, 927, 124, 911, 95 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 805, 146, 838, 139, 840, 154, 822, 167, 803, 156 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 950, -66, 958, -108, 999, -138, 1025, -132, 1028, -118, 988, -58 )
+disabled = true
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 1033, -158, 1038, -146, 1056, -138, 1062, -155, 1042, -165 )
+disabled = true
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 1058, -120, 1062, -89, 1090, -108, 1092, -137, 1075, -138 )
+disabled = true
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 1472, -353, 1473, -301, 1464, -287, 1450, -279, 1422, -270, 1422, -270, 1421, -259, 1434, -250, 1441, -272, 1456, -275, 1466, -280, 1503, -271, 1532, -297, 1526, -323, 1505, -366, 1494, -370 )
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 1596, 120, 1620, 146, 1636, 138, 1652, 94, 1645, 86, 1631, 76 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 6 )]
+position = Vector2( 959, 287 )
+anchor_mode = 0
+zoom = Vector2( 0.3, 0.3 )
+editor_draw_limits = true
+
+[node name="Bears" type="Node2D" parent="."]
+position = Vector2( -53, -7 )
+
+[node name="Chip (enemy)" parent="Bears" instance=ExtResource( 1 )]
+position = Vector2( 1184, 438 )
+rotation = 1.5708
+scale = Vector2( -1, 1 )
+mode = 1
+health = 1
 
 [editable path="GUI"]

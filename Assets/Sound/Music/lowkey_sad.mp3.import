@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lowkey_sad.mp3-36651557ed9d5360f1116371d084e0c0.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/lowkey_sad.mp3"
+dest_files=[ "res://.import/lowkey_sad.mp3-36651557ed9d5360f1116371d084e0c0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

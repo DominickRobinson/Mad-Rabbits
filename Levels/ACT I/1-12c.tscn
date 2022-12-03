@@ -74,6 +74,7 @@ extents = Vector2( 1000.26, 64.25 )
 [node name="1-12" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
+text = "After defeating some bears, the gang finally exits the Very Scary Dark Woods, arriving at the base of Icy Mountain of Doom and Freezing Coldness. “Wow, that sure was a very scary and dark forest. Thank goodness we made it out of there,” said Sarge. “Maybe for you it was scary. But for me, as a PROUD NINJA BUNNY, I was not scared for a single second!” replies Ninja. “Wow, that’s impressive. I wish I was as fearless as you,” remarks Sarge. He continues, “Well, it seems that once we climb this mountain, we will arrive at the mean bear base. Let’s go!” The gang begins their hike up the mountain."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false

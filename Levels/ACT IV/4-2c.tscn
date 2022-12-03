@@ -102,7 +102,6 @@ region_rect = Rect2( 0, 0, 4000, 2000 )
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
 position = Vector2( 473, 739 )
 scale = Vector2( -1, 1 )
-cutsceneMode = true
 show_halo = true
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 

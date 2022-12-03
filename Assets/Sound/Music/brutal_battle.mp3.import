@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/brutal_battle.mp3-827c5a40067fa109f65e8dc7256e07f9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/brutal_battle.mp3"
+dest_files=[ "res://.import/brutal_battle.mp3-827c5a40067fa109f65e8dc7256e07f9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

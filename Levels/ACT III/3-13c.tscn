@@ -73,6 +73,7 @@ tracks/3/keys = {
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+text = "Somehow, the gang prevails. Sarge proclaims, “Wait! We can steal one of their ships to get out of here and rematch Rex!” The gang heads to where the troops landed. Karen states,” I know how to drive one of these. They seem to be similar models from Winnie’s army. I can get us out of here. Hopefully there ain’t any space cops out there. I got my license taken away for a DUI!” Karen chugs a beer. “And I ain’t about to get another!” The gang buckles up, and Karen takes off. They follow the ship’s GPS and head for Rex."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false
@@ -118,11 +119,6 @@ position = Vector2( 35, 26 )
 
 [node name="UFO" parent="Props" instance=ExtResource( 10 )]
 position = Vector2( 1086, 504 )
-
-[node name="Sprite" parent="Props/UFO/StaticBody2D" index="1"]
-position = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
 
 [node name="Rabbits2" type="Node2D" parent="Props/UFO/StaticBody2D/Sprite" index="1"]
 modulate = Color( 1, 1, 1, 0.521569 )
