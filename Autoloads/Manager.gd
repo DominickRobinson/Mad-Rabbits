@@ -65,16 +65,17 @@ func _unhandled_input(event):
 
 
 #helper level
-func RestartLevel():
-	#reloads scene
+func reload():
+	ChangeScene.display_flip = false
 	speedup()
-	get_tree().change_scene(ConvertLevelToFile(Manager.LevelIndex))
+	get_tree().reload_current_scene()
 
 #page flip animation - goes to next level in array
 func next_level():
 	speedup()
 	Manager.LevelIndex += 1
 	#RestartLevel()
+	ChangeScene.display_flip = true
 	ChangeScene.flip_left = true
 	if Manager.LevelIndex >= Levels.size():
 		LevelIndex = 0
@@ -87,6 +88,7 @@ func last_level():
 	speedup()
 	Manager.LevelIndex -= 1
 	#RestartLevel()
+	ChangeScene.display_flip = true
 	ChangeScene.flip_left = false
 	if Manager.LevelIndex < 0:
 		Manager.LevelIndex = 0
@@ -97,6 +99,7 @@ func last_level():
 func go_to_level(num):
 	speedup()
 	var old_index = LevelIndex
+	ChangeScene.display_flip = true
 	Manager.LevelIndex = num 
 	#RestartLevel()
 	if Manager.LevelIndex >= Levels.size() or Manager.LevelIndex <= 0 or LevelIndex == old_index:
@@ -122,11 +125,6 @@ func set_level_mode():
 	
 func set_cutscene_mode():
 	CurrentGameMode = GameModes.Cutscene
-
-
-func reload():
-	speedup()
-	get_tree().reload_current_scene()
 
 func quit():
 	speedup()
