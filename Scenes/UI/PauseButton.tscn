@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Icons/pause.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Icons/gear.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/UI/PauseButton.gd" type="Script" id=2]
 
-[node name="PauseButton" type="Control"]
+[node name="SettingsButton" type="Control"]
 anchor_right = 0.0585938
 anchor_bottom = 0.1
 rect_min_size = Vector2( 60, 60 )
@@ -16,6 +16,8 @@ __meta__ = {
 [node name="Button" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -4.95911e-05
+rect_min_size = Vector2( 60, 60 )
 toggle_mode = true
 icon = ExtResource( 1 )
 flat = true

@@ -16,7 +16,7 @@ physics_material_override = SubResource( 4 )
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 3 )
-health = 150
+health = 125
 
 [node name="Right ear" type="Sprite" parent="."]
 position = Vector2( -0.999998, 1 )

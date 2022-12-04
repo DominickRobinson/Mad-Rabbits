@@ -91,6 +91,7 @@ func abilityZoomIn():
 	
 	
 	yield(zoomTween, "tween_completed")
+	yield(posTween, "tween_completed")
 	get_tree().paused = false
 	follow_player()
 
@@ -114,11 +115,11 @@ func unfollow_player():
 
 
 func trackPlayerPosition():
-	posTween.interpolate_property(self, "global_position", null, Manager.get_player().global_position, abilityZoomInSpeed, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	posTween.interpolate_property(self, "global_position", null, Manager.get_player().global_position, abilityZoomInSpeed * Engine.time_scale, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	posTween.start()
 
 func untrackPlayerPosition():
-	posTween.interpolate_property(self, "global_position", null, startingPos, abilityZoomOutSpeed/2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	posTween.interpolate_property(self, "global_position", null, startingPos, abilityZoomOutSpeed * Engine.time_scale/2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	posTween.start()
 
 

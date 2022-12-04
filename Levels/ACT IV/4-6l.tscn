@@ -106,6 +106,7 @@ polygon = PoolVector2Array( 294.958, 139.916, 331.638, 131.454, 391.15, 97.5228,
 
 [node name="LevelCamera" parent="." instance=ExtResource( 3 )]
 position = Vector2( 336, 305 )
+current = false
 zoom = Vector2( 1.6, 1.6 )
 editor_draw_limits = true
 

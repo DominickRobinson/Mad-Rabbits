@@ -118,9 +118,9 @@ anchor_top = -0.475167
 anchor_right = 0.0418945
 anchor_bottom = -0.475167
 margin_left = 120.703
-margin_top = -120.993
+margin_top = -133.993
 margin_right = 440.324
-margin_bottom = 811.007
+margin_bottom = 798.007
 rect_scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 6 )
 patch_margin_left = 165
@@ -132,10 +132,10 @@ __meta__ = {
 }
 
 [node name="ToggleVisibility" type="Button" parent="Control/NinePatchRect"]
-margin_left = 73.3333
-margin_top = 556.667
-margin_right = 433.333
-margin_bottom = 796.667
+margin_left = 70.0
+margin_top = 593.333
+margin_right = 430.0
+margin_bottom = 833.333
 rect_scale = Vector2( 0.5, 0.5 )
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 2 )

@@ -51,10 +51,10 @@ func _process(delta):
 		reload()
 
 func _unhandled_input(event):
-	if Input.is_action_just_pressed("slowmo_on"):
-		slowdown()
-	if Input.is_action_just_pressed("slowmo_off"):
-		speedup()
+#	if Input.is_action_just_pressed("slowmo_on"):
+#		slowdown()
+#	if Input.is_action_just_pressed("slowmo_off"):
+#		speedup()
 	
 	if findCamera() != null:
 		if Input.is_action_just_pressed("zoom_in_test"):
@@ -152,14 +152,14 @@ func playMusic(music):
 func slowdown(p=0.2):
 	Engine.time_scale = p
 	dampAllAudio(p)
-	if findCamera() != null:
-		findCamera().slowMotion()
+#	if findCamera() != null:
+#		findCamera().slowMotion()
 	
 func speedup():
 	normalAllAudio()
 	Engine.time_scale = 1
-	if findCamera() != null:
-		findCamera().normalMotion()
+#	if findCamera() != null:
+#		findCamera().normalMotion()
 
 func dampAllAudio(p=0.2):
 	var audioPlayers = get_tree().get_nodes_in_group("dampable")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Slingshot.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Props/Slingshot2.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Props/Slingshot1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Blocks - SHD/Rocket.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/RabbitControls.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 110.005
@@ -59,4 +60,15 @@ visible = false
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 4 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RabbitControls" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="input_event" from="TouchArea" to="." method="_on_TouchArea_input_event"]
+[connection signal="gui_input" from="CanvasLayer/RabbitControls" to="CanvasLayer/RabbitControls" method="_on_RabbitControls_gui_input"]

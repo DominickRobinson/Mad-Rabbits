@@ -21,7 +21,13 @@ script = ExtResource( 18 )
 text = "“Work on your aim, Sarge!” says Rex, the village chief, “The mean, evil bears could strike at any moment.” “Yes chief!” replies Sarge, who is next in line to become the village chief. Sarge defeats dummy after dummy, while Rex hones his sword skills."
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
+margin_top = 0.0
+margin_bottom = 620.0
 text = "“Work on your aim, Sarge!” says Rex, the village chief, “The mean, evil bears could strike at any moment.” “Yes chief!” replies Sarge, who is next in line to become the village chief. Sarge defeats dummy after dummy, while Rex hones his sword skills."
+
+[node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
+margin_top = 624.0
+margin_bottom = 624.0
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 368, -219 )

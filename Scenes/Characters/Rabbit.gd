@@ -101,6 +101,7 @@ func useAbility():
 	if Options.zoomInDuringAbility and zoom_in[currentAbility] == true:
 		Manager.findCamera().abilityZoomIn()
 		yield(Manager.findCamera().posTween, "tween_completed")
+#		yield(Manager.findCamera().zoomTween, "tween_completed")
 		Manager.slowdown(ability_slowmo_scale)
 
 	#ability
@@ -121,6 +122,8 @@ func useAbility():
 	yield(get_tree().create_timer(zoom_in_duration), "timeout")
 	if not Manager.slowmo:
 		Manager.speedup()
+	else:
+		Manager.slowdown()
 	if Options.zoomInDuringAbility:
 		Manager.get_level().get_camera().abilityZoomOut()
 	hideCatchphrase()

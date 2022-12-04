@@ -135,6 +135,7 @@ shape = SubResource( 10 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 3 )]
 position = Vector2( 275, -255 )
+current = false
 zoom = Vector2( 0.95, 0.95 )
 editor_draw_limits = true
 
