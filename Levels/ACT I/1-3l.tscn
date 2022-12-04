@@ -23,7 +23,6 @@ extents = Vector2( 1000.26, 64.25 )
 
 [node name="1-3" type="Node2D" groups=["Level"]]
 script = ExtResource( 2 )
-music = "res://Assets/Sound/Music/Solemn-Choral-Piece-No.-1.mp3"
 
 [node name="GUI" parent="." instance=ExtResource( 10 )]
 text = "As Rex and Sarge enter the village, Rex instructs Sarge, “The time has come. We have no choice but to fight!” Sarge responds, “Yes chief, I will do my best.” Rex and Sarge fight off the invader bears. "

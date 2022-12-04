@@ -22,8 +22,8 @@ func _ready():
 	page.material.set_shader_param("flip_duration", duration)
 	page.material.set_shader_param("cylinder_ratio", 0.6)
 	page.material.set_shader_param("rect", page.rect_size)
-#	page.material.set_shader_param("flip_left", ChangeScene.flip_left)
-	page.material.set_shader_param("flip_left", true)
+	page.material.set_shader_param("flip_left", ChangeScene.flip_left)
+#	page.material.set_shader_param("flip_left", true)
 #	print("Transition - flip_left: ", ChangeScene.flip_left)
 	page.material.set_shader_param("cylinder_direction", Vector2(5.0, 5.0))
 	
