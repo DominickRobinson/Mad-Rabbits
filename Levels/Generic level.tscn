@@ -18,7 +18,6 @@
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000.26, 64.25 )
 

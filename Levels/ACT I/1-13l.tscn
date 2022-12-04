@@ -60,7 +60,7 @@ texture = ExtResource( 18 )
 region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="Background2" type="Sprite" parent="."]
-position = Vector2( 3466, -369 )
+position = Vector2( 3779, -6.10352e-05 )
 scale = Vector2( 4.70127, 2.9 )
 z_index = -99
 texture = ExtResource( 18 )
@@ -94,13 +94,13 @@ MaxLaunchVelocity = 600
 position = Vector2( 910, -84 )
 
 [node name="SteelSuperLong4" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( -500, -145 )
+position = Vector2( -487, -161 )
 rotation = 0.640815
 mode = 1
 
 [node name="SteelSuperLong7" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( -348, -304 )
-rotation = 0.640815
+position = Vector2( -351, -303 )
+rotation = 0.410152
 mode = 1
 
 [node name="SteelSuperLong8" parent="Bricks" instance=ExtResource( 2 )]
@@ -114,53 +114,50 @@ rotation = 0.640815
 mode = 1
 
 [node name="SteelSuperLong10" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1440, -1283 )
-rotation = 0.640815
+position = Vector2( 1498, -1209 )
+rotation = 0.242601
 mode = 1
 
 [node name="SteelSuperLong11" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1623, -1364 )
+position = Vector2( 1677, -1314 )
 rotation = 0.640815
 mode = 1
 
 [node name="SteelSuperLong12" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( -1151, 225 )
+position = Vector2( -1195, 213 )
 rotation = 0.640815
 mode = 1
 
 [node name="SteelSuperLong13" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( -683, 18 )
+position = Vector2( -680, 24 )
 rotation = 0.640815
 mode = 1
 
 [node name="SteelSuperLong14" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( -617, -132 )
-rotation = 0.201222
+position = Vector2( -562, -95 )
+rotation = 0.546288
 mode = 1
 
 [node name="SteelSuperLong5" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( -336, -345 )
-rotation = 1.99183
+position = Vector2( -269, -366 )
+rotation = 0.703368
 mode = 1
 max_health = 100
 
 [node name="SteelSuperLong6" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 184, -635 )
-rotation = 1.02821
+position = Vector2( 219, -690 )
+rotation = -0.0663225
 mode = 1
 max_health = 100
 
-[node name="SteelRectangle" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( -191, -549 )
-rotation = 0.208754
+[node name="SteelSuperLong15" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 341, -809 )
+rotation = 0.164061
 mode = 1
+max_health = 100
 
 [node name="SteelRectangle3" parent="Bricks" instance=ExtResource( 11 )]
 position = Vector2( -28, -539 )
-mode = 1
-
-[node name="SteelRectangle2" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( -109, -540 )
 mode = 1
 
 [node name="SteelRectangle4" parent="Bricks" instance=ExtResource( 11 )]
@@ -179,70 +176,14 @@ rotation = 0.0174533
 mode = 1
 
 [node name="SteelRectangle7" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1768, -1554 )
+position = Vector2( 1888, -1569 )
 rotation = 0.0174533
 mode = 1
 
 [node name="SteelRectangle8" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1716, -1461 )
+position = Vector2( 1793, -1438 )
 rotation = 0.0174533
 mode = 1
-
-[node name="SteelRectangle9" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1840, -1659 )
-rotation = 0.0174533
-mode = 1
-
-[node name="SteelRectangle10" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1844, -1708 )
-rotation = 0.0174533
-mode = 1
-
-[node name="SteelRectangle11" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1846, -1754 )
-rotation = 0.0174533
-mode = 1
-
-[node name="SteelRectangle12" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1844, -1798 )
-rotation = 0.0174533
-mode = 1
-
-[node name="SteelRectangle13" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1840, -1851 )
-rotation = 0.0174533
-mode = 1
-
-[node name="SteelRectangle14" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1834, -1911 )
-rotation = 0.0174533
-mode = 1
-
-[node name="SteelRectangle15" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1612, -1761 )
-rotation = 0.0174533
-mode = 1
-
-[node name="SteelRectangle16" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1611, -1817 )
-rotation = 0.0174533
-mode = 1
-
-[node name="SteelRectangle17" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( 1557, -1866 )
-rotation = 0.0174533
-mode = 1
-
-[node name="IceSuperLong" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -131, -572 )
-rotation = 0.199581
-mode = 1
-max_health = 100
-
-[node name="IceSuperLong4" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -9, -571 )
-mode = 1
-max_health = 100
 
 [node name="IceSuperLong2" parent="Bricks" instance=ExtResource( 4 )]
 position = Vector2( 246, -761 )
@@ -312,10 +253,6 @@ mode = 3
 
 [node name="Bear11" parent="Bears" instance=ExtResource( 8 )]
 position = Vector2( 2349, -1021 )
-mode = 3
-
-[node name="Bear12" parent="Bears" instance=ExtResource( 8 )]
-position = Vector2( 2862, -1739 )
 mode = 3
 
 [node name="Bear18" parent="Bears" instance=ExtResource( 8 )]
