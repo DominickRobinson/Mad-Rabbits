@@ -22,7 +22,7 @@ var currentAbility = 1
 
 var teamwork_file = "res://Assets/Sound/Sound effects/teamwork.mp3"
 
-
+var zoom_in = {1: true, 2: true, 3: true}
 
 var dying = false
 var deathCounter = 0
@@ -52,6 +52,8 @@ func _init():
 
 
 func _physics_process(delta):
+	#print(angular_velocity)
+	clamp(angular_velocity, -250, 250)
 	if not Options.abilityCatchphraseVisible:
 		if is_instance_valid($AbilityPanel/Control):
 			$AbilityPanel/Control.visible = false
@@ -96,7 +98,7 @@ func useAbility():
 		return false
 	
 	#dramatic zoom in
-	if Options.zoomInDuringAbility:
+	if Options.zoomInDuringAbility and zoom_in[currentAbility] == true:
 		Manager.findCamera().abilityZoomIn()
 		yield(Manager.findCamera().posTween, "tween_completed")
 		Manager.slowdown(ability_slowmo_scale)

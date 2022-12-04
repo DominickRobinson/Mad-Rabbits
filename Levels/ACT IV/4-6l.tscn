@@ -148,7 +148,7 @@ mode = 3
 show_halo = true
 
 [node name="Karen (enemy)" parent="Bears" instance=ExtResource( 10 )]
-position = Vector2( 20, 535 )
+position = Vector2( 34, 534 )
 mode = 3
 show_halo = true
 

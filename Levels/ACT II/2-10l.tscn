@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Characters/Ninja (enemy).tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Rex (bad).tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=8]
@@ -13,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 785.735, 64.25 )
 
-[node name="2-1" type="Node2D" groups=["Level"]]
+[node name="2-10" type="Node2D" groups=["Level"]]
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
@@ -55,31 +56,31 @@ position = Vector2( -431, 10 )
 rotation = 1.5708
 
 [node name="WoodLong5" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -611, -62 )
+position = Vector2( -624, -61 )
+
+[node name="WoodLong7" parent="Bricks" instance=ExtResource( 8 )]
+position = Vector2( -796, -9 )
+
+[node name="WoodLong8" parent="Bricks" instance=ExtResource( 8 )]
+position = Vector2( -797, -98 )
 
 [node name="WoodLong6" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -483, -62 )
+position = Vector2( -469, -62 )
 
 [node name="WoodSquare" parent="Bricks" instance=ExtResource( 9 )]
 position = Vector2( -762, 37 )
 
-[node name="WoodSquare2" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( -763, -24 )
-
 [node name="WoodSquare3" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( -764, -86 )
+position = Vector2( -765, -48 )
 
 [node name="WoodSquare4" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( -771, -149 )
+position = Vector2( -771, -143 )
 
 [node name="WoodSquare5" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( -838, 38 )
-
-[node name="WoodSquare6" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( -831, -26 )
+position = Vector2( -836, 38 )
 
 [node name="WoodSquare7" parent="Bricks" instance=ExtResource( 9 )]
-position = Vector2( -823, -89 )
+position = Vector2( -833, -51 )
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( 178, 6 )
@@ -101,12 +102,12 @@ scale = Vector2( -1, 1 )
 
 [node name="Ninja (enemy)4" parent="Bears" instance=ExtResource( 6 )]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 135, -218 )
+position = Vector2( 133, -219 )
 scale = Vector2( -1, 1 )
 
 [node name="Ninja (enemy)5" parent="Bears" instance=ExtResource( 6 )]
 modulate = Color( 0, 0, 1, 1 )
-position = Vector2( 193, -276 )
+position = Vector2( 193, -270 )
 scale = Vector2( -1, 1 )
 
 [node name="Ninja (enemy)6" parent="Bears" instance=ExtResource( 6 )]
@@ -116,12 +117,12 @@ scale = Vector2( -1, 1 )
 
 [node name="Ninja (enemy)7" parent="Bears" instance=ExtResource( 6 )]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 479, -166 )
+position = Vector2( 484, -167 )
 scale = Vector2( -1, 1 )
 
 [node name="Ninja (enemy)9" parent="Bears" instance=ExtResource( 6 )]
 modulate = Color( 0, 1, 0, 1 )
-position = Vector2( 361, -165 )
+position = Vector2( 333, -161 )
 scale = Vector2( -1, 1 )
 
 [node name="Ground" type="Node2D" parent="."]
@@ -136,3 +137,6 @@ shape = SubResource( 10 )
 position = Vector2( 275, -255 )
 zoom = Vector2( 0.95, 0.95 )
 editor_draw_limits = true
+
+[node name="ScreenEffects" parent="." instance=ExtResource( 5 )]
+color = Color( 1, 0.498039, 0.498039, 1 )

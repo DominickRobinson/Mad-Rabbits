@@ -7,12 +7,17 @@ export (float) var chain_pull := 105
 export (float) var kickSpin := 40
 
 onready var MotionBlurShader = preload("res://Assets/Shaders/motion_blur.tres")
+const explosion = preload("res://Scenes/Effects/ExplosionTNT.tscn")
+onready var Smoke = preload("res://Scenes/Effects/GunSmoke.tscn")
 
 var blur = false
 var sprites : Array
 
+var teleport_global_position = null
+var should_teleport = false
 
 func _ready():
+	zoom_in = {1: true, 2: true, 3: false}
 	catchphrase_text = "TRIPLE THREAT! HIYA!"
 	#adds shader to all sprites
 	sprites = get_all_sprites($Body)
@@ -23,6 +28,13 @@ func _ready():
 		
 	#print("Sprites", sprites)
 	#will stop blurring once rabbit collides with something
+
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("ability"):
+		teleport_global_position = get_global_mouse_position()
+		#print(shoot_angle)
+
+
 
 func _physics_process(delta):
 	if blur:
@@ -55,11 +67,32 @@ func ability2():
 	blur()
 	self.modulate = Color.red
 
-#grapple hook
+
+#teleport
 func ability3():
-#	$Chain.visible = true
-#	$Chain.shoot(get_viewport().get_mouse_position() - get_viewport().size * 0.5)
-	pass
+#	should_teleport = true
+	make_explosion(1, 1.5)
+	var c = load(self.filename)
+	var copy = c.instance()
+	self.get_parent().add_child(copy)
+	self.get_parent().move_child(copy, 0)
+	Manager.set_last_rabbit_thrown(copy)
+	copy = copy as Rabbit
+	copy.ThrowRabbit()
+	copy.global_position = teleport_global_position
+	copy.linear_velocity = linear_velocity
+	copy.angular_velocity = angular_velocity
+	copy.ability_used = true
+	copy.modulate = modulate
+	copy.remove_from_group("Player")
+	copy.shoot_smoke(1)
+	copy.shoot_smoke(1.5)
+	queue_free()
+
+#func ability3():
+##	$Chain.visible = true
+##	$Chain.shoot(get_viewport().get_mouse_position() - get_viewport().size * 0.5)
+#	pass
 
 
 func ThrowRabbit():
@@ -76,7 +109,7 @@ func newNinja(offset, color, vel_mult):
 	self.get_parent().add_child(copy)
 	copy = copy as Rabbit
 	copy.ThrowRabbit()
-	copy.position = position + offset
+	copy.position = position + offset.rotated(rotation)
 	copy.linear_velocity = (linear_velocity + offset) * vel_mult
 	copy.angular_velocity = angular_velocity * vel_mult
 	copy.ability_used = true
@@ -103,3 +136,18 @@ func stop_blur(body):
 	$Foot.visible = false
 	disconnect("body_entered", self, "stop_blur")
 
+func make_explosion(s,s2):
+	var e = explosion.instance()
+	e.global_position = global_position
+	e.scale *= s
+	get_tree().get_current_scene().add_child(e)
+	shoot_smoke(s2)
+	shoot_smoke(s2*1.5)
+
+
+func shoot_smoke(s):
+	var smoke = Smoke.instance()
+	smoke.scale *= s
+	smoke.global_position = global_position
+	smoke.emitting = true
+	get_tree().get_current_scene().add_child(smoke)

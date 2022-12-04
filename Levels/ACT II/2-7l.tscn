@@ -19,8 +19,6 @@ script = ExtResource( 18 )
 [node name="GUI" parent="." instance=ExtResource( 1 )]
 text = ""
 
-[node name="ScreenEffects" parent="." instance=ExtResource( 12 )]
-
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( -789, -451 )
 scale = Vector2( -3, 3 )
@@ -175,5 +173,8 @@ texture = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/DojoBuilding/StaticBody2D"]
 position = Vector2( 340.5, 83 )
 polygon = PoolVector2Array( -81.5, 71.5, -80.5, 21.5, -98.5, 17.5, -79.5, 13.5, -65.5, -6, -66.5, -51.5, -102, -56, -99.5, -60, -81, -56, -56.5, -60.5, -20.5, -77.5, -1, -91, 3, -106.5, 6, -96, 33.5, -75, 48.5, -63.5, 82.5, -55, 92, -55, 101.5, -56.5, 102.5, -54, 86.5, -51, 68, -51, 69.5, -5.5, 78, 10, 89.5, 17, 101, 16, 99, 18.5, 81.5, 23, 85, 72 )
+
+[node name="ScreenEffects" parent="." instance=ExtResource( 12 )]
+color = Color( 1, 0.439216, 0.439216, 1 )
 
 [editable path="Slingshot"]

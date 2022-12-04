@@ -21,6 +21,7 @@ var slowmo = false
 onready var currentPlayer
 onready var cameraController
 onready var currentCamera
+onready var lastRabbitThrown
 
 export var space_level := false
 
@@ -83,11 +84,13 @@ func _process(delta):
 	elif Input.is_action_just_released("slowmo"):
 		speedup()
 		
-	if is_instance_valid(currentPlayer):
+	if is_instance_valid(lastRabbitThrown):
 		if Input.is_action_pressed("spin_up"):
-			currentPlayer.angular_velocity += 1
+#			Manager.get_player().angular_velocity += 1
+			lastRabbitThrown.angular_velocity += 1
 		elif Input.is_action_pressed("spin_down"):
-			currentPlayer.angular_velocity -= 1
+#			Manager.get_player().angular_velocity -= 1
+			lastRabbitThrown.angular_velocity -= 1
 	
 	
 	match CurrentGameState:

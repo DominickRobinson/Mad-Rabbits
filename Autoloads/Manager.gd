@@ -192,9 +192,17 @@ func get_number_of_rabbits_left():
 #gets the last rabbit thrown (useful for zooming in when abilities cant be manually activated
 func last_rabbit_thrown():
 	if is_instance_valid(get_tree().get_current_scene().get_node("Slingshot")):
-		return get_tree().get_current_scene().get_node("Slingshot").lastRabbitThrown
+#		return get_tree().get_current_scene().get_node("Slingshot").lastRabbitThrown
+		return get_tree().get_current_scene().lastRabbitThrown
 	else:
 		return null
+
+
+func set_last_rabbit_thrown(rabbit):
+	print(rabbit)
+	if is_instance_valid(get_tree().get_current_scene().get_node("Slingshot")):
+#		get_tree().get_current_scene().get_node("Slingshot").lastRabbitThrown = rabbit
+		get_tree().get_current_scene().lastRabbitThrown = rabbit
 
 
 func findCamera():

@@ -314,7 +314,6 @@ zoom_in_test={
 
 common/enable_pause_aware_picking=true
 2d/default_gravity=250
-2d/default_linear_damp=0.0
 
 [rendering]
 

@@ -233,7 +233,6 @@ position = Vector2( 6, -8 )
 position = Vector2( 47, 501 )
 rotation = -0.308343
 mode = 1
-gravity_scale = 0.2
 show_halo = true
 rainbow = true
 
@@ -329,7 +328,7 @@ rotation = 0.00872665
 shape = SubResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
-polygon = PoolVector2Array( 294.958, 139.916, 331.638, 131.454, 369.922, 100.048, 364.739, 16.483, 496.996, 31.746, 539.619, -147.718, 485.603, -249.734, 553.577, -246.986, 686.546, -184.559, 573.237, 131.307, 638.302, 189.988, 639.411, 217.132, 244.139, 221.57, 247.529, 201.758, 289.894, 183.669 )
+polygon = PoolVector2Array( 294.958, 139.916, 331.638, 131.454, 369.922, 100.048, 373.668, 32.144, 496.996, 31.746, 539.619, -147.718, 485.603, -249.734, 553.577, -246.986, 686.546, -184.559, 573.237, 131.307, 638.302, 189.988, 639.411, 217.132, 244.139, 221.57, 247.529, 201.758, 289.894, 183.669 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 3 )]
 position = Vector2( 336, 305 )
@@ -343,12 +342,13 @@ position = Vector2( 910, -84 )
 position = Vector2( -53, -7 )
 
 [node name="Rex (enemy)" parent="Bears" instance=ExtResource( 13 )]
-position = Vector2( 853, 287 )
+position = Vector2( 904, 276 )
 scale = Vector2( -1, 1 )
 health = 1000
 
 [node name="GoldenSlingshot" parent="." instance=ExtResource( 2 )]
 position = Vector2( 192, 525 )
+MaxLaunchVelocity = 600
 
 [editable path="GUI"]
 [editable path="Rabbits/Karen"]

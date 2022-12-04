@@ -17,7 +17,7 @@
 [ext_resource path="res://Scenes/Blocks/Steel/SteelLong.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 
-[node name="2-7" type="Node2D" groups=["Level"]]
+[node name="2-12" type="Node2D" groups=["Level"]]
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
@@ -70,17 +70,17 @@ rotation = 3.44653
 [node name="Rabbits" type="Node2D" parent="."]
 position = Vector2( -2144, -114 )
 
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 13 )]
+position = Vector2( -214, 15 )
+
 [node name="Karen" parent="Rabbits" instance=ExtResource( 14 )]
-position = Vector2( -27, -49 )
+position = Vector2( -103, -29 )
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
-position = Vector2( -101, -25 )
-
-[node name="Ninja" parent="Rabbits" instance=ExtResource( 13 )]
-position = Vector2( -173, -4 )
+position = Vector2( -156, -7 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 11 )]
-position = Vector2( -239, 14 )
+position = Vector2( -266, 27 )
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -1640, -137 )
@@ -90,11 +90,11 @@ position = Vector2( 602, -19 )
 scale = Vector2( -1, 1 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 9 )]
-position = Vector2( 678, -17 )
+position = Vector2( 533, -337 )
 scale = Vector2( -1, 1 )
 
 [node name="Bear3" parent="Bears" instance=ExtResource( 9 )]
-position = Vector2( 1562, -131 )
+position = Vector2( 1556, -128 )
 scale = Vector2( -1, 1 )
 
 [node name="Bear4" parent="Bears" instance=ExtResource( 9 )]

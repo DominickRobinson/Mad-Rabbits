@@ -152,6 +152,8 @@ func _process(delta):
 			else:
 				Manager.playAudio(launchNoise, -10)
 				player.ThrowRabbit()
+				lastRabbitThrown = player
+				Manager.set_last_rabbit_thrown(player)
 				player = player as RigidBody2D
 				#player.position = CenterOfSlingshot
 				#player.apply_impulse(Vector2(), velocity)
@@ -182,9 +184,6 @@ func _process(delta):
 #				if is_instance_valid(player):
 #					player.useAbility()
 			
-			#keeps track of last rabbit thrown
-			lastRabbitThrown = player
-
 			#reloads slingshot on button press
 			if Input.is_action_pressed("return_to_slingshot"):
 				if get_tree().get_nodes_in_group("Player").size() <= 1:

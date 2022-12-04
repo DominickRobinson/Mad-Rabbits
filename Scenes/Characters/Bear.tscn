@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Characters/Bodies/bear.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Characters/Bodies/BearBody.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Characters/Right Ear/BearRightEar.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Characters/Bear.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Characters/Left Ear/BearLeftEar.png" type="Texture" id=4]
 
 [sub_resource type="PhysicsMaterial" id=4]
 rough = true
@@ -15,6 +17,18 @@ contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 3 )
 health = 150
+
+[node name="Right ear" type="Sprite" parent="."]
+position = Vector2( -0.999998, 1 )
+rotation = -3.14159
+scale = Vector2( 0.015, -0.015 )
+texture = ExtResource( 2 )
+
+[node name="Left ear" type="Sprite" parent="."]
+position = Vector2( 2, 1 )
+rotation = -3.14159
+scale = Vector2( 0.015, -0.015 )
+texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( -0.015, 0.015 )

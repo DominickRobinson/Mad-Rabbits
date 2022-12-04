@@ -21,6 +21,7 @@ script = ExtResource( 1 )
 text = ""
 
 [node name="ScreenEffects" parent="." instance=ExtResource( 5 )]
+color = Color( 1, 0.498039, 0.498039, 1 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 386.5, -305.5 )
