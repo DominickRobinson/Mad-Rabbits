@@ -101,49 +101,53 @@ position = Vector2( -1640, -137 )
 [node name="Ninja (enemy)" parent="Bears" instance=ExtResource( 9 )]
 position = Vector2( 581, -33 )
 scale = Vector2( -1, 1 )
+mode = 3
 
 [node name="Ninja (enemy)2" parent="Bears" instance=ExtResource( 9 )]
 modulate = Color( 0, 1, 0, 1 )
 position = Vector2( 502, -35 )
 scale = Vector2( -1, 1 )
+mode = 3
 
 [node name="Ninja (enemy)5" parent="Bears" instance=ExtResource( 9 )]
 position = Vector2( 1298, 104 )
 scale = Vector2( -1, 1 )
+mode = 3
 
 [node name="Ninja (enemy)6" parent="Bears" instance=ExtResource( 9 )]
 modulate = Color( 0, 1, 0, 1 )
 position = Vector2( 1219, 102 )
 scale = Vector2( -1, 1 )
+mode = 3
 
 [node name="Ninja (enemy)7" parent="Bears" instance=ExtResource( 9 )]
 position = Vector2( 1278, 207 )
 scale = Vector2( -1, 1 )
+mode = 3
 
 [node name="Ninja (enemy)8" parent="Bears" instance=ExtResource( 9 )]
 modulate = Color( 0, 1, 0, 1 )
 position = Vector2( 1199, 205 )
 scale = Vector2( -1, 1 )
+mode = 3
 
 [node name="Ninja (enemy)9" parent="Bears" instance=ExtResource( 9 )]
 modulate = Color( 0, 0, 1, 1 )
 position = Vector2( 1323, 191 )
 scale = Vector2( -1, 1 )
+mode = 3
 
 [node name="Ninja (enemy)10" parent="Bears" instance=ExtResource( 9 )]
 modulate = Color( 0, 0, 1, 1 )
 position = Vector2( 1235, 210 )
 scale = Vector2( -1, 1 )
+mode = 3
 
 [node name="Ninja (enemy)3" parent="Bears" instance=ExtResource( 9 )]
 modulate = Color( 0, 0, 1, 1 )
 position = Vector2( 1539, 31 )
 scale = Vector2( -1, 1 )
-
-[node name="Ninja (enemy)4" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 1, 0, 1 )
-position = Vector2( 1558, -108 )
-scale = Vector2( -1, 1 )
+mode = 3
 
 [node name="Ground" type="Node2D" parent="."]
 

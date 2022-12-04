@@ -26,6 +26,7 @@ rough = true
 script = ExtResource( 16 )
 
 [node name="GUI" parent="." instance=ExtResource( 14 )]
+music = "opera"
 text = "The gang is unstoppable. They are on a quest. More guards come, but they are no match. The gang continues on to the top of the volcano."
 
 [node name="Background" type="Sprite" parent="."]
@@ -322,11 +323,11 @@ position = Vector2( 3729, -1832 )
 mode = 3
 
 [node name="TNT84" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3858, -2147 )
+position = Vector2( 3840, -2112 )
 mode = 3
 
 [node name="TNT85" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3772, -2181 )
+position = Vector2( 3771, -2156 )
 mode = 3
 
 [node name="TNT87" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
@@ -345,16 +346,8 @@ mode = 3
 position = Vector2( 3656, -1907 )
 mode = 3
 
-[node name="TNT42" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3557, -1983 )
-mode = 3
-
-[node name="TNT43" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3631, -2071 )
-mode = 3
-
-[node name="TNT44" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3754, -2070 )
+[node name="TNT48" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
+position = Vector2( 3739, -1956 )
 mode = 3
 
 [node name="TNT45" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
@@ -362,15 +355,11 @@ position = Vector2( 3829, -1981 )
 mode = 3
 
 [node name="TNT46" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3859, -2080 )
-mode = 3
-
-[node name="TNT53" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3461, -2288 )
+position = Vector2( 3836, -2036 )
 mode = 3
 
 [node name="TNT54" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3520, -2299 )
+position = Vector2( 3530, -2315 )
 mode = 3
 
 [node name="TNT55" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
@@ -378,15 +367,11 @@ position = Vector2( 3587, -2301 )
 mode = 3
 
 [node name="TNT56" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3642, -2305 )
-mode = 3
-
-[node name="TNT57" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3697, -2308 )
+position = Vector2( 3659, -2307 )
 mode = 3
 
 [node name="TNT58" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3746, -2308 )
+position = Vector2( 3732, -2309 )
 mode = 3
 
 [node name="TNT59" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
@@ -395,10 +380,6 @@ mode = 3
 
 [node name="TNT60" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
 position = Vector2( 3866, -2304 )
-mode = 3
-
-[node name="TNT61" parent="Bricks/TNT\'s" instance=ExtResource( 15 )]
-position = Vector2( 3914, -2300 )
 mode = 3
 
 [editable path="Slingshot"]

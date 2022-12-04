@@ -116,7 +116,7 @@ position = Vector2( -53, -7 )
 position = Vector2( 1177, 435 )
 rotation = 1.5708
 scale = Vector2( -1, 1 )
-mode = 1
+mode = 3
 health = 1
 
 [editable path="GUI"]
