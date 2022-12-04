@@ -26,7 +26,6 @@ texture = ExtResource( 4 )
 
 [node name="AbilityPanel" parent="." instance=ExtResource( 1 )]
 panelColor = Color( 0.266667, 0.301961, 0.337255, 1 )
-portraitFilename = "res://Assets/Characters/Sarge.png"
 catchphrase = "I shall avenge my people..."
 catchphraseOutlineColor = Color( 0.215686, 0.380392, 0.968627, 1 )
 
