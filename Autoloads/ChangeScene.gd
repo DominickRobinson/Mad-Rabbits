@@ -15,6 +15,7 @@ var page
 var img
 var transition_sprite
 
+var display_flip = true
 var flip_left = true
 
 # Called when the node enters the scene tree for the first time.
