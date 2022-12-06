@@ -1,0 +1,162 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/Act I/Plains/To training grounds.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Fonts/FancyQuisleyRegular-eZq4e.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/Milky Coffee.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Icons/horns.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=18]
+
+[sub_resource type="Animation" id=2]
+resource_name = "cutscene"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Chapter/VBoxContainer/ChapterHeader:bbcode_text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Chapter/TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.701961 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1000.26, 64.25 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 96
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 96
+font_data = ExtResource( 4 )
+
+[node name="2-0" type="Node2D"]
+script = ExtResource( 18 )
+
+[node name="GUI" parent="." instance=ExtResource( 8 )]
+text = "Sarge and Rex walk back to the village after their successful training session. “What do the bad bears want with us? Why can’t we be their friends?” asks Sarge. Rex answers, “They want to steal all of the carrots in Happy Land to form ge the legendary Infinity Carrot, which will grant its wielder unlimited power. They want to conquer Happy Land.”
+As if on cue, BANG!!! Rex and Sarge hear an explosion in the distance. “The village is under attack!” yells Rex. They rush back to the village."
+
+[node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
+margin_top = 0.0
+margin_bottom = 1445.0
+text = "Sarge and Rex walk back to the village after their successful training session. “What do the bad bears want with us? Why can’t we be their friends?” asks Sarge. Rex answers, “They want to steal all of the carrots in Happy Land to form ge the legendary Infinity Carrot, which will grant its wielder unlimited power. They want to conquer Happy Land.”
+As if on cue, BANG!!! Rex and Sarge hear an explosion in the distance. “The village is under attack!” yells Rex. They rush back to the village."
+
+[node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
+margin_top = 1449.0
+margin_bottom = 1449.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
+anims/cutscene = SubResource( 2 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 2 )]
+anchor_mode = 0
+editor_draw_limits = true
+
+[node name="Background" type="Sprite" parent="."]
+visible = false
+position = Vector2( 505, 285 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -99
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( -22, 503 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 530.77, 62.0743 )
+rotation = 0.00872665
+shape = SubResource( 1 )
+
+[node name="Chapter" type="CanvasLayer" parent="."]
+
+[node name="Paper" type="ColorRect" parent="Chapter"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Chapter"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 1024, 600 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChapterNumber" type="RichTextLabel" parent="Chapter/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 1024, 100 )
+rect_clip_content = false
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]Chapter 2:"
+text = "Chapter 2:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Chapter/VBoxContainer"]
+visible = false
+margin_top = 104.0
+margin_right = 1024.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="ChapterHeader" type="RichTextLabel" parent="Chapter/VBoxContainer"]
+margin_top = 104.0
+margin_right = 1024.0
+margin_bottom = 304.0
+rect_min_size = Vector2( 1024, 200 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]Bad Rabbits"
+text = "Bad Rabbits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Chapter"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 241.0
+margin_top = 219.0
+margin_right = 339.0
+margin_bottom = 287.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[editable path="GUI"]
+[editable path="GUI/StoryText"]

@@ -1,12 +1,12 @@
 extends Node
 
 
-var storytextVisible = true
+var storytextVisible = not true
 var storytextNarrator = true
 
-var zoomInDuringAbility = not false
+var zoomInDuringAbility = not true
 var soundEffects = true
 
-var abilityCatchphraseVisible = not false
+var abilityCatchphraseVisible = not true
 
 var rollMode = true

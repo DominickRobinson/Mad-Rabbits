@@ -30,6 +30,12 @@ func _ready():
 	$PageNumber.visible = true
 	pass
 
+func _physics_process(delta):
+	if Input.is_action_just_pressed("hide_ui"):
+		for c in get_children():
+			if c.has_method("hide"):
+				c.hide()
+
 
 func PopupLevelCompleted(win):
 	EndOfLevel.popupLevelCompleted(win)

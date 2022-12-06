@@ -2,6 +2,7 @@ extends CanvasLayer
 
 #var buttons = get_children()[0].get_children()
 var buttons
+var hide = false
 
 func _ready() -> void:
 	toggle_visibility(false)
@@ -38,6 +39,8 @@ func set_button(button):
 			b.modulate = Color.black
 
 func toggle_visibility(show):
+	if hide:
+		return
 	if show:
 		$Control.show()
 	else:
@@ -47,3 +50,10 @@ func get_button_number(button: Button):
 	return int(button.get_name()[7])
 
 
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("hide_ui"):
+		for c in get_children():
+			if c.has_method("hide"):
+				c.hide()
+		hide = true

@@ -11,3 +11,9 @@ func _ready():
 	#$Control/SpritePanel/Sprite.texture = load(portraitFilename)
 	$Control/DialoguePanel/Catchphrase.bbcode_text = catchphrase
 	$Control/DialoguePanel/Catchphrase.get("custom_fonts/normal_font").outline_color = catchphraseOutlineColor
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("hide_ui"):
+		for c in get_children():
+			if c.has_method("hide"):
+				c.hide()
