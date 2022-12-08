@@ -84,7 +84,7 @@ rect_clip_content = false
 custom_colors/default_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Table of Contents"
+bbcode_text = "[center][wave]Table of Contents"
 text = "Table of Contents"
 __meta__ = {
 "_edit_use_anchors_": true
