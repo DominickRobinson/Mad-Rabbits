@@ -81,7 +81,7 @@ rect_min_size = Vector2( 0, 75 )
 rect_clip_content = false
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center][wave]This book was written and created by:"
+bbcode_text = "[center][wave amp=4]This book was written and created by:"
 text = "This book was written and created by:"
 __meta__ = {
 "_edit_use_anchors_": true
@@ -110,7 +110,7 @@ margin_bottom = 348.0
 rect_min_size = Vector2( 300, 0 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[wave amp=10 rate=1]Dominick:
+bbcode_text = "[wave amp=3 rate=1]Dominick:
  - Writer
  - Programmer
  - UI designer
@@ -148,7 +148,7 @@ margin_bottom = 348.0
 rect_min_size = Vector2( 300, 0 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[wave amp=10 rate=1]
+bbcode_text = "[wave amp=3 rate=1]
 Edwin:
  - Level designer
 

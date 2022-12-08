@@ -19,7 +19,7 @@ font_data = ExtResource( 6 )
 resource_name = "start"
 length = 5.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("VBoxContainer/Made by:modulate")
+tracks/0/path = NodePath("VBoxContainer/Table of Contents:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -75,7 +75,7 @@ margin_right = 1024.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
 
-[node name="Made by" type="RichTextLabel" parent="VBoxContainer"]
+[node name="Table of Contents" type="RichTextLabel" parent="VBoxContainer"]
 margin_top = 54.0
 margin_right = 1024.0
 margin_bottom = 129.0
@@ -84,7 +84,7 @@ rect_clip_content = false
 custom_colors/default_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center][wave]Table of Contents"
+bbcode_text = "[center][wave amp=4]Table of Contents"
 text = "Table of Contents"
 __meta__ = {
 "_edit_use_anchors_": true

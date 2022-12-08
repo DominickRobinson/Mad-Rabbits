@@ -29,6 +29,7 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	$GCS_logo.visible = true
 	$Sprites.visible = true
+	$TipToFlip/AnimationPlayer.play("blink")
 
 
 func _physics_process(delta):
@@ -40,6 +41,8 @@ func _physics_process(delta):
 		$Sprites.visible = true
 		$GCS_logo.visible = true
 		$GCS_logo.modulate = Color(1,1,1,.7)
+		$TipToFlip.visible = true
+		$TipToFlip/AnimationPlayer.play("blink")
 		$Sprites.modulate = Color(1,1,1,1)
 
 
