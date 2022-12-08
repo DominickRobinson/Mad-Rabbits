@@ -36,6 +36,7 @@ extents = Vector2( 34.5, 65 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
+text = "Chip rolls and rolls until he comes across the gang, who lie in a pile in the middle of the beautiful, peaceful, cloudy landscape. Chip prods Sarge awake. “Where… where am I? Chip, is that you? WAIT CHIP?! WHERE AM I???” Chip calmly explains, “Heaven, Sarge, you’re in heaven now. Everything is safe here. Rex cannot enter this realm.” “WAIT CHIP, YOU CAN SPEAK?!? WHAT IS GOING ON?!?!?!” exclaims Sarge in total shock. “I will explain everything later, my child,” says Chip, “And by the way, my true name is Jesús. I am the second coming of our Lord Honkey, sent to Happy Land to restore peace and harmony. You may call me Chip, though. I find it endearing.” Chip chuckles. Scarlett, then Karen, wake up. Both of their jaws fall to the ground. Scarlett says, “What the…” Chip says, “I’ll explain everything later,” Chip says, “Now come hither, my children, I shall introduce you to our Father, Lord Honkey.” The gang rolls off toward the Kingdom of Honkey."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false

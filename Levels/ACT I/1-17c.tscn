@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
+[ext_resource path="res://Scenes/Infinity Carrot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Act I/Icy mountain/Throne.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Characters/Winnie (enemy).tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=4]
@@ -189,6 +190,10 @@ texture = ExtResource( 2 )
 [node name="Winnie (enemy)" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 980, 324 )
 mode = 1
+
+[node name="Infinity Carrot" parent="Enemies/Winnie (enemy)" instance=ExtResource( 1 )]
+position = Vector2( -39, 70 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 993, 414.5 )

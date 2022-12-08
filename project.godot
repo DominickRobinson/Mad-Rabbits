@@ -201,7 +201,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Mad Rabbits"
-run/main_scene="res://Levels/ACT I/1-1l.tscn"
+run/main_scene="res://Levels/ACT 0/0-0.tscn"
 config/icon="res://carrot_cursor.png"
 
 [autoload]

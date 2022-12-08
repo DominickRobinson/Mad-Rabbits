@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Act V/5509862.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/Act I/Icy mountain/earth.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Characters/Chewy.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Fonts/Milky Coffee.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "cutscene"
@@ -25,6 +26,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.898039 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Amogus")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 16.47 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ Vector2( 500, 0 ) ],
+"method": "apply_central_impulse"
+} ]
 }
 
 [sub_resource type="PhysicsMaterial" id=5]
@@ -128,8 +143,8 @@ position = Vector2( 1030, -286 )
 scale = Vector2( 25, 25 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.0823529 )
-position = Vector2( 3132, 600 )
+modulate = Color( 1, 1, 1, 0.0392157 )
+position = Vector2( 281, -886 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
 
@@ -146,7 +161,7 @@ shape = SubResource( 4 )
 
 [node name="Background" type="Sprite" parent="."]
 material = SubResource( 6 )
-position = Vector2( 1117, -48 )
+position = Vector2( 1123, -45 )
 scale = Vector2( 1.30169, 1.10427 )
 z_index = -99
 texture = ExtResource( 1 )
@@ -169,5 +184,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Amogus" parent="." instance=ExtResource( 10 )]
+position = Vector2( -862, 327 )
+gravity_scale = 0.0
+angular_velocity = 40.0
+angular_damp = 0.01
+cutsceneMode = true
+
+[node name="Sprite" parent="Amogus" index="0"]
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Sprite" parent="Amogus/Sprite" index="0"]
+visible = false
+
+[node name="VScrollBar2" type="VScrollBar" parent="Amogus/AbilityPanel/Control/DialoguePanel/Catchphrase" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="Amogus/AbilityPanel/Control/DialoguePanel/Catchphrase" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
 [editable path="GUI"]
 [editable path="GUI/StoryText"]
+[editable path="Amogus"]

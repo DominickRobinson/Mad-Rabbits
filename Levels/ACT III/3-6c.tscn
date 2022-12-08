@@ -17,7 +17,9 @@ step = 0.01
 script = ExtResource( 7 )
 
 [node name="GUI" parent="." instance=ExtResource( 3 )]
-text = "\"Chip... buddy... no...\" Sarge sobs."
+text = "\"Chip... buddy... no...\" Sarge sobs.
+
+Chip is dead..."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false

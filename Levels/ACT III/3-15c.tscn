@@ -1,86 +1,48 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Assets/Act III/space2.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Characters/Bodies/sarge.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Characters/Left Ear/leftEar0000.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Characters/Right Ear/rightEar0000.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Characters/Bodies/ninja.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Rex (bad).tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/UFO.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Characters/Right Ear/rightEar0009.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Characters/Left Ear/leftEar0009.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Characters/Left Ear/leftEar0012.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Characters/Bodies/karen.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Characters/Right Ear/rightEar0012.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Act III/spacecraft-png-40904.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Act I/Icy mountain/Throne.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "cutscene"
 length = 20.0
 step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Props/UFO:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.04, 9.99 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 145, 478 ), Vector2( 750, 300 ) ]
-}
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
-length = 2.0
-loop = true
-step = 0.125
-tracks/0/type = "value"
-tracks/0/path = NodePath("StaticBody2D/Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -20 ), Vector2( 0, 0 ), Vector2( 0, 20 ), Vector2( 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("StaticBody2D/Sprite:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1 ), Vector2( 1, 1 ), Vector2( 1.05, 1 ), Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1, 1 ), Vector2( 1.05, 1 ), Vector2( 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("StaticBody2D/Sprite:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.625, 1.375, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 3.0, -2.0, 0.0 ]
-}
+[sub_resource type="Gradient" id=13]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 13 )
+
+[sub_resource type="Gradient" id=14]
+offsets = PoolRealArray( 0.00497512, 0.455026, 1 )
+colors = PoolColorArray( 0.282353, 0.0235294, 0.0235294, 0.0823529, 0.291851, 0.031025, 0.031025, 1, 0.305882, 0.0392157, 0.0392157, 0.113725 )
+
+[sub_resource type="GradientTexture" id=16]
+gradient = SubResource( 14 )
+
+[sub_resource type="PhysicsMaterial" id=17]
+friction = 0.5
+rough = true
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 1000.26, 64.25 )
 
 [node name="3-15" type="Node2D"]
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
-text = "“By the way,” Ninja says, “my name is Scarlett. You guys can call me Scarlett. I figured I would tell you now. In case we don’t make it.”"
+text = "The gang rushes into his Rex's throne room. Rex sits atop his throne, waiting for them.
+ “Well, well, well… Look who defied death yet again. You know what they say, third time’s the charm.” The gang are unamused. “This,” Sarge says, “is for Chip.” 
+They fight."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false
@@ -118,134 +80,92 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 step = 1.0
 
+[node name="VScrollBar8" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="6"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar9" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="7"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
 [node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
 anims/cutscene = SubResource( 1 )
 
-[node name="Props" type="Node2D" parent="."]
-position = Vector2( 35, 26 )
-
-[node name="UFO" parent="Props" instance=ExtResource( 10 )]
-position = Vector2( 145, 478 )
-scale = Vector2( 0.07, 0.07 )
-engine_on = true
-
-[node name="StaticBody2D" parent="Props/UFO" index="0"]
-angular_velocity = 20.0
-
-[node name="Rabbits2" type="Node2D" parent="Props/UFO/StaticBody2D/Sprite" index="1"]
-modulate = Color( 1, 1, 1, 0.521569 )
-position = Vector2( -189.429, -18.0854 )
-rotation = -0.0285647
-scale = Vector2( 2.42131, 2.49987 )
-
-[node name="Rabbit" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2"]
-position = Vector2( 79, 4 )
-scale = Vector2( 0.015, 0.015 )
-texture = ExtResource( 3 )
-
-[node name="ear1" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit"]
-texture = ExtResource( 4 )
-
-[node name="ear2" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit"]
-texture = ExtResource( 6 )
-
-[node name="Rabbit2" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2"]
-position = Vector2( 41, -1 )
-scale = Vector2( 0.015, 0.015 )
-texture = ExtResource( 7 )
-
-[node name="ear1" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit2"]
-texture = ExtResource( 12 )
-
-[node name="ear2" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit2"]
-texture = ExtResource( 11 )
-
-[node name="Rabbit3" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2"]
-position = Vector2( 121, -3 )
-scale = Vector2( 0.015, 0.015 )
-texture = ExtResource( 14 )
-
-[node name="ear1" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit3"]
-texture = ExtResource( 13 )
-
-[node name="ear2" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit3"]
-texture = ExtResource( 15 )
-
-[node name="UFO2" parent="Props" instance=ExtResource( 10 )]
-position = Vector2( 145, 478 )
-scale = Vector2( 0.07, 0.07 )
-
-[node name="StaticBody2D" parent="Props/UFO2" index="0"]
-angular_velocity = 20.0
-
-[node name="CollisionPolygon2D" parent="Props/UFO2/StaticBody2D" index="0"]
-visible = false
-
-[node name="Sprite" parent="Props/UFO2/StaticBody2D" index="1"]
-visible = false
-
-[node name="Rabbits2" type="Node2D" parent="Props/UFO2/StaticBody2D/Sprite" index="1"]
-modulate = Color( 1, 1, 1, 0.521569 )
-position = Vector2( -189.429, -18.0854 )
-rotation = -0.0285647
-scale = Vector2( 2.42131, 2.49987 )
-
-[node name="Rabbit" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2"]
-position = Vector2( 79, 4 )
-scale = Vector2( 0.015, 0.015 )
-texture = ExtResource( 3 )
-
-[node name="ear1" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit"]
-texture = ExtResource( 4 )
-
-[node name="ear2" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit"]
-texture = ExtResource( 6 )
-
-[node name="Rabbit2" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2"]
-position = Vector2( 41, -1 )
-scale = Vector2( 0.015, 0.015 )
-texture = ExtResource( 7 )
-
-[node name="ear1" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit2"]
-texture = ExtResource( 12 )
-
-[node name="ear2" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit2"]
-texture = ExtResource( 11 )
-
-[node name="Rabbit3" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2"]
-position = Vector2( 121, -3 )
-scale = Vector2( 0.015, 0.015 )
-texture = ExtResource( 14 )
-
-[node name="ear1" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit3"]
-texture = ExtResource( 13 )
-
-[node name="ear2" type="Sprite" parent="Props/UFO2/StaticBody2D/Sprite/Rabbits2/Rabbit3"]
-texture = ExtResource( 15 )
-
-[node name="Sprite2" type="Sprite" parent="Props/UFO2/StaticBody2D" index="2"]
-position = Vector2( 11264.9, -3045.04 )
-rotation = -0.0473889
-scale = Vector2( 14.2456, 14.2856 )
-texture = ExtResource( 16 )
-
-[node name="AnimationPlayer" parent="Props/UFO2" index="1"]
-anims/idle = SubResource( 2 )
-
-[node name="LevelCamera" parent="." instance=ExtResource( 8 )]
-position = Vector2( 48, -5 )
-anchor_mode = 0
-zoom = Vector2( 1.4, 1.4 )
-editor_draw_limits = true
-
 [node name="Background" type="Sprite" parent="."]
-modulate = Color( 0.615686, 0.615686, 0.615686, 1 )
-position = Vector2( 771, 428 )
-scale = Vector2( 0.5, 0.5 )
+modulate = Color( 0.176471, 0.176471, 0.176471, 1 )
+position = Vector2( 168, -300 )
+scale = Vector2( 0.75, 858 )
 z_index = -99
-texture = ExtResource( 1 )
+texture = SubResource( 15 )
 region_rect = Rect2( 0, 0, 4000, 2000 )
 
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -28, -235 )
+scale = Vector2( 0.570313, 751 )
+texture = SubResource( 16 )
+color = Color( 1, 0.0235294, 0.0235294, 1 )
+energy = 1.69
+
+[node name="Props" type="Node2D" parent="."]
+position = Vector2( -1063, -676 )
+
+[node name="Throne" type="Sprite" parent="Props"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 981, 556 )
+rotation = -0.00872665
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( -510, -95 )
+
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+margin_left = -155.0
+margin_top = 96.0
+margin_right = 1701.0
+margin_bottom = 378.0
+color = Color( 0, 0.0470588, 0.152941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2( 187, 98 )
+physics_material_override = SubResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 527, 62 )
+shape = SubResource( 18 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( -295, -776 )
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 1 )]
+position = Vector2( 556, 761 )
+scale = Vector2( -1, 1 )
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 4 )]
+position = Vector2( 712, 762 )
+scale = Vector2( -1, 1 )
+
+[node name="Karen" parent="Rabbits" instance=ExtResource( 6 )]
+position = Vector2( 635, 760 )
+scale = Vector2( -1, 1 )
+
+[node name="Rex (bad)" parent="Rabbits" instance=ExtResource( 7 )]
+position = Vector2( 215, 593 )
+
+[node name="ScreenEffects" parent="." instance=ExtResource( 3 )]
+position = Vector2( -580, -170 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 8 )]
+position = Vector2( 117, -208 )
+zoom = Vector2( 0.9, 0.9 )
+editor_draw_limits = true
+
 [editable path="GUI"]
-[editable path="Props/UFO"]
-[editable path="Props/UFO2"]

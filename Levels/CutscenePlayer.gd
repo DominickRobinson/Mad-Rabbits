@@ -13,7 +13,7 @@ func _ready():
 func _unhandled_key_input(event):
 	if Input.is_action_just_pressed("hide_ui"):
 		print("hiii")
-		$Control.visible = not $Control.visible
+		$Control.visible = false
 
 
 func _on_Button_toggled(button_pressed):

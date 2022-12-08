@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=1]
 [ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Act IV/Honk throne room.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Infinity Carrot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=10]
@@ -80,6 +81,11 @@ position = Vector2( 6, -8 )
 position = Vector2( 63, 528 )
 mode = 1
 show_infinity_carrot = true
+
+[node name="Infinity Carrot2" parent="Rabbits/Rex (bad)" instance=ExtResource( 7 )]
+position = Vector2( 22, -14 )
+rotation = 1.81193
+scale = Vector2( 0.25, 0.25 )
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 3 )]
 position = Vector2( -76, 538 )

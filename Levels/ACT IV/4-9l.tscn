@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/GoldenSlingshot.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Scenes/Characters/Bear (playable).tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Characters/Winnie (playable).tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Characters/Rex (enemy).tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Blocks/TNT.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scripts/TNT container.gd" type="Script" id=15]
 
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
@@ -328,7 +330,7 @@ rotation = 0.00872665
 shape = SubResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
-polygon = PoolVector2Array( 294.958, 139.916, 331.638, 131.454, 369.922, 100.048, 373.668, 32.144, 496.996, 31.746, 539.619, -147.718, 485.603, -249.734, 553.577, -246.986, 686.546, -184.559, 573.237, 131.307, 638.302, 189.988, 639.411, 217.132, 244.139, 221.57, 247.529, 201.758, 289.894, 183.669 )
+polygon = PoolVector2Array( 294.958, 139.916, 331.638, 131.454, 369.922, 100.048, 371.743, 31.007, 501.007, 46.0607, 539.619, -147.718, 554.547, -217.847, 616.815, -219.508, 686.546, -184.559, 573.237, 131.307, 638.302, 189.988, 639.411, 217.132, 244.139, 221.57, 247.529, 201.758, 289.894, 183.669 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 3 )]
 position = Vector2( 336, 305 )
@@ -342,13 +344,149 @@ position = Vector2( 910, -84 )
 position = Vector2( -53, -7 )
 
 [node name="Rex (enemy)" parent="Bears" instance=ExtResource( 13 )]
-position = Vector2( 904, 276 )
+position = Vector2( 944, 301 )
 scale = Vector2( -1, 1 )
-health = 1000
+health = 50000
 
 [node name="GoldenSlingshot" parent="." instance=ExtResource( 2 )]
 position = Vector2( 192, 525 )
-MaxLaunchVelocity = 600
+MaxLaunchVelocity = 1000
+
+[node name="TNTs" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 15 )
+
+[node name="TNT" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 847, 288 )
+mode = 3
+
+[node name="TNT2" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 847, 242 )
+mode = 3
+
+[node name="TNT8" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 789, 270 )
+mode = 3
+
+[node name="TNT9" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 798, 223 )
+mode = 3
+
+[node name="TNT11" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 797, 184 )
+mode = 3
+
+[node name="TNT12" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 797, 346 )
+mode = 3
+
+[node name="TNT13" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 941, 389 )
+mode = 3
+
+[node name="TNT14" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 868, 383 )
+mode = 3
+
+[node name="TNT15" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 868, 326 )
+mode = 3
+
+[node name="TNT10" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 808, 391 )
+mode = 3
+
+[node name="TNT37" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 932, 321 )
+mode = 3
+
+[node name="TNT38" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 813, 309 )
+mode = 3
+
+[node name="TNT3" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 901, 244 )
+mode = 3
+
+[node name="TNT4" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 847, 197 )
+mode = 3
+
+[node name="TNT5" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 872, 167 )
+mode = 3
+
+[node name="TNT6" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 848, 131 )
+mode = 3
+
+[node name="TNT7" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 891, 130 )
+mode = 3
+
+[node name="TNT16" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 955, 196 )
+mode = 3
+
+[node name="TNT17" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 937, 154 )
+mode = 3
+
+[node name="TNT19" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 980, 217 )
+mode = 3
+
+[node name="TNT20" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 999, 254 )
+mode = 3
+
+[node name="TNT21" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 956, 247 )
+mode = 3
+
+[node name="TNT22" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 956, 271 )
+mode = 3
+
+[node name="TNT23" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 984, 314 )
+mode = 3
+
+[node name="TNT24" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 926, 219 )
+mode = 3
+
+[node name="TNT25" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 952, 341 )
+mode = 3
+
+[node name="TNT26" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 819, 151 )
+mode = 3
+
+[node name="TNT29" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 843, 338 )
+mode = 3
+
+[node name="TNT30" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 896, 339 )
+mode = 3
+
+[node name="TNT31" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 997, 169 )
+mode = 3
+
+[node name="TNT33" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 839, 356 )
+mode = 3
+
+[node name="TNT34" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 896, 339 )
+mode = 3
+
+[node name="TNT35" parent="TNTs" instance=ExtResource( 14 )]
+position = Vector2( 879, 199 )
+mode = 3
 
 [editable path="GUI"]
 [editable path="Rabbits/Karen"]

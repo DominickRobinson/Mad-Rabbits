@@ -1,37 +1,45 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Scenes/Characters/Rex (good).tscn" type="PackedScene" id=1]
+[ext_resource path="res://carrot_cursor.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Blocks/Ice/IceSuperLong.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Effects/DeathZone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Blocks/TNT.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/PlatformerCamera.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Blocks/Steel/SteelRectangle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Characters/Rex (good).tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=16]
 [ext_resource path="res://Assets/Act II/Volcano.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Act I/Icy mountain/Snow sky.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=20]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.86
 rough = true
 
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 2.38455
+height = 39.6375
+
 [node name="2-17" type="Node2D" groups=["Level"]]
 script = ExtResource( 16 )
 
 [node name="GUI" parent="." instance=ExtResource( 14 )]
-text = "The gang arrives at the base of Hot Volcano of Death and Bad Stuff. Like before, they must fight through waves and waves of bear soldiers. The soldiers are much better trained and stronger than before."
+music = "opera"
+text = "The gang arrives at the base of Hot Volcano of Death and Bad Stuff. Like before, they must fight through waves and waves of bear soldiers. The soldiers are much better trained and stronger than before. However, the gang is unstoppable. They are on a quest. More guards come, but they are no match. The gang continues on to the top of the volcano."
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 1, 0.376471, 0.376471, 1 )
-position = Vector2( 4882, 443 )
-scale = Vector2( 5, 5 )
+position = Vector2( 4329, 91.4999 )
+scale = Vector2( 5.78475, 5.39573 )
 z_index = -99
 texture = ExtResource( 18 )
 region_rect = Rect2( 0, 0, 4000, 2000 )
@@ -48,88 +56,758 @@ texture = ExtResource( 17 )
 physics_material_override = SubResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/Mountain/StaticBody2D"]
-polygon = PoolVector2Array( -1078.29, 31.7142, -1074.86, -3.42859, -1001.71, -40.5714, -993.429, -61.1428, -978.857, -70.2858, -955.714, -71.4286, -914, -120.571, -885.429, -136.571, -879.143, -151.714, -859.714, -154.857, -836, -195.714, -821.143, -208, -795.143, -214.857, -755.143, -214.857, -742.857, -223.714, -729.714, -240.286, -708.571, -252.571, -692.857, -254, -678.286, -264, -676.286, -271.429, -681.143, -282.857, -660.571, -303.143, -641.714, -313.143, -629.714, -328.857, -613.143, -363.143, -591.429, -372.857, -566, -385.143, -556.571, -395.429, -539.714, -415.143, -521.143, -428.286, -485.714, -475.143, -468.571, -487.429, -446.571, -495.429, -435.429, -494.571, -424.286, -488.286, -399.143, -463.143, -383.143, -452.857, -355.429, -430, -346.571, -432.571, -337.143, -455.143, -324, -470, -294, -487.714, -244.286, -504.571, -218.571, -528.286, -220.571, -536, -202.286, -555.143, -178, -577.714, -145.429, -585.714, -106.286, -585.143, -80.5714, -571.143, 14.5714, 53.4286 )
+polygon = PoolVector2Array( -1076.57, 33.4286, -1074.86, -3.42859, -1001.71, -40.5714, -992.571, -57.4286, -977.429, -66.8571, -954.286, -74.8571, -936.795, -94.7044, -926, -103.143, -914, -120.571, -885.429, -136.571, -879.143, -151.714, -859.714, -154.857, -836, -195.714, -821.143, -208, -795.143, -214.857, -755.143, -214.857, -742.857, -223.714, -729.714, -240.286, -708.571, -252.571, -692.857, -254, -678.286, -264, -676.286, -271.429, -681.143, -282.857, -660.571, -303.143, -641.714, -313.143, -629.714, -328.857, -613.143, -363.143, -591.429, -372.857, -566, -385.143, -556.571, -395.429, -539.714, -415.143, -521.143, -428.286, -485.714, -475.143, -468.571, -487.429, -446.571, -495.429, -435.429, -494.571, -424.286, -488.286, -399.143, -463.143, -383.143, -452.857, -355.429, -430, -344.286, -440.571, -337.143, -455.143, -324, -470, -294, -487.714, -244.286, -504.571, -218.571, -528.286, -220.571, -536, -202.286, -555.143, -178, -577.714, -145.429, -585.714, -106.286, -585.143, -80.5714, -571.143, -34.2857, -554, 0.571411, -542.571, 70.5715, -539.714, 119.429, -545.714, 167.143, -546.571, 226.286, -536.286, 270.571, -497.714, 296.571, -424, 317.143, -397.429, 356, -378.571, 375.143, -351.714, 424.571, -365.143, 455.714, -403.714, 512.286, -436.286, 531.143, -452.571, 543.714, -455.143, 556, -447.714, 566.286, -421.429, 585.143, -400.286, 619.429, -378.286, 637.429, -360, 658, -344.286, 681.714, -331.429, 694.286, -309.714, 782.857, -263.143, 814.857, -220.571, 885.714, -162.571, 980.857, -95.7143, 1017.43, -46.2857, 1055.71, -3.71429, 1053.71, 12.8571, 989.714, 44.2857 )
 
 [node name="Slingshot" parent="." instance=ExtResource( 6 )]
-position = Vector2( 26, -2 )
-MaxSlingshotPull = 250
-MaxLaunchVelocity = 1000
-
-[node name="Bricks" type="Node2D" parent="."]
-position = Vector2( 910, -84 )
-
-[node name="SteelSuperLong4" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( -549, -204 )
-rotation = 0.640815
-
-[node name="SteelSuperLong5" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( -330, -404 )
-rotation = 1.99183
-mode = 1
-
-[node name="SteelRectangle" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( -253, -515 )
-mode = 1
-
-[node name="SteelRectangle3" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( -87, -513 )
-mode = 1
-
-[node name="SteelRectangle2" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( -168, -514 )
-mode = 1
-
-[node name="WoodSquare" parent="Bricks" instance=ExtResource( 12 )]
-position = Vector2( 53, -560 )
-mode = 1
-
-[node name="IceSuperLong" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( -191, -547 )
-mode = 1
-max_health = 100
+position = Vector2( 16, 10 )
+MaxLaunchVelocity = 600
 
 [node name="Rabbits" type="Node2D" parent="."]
-position = Vector2( -71, 355 )
-
-[node name="Chip" parent="Rabbits" instance=ExtResource( 13 )]
-position = Vector2( 41, -346 )
-
-[node name="Karen" parent="Rabbits" instance=ExtResource( 10 )]
-position = Vector2( 1, -297 )
-
-[node name="Ninja" parent="Rabbits" instance=ExtResource( 7 )]
-position = Vector2( -63, -244 )
-
-[node name="Rex (good)" parent="Rabbits" instance=ExtResource( 1 )]
-position = Vector2( -127, -213 )
+position = Vector2( 6, -202 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 5 )]
-position = Vector2( -191, -177 )
+position = Vector2( -39, 215 )
+linear_damp = 0.15
+totalAbilities = 0
+
+[node name="Sword" type="CollisionShape2D" parent="Rabbits/Sarge"]
+show_behind_parent = true
+position = Vector2( 24, -16 )
+rotation = 0.940108
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Rabbits/Sarge/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Rabbits/Sarge"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+script = ExtResource( 7 )
+
+[node name="Chip" parent="Rabbits" instance=ExtResource( 13 )]
+position = Vector2( -103, 297 )
+linear_damp = 0.15
+
+[node name="Sword" type="CollisionShape2D" parent="Rabbits/Chip"]
+show_behind_parent = true
+position = Vector2( 24, -16 )
+rotation = 0.940108
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Rabbits/Chip/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Rabbits/Chip"]
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+script = ExtResource( 7 )
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 20 )]
+position = Vector2( -182, 334 )
+linear_damp = 0.15
+
+[node name="Sword" type="CollisionShape2D" parent="Rabbits/Ninja"]
+show_behind_parent = true
+position = Vector2( 24, -16 )
+rotation = 0.940108
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Rabbits/Ninja/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Rabbits/Ninja"]
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+script = ExtResource( 7 )
+
+[node name="Karen" parent="Rabbits" instance=ExtResource( 10 )]
+position = Vector2( -244, 369 )
+linear_damp = 0.15
+
+[node name="Sword" type="CollisionShape2D" parent="Rabbits/Karen"]
+show_behind_parent = true
+position = Vector2( 24, -16 )
+rotation = 0.940108
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Rabbits/Karen/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Rabbits/Karen"]
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+script = ExtResource( 7 )
+
+[node name="Rex (good)" parent="Rabbits" instance=ExtResource( 15 )]
+position = Vector2( -302, 406 )
+linear_damp = 0.15
+totalAbilities = 0
+
+[node name="Camera2D" type="Camera2D" parent="Rabbits/Rex (good)"]
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+script = ExtResource( 7 )
 
 [node name="Bears" type="Node2D" parent="."]
-position = Vector2( -114, -306 )
-
-[node name="Bear" parent="Bears" instance=ExtResource( 8 )]
-position = Vector2( 890, -227 )
+position = Vector2( 2409, -2044 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 8 )]
-position = Vector2( 1144, -378 )
+position = Vector2( 1092, -344 )
+
+[node name="Bear10" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( -1634, 1512 )
+
+[node name="Sword" type="CollisionShape2D" parent="Bears/Bear10"]
+show_behind_parent = true
+position = Vector2( -23, -6 )
+rotation = -0.758517
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Bears/Bear10/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 1 )
+
+[node name="Bear11" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( -1711, 1509 )
+
+[node name="Sword" type="CollisionShape2D" parent="Bears/Bear11"]
+show_behind_parent = true
+position = Vector2( -23, -6 )
+rotation = -0.758517
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Bears/Bear11/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 1 )
+
+[node name="Bear12" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( -1408, 1375 )
+
+[node name="Sword" type="CollisionShape2D" parent="Bears/Bear12"]
+show_behind_parent = true
+position = Vector2( -23, -6 )
+rotation = -0.758517
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Bears/Bear12/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 1 )
+
+[node name="Bear13" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( -539, 534 )
+
+[node name="Sword" type="CollisionShape2D" parent="Bears/Bear13"]
+show_behind_parent = true
+position = Vector2( -23, -6 )
+rotation = -0.758517
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Bears/Bear13/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 1 )
 
 [node name="Bear3" parent="Bears" instance=ExtResource( 8 )]
-position = Vector2( 765, -220 )
+position = Vector2( 1152, -345 )
 
 [node name="Bear4" parent="Bears" instance=ExtResource( 8 )]
-position = Vector2( 832, -225 )
+position = Vector2( 1208, -344 )
 
 [node name="Bear5" parent="Bears" instance=ExtResource( 8 )]
-position = Vector2( 517, -13 )
+position = Vector2( 1268, -345 )
 
-[node name="LevelCamera" parent="." instance=ExtResource( 3 )]
-position = Vector2( 563, -251 )
-zoom = Vector2( 2, 2 )
-editor_draw_limits = true
+[node name="Bear6" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 1317, -346 )
+
+[node name="Bear7" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 1377, -347 )
+
+[node name="Bear8" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 1426, -350 )
+
+[node name="Bear9" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 1486, -351 )
 
 [node name="ScreenEffects" parent="." instance=ExtResource( 9 )]
 position = Vector2( -22, 503 )
+color = Color( 1, 0.811765, 0.811765, 1 )
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="WoodLong" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 3475, -1674 )
+mode = 3
+max_health = 1000
+
+[node name="WoodLong11" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 2861, -2459 )
+mode = 3
+max_health = 1000
+
+[node name="WoodLong9" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 2388, -1887 )
+mode = 3
+max_health = 500
+
+[node name="WoodLong10" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 2463, -1888 )
+mode = 3
+max_health = 500
+
+[node name="WoodLong2" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 3595, -1674 )
+mode = 3
+max_health = 1000
+
+[node name="WoodLong3" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 3714, -1674 )
+mode = 3
+max_health = 1000
+
+[node name="WoodLong4" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 3834, -1674 )
+mode = 3
+max_health = 1000
+
+[node name="WoodLong5" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 3502, -2354 )
+mode = 3
+max_health = 1000
+
+[node name="WoodLong6" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 3622, -2354 )
+mode = 3
+max_health = 1000
+
+[node name="WoodLong7" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 3741, -2354 )
+mode = 3
+max_health = 1000
+
+[node name="WoodLong8" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 3861, -2354 )
+mode = 3
+max_health = 1000
+
+[node name="WoodSquare" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( 3435, -2364 )
+mode = 3
+
+[node name="WoodSquare2" parent="Bricks" instance=ExtResource( 12 )]
+position = Vector2( 3945, -2376 )
+mode = 3
+
+[node name="SteelSuperLong2" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3526, -2435 )
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong3" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3730, -2435 )
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong4" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3872, -2434 )
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong5" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3405, -1893 )
+rotation = 1.74241
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong12" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3298, -1801 )
+rotation = 3.38102
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong13" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3111, -1847 )
+rotation = 3.38102
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong15" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3013, -1966 )
+rotation = 4.71631
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong39" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3011, -2157 )
+rotation = 4.71631
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong40" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3011, -2337 )
+rotation = 4.71631
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong41" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2866, -2049 )
+rotation = 4.71631
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong42" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2854, -2245 )
+rotation = 4.5995
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong52" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2845, -2340 )
+rotation = 4.67697
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong53" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2834, -2572 )
+rotation = 4.67697
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong14" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2872, -1861 )
+rotation = 4.66967
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong6" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3951, -1880 )
+rotation = 1.49005
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong8" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3411, -2085 )
+rotation = 1.74241
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong9" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3957, -2072 )
+rotation = 1.49005
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong10" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3418, -2247 )
+rotation = 1.74241
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong11" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3964, -2234 )
+rotation = 1.49005
+mode = 3
+max_health = 1000
+
+[node name="SteelSuperLong7" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 3957, -1770 )
+rotation = 1.49005
+mode = 3
+max_health = 1000
+
+[node name="TNT\'s" type="Node2D" parent="Bricks"]
+
+[node name="TNT" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3527, -1713 )
+mode = 3
+
+[node name="TNT8" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2365, -1857 )
+mode = 3
+
+[node name="TNT9" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2414, -1854 )
+mode = 3
+
+[node name="TNT10" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2459, -1852 )
+mode = 3
+
+[node name="TNT11" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2503, -1850 )
+mode = 3
+
+[node name="TNT2" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3582, -1711 )
+mode = 3
+
+[node name="TNT3" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3642, -1707 )
+mode = 3
+
+[node name="TNT4" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3698, -1710 )
+mode = 3
+
+[node name="TNT5" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3749, -1711 )
+mode = 3
+
+[node name="TNT6" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3802, -1711 )
+mode = 3
+
+[node name="TNT7" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3470, -1713 )
+mode = 3
+
+[node name="TNT33" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3408, -1713 )
+mode = 3
+
+[node name="TNT34" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3336, -1723 )
+mode = 3
+
+[node name="TNT35" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3259, -1755 )
+mode = 3
+
+[node name="TNT36" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3189, -1786 )
+mode = 3
+
+[node name="TNT37" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3105, -1818 )
+mode = 3
+
+[node name="TNT38" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3040, -1829 )
+mode = 3
+
+[node name="TNT39" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2977, -1832 )
+mode = 3
+
+[node name="TNT40" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2936, -1832 )
+mode = 3
+
+[node name="TNT47" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2909, -1857 )
+mode = 3
+
+[node name="TNT49" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2960, -1905 )
+mode = 3
+
+[node name="TNT50" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2916, -1956 )
+mode = 3
+
+[node name="TNT51" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2955, -2028 )
+mode = 3
+
+[node name="TNT52" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2907, -2117 )
+mode = 3
+
+[node name="TNT53" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2955, -2207 )
+mode = 3
+
+[node name="TNT57" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2927, -2256 )
+mode = 3
+
+[node name="TNT62" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2889, -2294 )
+mode = 3
+
+[node name="TNT61" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 2883, -2495 )
+max_health = 1
+
+[node name="TNT86" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3147, -1790 )
+mode = 3
+
+[node name="TNT32" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3870, -1713 )
+mode = 3
+
+[node name="TNT66" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3806, -1776 )
+mode = 3
+
+[node name="TNT67" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3729, -1832 )
+mode = 3
+
+[node name="TNT84" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3840, -2112 )
+mode = 3
+
+[node name="TNT85" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3771, -2156 )
+mode = 3
+
+[node name="TNT87" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3703, -2223 )
+mode = 3
+
+[node name="TNT88" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3643, -2260 )
+mode = 3
+
+[node name="TNT89" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3750, -2261 )
+mode = 3
+
+[node name="TNT41" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3656, -1907 )
+mode = 3
+
+[node name="TNT48" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3739, -1956 )
+mode = 3
+
+[node name="TNT45" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3829, -1981 )
+mode = 3
+
+[node name="TNT46" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3836, -2036 )
+mode = 3
+
+[node name="TNT54" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3530, -2315 )
+mode = 3
+
+[node name="TNT55" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3587, -2301 )
+mode = 3
+
+[node name="TNT56" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3659, -2307 )
+mode = 3
+
+[node name="TNT58" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3732, -2309 )
+mode = 3
+
+[node name="TNT59" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3801, -2310 )
+mode = 3
+
+[node name="TNT60" parent="Bricks/TNT\'s" instance=ExtResource( 4 )]
+position = Vector2( 3866, -2304 )
+mode = 3
+
+[node name="SteelSuperLong16" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( -390, 193 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong44" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 396, -263 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong45" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 962, -551 )
+rotation = 0.640815
+mode = 1
+
+[node name="SteelSuperLong46" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1210, -1032 )
+rotation = -0.0295031
+mode = 1
+
+[node name="SteelSuperLong47" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1122, -738 )
+rotation = -0.0295031
+mode = 1
+
+[node name="SteelSuperLong48" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2009, -1483 )
+rotation = 0.894613
+mode = 1
+
+[node name="SteelSuperLong49" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2098, -1555 )
+rotation = 0.894613
+mode = 1
+
+[node name="SteelSuperLong50" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2189, -1641 )
+rotation = 0.894613
+mode = 1
+
+[node name="SteelSuperLong51" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2276, -1736 )
+rotation = 0.894613
+mode = 1
+
+[node name="SteelSuperLong17" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1996, -1553 )
+rotation = 2.35995
+mode = 1
+
+[node name="SteelSuperLong18" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2135, -1690 )
+rotation = 2.35995
+mode = 1
+
+[node name="SteelSuperLong19" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2262, -1816 )
+rotation = 2.35995
+mode = 1
+
+[node name="SteelSuperLong20" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2378, -1822 )
+rotation = 3.19856
+mode = 1
+
+[node name="SteelSuperLong33" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2431, -1818 )
+rotation = 3.19856
+mode = 1
+
+[node name="SteelSuperLong21" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2629, -1918 )
+rotation = 3.19856
+mode = 1
+
+[node name="SteelSuperLong22" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2532, -1820 )
+rotation = 4.68549
+mode = 1
+
+[node name="SteelSuperLong23" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2320, -2127 )
+rotation = 4.68549
+mode = 1
+
+[node name="SteelSuperLong24" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2539, -1650 )
+rotation = 4.68549
+mode = 1
+
+[node name="SteelSuperLong25" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2547, -1459 )
+rotation = 4.68549
+mode = 1
+
+[node name="SteelSuperLong27" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2570, -2109 )
+rotation = 4.68549
+mode = 1
+
+[node name="SteelSuperLong28" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2574, -2007 )
+rotation = 4.68549
+mode = 1
+
+[node name="SteelSuperLong29" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2568, -2263 )
+rotation = 4.68549
+mode = 1
+
+[node name="SteelSuperLong30" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2315, -2289 )
+rotation = 4.68549
+mode = 1
+
+[node name="SteelSuperLong31" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2372, -2465 )
+rotation = 5.45364
+mode = 1
+
+[node name="SteelSuperLong32" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2456, -2533 )
+rotation = 6.64477
+mode = 1
+
+[node name="SteelSuperLong34" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2658, -2353 )
+rotation = 6.37231
+mode = 1
+
+[node name="SteelSuperLong35" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2738, -2347 )
+rotation = 6.37231
+mode = 1
+
+[node name="SteelSuperLong43" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2913, -2330 )
+rotation = 6.37231
+mode = 1
+
+[node name="SteelSuperLong36" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2613, -2627 )
+rotation = 6.37231
+mode = 1
+
+[node name="SteelSuperLong37" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2802, -2609 )
+rotation = 6.37231
+mode = 1
+
+[node name="SteelSuperLong38" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 2960, -2520 )
+rotation = 4.14475
+mode = 1
+
+[node name="Amogus" parent="Bricks" instance=ExtResource( 19 )]
+position = Vector2( 5339, -1364 )
+scale = Vector2( -1, 1 )
+mode = 1
+
+[node name="DeathZone" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1001, 375 )
+
+[node name="CollisionShape2D" parent="DeathZone" index="0"]
+position = Vector2( 4146.5, 203 )
+
+[node name="DeathZone2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1023, -4035 )
+rotation = 1.55787
+
+[node name="CollisionShape2D" parent="DeathZone2" index="0"]
+position = Vector2( 3503, 177.29 )
+
+[node name="DeathZone3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7501, -4187 )
+rotation = 1.55787
+
+[node name="CollisionShape2D" parent="DeathZone3" index="0"]
+position = Vector2( 3499.96, -747.826 )
 
 [editable path="Slingshot"]
+[editable path="Rabbits/Rex (good)"]
+[editable path="Rabbits/Rex (good)/AbilityPanel"]
+[editable path="Rabbits/Rex (good)/AbilitySelectionPanel"]
+[editable path="DeathZone"]
+[editable path="DeathZone2"]
+[editable path="DeathZone3"]

@@ -15,7 +15,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "cutscene"
-length = 20.0
+length = 10.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("../Rabbits/Sarge")
 tracks/0/interp = 1
@@ -23,13 +23,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1.4, 6.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 1.1 ),
+"transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "give up again", 3.0 ],
-"method": "speak"
-}, {
-"args": [ "understandable have a nice day again", 4.0 ],
+"args": [ "you lose", 3.0 ],
 "method": "speak"
 } ]
 }
@@ -40,10 +37,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 4.5 ),
+"times": PoolRealArray( 3.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "no again", 4.0 ],
+"args": [ "darn", 3.0 ],
 "method": "speak"
 } ]
 }
@@ -68,7 +65,7 @@ gradient = SubResource( 5 )
 script = ExtResource( 12 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
-text = "Winnie is atop his throne. He is just standing there, menacingly. Suddenly, the gang bursts into the room! “Mwahaahaha! Back for some more, foolish rabbits? You should have just stayed dead. I would hate to kill you twice. Oh wait, actually I would love it, because I am VERY EVIL mwahahah!!” says Winnie. “How many times… I AM A FREAKIN BUNNY, YOU BUTTHOLE!!!” retorts Ninja, who then farts for no reason. “Let’s just cut the chit-chat and get to it. You’re going down,” says Sarge. Ninja unveils the Epic Slingshot of Ninja Bunny Legend. They battle."
+text = "“NOOO… IMPOSSIBLE! HOW COULD I LOSE TO RABBITS?!?!” cries out Winnie the Pooh. “AND BUNNY! NEVER MISS WITH NINJA BUNNY! REEE” cries out Ninja even louder. “Mwahahahaha…” chuckles Winnie. “What’s so funny?” asks Ninja. “Strike me down, now, and I shall become more powerful than you can imagine. Use your anger, turn to the dark side, and let tyranny continue to rule these lands. MWahaha,” explains Winnie. “Well, you see, that’s not happening. We are taking you prisoner, and you shall serve your time,” responds Sarge."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false

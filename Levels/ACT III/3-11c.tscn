@@ -1,0 +1,221 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/UFO.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Characters/Bodies/sarge.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/Left Ear/leftEar0000.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/Bodies/ninja.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Characters/Right Ear/rightEar0000.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/Right Ear/rightEar0009.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Characters/Left Ear/leftEar0009.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Characters/Left Ear/leftEar0012.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Act III/alien planet/alien5.jpg" type="Texture" id=12]
+[ext_resource path="res://Assets/Characters/Bodies/karen.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Characters/Right Ear/rightEar0012.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=15]
+
+[sub_resource type="Animation" id=1]
+resource_name = "cutscene"
+length = 20.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Props/UFO:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.46, 9.19 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1086, 504 ), Vector2( 1086, 504 ), Vector2( 800, -300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Props/UFO/StaticBody2D/Sprite/Engine:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.73, 17.62 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "off", "on", "off" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Props/UFO/StaticBody2D:mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 17.57 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Props/UFO/StaticBody2D:angular_velocity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 17.83 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 20.0 ]
+}
+
+[node name="3-11" type="Node2D"]
+script = ExtResource( 15 )
+
+[node name="GUI" parent="." instance=ExtResource( 4 )]
+text = "Somehow, the gang prevails. Sarge proclaims, “Wait! We can steal one of their ships to get out of here and rematch Rex!” The gang heads to where the troops landed. Karen states,” I know how to drive one of these. They seem to be similar models from Winnie’s army. I can get us out of here. Hopefully there ain’t any space cops out there. I got my license taken away for a DUI!” Karen chugs a beer. “And I ain’t about to get another!” The gang buckles up, and Karen takes off. They follow the ship’s GPS and head for Rex."
+
+[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 3 )]
+anims/cutscene = SubResource( 1 )
+
+[node name="Props" type="Node2D" parent="."]
+position = Vector2( 35, 26 )
+
+[node name="UFO" parent="Props" instance=ExtResource( 1 )]
+position = Vector2( 1086, 504 )
+
+[node name="Rabbits2" type="Node2D" parent="Props/UFO/StaticBody2D/Sprite" index="1"]
+modulate = Color( 1, 1, 1, 0.521569 )
+position = Vector2( -189.429, -18.0854 )
+rotation = -0.0285647
+scale = Vector2( 2.42131, 2.49987 )
+
+[node name="Rabbit" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2"]
+position = Vector2( 79, 4 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 5 )
+
+[node name="ear1" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit"]
+texture = ExtResource( 6 )
+
+[node name="ear2" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit"]
+texture = ExtResource( 8 )
+
+[node name="Rabbit2" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2"]
+position = Vector2( 41, -1 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 7 )
+
+[node name="ear1" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit2"]
+texture = ExtResource( 10 )
+
+[node name="ear2" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit2"]
+texture = ExtResource( 9 )
+
+[node name="Rabbit3" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2"]
+position = Vector2( 121, -3 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 13 )
+
+[node name="ear1" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit3"]
+texture = ExtResource( 11 )
+
+[node name="ear2" type="Sprite" parent="Props/UFO/StaticBody2D/Sprite/Rabbits2/Rabbit3"]
+texture = ExtResource( 14 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 2 )]
+position = Vector2( 48, -5 )
+anchor_mode = 0
+zoom = Vector2( 1.4, 1.4 )
+editor_draw_limits = true
+
+[node name="Ground2" type="Node2D" parent="."]
+position = Vector2( 150, 693.75 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
+position = Vector2( 513, 62 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Ground2/StaticBody2D"]
+rotation = -0.00523599
+polygon = PoolVector2Array( -1204.67, -66.3085, -225.651, -67.1824, -255.363, -122.339, -213.379, -119.119, -138.548, -86.7266, -129.658, -65.6798, 851.339, -62.5433, 864.548, 279.531, -1161.39, 262.923 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( -479, 426.75 )
+scale = Vector2( -0.5, 0.5 )
+z_index = -99
+texture = ExtResource( 12 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+visible = false
+
+[node name="Rabbit" type="Sprite" parent="Rabbits"]
+position = Vector2( 79, 4 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 5 )
+
+[node name="ear1" type="Sprite" parent="Rabbits/Rabbit"]
+texture = ExtResource( 6 )
+
+[node name="ear2" type="Sprite" parent="Rabbits/Rabbit"]
+texture = ExtResource( 8 )
+
+[node name="Rabbit2" type="Sprite" parent="Rabbits"]
+position = Vector2( 41, -1 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 7 )
+
+[node name="ear1" type="Sprite" parent="Rabbits/Rabbit2"]
+texture = ExtResource( 10 )
+
+[node name="ear2" type="Sprite" parent="Rabbits/Rabbit2"]
+texture = ExtResource( 9 )
+
+[node name="Rabbit3" type="Sprite" parent="Rabbits"]
+position = Vector2( 121, -3 )
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 13 )
+
+[node name="ear1" type="Sprite" parent="Rabbits/Rabbit3"]
+texture = ExtResource( 11 )
+
+[node name="ear2" type="Sprite" parent="Rabbits/Rabbit3"]
+texture = ExtResource( 14 )
+
+[editable path="GUI"]
+[editable path="Props/UFO"]

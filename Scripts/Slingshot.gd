@@ -61,6 +61,8 @@ func wait(time):
 
 
 func _process(delta):
+#	if Input.is_action_just_pressed("return_to_slingshot"):
+#		print("hiiii")
 #	print(SlingshotState)
 #	print(player.get_name())
 	#print(str(SlingState.pulling))
@@ -74,6 +76,7 @@ func _process(delta):
 	match SlingshotState:
 		SlingState.idle:
 			player.showAbilitySelection(true)
+		
 		SlingState.pulling:
 			#finds player
 			
@@ -82,6 +85,8 @@ func _process(delta):
 			
 			#finds current player
 			player = currentLevel.get_player()
+#			if player.has_node("Camera2D"):
+#				player.get_node("Camera2D").current = true
 			#shows ability selection
 			
 			#position of slingshot rope relative to center
@@ -235,6 +240,7 @@ func nextPlayer():
 	if is_instance_valid(player):
 		player.hideCatchphrase()
 		player.remove_from_group("Player")
+
 	
 	#resets camera
 	if Manager.findCamera() != null:
@@ -247,6 +253,8 @@ func nextPlayer():
 	if players.size() > 0:
 		#player = GameManager.currentPlayer
 		player = currentLevel.get_player()
+		if player.has_node("Camera2D"):
+			player.get_node("Camera2D").current = true
 
 #moves next player into catapult
 func movePlayerToSlingshot(t = 0.1):

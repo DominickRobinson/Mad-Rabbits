@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Assets/Act II/Dojo/Dojo building.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Act II/Dojo/Cherry level no dojo.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Props/CherryBlossom1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Props/CherryBlossom2.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=2]
 resource_name = "cutscene"
@@ -27,7 +29,7 @@ tracks/0/keys = {
 "args": [ "VROOM", 10.0 ],
 "method": "speak"
 }, {
-"args": [ Vector2( 2000, 0 ) ],
+"args": [ Vector2( 800, 0 ) ],
 "method": "apply_central_impulse"
 } ]
 }
@@ -44,7 +46,7 @@ tracks/1/keys = {
 "args": [ "VROOM", 10.0 ],
 "method": "speak"
 }, {
-"args": [ Vector2( 2500, 0 ) ],
+"args": [ Vector2( 800, 0 ) ],
 "method": "apply_central_impulse"
 }, {
 "args": [ "iunjefh;kEWNMKJzJ<HQE:FLHKJEF>", 10.0 ],
@@ -64,7 +66,7 @@ tracks/2/keys = {
 "args": [ "VROOM", 10.0 ],
 "method": "speak"
 }, {
-"args": [ Vector2( 2000, 0 ) ],
+"args": [ Vector2( 800, 0 ) ],
 "method": "apply_central_impulse"
 } ]
 }
@@ -81,13 +83,21 @@ tracks/3/keys = {
 "args": [ "VROOOM", 10.0 ],
 "method": "speak"
 }, {
-"args": [ Vector2( 2000, 0 ) ],
+"args": [ Vector2( 800, 0 ) ],
 "method": "apply_central_impulse"
 } ]
 }
 
 [node name="2-11" type="Node2D"]
 script = ExtResource( 9 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( -789, -451 )
+rotation = 3.14159
+scale = Vector2( 3, -3 )
+z_index = -99
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
 text = "The gang enters a beautiful cherry-blossom forest. “Wow, this place is beautiful, but where are we going?” asks Sarge. “Oh, you’ll see,” replies Ninja. "
@@ -109,15 +119,19 @@ position = Vector2( -3440, -729 )
 
 [node name="Karen" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( 685, 568 )
+cutsceneMode = true
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 7 )]
 position = Vector2( 755, 591 )
+cutsceneMode = true
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 4 )]
 position = Vector2( 614, 557 )
+cutsceneMode = true
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 3 )]
 position = Vector2( 834, 615 )
+cutsceneMode = true
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -135,6 +149,62 @@ editor_draw_limits = true
 [node name="Props" type="Node2D" parent="."]
 position = Vector2( 41, -17 )
 
+[node name="Trees" type="Node2D" parent="Props"]
+position = Vector2( -23, 22 )
+
+[node name="CherryBlossom1" parent="Props/Trees" instance=ExtResource( 11 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( -1746, -204 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CherryBlossom9" parent="Props/Trees" instance=ExtResource( 11 )]
+position = Vector2( -1822, 87 )
+z_index = 1
+
+[node name="CherryBlossom11" parent="Props/Trees" instance=ExtResource( 11 )]
+position = Vector2( 223, -41 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="CherryBlossom2" parent="Props/Trees" instance=ExtResource( 12 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( -1616, -165 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CherryBlossom10" parent="Props/Trees" instance=ExtResource( 12 )]
+position = Vector2( -960, 19 )
+z_index = 1
+
+[node name="CherryBlossom3" parent="Props/Trees" instance=ExtResource( 11 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( -2370, -300 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CherryBlossom6" parent="Props/Trees" instance=ExtResource( 11 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( -18, -287 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CherryBlossom7" parent="Props/Trees" instance=ExtResource( 11 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( 293, -292 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CherryBlossom4" parent="Props/Trees" instance=ExtResource( 12 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( -1979, -236 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CherryBlossom5" parent="Props/Trees" instance=ExtResource( 12 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( -244, -213 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CherryBlossom8" parent="Props/Trees" instance=ExtResource( 12 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( -623, -45 )
+scale = Vector2( 0.2, 0.2 )
+
 [node name="DojoBuilding" type="Sprite" parent="Props"]
 position = Vector2( -647, -270 )
 scale = Vector2( 2, 2 )
@@ -145,13 +215,6 @@ texture = ExtResource( 8 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/DojoBuilding/StaticBody2D"]
 position = Vector2( 340.5, 83 )
 polygon = PoolVector2Array( -81.5, 71.5, -80.5, 21.5, -98.5, 17.5, -79.5, 13.5, -65.5, -6, -66.5, -51.5, -102, -56, -99.5, -60, -81, -56, -56.5, -60.5, -20.5, -77.5, -1, -91, 3, -106.5, 6, -96, 33.5, -75, 48.5, -63.5, 82.5, -55, 92, -55, 101.5, -56.5, 102.5, -54, 86.5, -51, 68, -51, 69.5, -5.5, 78, 10, 89.5, 17, 101, 16, 99, 18.5, 81.5, 23, 85, 72 )
-
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( -789, -451 )
-scale = Vector2( -3, 3 )
-z_index = -99
-texture = ExtResource( 10 )
-region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [editable path="GUI"]
 [editable path="GUI/StoryText"]

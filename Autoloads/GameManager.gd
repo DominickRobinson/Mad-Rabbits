@@ -79,8 +79,10 @@ func _process(delta):
 		
 	if Input.is_action_pressed("spin_up"):
 		currentPlayer.angular_velocity += 1
+#		currentPlayer.linear_velocity += .1
 	elif Input.is_action_pressed("spin_down"):
 		currentPlayer.angular_velocity -= 1
+#		currentPlayer.linear_velocity -= .1
 	
 	
 	match CurrentGameState:

@@ -50,6 +50,7 @@ color_ramp = SubResource( 8 )
 
 [node name="CherryBlossom1" type="Sprite"]
 material = SubResource( 4 )
+z_index = -1
 texture = ExtResource( 3 )
 
 [node name="Particles2D" type="Particles2D" parent="."]

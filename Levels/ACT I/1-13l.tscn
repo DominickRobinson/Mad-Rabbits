@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Characters/Amogus.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=2]
@@ -12,10 +12,13 @@
 [ext_resource path="res://Assets/Act I/Icy mountain/Winnie’s castle.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelRectangle.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Shaders/space2.tres" type="Shader" id=12]
+[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Act I/Icy mountain/Mountain.png" type="Texture" id=15]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Act I/Icy mountain/Snow sky.png" type="Texture" id=18]
+[ext_resource path="res://Scripts/PlatformerCamera.gd" type="Script" id=19]
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 12 )
@@ -201,7 +204,7 @@ max_health = 100
 position = Vector2( -71, 355 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 5 )]
-position = Vector2( -92, -220 )
+position = Vector2( 23, -307 )
 linear_damp = 0.15
 totalAbilities = 0
 
@@ -220,6 +223,48 @@ texture = ExtResource( 7 )
 [node name="Camera2D" type="Camera2D" parent="Rabbits/Sarge"]
 current = true
 zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+script = ExtResource( 19 )
+
+[node name="Chip" parent="Rabbits" instance=ExtResource( 13 )]
+position = Vector2( -89, -228 )
+
+[node name="Sword" type="CollisionShape2D" parent="Rabbits/Chip"]
+show_behind_parent = true
+position = Vector2( 24, -16 )
+rotation = 0.940108
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Rabbits/Chip/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="Rabbits/Chip"]
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+script = ExtResource( 19 )
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 17 )]
+position = Vector2( -216, -261 )
+
+[node name="Sword" type="CollisionShape2D" parent="Rabbits/Ninja"]
+show_behind_parent = true
+position = Vector2( 24, -16 )
+rotation = 0.940108
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Rabbits/Ninja/Sword"]
+position = Vector2( 0.50116, 3.7317 )
+rotation = 1.27803
+scale = Vector2( 0.43319, 0.132308 )
+texture = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="Rabbits/Ninja"]
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
+script = ExtResource( 19 )
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -114, -306 )

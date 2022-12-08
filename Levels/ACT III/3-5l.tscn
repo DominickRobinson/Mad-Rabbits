@@ -12,7 +12,7 @@
 script = ExtResource( 7 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
-text = ""
+text = "But then, Sarge sees Chip in the distance! He rushes over! However..."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false

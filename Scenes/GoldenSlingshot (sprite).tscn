@@ -10,7 +10,8 @@ shader_param/strength = 0.5
 shader_param/speed = 0.5
 shader_param/angle = 0.0
 
-[node name="GoldenSlingshot" type="Node2D"]
+[node name="GoldenSlingshot" type="CollisionPolygon2D"]
+polygon = PoolVector2Array( -16, 0, -14, -67, -26, -116, -49, -153, -34, -164, -14, -131, -4, -96, 6, -116, -5, -159, 8, -166, 17, -154, 19, -108, 3, -77, 16, -1 )
 
 [node name="LeftLine" type="Line2D" parent="."]
 z_index = 1

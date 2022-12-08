@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Characters/Rex (good).tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Act I/Plains/Training grounds.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Characters/Bear (dummy).tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=8]
@@ -66,12 +66,10 @@ position = Vector2( -129, -22 )
 position = Vector2( -53, -7 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 5 )]
-modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 534, -154 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 5 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 347, -31 )
+position = Vector2( 396, -23 )
 
 [node name="Ground" type="Node2D" parent="."]
 

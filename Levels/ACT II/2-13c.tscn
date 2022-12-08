@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Assets/Act II/Dojo/Dojo building.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Act II/Dojo/Cherry level no dojo.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Props/CherryBlossom1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Props/CherryBlossom2.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=2]
 resource_name = "cutscene"
@@ -121,6 +123,29 @@ editor_draw_limits = true
 
 [node name="Props" type="Node2D" parent="."]
 position = Vector2( 41, -17 )
+
+[node name="Trees" type="Node2D" parent="Props"]
+position = Vector2( -23, 22 )
+
+[node name="CherryBlossom11" parent="Props/Trees" instance=ExtResource( 11 )]
+position = Vector2( 223, -41 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+
+[node name="CherryBlossom6" parent="Props/Trees" instance=ExtResource( 11 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( -18, -287 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CherryBlossom7" parent="Props/Trees" instance=ExtResource( 11 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( 293, -292 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="CherryBlossom5" parent="Props/Trees" instance=ExtResource( 12 )]
+modulate = Color( 0.678431, 0.678431, 0.678431, 1 )
+position = Vector2( -244, -213 )
+scale = Vector2( 0.2, 0.2 )
 
 [node name="DojoBuilding" type="Sprite" parent="Props"]
 position = Vector2( -641, -263 )

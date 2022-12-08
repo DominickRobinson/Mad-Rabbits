@@ -18,10 +18,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1.96 ),
+"times": PoolRealArray( 1.45 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ Vector2( 500, -500 ) ],
+"args": [ Vector2( 500, -700 ) ],
 "method": "apply_central_impulse"
 } ]
 }
@@ -30,7 +30,7 @@ tracks/0/keys = {
 script = ExtResource( 6 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
-text = ""
+text = "No life..."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false

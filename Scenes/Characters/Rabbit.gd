@@ -98,7 +98,7 @@ func useAbility():
 		return false
 	
 	#dramatic zoom in
-	if Options.zoomInDuringAbility and zoom_in[currentAbility] == true:
+	if Options.zoomInDuringAbility and zoom_in[currentAbility] == true and Manager.findCamera() != null:
 		Manager.findCamera().abilityZoomIn()
 		yield(Manager.findCamera().posTween, "tween_completed")
 #		yield(Manager.findCamera().zoomTween, "tween_completed")
@@ -118,13 +118,15 @@ func useAbility():
 	if counter == 0:
 		ability_used = true
 	
+#	modulate = Color(1,0,0)
+	
 	#dramatic zoom out
 	yield(get_tree().create_timer(zoom_in_duration), "timeout")
 	if not Manager.slowmo:
 		Manager.speedup()
 	else:
 		Manager.slowdown()
-	if Options.zoomInDuringAbility:
+	if Options.zoomInDuringAbility and Manager.findCamera() != null:
 		Manager.get_level().get_camera().abilityZoomOut()
 	hideCatchphrase()
 

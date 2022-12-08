@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Characters/RobotRabbit (enemy).gd" type="Script" id=1]
 [ext_resource path="res://Assets/Act IV/halo.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Characters/Bodies/RobotRedBody.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/Bodies/robot_rabbit.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Characters/Right Ear/rightEar0015.png" type="Texture" id=5]
 
 [sub_resource type="PhysicsMaterial" id=2]
@@ -17,11 +18,28 @@ height = 12.0
 [sub_resource type="CircleShape2D" id=5]
 radius = 2.0
 
-[node name="RobotRabbit (enemy)" type="RigidBody2D" groups=["Player", "Rabbits"]]
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "glad",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "mad",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 150.0
+
+[node name="RobotRabbit (enemy)" type="RigidBody2D" groups=["Bears"]]
 physics_material_override = SubResource( 2 )
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
+health = 1000
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
@@ -107,14 +125,24 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/EarStuff/EarNeutral2"]
 shape = SubResource( 5 )
 
-[node name="BodySprite" type="Sprite" parent="Body"]
+[node name="BodySprite" type="AnimatedSprite" parent="Body"]
 show_behind_parent = true
 position = Vector2( -6.85453e-07, -7.5 )
 scale = Vector2( -0.013, 0.013 )
-texture = ExtResource( 3 )
+frames = SubResource( 7 )
+animation = "glad"
 
 [node name="Halo" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -34 )
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 6 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

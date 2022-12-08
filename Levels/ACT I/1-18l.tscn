@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Winnie (playable).tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/Props/Slingshot2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Blocks - SHD/Rocket.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Infinity Carrot.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
 
 [sub_resource type="Gradient" id=7]
@@ -62,6 +63,21 @@ texture = ExtResource( 3 )
 [node name="Winnie (playable)" parent="Rabbits" instance=ExtResource( 2 )]
 position = Vector2( -85, -255 )
 mass = 65535.0
+totalAbilities = 1
+
+[node name="Winnie" parent="Rabbits/Winnie (playable)" index="0"]
+position = Vector2( 15, 3 )
+scale = Vector2( -0.3, 0.3 )
+
+[node name="NinePatchRect" parent="Rabbits/Winnie (playable)/AbilitySelectionPanel/Control" index="0"]
+visible = false
+
+[node name="Container" parent="Rabbits/Winnie (playable)/AbilitySelectionPanel/Control" index="3"]
+visible = false
+
+[node name="Infinity Carrot" parent="Rabbits/Winnie (playable)" instance=ExtResource( 13 )]
+position = Vector2( 47, -20 )
+scale = Vector2( -0.5, 0.5 )
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )
@@ -175,3 +191,7 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 11 )
 
 [connection signal="input_event" from="Slingshot/TouchArea" to="Slingshot" method="_on_TouchArea_input_event"]
+
+[editable path="Rabbits/Winnie (playable)"]
+[editable path="Rabbits/Winnie (playable)/AbilityPanel"]
+[editable path="Rabbits/Winnie (playable)/AbilitySelectionPanel"]

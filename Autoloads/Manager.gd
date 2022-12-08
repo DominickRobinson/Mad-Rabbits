@@ -4,28 +4,30 @@ var rng = RandomNumberGenerator.new()
 onready var bubble_root = preload("res://Scenes/Bubble.tscn")
 
 
-var Levels = ["ACT I/1-0c",
+var Levels = ["ACT 0/0-0", "ACT 0/0-1", "ACT 0/0-2",
+	
+			  "ACT I/1-0c",
 			  "ACT I/1-1l", "ACT I/1-2c", "ACT I/1-3l", "ACT I/1-4c", "ACT I/1-5l", "ACT I/1-6c", 
 			  "ACT I/1-7l", "ACT I/1-8c", "ACT I/1-9l", "ACT I/1-10c", "ACT I/1-11l", "ACT I/1-12c", 
-			  "ACT I/1-13l", "ACT I/1-14c", "ACT I/1-15c", "ACT I/1-16c", "ACT I/1-17c", "ACT I/1-18l", 
+			  "ACT I/1-13l", "ACT I/1-14c", "ACT I/1-15c", "ACT I/1-16l", "ACT I/1-17c", "ACT I/1-18l", 
 			  "ACT I/1-19c",
 			
 			  "ACT II/2-0c",
-			  "ACT II/2-1l", "ACT II/2-2c", "ACT II/2-3", "ACT II/2-4c", "ACT II/2-5c", "ACT II/2-6c",
+			  "ACT II/2-1l", "ACT II/2-2c", "ACT II/2-3l", "ACT II/2-4c", "ACT II/2-5c", "ACT II/2-6c",
 			  "ACT II/2-7l", "ACT II/2-8l", "ACT II/2-9c", "ACT II/2-10l", "ACT II/2-11c", "ACT II/2-12l", 
-			  "ACT II/2-13c", "ACT II/2-14c", "ACT II/2-15c", "ACT II/2-16c", "ACT II/2-17l", 
-			  "ACT II/2-18l", "ACT II/2-19l", "ACT II/2-20c", "ACT II/2-21c", "ACT II/2-22l", 
-			  "ACT II/2-23c", "ACT II/2-24l", "ACT II/2-25l", "ACT II/2-26c", "ACT II/2-27c",
+			  "ACT II/2-13c", "ACT II/2-14c", "ACT II/2-15l", "ACT II/2-16c", "ACT II/2-17l", 
+			  "ACT II/2-18c", "ACT II/2-19c", "ACT II/2-20l", "ACT II/2-21c", "ACT II/2-22l", 
+			  "ACT II/2-23l", "ACT II/2-24c", "ACT II/2-25c",
 			  
 			  "ACT III/3-0c",
 			  "ACT III/3-1c", "ACT III/3-2c", "ACT III/3-3c", "ACT III/3-4c", "ACT III/3-5l", 
 			  "ACT III/3-6c", "ACT III/3-7l", "ACT III/3-8c", "ACT III/3-9c", "ACT III/3-10l", 
-			  "ACT III/3-11l", "ACT III/3-12l", "ACT III/3-13c", "ACT III/3-14l", "ACT III/3-15c", 
-			  "ACT III/3-16l", "ACT III/3-17c", "ACT III/3-18l", "ACT III/3-19c",
+			  "ACT III/3-11c", "ACT III/3-12l", "ACT III/3-13c", "ACT III/3-14l", "ACT III/3-15c", 
+			  "ACT III/3-16l", "ACT III/3-17c",
 			
 			  "ACT IV/4-0c",
 			  "ACT IV/4-1c", "ACT IV/4-2c", "ACT IV/4-3c", "ACT IV/4-4l", "ACT IV/4-5c", "ACT IV/4-6l", 
-			  "ACT IV/4-7c", "ACT IV/4-8c", "ACT III/4-9l","ACT IV/4-10c", "ACT IV/4-11c", "ACT IV/4-12c",
+			  "ACT IV/4-7c", "ACT IV/4-8c", "ACT IV/4-9l","ACT IV/4-10c", "ACT IV/4-11c", "ACT IV/4-12c",
 			
 			  "ACT V/5-0c",
 			  "ACT V/5-1c", "ACT V/5-2c"]
@@ -48,6 +50,12 @@ var gaveUp = false
 func _ready():
 	CurrentGameMode = GameModes.MainMenu
 	print("There are ", Levels.size(), " levels!")
+	var sling_count = 0
+	for l in Levels:
+		if "l" in l:
+			sling_count += 1
+	print("  " + str(sling_count) + " of these are action levels!")
+	print("  The other " + str(Levels.size()-sling_count) + " are cutscenes!")
 
 func _process(delta):
 	pass
@@ -75,16 +83,17 @@ func _unhandled_input(event):
 		yield(get_tree(), "physics_frame")
 		yield(get_tree(), "physics_frame")
 		yield(get_tree(), "physics_frame")
+		yield(get_tree(), "physics_frame")
 		var image = get_viewport().get_texture().get_data()
 		image.flip_y()
 		image.save_png("res://Screenshots/" + get_tree().current_scene.get_name() + ".png")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	if findCamera() != null:
-		if Input.is_action_just_pressed("zoom_in_test"):
-			findCamera().zoom *= .9
-		if Input.is_action_just_pressed("zoom_out_test"):
-			findCamera().zoom *= 1.1
+#	if findCamera() != null:
+#		if Input.is_action_just_pressed("zoom_in_test"):
+#			findCamera().zoom *= .9
+#		if Input.is_action_just_pressed("zoom_out_test"):
+#			findCamera().zoom *= 1.1
 
 
 

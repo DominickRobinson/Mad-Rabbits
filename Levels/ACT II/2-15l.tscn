@@ -1,0 +1,138 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Act II/Dojo/Poster wall dojo.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/GoldenSlingshot (sprite).tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/Bear (dummy).tscn" type="PackedScene" id=9]
+
+[sub_resource type="Animation" id=2]
+resource_name = "cutscene"
+length = 20.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Rabbits/Ninja")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.9, 9, 9.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ "Rex is kinda sus...", 3.0 ],
+"method": "speak"
+}, {
+"args": [ "VROOOM!!", 10.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 1000, 0 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 785.735, 64.25 )
+
+[node name="2-15" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="GUI" parent="." instance=ExtResource( 6 )]
+text = "Ninja rolls around the dojo. The rooms are too clean, there is no sign of any struggle. “They would have put up at least a fight, I know it. Besides, we never lose to bears, so this must not have been a bear’s doing…” Ninja looks around, then opens a secret door. “Ah, here it is, the Epic Slingshot of Ninja Bunny Legend!” She pulls out a beautiful slingshot. She takes her anger out on the practice dummies in the room, then leaves the room and returns to the gang."
+
+[node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
+margin_top = 0.0
+margin_bottom = 1445.0
+text = "Sarge and Rex walk back to the village after their successful training session. Sarge asks, “Chief Rex, why do we even need to defend ourselves? What do those bad bears want with us? Why can’t we be their friends?” Rex replies, “They are trying to steal all of the carrots in Happy Land to forge an ultimate weapon, the Infinity Carrot, which will grant its wielder an untold power, enough to conquer Happy Land.” Sarge responds, “Wow, that sounds scary!” Rex, “Yes, it is. That is why we cannot lose…” BANG!!! As if on cue, Rex and Sarge hear an explosion in the distance. “The village is under attack!” yells Rex. They race back to the village."
+
+[node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
+margin_top = 1449.0
+margin_bottom = 1449.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
+anims/cutscene = SubResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 503, -226 )
+scale = Vector2( -1, 1 )
+z_index = -99
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( -308, -575 )
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 2 )]
+position = Vector2( 296, 557 )
+
+[node name="GoldenSlingshot" parent="Rabbits/Ninja" instance=ExtResource( 4 )]
+position = Vector2( 10, 2 )
+rotation = 0.847767
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 311.508, 59.256 )
+shape = SubResource( 3 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 3 )]
+position = Vector2( 309, -163 )
+zoom = Vector2( 0.75, 0.75 )
+editor_draw_limits = true
+
+[node name="Slingshot" parent="." instance=ExtResource( 8 )]
+position = Vector2( 113, -4 )
+
+[node name="Bears" type="Node2D" parent="."]
+position = Vector2( -1640, -137 )
+
+[node name="Bear" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 2195, 106 )
+health = 1000
+
+[node name="Bear2" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 2136, 105 )
+health = 1000
+
+[node name="Bear3" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 2076, 107 )
+health = 1000
+
+[node name="Bear4" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 2024, 105 )
+health = 1000
+
+[node name="Bear5" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 2052, 68 )
+health = 1000
+
+[node name="Bear6" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 2102, 69 )
+health = 1000
+
+[node name="Bear7" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 2163, 67 )
+health = 1000
+
+[node name="Bear8" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 2082, 38 )
+health = 1000
+
+[node name="Bear9" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 2135, 37 )
+health = 1000
+
+[node name="Bear10" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 2109, 7 )
+health = 1000
+
+[editable path="GUI"]
+[editable path="GUI/StoryText"]
+[editable path="Rabbits/Ninja/GoldenSlingshot"]
+[editable path="Slingshot"]

@@ -13,6 +13,8 @@ export (String, "battling_god", "brutal_battle", "chapter_card", "chill_happy", 
 
 export (String, MULTILINE) var text := "There once was a rabbit..."
 
+export (bool) var is_chapter_page := false
+
 onready var Score = $Score
 onready var EndOfLevel = $EndOfLevel
 onready var pauseMenu = $PauseMenu
@@ -22,13 +24,19 @@ var children = [Score, EndOfLevel]
 func _ready():
 #	Manager.play_music(music)
 	play_music()
-	$StoryText/VBoxContainer/Label.text = text
-	if text == "":
-		$StoryText.visible = false
-	#EndOfLevel.visible = false
-	$GameplayUtilityBar.visible = true
+	
+	if is_chapter_page:
+		$StoryText.queue_free()
+		$GameplayUtilityBar.queue_free()
+	else:
+		$StoryText/VBoxContainer/Label.text = text
+		if text == "":
+			$StoryText.visible = false
+		#EndOfLevel.visible = false
+		$GameplayUtilityBar.visible = true
+	
 	$PageNumber.visible = true
-	pass
+	
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("hide_ui"):

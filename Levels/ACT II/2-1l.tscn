@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Blocks/Steel/SteelLong.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Act II/apocalypse.jpg" type="Texture" id=10]
+[ext_resource path="res://Scenes/Blocks/TNT.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 785.735, 64.25 )
@@ -41,174 +42,158 @@ MaxLaunchVelocity = 600
 position = Vector2( -91, -23 )
 
 [node name="Bricks" type="Node2D" parent="."]
-position = Vector2( 1138, -75 )
+position = Vector2( 1152, -83 )
 
 [node name="SteelLong2" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -427, -70 )
+position = Vector2( -417, -75 )
 
 [node name="SteelLong3" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -429, 66 )
+position = Vector2( -415, 69 )
 
 [node name="SteelLong4" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -545, -70 )
+position = Vector2( -538, -75 )
 
 [node name="SteelLong5" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -547, 66 )
+position = Vector2( -537, 69 )
 
 [node name="SteelLong6" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -653, -69 )
+position = Vector2( -660, -76 )
 
 [node name="SteelLong7" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -655, 67 )
+position = Vector2( -658, 69 )
 
 [node name="WoodLong" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -703, 1 )
+position = Vector2( -706, -3 )
 rotation = 1.5708
 
 [node name="WoodLong2" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -597, -1 )
+position = Vector2( -596, -2 )
 rotation = 1.5708
 
 [node name="WoodLong3" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -484, 0 )
+position = Vector2( -476, -4 )
 rotation = 1.5708
 
 [node name="WoodLong4" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -376, -5 )
+position = Vector2( -367, -3 )
 rotation = 1.5708
 
 [node name="SteelLong8" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -427, -207 )
+position = Vector2( -418, -219 )
 
 [node name="SteelLong9" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -545, -207 )
+position = Vector2( -540, -219 )
 
 [node name="SteelLong10" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -653, -206 )
+position = Vector2( -663, -219 )
 
 [node name="WoodLong5" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -703, -136 )
+position = Vector2( -707, -148 )
 rotation = 1.5708
 
 [node name="WoodLong6" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -597, -138 )
+position = Vector2( -599, -148 )
 rotation = 1.5708
 
 [node name="WoodLong7" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -484, -137 )
+position = Vector2( -477, -148 )
 rotation = 1.5708
 
 [node name="WoodLong8" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -376, -142 )
+position = Vector2( -368, -147 )
 rotation = 1.5708
 
 [node name="SteelLong11" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -428, -343 )
+position = Vector2( -417, -363 )
 
 [node name="SteelLong12" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -546, -343 )
+position = Vector2( -541, -363 )
 
 [node name="SteelLong13" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -654, -342 )
+position = Vector2( -666, -363 )
 
 [node name="WoodLong9" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -704, -272 )
+position = Vector2( -705, -291 )
 rotation = 1.5708
 
 [node name="WoodLong10" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -598, -274 )
+position = Vector2( -599, -290 )
 rotation = 1.5708
 
 [node name="WoodLong11" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -485, -273 )
+position = Vector2( -478, -291 )
 rotation = 1.5708
 
 [node name="WoodLong12" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -377, -278 )
+position = Vector2( -368, -291 )
 rotation = 1.5708
 
+[node name="TNT" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( -540, -107 )
+
+[node name="TNT2" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( -749, 53 )
+
+[node name="TNT3" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( -316, 54 )
+
 [node name="Bears" type="Node2D" parent="."]
-position = Vector2( 178, 6 )
+position = Vector2( 192, -2 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 551, -47 )
+position = Vector2( 289, -49 )
 
 [node name="Bear2" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 514, -51 )
+position = Vector2( 331, -47 )
 
 [node name="Bear3" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 433, -47 )
+position = Vector2( 396, -47 )
 
 [node name="Bear4" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 396, -51 )
+position = Vector2( 441, -46 )
 
 [node name="Bear5" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 325, -46 )
+position = Vector2( 518, -47 )
 
 [node name="Bear6" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 288, -50 )
+position = Vector2( 561, -47 )
 
 [node name="Bear7" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 551, -184 )
+position = Vector2( 288, -195 )
 
 [node name="Bear8" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 514, -188 )
-
-[node name="Bear9" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 433, -184 )
-
-[node name="Bear10" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 396, -188 )
+position = Vector2( 330, -193 )
 
 [node name="Bear11" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 325, -183 )
+position = Vector2( 517, -193 )
 
 [node name="Bear12" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 288, -187 )
+position = Vector2( 560, -193 )
 
 [node name="Bear13" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 550, -320 )
+position = Vector2( 285, -339 )
 
 [node name="Bear14" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 513, -324 )
+position = Vector2( 327, -337 )
 
 [node name="Bear15" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 432, -320 )
+position = Vector2( 392, -337 )
 
 [node name="Bear16" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 395, -324 )
+position = Vector2( 437, -336 )
 
 [node name="Bear17" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 324, -319 )
+position = Vector2( 514, -337 )
 
 [node name="Bear18" parent="Bears" instance=ExtResource( 9 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 287, -323 )
+position = Vector2( 557, -337 )
 
 [node name="Ground" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2( 311.508, 59.256 )
-rotation = 0.0174533
+position = Vector2( 311, 62 )
 shape = SubResource( 10 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 3 )]

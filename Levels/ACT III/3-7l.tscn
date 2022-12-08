@@ -113,8 +113,7 @@ scale = Vector2( -1, 1 )
 
 [node name="Slingshot" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1818, 722 )
-scale = Vector2( -1, 1 )
-MaxLaunchVelocity = 2000
+MaxLaunchVelocity = 1000
 
 [node name="Bears" type="Node2D" parent="."]
 position = Vector2( -53, -7 )
@@ -123,10 +122,12 @@ position = Vector2( -53, -7 )
 position = Vector2( 1162, 443 )
 rotation = 1.5708
 scale = Vector2( -1, 1 )
+mode = 3
 health = 10
 
 [node name="Sarge (enemy)" parent="Bears" instance=ExtResource( 3 )]
 position = Vector2( 1122, 453 )
+mode = 3
 health = 10
 
 [editable path="GUI"]

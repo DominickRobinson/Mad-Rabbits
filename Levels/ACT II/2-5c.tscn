@@ -22,13 +22,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.6 ),
+"times": PoolRealArray( 0.1, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "VROOM", 10.0 ],
 "method": "speak"
 }, {
-"args": [ Vector2( 700, 0 ) ],
+"args": [ Vector2( 400, 0 ) ],
 "method": "apply_central_impulse"
 } ]
 }
@@ -39,13 +39,13 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1, 1, 14.7 ),
+"times": PoolRealArray( 0.1, 2.9, 14.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ "VROOM", 10.0 ],
 "method": "speak"
 }, {
-"args": [ Vector2( 2500, 0 ) ],
+"args": [ Vector2( 400, 0 ) ],
 "method": "apply_central_impulse"
 }, {
 "args": [ "iunjefh;kEWNMKJzJ<HQE:FLHKJEF>", 10.0 ],
@@ -59,13 +59,13 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.1, 0.3 ),
+"times": PoolRealArray( 0.1, 1.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "VROOM", 10.0 ],
 "method": "speak"
 }, {
-"args": [ Vector2( 1000, 0 ) ],
+"args": [ Vector2( 400, 0 ) ],
 "method": "apply_central_impulse"
 } ]
 }
@@ -76,13 +76,13 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.1, 0.4 ),
+"times": PoolRealArray( 0.1, 0.42 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ "VROOOM", 10.0 ],
 "method": "speak"
 }, {
-"args": [ Vector2( 1250, 0 ) ],
+"args": [ Vector2( 300, 0 ) ],
 "method": "apply_central_impulse"
 } ]
 }
@@ -126,6 +126,7 @@ texture = ExtResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="Background"]
 position = Vector2( 28, -34 )
+scale = Vector2( 1.1, 1.1 )
 z_index = 10
 z_as_relative = false
 texture = ExtResource( 1 )
@@ -134,16 +135,20 @@ texture = ExtResource( 1 )
 position = Vector2( -573, 0 )
 
 [node name="Karen" parent="Rabbits" instance=ExtResource( 4 )]
-position = Vector2( 428, 543 )
+position = Vector2( 492, 546 )
+cutsceneMode = true
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 7 )]
-position = Vector2( 318, 544 )
+position = Vector2( 226, 541 )
+cutsceneMode = true
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 9 )]
-position = Vector2( 371, 547 )
+position = Vector2( 390, 553 )
+cutsceneMode = true
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 10 )]
-position = Vector2( 269, 546 )
+position = Vector2( 308, 544 )
+cutsceneMode = true
 
 [node name="Ground" type="Node2D" parent="."]
 position = Vector2( -6, 573 )
@@ -151,8 +156,8 @@ position = Vector2( -6, 573 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2( 531, 76 )
-rotation = 0.0174533
+position = Vector2( 527, 80 )
+rotation = 0.0349066
 shape = SubResource( 1 )
 
 [editable path="GUI"]

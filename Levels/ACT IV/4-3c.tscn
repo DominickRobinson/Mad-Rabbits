@@ -81,6 +81,7 @@ extents = Vector2( 80.625, 504.301 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 4 )]
+text = "“Soo… um… Chip, or I mean Jesús,” Sarge asks, “how can you speak?” Chip chuckles heartily, then explains “Well, of course I can speak, my child! You see, that whole time, believe it or not, I was choking… on a carrot. A carrot, my child, a carrot! Can you believe it? Oh, what poor luck indeed. I am recovered now, however, as you can see.” The gang continues to roll. Eventually, they arrive outside of the gates to the Kingdom of Heaven. “It seems that we have arrived. I am so excited for you to experience Honkey’s everlasting glory.” They enter. "
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false
