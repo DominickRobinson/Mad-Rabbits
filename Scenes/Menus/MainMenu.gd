@@ -8,7 +8,10 @@ func _ready():
 	Manager.playMusic("res://Assets/Sound/Music/Scott Holmes Music - Beyond Dreams.mp3")
 	
 	#title animation
-	yield(get_tree().create_timer(1), "timeout")
+#	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
 	$AnimationPlayer1.play("start")
 	yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
@@ -24,15 +27,21 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
+	$GCS_logo.visible = true
 	$Sprites.visible = true
+
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ability"):
 #		$PageNumber.visible = true
-		$Text.visible = true
-		$Sprites.visible = true
 		$AnimationPlayer1.seek(100)
 		$AnimationPlayer2.seek(100)
+		$Text.visible = true
+		$Sprites.visible = true
+		$GCS_logo.visible = true
+		$GCS_logo.modulate = Color(1,1,1,.7)
+		$Sprites.modulate = Color(1,1,1,1)
+
 
 
 #func _unhandled_input(event):

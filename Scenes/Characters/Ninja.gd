@@ -48,8 +48,8 @@ func _physics_process(delta):
 #split into 3
 func ability1():
 	var copy = load(self.filename)
-	newNinja(Vector2(0, -20), Color(0, 1, 0), 1.5)
-	newNinja(Vector2(0, 20), Color(0, 0, 1), 1.5)
+	newNinja(Vector2(-20, 0), Color(0, 1, 0), 1.5)
+	newNinja(Vector2(20, 0), Color(0, 0, 1), 1.5)
 	self.modulate = Color(1, 0, 0)
 	ability_used = true
 	#change
@@ -109,7 +109,8 @@ func newNinja(offset, color, vel_mult):
 	self.get_parent().add_child(copy)
 	copy = copy as Rabbit
 	copy.ThrowRabbit()
-	copy.position = position + offset.rotated(rotation)
+	var lv_dir = linear_velocity.angle()
+	copy.global_position = global_position + offset.rotated(lv_dir + PI/2)
 	copy.linear_velocity = (linear_velocity + offset) * vel_mult
 	copy.angular_velocity = angular_velocity * vel_mult
 	copy.ability_used = true

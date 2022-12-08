@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Menus/OptionButton.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/true-crimes.ttf" type="DynamicFontData" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/Characters/Portraits/Robot rabbit.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Characters/Portraits/Rex.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Characters/Portraits/winnie.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Icons/official_no_back white.png" type="Texture" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -42,7 +43,7 @@ font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "start"
-length = 11.0
+length = 10.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Text/Mad Rabbits:percent_visible")
 tracks/0/interp = 1
@@ -205,6 +206,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( -8, 0 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("GCS_logo:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 8.9, 14.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.7 ) ]
+}
 
 [node name="0-0" type="Control"]
 anchor_right = 1.0
@@ -239,6 +252,7 @@ visible = false
 
 [node name="Sprites" type="Control" parent="."]
 visible = false
+modulate = Color( 1, 1, 1, 0.0263158 )
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -246,7 +260,7 @@ __meta__ = {
 }
 
 [node name="Winnie" type="TextureRect" parent="Sprites"]
-modulate = Color( 1, 0.443137, 0.443137, 0.0980392 )
+modulate = Color( 1, 0.443137, 0.443137, 0 )
 margin_left = 327.0
 margin_top = 19.0
 margin_right = 469.0
@@ -287,8 +301,7 @@ __meta__ = {
 
 [node name="Mystery" type="TextureRect" parent="Sprites/Rex"]
 show_behind_parent = true
-margin_left = -8.0
-margin_right = 134.0
+margin_right = 142.0
 margin_bottom = 214.0
 texture = ExtResource( 14 )
 expand = true
@@ -369,6 +382,7 @@ margin_bottom = 25.0
 rect_min_size = Vector2( 0, 25 )
 
 [node name="Mad Rabbits" type="RichTextLabel" parent="Text"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 29.0
 margin_right = 926.0
 margin_bottom = 123.0
@@ -383,6 +397,7 @@ __meta__ = {
 }
 
 [node name="Epic Vegetable Quest" type="RichTextLabel" parent="Text"]
+visible = false
 margin_top = 127.0
 margin_right = 926.0
 margin_bottom = 175.0
@@ -404,10 +419,13 @@ margin_bottom = 210.0
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center]and the Legend of the [rainbow]Infinity Carrot"
+visible_characters = 0
+percent_visible = 0.0
 text = "and the Legend of the Infinity Carrot"
 fit_content_height = true
 
 [node name="of Legendary Legend" type="RichTextLabel" parent="Text"]
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 214.0
 margin_right = 926.0
 margin_bottom = 263.0
@@ -423,6 +441,7 @@ text = "of Legendary Legend"
 fit_content_height = true
 
 [node name="ft Winnie" type="RichTextLabel" parent="Text"]
+visible = false
 margin_top = 267.0
 margin_right = 926.0
 margin_bottom = 284.0
@@ -602,7 +621,6 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
-playback_speed = 2.0
 anims/start = SubResource( 5 )
 
 [node name="Button" type="Button" parent="."]
@@ -618,6 +636,20 @@ __meta__ = {
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 anims/cutscene = SubResource( 7 )
+
+[node name="GCS_logo" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 851.0
+margin_top = -6.0
+margin_right = 1024.0
+margin_bottom = 95.0
+texture = ExtResource( 18 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Buttons/HBoxContainer/VBoxContainer/Classic" to="." method="_on_Classic_pressed"]
 [connection signal="value_changed" from="Buttons/HBoxContainer/VBoxContainer2/SpinBox" to="." method="_on_SpinBox_value_changed"]

@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Blocks/Steel/SteelRectangle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSquare.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Blocks/Wood/WoodLong.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Act II/Dojo/Dojo building.png" type="Texture" id=10]
@@ -36,7 +36,6 @@ region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="Slingshot" parent="." instance=ExtResource( 6 )]
 position = Vector2( -2091, -149 )
-MaxSlingshotPull = 200
 MaxLaunchVelocity = 1000
 
 [node name="Bricks" type="Node2D" parent="."]
@@ -57,29 +56,29 @@ position = Vector2( -431, -142 )
 [node name="SteelRectangle" parent="Bricks" instance=ExtResource( 4 )]
 position = Vector2( -430, -206 )
 
-[node name="SteelLong" parent="Bricks" instance=ExtResource( 15 )]
-position = Vector2( 170, 217 )
-rotation = -0.811611
-
 [node name="SteelLong2" parent="Bricks" instance=ExtResource( 15 )]
 position = Vector2( 233, 233 )
 rotation = -1.60347
 
-[node name="SteelSuperLong2" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( 344, 223 )
-rotation = 3.44653
+[node name="WoodLong" parent="Bricks" instance=ExtResource( 7 )]
+position = Vector2( 169, 234 )
+rotation = -0.535755
+
+[node name="WoodLong2" parent="Bricks" instance=ExtResource( 7 )]
+position = Vector2( 301, 251 )
+rotation = 0.477477
 
 [node name="Rabbits" type="Node2D" parent="."]
 position = Vector2( -2144, -114 )
 
 [node name="Ninja" parent="Rabbits" instance=ExtResource( 13 )]
-position = Vector2( -214, 15 )
+position = Vector2( -60, -32 )
 
 [node name="Karen" parent="Rabbits" instance=ExtResource( 14 )]
-position = Vector2( -103, -29 )
+position = Vector2( -156, -8 )
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 2 )]
-position = Vector2( -156, -7 )
+position = Vector2( -209, 14 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 11 )]
 position = Vector2( -266, 27 )
