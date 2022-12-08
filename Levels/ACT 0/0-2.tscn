@@ -159,6 +159,7 @@ margin_bottom = 330.0
 rect_min_size = Vector2( 100, 0 )
 
 [node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0.717647 )
 margin_left = 487.0
 margin_right = 587.0
 margin_bottom = 330.0
