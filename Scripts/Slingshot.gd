@@ -24,7 +24,14 @@ var lastRabbitThrown
 
 var can_start = false
 
+
+var left_just_pressed = false
+var right_just_pressed = false
+var left_pressed = false
+var right_pressed = false
+
 var launchNoise = "res://Assets/Sound/Sound effects/slingshot.mp3"
+
 
 func _ready():
 	SlingshotState = SlingState.idle
@@ -73,11 +80,19 @@ func _process(delta):
 #		print(Manager.findCamera().global_position)
 #	#print(player.global_position)
 	
+	if Input.is_action_just_released("ability"):
+		left_pressed = false
+		left_just_pressed = false
+		
+	
 	match SlingshotState:
 		SlingState.idle:
+			$CanvasLayer/RabbitControls.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			player.showAbilitySelection(true)
 		
 		SlingState.pulling:
+			$CanvasLayer/RabbitControls.mouse_filter = Control.MOUSE_FILTER_PASS
+			
 			#finds player
 			
 			if not can_start:
@@ -121,7 +136,8 @@ func _process(delta):
 			
 			$Arrow.global_position = pullPositionGlobal
 			
-			if Input.is_action_pressed("pull_in_slingshot"):
+#			if Input.is_action_pressed("pull_in_slingshot"):
+			if left_pressed:
 				#makes slingshot rope follow player
 				LeftLine.points[1] = pullPositionLocal
 				RightLine.points[1] = pullPositionLocal
@@ -180,7 +196,9 @@ func _process(delta):
 				
 				
 		SlingState.thrown:
-			if Input.is_action_just_pressed("ability"):
+			$CanvasLayer/RabbitControls.mouse_filter = Control.MOUSE_FILTER_PASS
+#			if Input.is_action_just_pressed("ability"):
+			if left_just_pressed:
 				if is_instance_valid(player):
 					player.useAbility()
 
@@ -190,7 +208,8 @@ func _process(delta):
 #					player.useAbility()
 			
 			#reloads slingshot on button press
-			if Input.is_action_pressed("return_to_slingshot"):
+#			if Input.is_action_pressed("return_to_slingshot"):
+			if right_just_pressed:
 				if get_tree().get_nodes_in_group("Player").size() <= 1:
 					return
 				nextPlayer()
@@ -198,6 +217,7 @@ func _process(delta):
 
 
 		SlingState.reset:
+			$CanvasLayer/RabbitControls.mouse_filter = Control.MOUSE_FILTER_PASS
 			var lives = get_tree().get_nodes_in_group("Player")
 			
 			if lives.size() >= 1:
@@ -261,13 +281,34 @@ func movePlayerToSlingshot(t = 0.1):
 	$Tween.interpolate_property(player, "global_position", player.global_position, CenterOfSlingshotGlobal, t)
 	$Tween.start()
 
-
 #when player presses on catapult to drag character
 func _on_TouchArea_input_event(viewport, event, shape_idx):
 #	print("1")
 	if not can_start:
 		return false
-	
+
 	if SlingshotState == SlingState.idle:
-		if (event is InputEventMouseButton and event.pressed):
+		if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
 			SlingshotState = SlingState.pulling
+			left_pressed = true
+			left_just_pressed = true
+
+
+func _on_RabbitControls_gui_input(event):
+	
+	if not (event is InputEventMouseButton):
+		return
+	
+	var left_pressed_last_frame = left_pressed
+	var right_pressed_last_frame = right_pressed
+	
+	left_pressed = (event is InputEventMouseButton) and (event.button_index == BUTTON_LEFT) and event.pressed
+	right_pressed = (event is InputEventMouseButton) and (event.button_index == BUTTON_RIGHT) and event.pressed
+	
+	left_just_pressed = left_pressed and not left_pressed_last_frame
+	right_just_pressed = right_pressed and not right_pressed_last_frame
+
+#	print("right_just_pressed: ", right_just_pressed)
+#	print("left_just_pressed: ", left_just_pressed)
+#	print("right_pressed: ", right_pressed)
+#	print("left_pressed: ", left_pressed)

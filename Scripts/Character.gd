@@ -5,6 +5,8 @@ export var cutsceneMode := false
 
 export (bool) var show_halo := false
 
+export (bool) var can_always_control := false
+
 onready var speechBubble = preload("res://Scenes/Effects/SpeechBubble.tscn")
 
 # Declare member variables here. Examples:
@@ -21,6 +23,17 @@ func _ready():
 			$Halo.visible = true
 		else:
 			$Halo.visible = false
+
+func _physics_process(delta):
+	if can_always_control:
+		if Input.is_action_pressed("spin_up"):
+#			Manager.get_player().angular_velocity += 1
+			angular_velocity += 1
+			linear_velocity.x += .1
+		elif Input.is_action_pressed("spin_down"):
+#			Manager.get_player().angular_velocity -= 1
+			angular_velocity -= 1
+			linear_velocity.x -= .1
 
 
 #useful functions for cutscenes
