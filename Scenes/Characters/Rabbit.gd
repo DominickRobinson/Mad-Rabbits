@@ -53,7 +53,7 @@ func _init():
 
 func _physics_process(delta):
 	#print(angular_velocity)
-	clamp(angular_velocity, -250, 250)
+	clamp(angular_velocity, -150, 150)
 	if not Options.abilityCatchphraseVisible:
 		if is_instance_valid($AbilityPanel/Control):
 			$AbilityPanel/Control.visible = false

@@ -217,6 +217,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BackgroundFilter" type="ColorRect" parent="Tips"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0588235, 0.0588235, 0.0588235, 0.345098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextArrow" type="TextureRect" parent="Tips"]
 anchor_left = 0.194336
 anchor_top = 0.21
@@ -431,6 +439,7 @@ __meta__ = {
 }
 
 [node name="Ability" type="Control" parent="Tips"]
+visible = false
 margin_left = -65.0
 margin_top = -43.0
 margin_right = -25.0
@@ -467,6 +476,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HowToPlay" type="Control" parent="Tips/Ability"]
+margin_left = 307.0
+margin_top = 233.0
+margin_right = 745.0
+margin_bottom = 447.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Tips/Ability/HowToPlay"]
+margin_left = 2.0
+margin_top = -5.0
+margin_right = 416.0
+margin_bottom = 209.0
+color = Color( 0.117647, 0.117647, 0.117647, 0.427451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="RichTextLabel" parent="Tips/Ability/HowToPlay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 14.0
+margin_top = 3.0
+margin_right = 14.0
+margin_bottom = 3.0
+rect_clip_content = false
+custom_colors/default_color = Color( 1, 0.709804, 0.145098, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "How to Play
+1. Right click to load slingshot
+2. Drag with left click to pull rabbit
+3. Release left click to launch
+4. Right click before loading slingshot again to use ability
+5. Repeat"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Cutscene" type="Control" parent="Tips"]
 visible = false
 margin_right = 40.0
@@ -495,6 +543,42 @@ margin_right = 330.0
 margin_bottom = 250.0
 custom_fonts/normal_font = SubResource( 3 )
 text = "Play cutscene"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowToPlay" type="Control" parent="Tips/Cutscene"]
+margin_left = 228.0
+margin_top = 267.0
+margin_right = 666.0
+margin_bottom = 481.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Tips/Cutscene/HowToPlay"]
+margin_left = 2.0
+margin_top = -6.0
+margin_right = 383.0
+margin_bottom = 131.0
+color = Color( 0.117647, 0.117647, 0.117647, 0.427451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="RichTextLabel" parent="Tips/Cutscene/HowToPlay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 14.0
+margin_top = 3.0
+margin_right = -60.0
+margin_bottom = -37.0
+rect_clip_content = false
+custom_colors/default_color = Color( 0.545098, 0.937255, 0.278431, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "How to Play
+1. Click the play button in the top left corner to play cutscene
+2. Sit back and enjoy the show  :)"
 __meta__ = {
 "_edit_use_anchors_": false
 }

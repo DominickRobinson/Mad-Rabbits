@@ -25,6 +25,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 2 )
 
 [node name="GUI" parent="." instance=ExtResource( 10 )]
+music = "brutal_battle"
 text = "As Rex and Sarge enter the village, Rex instructs Sarge, “The time has come. We have no choice but to fight!” Sarge responds, “Yes chief, I will do my best.” Rex and Sarge fight off the invader bears. "
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
@@ -129,19 +130,27 @@ position = Vector2( 1126.25, 141.25 )
 scale = Vector2( -1, 1 )
 
 [node name="Bricks" type="Node2D" parent="."]
-position = Vector2( 993, -76 )
+position = Vector2( 920, -83 )
 
 [node name="WoodSquare" parent="Bricks" instance=ExtResource( 13 )]
 position = Vector2( -508, -437 )
 
 [node name="WoodSquare4" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -194, -428 )
+position = Vector2( -195, -338 )
 
 [node name="WoodLong" parent="Bricks" instance=ExtResource( 17 )]
 position = Vector2( -507, -390 )
 
 [node name="WoodLong4" parent="Bricks" instance=ExtResource( 17 )]
-position = Vector2( -192, -377 )
+position = Vector2( -193, -287 )
+
+[node name="WoodLong5" parent="Bricks" instance=ExtResource( 17 )]
+position = Vector2( -146, -216 )
+rotation = 1.5708
+
+[node name="WoodLong6" parent="Bricks" instance=ExtResource( 17 )]
+position = Vector2( -242, -214 )
+rotation = 1.5708
 
 [node name="WoodRectangle" parent="Bricks" instance=ExtResource( 18 )]
 position = Vector2( -306, 39 )
@@ -158,20 +167,12 @@ rotation = 1.5708
 position = Vector2( -547, -272 )
 rotation = 1.5708
 
-[node name="WoodSuperLong7" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -235, -257 )
-rotation = 1.5708
-
 [node name="WoodSuperLong4" parent="Bricks" instance=ExtResource( 14 )]
 position = Vector2( -468, -273 )
 rotation = 1.5708
 
-[node name="WoodSuperLong8" parent="Bricks" instance=ExtResource( 14 )]
-position = Vector2( -148, -257 )
-rotation = 1.5708
-
 [node name="WoodSquare2" parent="Bricks" instance=ExtResource( 13 )]
-position = Vector2( -388, -20 )
+position = Vector2( -401, -20 )
 
 [node name="WoodSquare3" parent="Bricks" instance=ExtResource( 13 )]
 position = Vector2( -318, -26 )
@@ -206,7 +207,7 @@ position = Vector2( -121, -15 )
 catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
 [node name="Bears" type="Node2D" parent="."]
-position = Vector2( 30, 1 )
+position = Vector2( -43, -6 )
 
 [node name="Bear" parent="Bears" instance=ExtResource( 12 )]
 position = Vector2( 457, -269 )

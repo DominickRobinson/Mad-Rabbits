@@ -353,7 +353,6 @@ position = Vector2( 192, 525 )
 MaxLaunchVelocity = 1000
 
 [node name="TNTs" type="Node2D" parent="."]
-visible = false
 script = ExtResource( 15 )
 
 [node name="TNT" parent="TNTs" instance=ExtResource( 14 )]
@@ -372,28 +371,8 @@ mode = 3
 position = Vector2( 798, 223 )
 mode = 3
 
-[node name="TNT11" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 797, 184 )
-mode = 3
-
-[node name="TNT12" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 797, 346 )
-mode = 3
-
-[node name="TNT13" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 941, 389 )
-mode = 3
-
-[node name="TNT14" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 868, 383 )
-mode = 3
-
 [node name="TNT15" parent="TNTs" instance=ExtResource( 14 )]
 position = Vector2( 868, 326 )
-mode = 3
-
-[node name="TNT10" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 808, 391 )
 mode = 3
 
 [node name="TNT37" parent="TNTs" instance=ExtResource( 14 )]
@@ -412,44 +391,12 @@ mode = 3
 position = Vector2( 847, 197 )
 mode = 3
 
-[node name="TNT5" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 872, 167 )
-mode = 3
-
-[node name="TNT6" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 848, 131 )
-mode = 3
-
-[node name="TNT7" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 891, 130 )
-mode = 3
-
-[node name="TNT16" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 955, 196 )
-mode = 3
-
-[node name="TNT17" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 937, 154 )
-mode = 3
-
-[node name="TNT19" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 980, 217 )
-mode = 3
-
-[node name="TNT20" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 999, 254 )
-mode = 3
-
 [node name="TNT21" parent="TNTs" instance=ExtResource( 14 )]
 position = Vector2( 956, 247 )
 mode = 3
 
 [node name="TNT22" parent="TNTs" instance=ExtResource( 14 )]
 position = Vector2( 956, 271 )
-mode = 3
-
-[node name="TNT23" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 984, 314 )
 mode = 3
 
 [node name="TNT24" parent="TNTs" instance=ExtResource( 14 )]
@@ -460,24 +407,12 @@ mode = 3
 position = Vector2( 952, 341 )
 mode = 3
 
-[node name="TNT26" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 819, 151 )
-mode = 3
-
 [node name="TNT29" parent="TNTs" instance=ExtResource( 14 )]
 position = Vector2( 843, 338 )
 mode = 3
 
 [node name="TNT30" parent="TNTs" instance=ExtResource( 14 )]
 position = Vector2( 896, 339 )
-mode = 3
-
-[node name="TNT31" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 997, 169 )
-mode = 3
-
-[node name="TNT33" parent="TNTs" instance=ExtResource( 14 )]
-position = Vector2( 839, 356 )
 mode = 3
 
 [node name="TNT34" parent="TNTs" instance=ExtResource( 14 )]

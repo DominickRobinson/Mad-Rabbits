@@ -39,6 +39,7 @@ font_data = ExtResource( 4 )
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "chapter_card"
 text = "Sarge and Rex walk back to the village after their successful training session. “What do the bad bears want with us? Why can’t we be their friends?” asks Sarge. Rex answers, “They want to steal all of the carrots in Happy Land to form ge the legendary Infinity Carrot, which will grant its wielder unlimited power. They want to conquer Happy Land.”
 As if on cue, BANG!!! Rex and Sarge hear an explosion in the distance. “The village is under attack!” yells Rex. They rush back to the village."
 is_chapter_page = true

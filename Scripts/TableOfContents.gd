@@ -8,7 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Manager.playMusic("res://Assets/Sound/Music/happy_chill.mp3")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,4 +38,4 @@ func _on_Chapter_5_pressed():
 
 
 func _on_GoToPage_pressed():
-	Manager.go_to_level($PageNumber/HBoxContainer/SpinBox.value - 1)
+	Manager.go_to_level($VBoxContainer/HBoxContainer/Control3/HBoxContainer/SpinBox.value - 1)

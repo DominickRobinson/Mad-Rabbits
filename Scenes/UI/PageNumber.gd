@@ -4,6 +4,7 @@ onready var sb = $HBoxContainer/SpinBox
 
 func _ready():
 	sb.value = Manager.LevelIndex + 1
+	$Num.text = "" + str(Manager.LevelIndex + 1)
 
 
 

@@ -141,8 +141,8 @@ rect_min_size = Vector2( 1024, 200 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[center]Bad Rabbits"
-text = "Bad Rabbits"
+bbcode_text = "[center]Bad Rabbit"
+text = "Bad Rabbit"
 __meta__ = {
 "_edit_use_anchors_": false
 }

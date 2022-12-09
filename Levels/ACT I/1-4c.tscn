@@ -55,6 +55,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 10 )]
+music = "church_death"
 text = "The rabbits successfully fend off the bears. However, Rex is critically wounded. Sarge rolls over to Rex, crying out, “CHIEF! CHIEF! ARE YOU OK?” Rex coughs and says, “Sarge, you fought well. I am in no shape to fight anymore. We won for now, but they’ll be back. You must avenge our people. Go retrieve the carrots they stole from us. Please…” Rex passes out, and Sarge cries out, “NOOOOOO, CHIEF!!!” Sarge is solemn and mourns the loss of his mentor. He declares, “I will avenge my village. I will avenge Chief.” And with that, a Mad Rabbit embarks on an Epic Vegetable Quest."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

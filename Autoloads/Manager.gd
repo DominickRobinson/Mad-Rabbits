@@ -106,31 +106,34 @@ func reload():
 #page flip animation - goes to next level in array
 func next_level():
 	speedup()
+	get_tree().paused = false	
 	Manager.LevelIndex += 1
 	#RestartLevel()
 	ChangeScene.display_flip = true
 	ChangeScene.flip_left = true
-	if Manager.LevelIndex >= Levels.size():
-		LevelIndex = 0
-		ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
-		return
+#	if Manager.LevelIndex >= Levels.size():
+#		LevelIndex = 0
+#		ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
+#		return
 	ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
 
 #page flip animation - goes to last level in array
 func last_level():
 	speedup()
+	get_tree().paused = false
 	Manager.LevelIndex -= 1
 	#RestartLevel()
 	ChangeScene.display_flip = true
 	ChangeScene.flip_left = false
-	if Manager.LevelIndex < 0:
-		Manager.LevelIndex = 0
-		return
+#	if Manager.LevelIndex < 0:
+#		Manager.LevelIndex = 0
+#		return
 	ChangeScene.change_scene(ConvertLevelToFile(Manager.LevelIndex))
 
 #page flip animaton - goes to given level with index num
 func go_to_level(num):
 	speedup()
+	get_tree().paused = false
 	var old_index = LevelIndex
 	ChangeScene.display_flip = true
 	Manager.LevelIndex = num 

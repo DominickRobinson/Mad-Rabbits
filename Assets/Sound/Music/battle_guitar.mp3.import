@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/battle_guitar.mp3-5ae51973b8f931b5ef5d969f6d7b246d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/battle_guitar.mp3"
+dest_files=[ "res://.import/battle_guitar.mp3-5ae51973b8f931b5ef5d969f6d7b246d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

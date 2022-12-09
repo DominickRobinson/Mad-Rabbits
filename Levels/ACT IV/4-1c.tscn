@@ -51,7 +51,7 @@ extents = Vector2( 835.344, 64.25 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
-text = "“They are here,” God says. “I sense them, God. I shall go get them, bring them to you.” “Yes, Father,” replies Chip, who rolls out of the magnificent throne room."
+text = "“They are here,” says Honkey. “Yes, Father, I shall go retrieve them,” replies Chip, who rolls out of the magnificent throne room."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
 visible = false

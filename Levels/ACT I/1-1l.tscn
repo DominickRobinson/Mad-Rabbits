@@ -18,6 +18,7 @@ extents = Vector2( 618.775, 64.25 )
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "graceful_classical"
 text = "“Work on your aim, Sarge!” says Rex, the village chief, “The mean, evil bears could strike at any moment.” “Yes chief!” replies Sarge, who is next in line to become the village chief. Sarge defeats dummy after dummy, while Rex hones his sword skills."
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

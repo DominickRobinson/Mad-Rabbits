@@ -134,6 +134,12 @@ text = "6900 years have passed since the gang’s defeat. In that time, the bear
 margin_top = 1614.0
 margin_bottom = 1614.0
 
+[node name="PageNumber" parent="GUI" index="5"]
+visible = true
+
+[node name="ForwardPage" parent="GUI/PageNumber" index="4"]
+visible = false
+
 [node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
 anims/cutscene = SubResource( 1 )
 
@@ -211,4 +217,5 @@ step = 1.0
 
 [editable path="GUI"]
 [editable path="GUI/StoryText"]
+[editable path="GUI/PageNumber"]
 [editable path="Amogus"]

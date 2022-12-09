@@ -276,12 +276,6 @@ __meta__ = {
 
 [node name="PageNumber" parent="." instance=ExtResource( 3 )]
 
-[node name="NinePatchRect2" parent="PageNumber" index="2"]
-visible = false
-
-[node name="HBoxContainer" parent="PageNumber" index="3"]
-visible = false
-
 [node name="BackPage" parent="PageNumber" index="5"]
 visible = false
 

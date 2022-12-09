@@ -57,6 +57,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
+music = "optimistic_flowy_adventuring"
 text = "They successfully fend off the bears. Sarge introduces himself, “Hey, I’m Sarge! I am on an Epic Vegetable Quest to avenge my people. Who are you?” “OBUEUBUEGR7EGCHIPBLIGMAG,” the farmer responds. “I’m sorry, could you repeat that? I couldn’t quite understand you there…,” asks Sarge. “OBUEUBUWEFR7EGCHIPBLIGMAG,” replies the farmer. “Hmmm, I think I heard a Chip somewhere in there, so let’s go with that! Nice to meet you, Chip!” says Sarge. “UBYBUBER9UBPWGMUAWE78…,” Chip replies. “Would you like to join me on my quest, Chip? I want to avenge all rabbits whose carrots were stolen, and I could really use your help,” asks Sarge. Chip looks around at his devastated farm and sighs, then nods and says, “IYDBVFYIW.” Chip enlarges, showcasing his cool rabbit ability. Sarge replies, “Great! Then let’s go!”"
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

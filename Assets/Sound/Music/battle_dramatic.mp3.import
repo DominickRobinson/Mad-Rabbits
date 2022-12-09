@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/battle_dramatic.mp3-72c0810c55af28bf169ec162a8594dc0.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/battle_dramatic.mp3"
+dest_files=[ "res://.import/battle_dramatic.mp3-72c0810c55af28bf169ec162a8594dc0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

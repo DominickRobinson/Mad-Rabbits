@@ -23,6 +23,7 @@ position = Vector2( 4, 33 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 11 )]
+music = "brutal_battle"
 text = "Sarge journeys across the land. He travels far and wide, no carrots in sight. Eventually, he comes across a devastated carrot farm. A poor rabbit farmer is under attack! Sarge rushes into battle, teaming up with this farmer to fight off the bears."
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

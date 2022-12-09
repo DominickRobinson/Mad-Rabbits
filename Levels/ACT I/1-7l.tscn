@@ -26,6 +26,7 @@ position = Vector2( 4, 33 )
 script = ExtResource( 2 )
 
 [node name="GUI" parent="." instance=ExtResource( 17 )]
+music = "fun_piano"
 text = "Sarge and Chip travel across the lands. They encounter more bears and fight them. “You know, Chip, I’m happy that I was able to help you out back there,” says Sarge, “I failed my own people, and now they are all gone…” Chip frowns and is sad. Sarge continues, “But that is why I want to fight. I don’t want this to happen to anyone else.” “UEBFUBEG,” says Chip."
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

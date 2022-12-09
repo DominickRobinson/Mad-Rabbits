@@ -77,12 +77,12 @@ func _process(delta):
 	elif Input.is_action_just_released("slowmo"):
 		speedup()
 		
-	if Input.is_action_pressed("spin_up"):
-		currentPlayer.angular_velocity += 1
-#		currentPlayer.linear_velocity += .1
-	elif Input.is_action_pressed("spin_down"):
-		currentPlayer.angular_velocity -= 1
-#		currentPlayer.linear_velocity -= .1
+#	if Input.is_action_pressed("spin_up"):
+#		currentPlayer.angular_velocity += 1
+#		currentPlayer.linear_velocity.x += 1
+#	elif Input.is_action_pressed("spin_down"):
+#		currentPlayer.angular_velocity -= 1
+#		currentPlayer.linear_velocity.x -= 1
 	
 	
 	match CurrentGameState:

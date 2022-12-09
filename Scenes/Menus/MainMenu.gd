@@ -5,7 +5,8 @@ var click_counter = 0
 
 func _ready():
 	#play title music
-	Manager.playMusic("res://Assets/Sound/Music/Scott Holmes Music - Beyond Dreams.mp3")
+#	Manager.playMusic("res://Assets/Sound/Music/Scott Holmes Music - Beyond Dreams.mp3")
+	Manager.playMusic("res://Assets/Sound/Music/title_hopeful.mp3")
 	
 	#title animation
 #	yield(get_tree().create_timer(1), "timeout")
@@ -30,6 +31,7 @@ func _ready():
 	$GCS_logo.visible = true
 	$Sprites.visible = true
 	$TipToFlip/AnimationPlayer.play("blink")
+	$TipToFlip.visible = true
 
 
 func _physics_process(delta):

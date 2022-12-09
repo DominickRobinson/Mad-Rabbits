@@ -54,3 +54,8 @@ func _on_QuitGame_pressed():
 
 func _on_Unpause_button_down():
 	set_is_paused(false)
+
+
+func _on_GoToPage_pressed():
+	var level_num = $CenterContainer/VBoxContainer/GoToPage/HBoxContainer/SpinBox.value - 1
+	Manager.go_to_level(level_num)

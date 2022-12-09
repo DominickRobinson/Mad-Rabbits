@@ -101,6 +101,7 @@ extents = Vector2( 1000.26, 64.25 )
 [node name="1-10" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
+music = "fun_piano"
 text = "“HAHAHA! GOT YOU!! Only feeble rabbits would get scared. I, NINJA, a PROUD NINJA BUNNY, the most elite of carrot nibblers, I NEVER get scared,” boasts Ninja. “AAAAAAAASDRTFGYAJKjgAAHAHHAFT… ,” Chip retorts. “What are rabbits like you doing out in these woods?” asks Ninja. “You see, we are on a quest to reclaim carrots for all rabbits across the land. The bears attacked my own people, so I must avenge them,” says Sarge. “Pshh, no ninja bunny like myself would ever lose to a bear,” says Ninja. “Well, Ninja, do you think you could help us out? We could certainly use someone who could never lose to a bear!”  asks Sarge. “Well… ok… but only to show you the true power of the NINJA BUNNY,” replies Ninja. “It’s a deal!” exclaims Sarge."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

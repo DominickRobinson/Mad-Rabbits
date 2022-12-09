@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/death_chip.mp3-fdebadba5ddf52a01ae1d475771af5e5.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/death_chip.mp3"
+dest_files=[ "res://.import/death_chip.mp3-fdebadba5ddf52a01ae1d475771af5e5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -4,10 +4,29 @@ extends CanvasLayer
 #				"tense/ominous", "hopeful", "title", "church", "iconic/chaotic",
 #				"villainous", "none") var music := "none"
 
-export (String, "battling_god", "brutal_battle", "chapter_card", "chill_happy", "church_death",
-				"decisive_battle", "elegant_happy", "epic_boss", "fun_piano", "graceful_classical",
-				"iconic_chaoes", "lowkey_sad", "opera", "optimistic_flowy_adventuring", "royal_sophisticated",
-				"sad_choir", "tense_ominous", "title_hopeful", "triumphant", "villain",
+export (String, "battle_brutal",
+				"battle_decisive",
+				"battle_dramatic",
+				"battle_final_chanting",
+				"battle_guitar",
+				"chapter_card",
+				"church_death",
+				"death_chip",
+				"fun_piano",
+				"graceful_classical",
+				"happy_chill",
+				"happy_elegant",
+				"honkey",
+				"iconic_chaos",
+				"lowkey_sad",
+				"meeting_god",
+				"opera",
+				"optimistic_flowy_adventure",
+				"royal_sophisticated",
+				"tense_ominous",
+				"title_hopeful",
+				"triumphant",
+				"villain",
 				"none") var music := "none"
 
 

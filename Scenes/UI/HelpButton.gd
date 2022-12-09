@@ -25,3 +25,4 @@ func _process(delta):
 
 func _on_Button_toggled(button_pressed):
 	tips.visible = button_pressed
+	get_tree().paused = button_pressed
