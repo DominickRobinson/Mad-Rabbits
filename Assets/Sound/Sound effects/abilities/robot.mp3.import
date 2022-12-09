@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/robot.mp3-d22e0016b8fc2215d9f9d80b72816510.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound effects/abilities/robot.mp3"
+dest_files=[ "res://.import/robot.mp3-d22e0016b8fc2215d9f9d80b72816510.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

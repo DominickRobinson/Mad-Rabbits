@@ -172,8 +172,8 @@ func playAudio(file, vol = 0, dampable = true):
 	get_tree().get_current_scene().add_child(a)
 	if dampable:
 		a.add_to_group("dampable")
-#	a.stream = load(file)
-	a.stream = load("res://Assets/Sound/Music/battling_god.mp3")
+	a.stream = load(file)
+#	a.stream = load("res://Assets/Sound/Music/battling_god.mp3")
 	a.volume_db = vol
 	a.play()
 	

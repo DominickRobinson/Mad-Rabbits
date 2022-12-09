@@ -17,6 +17,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "tense_ominous"
 text = "Sarge and Chip walk carefully through The Very Scary Dark Woods. They hear twigs snap and bushes rustle, but they ignore them and press on. However, a mysterious ninja bear readies herself from high above in the trees. She pounces at the gang, using her cool ninja ability to split into three to surprise both of them at once!"
 
 [node name="Background" type="Sprite" parent="."]

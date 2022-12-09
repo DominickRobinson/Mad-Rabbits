@@ -29,11 +29,11 @@ func _physics_process(delta):
 		if Input.is_action_pressed("spin_up"):
 #			Manager.get_player().angular_velocity += 1
 			angular_velocity += 1
-			linear_velocity.x += .1
+#			linear_velocity.x += .1
 		elif Input.is_action_pressed("spin_down"):
 #			Manager.get_player().angular_velocity -= 1
 			angular_velocity -= 1
-			linear_velocity.x -= .1
+#			linear_velocity.x -= .1
 
 
 #useful functions for cutscenes

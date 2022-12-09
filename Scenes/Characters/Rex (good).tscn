@@ -31,6 +31,7 @@ height = 45.2268
 [node name="Rex (good)" type="RigidBody2D" groups=["Player", "Rabbits"]]
 mass = 1.2
 script = ExtResource( 3 )
+catchphrase1_filename = "res://Assets/Sound/Sound effects/abilities/rex_good_1.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource( 10 )

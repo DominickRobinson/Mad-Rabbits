@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/guy-yelling-among-us-sound-effect.mp3-49b0300a454049c140266d583607a76b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound effects/unused/guy-yelling-among-us-sound-effect.mp3"
+dest_files=[ "res://.import/guy-yelling-among-us-sound-effect.mp3-49b0300a454049c140266d583607a76b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

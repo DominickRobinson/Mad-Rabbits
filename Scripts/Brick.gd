@@ -8,6 +8,13 @@ var last_linear_velocity
 var calculate_yet = true
 var can_take_damage = false
 
+var random_generator = RandomNumberGenerator.new()
+
+#export(String, FILE) var hit_noise_filename := "res://Assets/Sound/Sound effects/pow.mp3"
+var hit_noise1_filename := "res://Assets/Sound/Sound effects/hit.mp3"
+var hit_noise2_filename := "res://Assets/Sound/Sound effects/ow.mp3"
+
+
 onready var audio = $SoundEffect
 onready var damageNoise = "res://Assets/Sound/Sound effects/ow.mp3"
 
@@ -30,7 +37,7 @@ func activate():
 #	print(self.name, " is ready!")
 	can_take_damage = true
 	contact_monitor = true
-	contacts_reported = 3
+	contacts_reported = 6
 	self.connect("body_entered", self, "on_body_entered")
 	
 
@@ -78,6 +85,15 @@ func on_body_entered(body):
 func take_damage(amt):
 	if amt <= 5:
 		return
+	
+	random_generator.randomize()
+	var random_value = random_generator.randi_range(0,1)
+	match random_value:
+		0:
+			Manager.playAudio(hit_noise1_filename, 7)
+		1:
+			Manager.playAudio(hit_noise2_filename, 0)
+		
 	health -= amt
 	Manager.Score += amt
 	#print(health)

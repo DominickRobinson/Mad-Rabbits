@@ -23,6 +23,7 @@
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "battle_guitar"
 text = "The gang eventually enters the ninja town. However, it is under attack by bears! “So much for being unfindable,” says Karen. “Shut it,” retorts Ninja. The gang ambushes the bears."
 
 [node name="ScreenEffects" parent="." instance=ExtResource( 12 )]

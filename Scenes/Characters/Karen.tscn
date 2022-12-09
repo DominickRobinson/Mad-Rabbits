@@ -159,6 +159,7 @@ script = ExtResource( 1 )
 initial_angular_velocity = 6
 ability_slowmo_scale = 0.9
 zoom_in_duration = 1.55
+catchphrase1_filename = "res://Assets/Sound/Sound effects/abilities/karen1.mp3"
 
 [node name="Body" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -9, 11, -8, 4, -10, 3, -7, 0, -3, -2, 2, -2, 6, -1, 9, 3, 8, 4, 9, 11, 5, 13, -4, 13 )

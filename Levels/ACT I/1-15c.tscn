@@ -66,6 +66,7 @@ gradient = SubResource( 5 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "tense_ominous"
 text = "The gang makes their way inside the throne room. On the throne sits King Winnie the Pooh, the meanest bear in Happy Land.  “Mwahahahhhh…. I have been expecting you for a long time. That is why the door was unlocked,” says Winnie the Pooh. Ninja retorts, “OH YEAH, WELL HAVE YOU BEEN EXPECTING THIS BUTT-WHOOPING YOU’RE ABOUT TO GET?! BECAUSE I, AS A PROUD—” but Winnie the Pooh continues, “Unfortunately for youl, I have gathered all of the carrots in Happy Land, and forged the ultimate weapon… THE INFINITY CARROT!” Winnie the Pooh reveals his Infinity Carrot to the gang. Winnie continues, “I am now unstoppable! MWAHAHA!”"
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

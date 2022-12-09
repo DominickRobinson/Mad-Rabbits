@@ -100,6 +100,7 @@ texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
+music = "optimistic_flowy_adventuring"
 text = "The gang enters a beautiful cherry-blossom forest. “Wow, this place is beautiful, but where are we going?” asks Sarge. “Oh, you’ll see,” replies Ninja. "
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

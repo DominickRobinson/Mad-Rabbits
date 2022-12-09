@@ -166,6 +166,7 @@ radius = 532.241
 [node name="1-19" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
+music = "battle_final_chanting"
 text = "Over the next 6900 years, the bear empire rises up and takes over Happy Land, enslaving the rabbits, instituting bear supremacy, and funneling all carrots to Emperor Winnie the Pooh. The kingdom becomes a strict, dystopian dictatorship, and new robot bears are used to surveil the rabbit citizens. Yet, rumors of a certain ragtag gang that once challenged Emperor Winnie the Pooh pass down through the generations. Many reasonable rabbit pessimists dismiss this story as an unfounded myth meant to inspire hope for a rabbit uprising."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

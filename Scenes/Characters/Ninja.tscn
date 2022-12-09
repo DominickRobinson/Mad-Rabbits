@@ -34,6 +34,9 @@ mass = 0.7
 physics_material_override = SubResource( 2 )
 script = ExtResource( 2 )
 totalAbilities = 3
+catchphrase1_filename = "res://Assets/Sound/Sound effects/abilities/ninja1.mp3"
+catchphrase2_filename = "res://Assets/Sound/Sound effects/abilities/ninja2.mp3"
+catchphrase3_filename = "res://Assets/Sound/Sound effects/abilities/ninja3.mp3"
 kickSpin = 60.0
 
 [node name="Body" type="CollisionShape2D" parent="."]

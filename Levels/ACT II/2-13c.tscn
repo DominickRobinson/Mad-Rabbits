@@ -80,6 +80,7 @@ tracks/3/keys = {
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
+music = "graceful_classical"
 text = "The gang fends off the bears. They continue to walk around. It is eerily quiet. “Hm… this is strange. Where is everyone?” wonders Ninja. “Oh, I’m afraid that Winnie the Pooh must have wiped out your people. His reach extends over every inch of Happy Land,” explains Karen. “ No, GRANDMA, you don’t understand! No bear could ever find us! Someone must have led them here,” pouts Ninja, who rushes off into the dojo. "
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/karen2.mp3-0e2a7ecf5e0bbba79690162bc5c3cd30.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound effects/abilities/karen2.mp3"
+dest_files=[ "res://.import/karen2.mp3-0e2a7ecf5e0bbba79690162bc5c3cd30.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

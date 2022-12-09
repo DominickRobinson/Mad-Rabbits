@@ -95,14 +95,7 @@ func despawnConditionsMet():
 
 
 func useAbility():
-	match currentAbility:
-		1:
-			
-		2:
-			Manager.playAudio(catchphrase2_filename)
-		3:
-			Manager.playAudio(catchphrase3_filename)
-	
+
 	if totalAbilities == 0:
 		return
 	#dont use if ability already used
@@ -171,11 +164,11 @@ func ability():
 func sayCatchphrase():
 	match currentAbility:
 		1:
-			Manager.playAudio(catchphrase1_filename)
+			Manager.playAudio(catchphrase1_filename, 10)
 		2:
-			Manager.playAudio(catchphrase2_filename)
+			Manager.playAudio(catchphrase2_filename, 10)
 		3:
-			Manager.playAudio(catchphrase3_filename)
+			Manager.playAudio(catchphrase3_filename, 10)
 
 
 func showCatchphrase():

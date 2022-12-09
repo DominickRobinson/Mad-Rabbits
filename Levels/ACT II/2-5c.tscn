@@ -94,6 +94,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "optimistic_flowy_adventuring"
 text = "The gang navigates through the Deep and Shimmering Caverns of Epic Beauty, searching for an exit. “So, Karen… You’re a bear. Then why are you helping us?” asks Sarge. “You seem misguided, blue one. Not all bears are bad. In fact, most bears are just fine. We have always been fine. We are simply the result of the environment in which we were raised,” explains Karen. She continues, “I have sought you out because you are the only ones to have challenged Winnie face-to-face. You can change this.” Karen chuckles, “And besides, my retirement days have been quite boring. I could use some action.”"
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

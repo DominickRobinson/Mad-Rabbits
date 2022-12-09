@@ -19,6 +19,7 @@
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "meeting_god"
 text = ""
 
 [node name="Background" type="Sprite" parent="."]

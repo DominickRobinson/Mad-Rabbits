@@ -22,6 +22,7 @@ func _on_Area2D_body_entered(body):
 	if not explode or exploded:
 		return
 	if body.is_in_group("Rabbits"):
+		$RobotNoise.play()
 		$Body/BodySprite.animation = "mad"
 		$Tween.interpolate_property(self, "modulate", Color(1,1,1,1), Color(.2,0,0,1), time_to_explode, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		$Tween.start()

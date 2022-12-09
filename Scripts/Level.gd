@@ -87,12 +87,12 @@ func _process(delta):
 	if is_instance_valid(lastRabbitThrown):
 		if Input.is_action_pressed("spin_up"):
 #			Manager.get_player().angular_velocity += 1
-			lastRabbitThrown.angular_velocity += 1
-			lastRabbitThrown.linear_velocity.x += .1
+			lastRabbitThrown.angular_velocity += .5
+#			lastRabbitThrown.linear_velocity.x += .1
 		elif Input.is_action_pressed("spin_down"):
 #			Manager.get_player().angular_velocity -= 1
-			lastRabbitThrown.angular_velocity -= 1
-			lastRabbitThrown.linear_velocity.x -= .1
+			lastRabbitThrown.angular_velocity -= .5
+#			lastRabbitThrown.linear_velocity.x -= .1
 			
 	
 	

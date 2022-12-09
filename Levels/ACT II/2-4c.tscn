@@ -54,6 +54,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "royal_sophisticated"
 text = "The rabbits are out cold, but they awaken, dazed. “Why, hello, young whippersnappers!” introduces Karen. Sarge is confused, but Ninja immediately lunges and attacks, crying out, “A NINJA BUNNY NEVER LOSES TO A BEAR! HIYA!” Fortunately for the bear, Chip jumps in front of her and uses his ability to expand, protecting her. “HEY NOW, WHAT ARE YOU DOING?! LET ME AT HER!” screams Ninja. “Where are we? What happened?” asks Sarge. “You see, young rabbits. You have been frozen for 6900 years. Your legendary fight against Winnie has been passed down for generations. Unfortunately, he is still in power. That is why I came searching for you,” explained Karen. “I’m not a rabbit, I am a bunny. A b-u-n-n-y… ugh,” grumbled Ninja. "
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

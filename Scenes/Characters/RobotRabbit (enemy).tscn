@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Characters/RobotRabbit (enemy).gd" type="Script" id=1]
 [ext_resource path="res://Assets/Act IV/halo.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Characters/Bodies/RobotRedBody.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Characters/Bodies/robot_rabbit.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Characters/Right Ear/rightEar0015.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sound/Sound effects/abilities/rabbit.mp3" type="AudioStream" id=6]
 
 [sub_resource type="PhysicsMaterial" id=2]
 
@@ -40,6 +41,8 @@ contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
 health = 1000
+oofNoise1 = "res://Assets/Sound/Sound effects/abilities/robot.mp3"
+oofNoise2 = "res://Assets/Sound/Sound effects/abilities/robot.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
@@ -144,5 +147,8 @@ texture = ExtResource( 2 )
 shape = SubResource( 6 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="RobotNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

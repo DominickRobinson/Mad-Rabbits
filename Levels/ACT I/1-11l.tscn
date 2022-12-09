@@ -22,7 +22,7 @@ extents = Vector2( 1079.46, 64.25 )
 script = ExtResource( 2 )
 
 [node name="GUI" parent="." instance=ExtResource( 13 )]
-music = "brutal_battle"
+music = "iconic_chaos"
 text = "Sarge, Chip, and Ninja continue through The Very Scary Dark Woods. “Have the bears attacked your people, too?” Sarge asks Ninja. “PFFT, of course not! How dare you suggest that those bears would ever even think about attacking us powerful bunnies! Not that they could even find us, nobody can!” remarks Ninja. 
 “UH OH, I see some bears up ahead, prepare yourselves!” exclaims Sarge. “YOYLOYLLYLYOOYO,” cries Chip in a magnificent battle cry. “DON’T TELL ME WHAT TO DO, RABBIT! I can handle MYSELF!” snaps Ninja. The gang battles the bears."
 

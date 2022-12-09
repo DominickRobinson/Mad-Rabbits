@@ -104,6 +104,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
+music = "happy_chill"
 text = "Karen effortlessly lays waste to those poor, poor bears. She then settles down and chuckles, saying, “Oopsies, did I come off too strong there? I can get a bit extreme sometimes. Tee hee.” The gang stands still in shock, mouths agape at what they just witnessed. They leave the city, continuing on their quest."
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

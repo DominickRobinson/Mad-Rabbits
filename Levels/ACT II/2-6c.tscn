@@ -89,6 +89,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+music = "optimistic_flowy_adventuring"
 text = "Finally, the gang exits the Deep and Shimmering Caverns of Epic Beauty. “Well, it looks like we have to rematch Winnie,” states Sarge. “Unfortunately, I’m afraid that he’s simply too powerful with the Infinity Carrot. We are no match for now,” says Karen. Ninja suggests, “We need an ultimate weapon of our own. And I think I know just where to find one…” The gang embarks."
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

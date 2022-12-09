@@ -62,6 +62,7 @@ gradient = SubResource( 8 )
 [node name="1-17" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "villain"
 text = "The gang exhausts itself, dealing minimal damage to Winnie in the process. Sarge cries out, “I can’t hold out any longer, guys. I think that this might be the end.” Chip cries, “UBURSHGUERBFRICKWUBEUGBPUI3BEFUIWBGTIU!” Ninja is silent, shocked, defeated."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

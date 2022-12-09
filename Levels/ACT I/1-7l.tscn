@@ -206,51 +206,51 @@ position = Vector2( -420, -179 )
 position = Vector2( -264, -1 )
 
 [node name="Corn5" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -877, -10000 )
+position = Vector2( -705, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn6" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -834, -10000 )
+position = Vector2( -662, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn7" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -788, -10000 )
+position = Vector2( -616, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn8" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -735, -10000 )
+position = Vector2( -563, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn9" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -692, -10000 )
+position = Vector2( -520, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn10" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -646, -10000 )
+position = Vector2( -474, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn11" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -585, -10000 )
+position = Vector2( -413, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn12" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -542, -10000 )
+position = Vector2( -370, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn13" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -496, -10000 )
+position = Vector2( -324, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn14" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -443, -10000 )
+position = Vector2( -271, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn15" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -400, -10000 )
+position = Vector2( -228, -4526 )
 gravity_scale = 0.2
 
 [node name="Corn16" parent="Bricks" instance=ExtResource( 7 )]
-position = Vector2( -354, -10000 )
+position = Vector2( -182, -4526 )
 gravity_scale = 0.2
 
 [node name="SteelRectangle" parent="Bricks" instance=ExtResource( 5 )]

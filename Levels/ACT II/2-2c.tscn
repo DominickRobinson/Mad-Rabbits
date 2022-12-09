@@ -58,6 +58,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "happy_chill"
 text = "Karen, an old grandma bear, wanders through the Deep and Shimmering Caverns of Epic Beauty. She maneuvers through tight passages and descends steep cliffs. Eventually, she enters into the coldest chamber of the cave system."
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

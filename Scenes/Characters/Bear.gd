@@ -11,7 +11,11 @@ var calculate_yet = true
 var can_take_damage = false
 const Kaboom = preload("../Effects/Kaboom.tscn")
 
+var random_generator = RandomNumberGenerator.new()
+
 #var deathNoise = "res://Assets/Sound/Sound effects/dying.mp3"
+export(String, FILE) var oofNoise1 := ""
+export(String, FILE) var oofNoise2 := ""
 export (String, FILE) var deathNoise := "res://Assets/Sound/Sound effects/wilhelmscream.mp3"
 
 func _ready():
@@ -82,9 +86,18 @@ func _on_body_entered(body):
 
 
 func take_damage(amt):
-	if amt <= 10:
+	if amt <= 5:
 		return
 	Manager.makePOW(get_tree().get_root(), "POW", Color(1, 1, 1, 0.5), global_position, 25)
+
+	random_generator.randomize()
+	var random_value = random_generator.randi_range(0,1)
+	match random_value:
+		0:
+			Manager.playAudio(oofNoise1, 10)
+		1:
+			Manager.playAudio(oofNoise2, 10)
+	
 	health -= amt
 #	print("Damage: ", amt)
 #	print("Health remaining: ", health)

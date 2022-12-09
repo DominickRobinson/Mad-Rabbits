@@ -23,6 +23,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+music = "graceful_classical"
 text = "Karen discovers the gang frozen in ice! She observes that the blue one is in pain, the ninja one is sad, and the big brown one is blissful with its eyes frozen open. Despite her small size, she effortlessly breaks open the ice."
 
 [node name="ScreenEffects" parent="." instance=ExtResource( 7 )]

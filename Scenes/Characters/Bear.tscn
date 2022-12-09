@@ -17,6 +17,8 @@ contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 3 )
 health = 125
+oofNoise1 = "res://Assets/Sound/Sound effects/ow.mp3"
+oofNoise2 = "res://Assets/Sound/Sound effects/oof.mp3"
 
 [node name="Right ear" type="Sprite" parent="."]
 position = Vector2( -0.999998, 1 )

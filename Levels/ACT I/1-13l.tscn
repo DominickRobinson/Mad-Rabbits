@@ -51,7 +51,7 @@ height = 39.6375
 script = ExtResource( 16 )
 
 [node name="GUI" parent="." instance=ExtResource( 14 )]
-music = "brutal_battle"
+music = "opera"
 text = "Despite freezing cold and unrelenting hail, the gang soldiers on. “Man, it sure is real icy and freezing cold and full of doom here, isn’t it?” says Sarge. Ninja replies, “MAYBE FOR–” but Chip interjects mockingly, “YUVRSYGRYOWUJNNEGINE!” “Yeah, I feel ya, Chipperoni…” says Sarge. As they approach the bear king’s castle, the gang comes across many bear soldiers. They are fighting an uphill battle."
 
 [node name="Background" type="Sprite" parent="."]

@@ -37,6 +37,7 @@ position = Vector2( 4, 33 )
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "lowkey_sad"
 text = "“Time for the finishing blow. You should all feel honored, having witnessed my UNLIMITED POWER!” proclaims Winnie. Sarge and Ninja lay in defeat, while Chip attempts to roll away. However, no one can escape King Winnie the Pooh’s signature Infinite Honey Charge Attack, which sends them all flying off of the cliff. The gang falls down into the Deep and Shimmering Caverns of Epic Beauty below the Icy Mountain of Doom and Freezing Cold, never to be seen again."
 
 [node name="Props" type="Node2D" parent="."]

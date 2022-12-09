@@ -19,6 +19,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 11 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "battle_brutal"
 text = "On their journey, the gang passes through a city with thousands of dead soldier bears laying everywhere. Reinforcement bears flood the city, searching for the attacker. “Well, it’s a good thing I retired from the military yesterday. Otherwise, I might have perished here, too,” says Karen. “WAIT, YOU SERVED WINNIE THE POOH,” exclaims Ninja. “Indeed, young ninja. In fact, I served as the general,” explains Karen. The military bears spot the gang and begin charging. “But now,” Karen pulls out her glock, “I have no allegiances…” she cocks her glock, “THIS IS MY RETIREMENT, BABY! I DO WHAT I WANT NOW! YEEEHAAAW!”"
 
 [node name="ScreenEffects" parent="." instance=ExtResource( 9 )]
