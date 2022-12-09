@@ -20,7 +20,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 7.1 ),
+"times": PoolRealArray( 4.04 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
@@ -250,7 +250,6 @@ shape = SubResource( 4 )
 
 [node name="Rex (bad)" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 1035, 186 )
-mode = 1
 
 [node name="SpeechBubble" parent="Enemies/Rex (bad)" instance=ExtResource( 8 )]
 position = Vector2( -2, 17 )

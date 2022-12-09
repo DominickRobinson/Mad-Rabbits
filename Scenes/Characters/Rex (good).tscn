@@ -128,7 +128,7 @@ stream = ExtResource( 2 )
 
 [node name="AbilityPanel" parent="." instance=ExtResource( 13 )]
 panelColor = Color( 0.156863, 0.054902, 0.439216, 1 )
-catchphrase = "Begone, bears!"
+catchphrase1 = "FOR MY PEOPLE!!!"
 
 [node name="Sprite" parent="AbilityPanel/Control/SpritePanel" index="1"]
 texture = ExtResource( 1 )

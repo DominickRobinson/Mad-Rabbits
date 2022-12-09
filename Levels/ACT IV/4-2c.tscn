@@ -21,9 +21,26 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "yo is that chip?", 0.0 ],
+"method": "speak"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Rabbits/Chip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.97 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "unfreeze"
+} ]
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -108,7 +125,6 @@ catchphrase_text = "[wave] PEEPEE POOPOO !!"
 
 [node name="Chip" parent="Rabbits" instance=ExtResource( 5 )]
 position = Vector2( 465, 276 )
-mode = 1
 gravity_scale = 0.2
 show_halo = true
 

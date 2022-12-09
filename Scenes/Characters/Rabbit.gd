@@ -8,13 +8,17 @@ export var initial_angular_velocity := 3
 export var ability_used := false
 
 export var catchphrase_text := "*insert catchphrase text here*"
+
+
 export var counter := 4
 export (int) var totalAbilities := 1
 
 export (float) var ability_slowmo_scale := 0.2
 export (float) var zoom_in_duration := 0.4
 
-export(String, FILE) var catchphrase_filename := ""
+export(String, FILE) var catchphrase1_filename := ""
+export(String, FILE) var catchphrase2_filename := ""
+export(String, FILE) var catchphrase3_filename := ""
 
 
 #different abilities
@@ -91,6 +95,14 @@ func despawnConditionsMet():
 
 
 func useAbility():
+	match currentAbility:
+		1:
+			
+		2:
+			Manager.playAudio(catchphrase2_filename)
+		3:
+			Manager.playAudio(catchphrase3_filename)
+	
 	if totalAbilities == 0:
 		return
 	#dont use if ability already used
@@ -157,8 +169,15 @@ func ability():
 
 
 func sayCatchphrase():
-	Manager.playAudio(catchphrase_filename)
-	
+	match currentAbility:
+		1:
+			Manager.playAudio(catchphrase1_filename)
+		2:
+			Manager.playAudio(catchphrase2_filename)
+		3:
+			Manager.playAudio(catchphrase3_filename)
+
+
 func showCatchphrase():
 	if is_instance_valid($AbilityPanel/Control):
 		$AbilityPanel/Control.visible = true

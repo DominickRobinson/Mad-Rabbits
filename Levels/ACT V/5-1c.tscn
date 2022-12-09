@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=1]
 [ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Characters/Bear (playable).tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Characters/Winnie (playable).tscn" type="PackedScene" id=11]
+[ext_resource path="res://Levels/ACT V/Rabbits.gd" type="Script" id=12]
 
 [sub_resource type="Animation" id=3]
 resource_name = "cutscene"
@@ -210,6 +211,20 @@ tracks/13/keys = {
 "update": 0,
 "values": [ Vector2( 1082, 80 ), Vector2( 1082, 80 ), Vector2( 1020, 80 ), Vector2( 1020, 80 ), Vector2( 1100, 98 ) ]
 }
+tracks/14/type = "method"
+tracks/14/path = NodePath("../Rabbits")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 7.38 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "yay"
+} ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1000.26, 64.25 )
@@ -258,6 +273,7 @@ anchor_mode = 0
 editor_draw_limits = true
 
 [node name="Rabbits" type="Node2D" parent="."]
+script = ExtResource( 12 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 6 )]
 position = Vector2( 475, 355 )
@@ -323,7 +339,7 @@ mode = 1
 
 [node name="Winnie (playable)" parent="Rabbits" instance=ExtResource( 11 )]
 modulate = Color( 0.517647, 0.517647, 0.517647, 1 )
-position = Vector2( 1115, 98.0001 )
+position = Vector2( 1082, 80 )
 rotation = -0.687993
 scale = Vector2( 0.5, 0.5 )
 mode = 3
@@ -336,6 +352,16 @@ position = Vector2( -22, 503 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
 position = Vector2( 530.77, 62.0743 )
 rotation = 0.00872665
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( -72.0002, 38.9999 )
+rotation = 1.55665
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 1166, 99.9999 )
+rotation = 1.55665
 shape = SubResource( 1 )
 
 [editable path="GUI"]

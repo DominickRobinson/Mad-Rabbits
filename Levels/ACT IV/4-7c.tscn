@@ -16,6 +16,37 @@
 resource_name = "cutscene"
 length = 20.0
 step = 0.01
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Rabbits/Rex (bad)")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.52, 6.37 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "give up", 3.0 ],
+"method": "speak"
+}, {
+"args": [ "dang i really thought that would work", 0.0 ],
+"method": "speak"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Rabbits/Sarge")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.51 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "lol no", 2.0 ],
+"method": "speak"
+} ]
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 835.344, 64.25 )

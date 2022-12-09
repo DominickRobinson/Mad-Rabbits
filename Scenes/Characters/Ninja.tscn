@@ -34,7 +34,6 @@ mass = 0.7
 physics_material_override = SubResource( 2 )
 script = ExtResource( 2 )
 totalAbilities = 3
-catchphrase_filename = "res://Assets/Sound/Sound effects/guy-yelling-among-us-sound-effect.mp3"
 kickSpin = 60.0
 
 [node name="Body" type="CollisionShape2D" parent="."]
@@ -140,7 +139,9 @@ stream = ExtResource( 3 )
 
 [node name="AbilityPanel" parent="." instance=ExtResource( 1 )]
 panelColor = Color( 0.490196, 0.215686, 0.215686, 1 )
-catchphrase = "[tornado]TRIPLE THREAT... HIYA"
+catchphrase1 = "NINJA TRIPLE THREAT!!"
+catchphrase2 = "NINJA KICK!!!"
+catchphrase3 = "NINJA STEALTH!!!"
 catchphraseOutlineColor = Color( 1, 0, 0, 1 )
 
 [node name="Sprite" parent="AbilityPanel/Control/SpritePanel" index="1"]

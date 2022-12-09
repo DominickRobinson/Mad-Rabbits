@@ -14,7 +14,6 @@ extents = Vector2( 43.5, 98.5 )
 mass = 74.13
 script = ExtResource( 5 )
 totalAbilities = 0
-catchphrase_filename = "res://Assets/Sound/Sound effects/Winnie_sound.mp3"
 
 [node name="Winnie" type="Sprite" parent="."]
 position = Vector2( -17.2, 0.200005 )
@@ -30,7 +29,7 @@ stream = ExtResource( 2 )
 
 [node name="AbilityPanel" parent="." instance=ExtResource( 4 )]
 panelColor = Color( 0, 0, 0, 1 )
-catchphrase = "GIVE ME YOUR HONEY!!"
+catchphrase1 = "GIVE ME YOUR HONEY!!!"
 catchphraseOutlineColor = Color( 1, 0.352941, 0, 1 )
 
 [node name="Sprite" parent="AbilityPanel/Control/SpritePanel" index="1"]

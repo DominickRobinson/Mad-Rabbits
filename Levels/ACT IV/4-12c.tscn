@@ -17,6 +17,32 @@
 resource_name = "cutscene"
 length = 20.0
 step = 0.01
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Chip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.29 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "get outta here", 3.0 ],
+"method": "speak"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Rabbits:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.4, 5.54 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 835.344, 64.25 )
@@ -76,17 +102,17 @@ region_rect = Rect2( 0, 0, 4000, 2000 )
 
 [node name="Props" type="Node2D" parent="."]
 
-[node name="Rabbits" type="Node2D" parent="."]
-position = Vector2( 6, -8 )
-
-[node name="Chip" parent="Rabbits" instance=ExtResource( 3 )]
-position = Vector2( 428, 506 )
-rotation = -0.308343
-scale = Vector2( -1, 1 )
+[node name="Chip" parent="." instance=ExtResource( 3 )]
+position = Vector2( 434, 498 )
+rotation = 2.83325
+scale = Vector2( 1, -1 )
 mode = 1
 gravity_scale = 0.2
 show_halo = true
 rainbow = true
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( 6, -8 )
 
 [node name="Sarge" parent="Rabbits" instance=ExtResource( 9 )]
 position = Vector2( 359, 514 )

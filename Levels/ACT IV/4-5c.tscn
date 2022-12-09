@@ -139,7 +139,6 @@ show_halo = true
 
 [node name="Rex (bad)" parent="Rabbits" instance=ExtResource( 11 )]
 position = Vector2( 826, 295 )
-mode = 1
 
 [node name="Infinity Carrot2" parent="Rabbits/Rex (bad)" instance=ExtResource( 12 )]
 position = Vector2( -17, -9 )

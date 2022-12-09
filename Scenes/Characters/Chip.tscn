@@ -41,7 +41,6 @@ mass = 2.0
 physics_material_override = SubResource( 2 )
 script = ExtResource( 1 )
 totalAbilities = 3
-catchphrase_filename = "res://Assets/Sound/Sound effects/fart-meme-sound.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
 scale = Vector2( 1.1, 1.1 )
@@ -235,7 +234,9 @@ stream = ExtResource( 3 )
 
 [node name="AbilityPanel" parent="." instance=ExtResource( 4 )]
 panelColor = Color( 0.352941, 0.207843, 0, 1 )
-catchphrase = "[shake rate=10 level=10] OOGA BOOGA !!"
+catchphrase1 = "INEIRRIU3G45WH45WE"
+catchphrase2 = "JKGJTUKYIUHJKBHDUIC"
+catchphrase3 = "KJBHGFUWV ;REIIONRF"
 catchphraseOutlineColor = Color( 0.619608, 0.231373, 0, 1 )
 
 [node name="Sprite" parent="AbilityPanel/Control/SpritePanel" index="1"]

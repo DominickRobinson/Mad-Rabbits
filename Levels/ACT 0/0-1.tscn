@@ -185,4 +185,25 @@ stream = ExtResource( 2 )
 volume_db = -5.0
 autoplay = true
 
+[node name="Credit" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.796078 )
+margin_left = 506.0
+margin_top = 478.0
+margin_right = 1111.0
+margin_bottom = 588.0
+rect_min_size = Vector2( 300, 0 )
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[wave amp=3 rate=1]
+*some backgrounds are from freepik.com
+*all music from fesliyanstudios.com"
+text = "
+*some backgrounds are from freepik.com
+*all music from fesliyanstudios.com"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [editable path="PageNumber"]

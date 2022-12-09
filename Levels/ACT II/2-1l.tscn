@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Characters/Bear.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Act II/apocalypse.jpg" type="Texture" id=10]
 [ext_resource path="res://Scenes/Blocks/TNT.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 785.735, 64.25 )
@@ -39,7 +40,10 @@ MaxLaunchVelocity = 600
 [node name="Rabbits" type="Node2D" parent="."]
 
 [node name="Rex (bad)" parent="Rabbits" instance=ExtResource( 7 )]
-position = Vector2( -91, -23 )
+position = Vector2( -170, -35 )
+
+[node name="Karen" parent="Rabbits" instance=ExtResource( 12 )]
+position = Vector2( -170, -398 )
 
 [node name="Bricks" type="Node2D" parent="."]
 position = Vector2( 1152, -83 )
@@ -88,7 +92,7 @@ position = Vector2( -540, -219 )
 position = Vector2( -663, -219 )
 
 [node name="WoodLong5" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -707, -148 )
+position = Vector2( -710, -146 )
 rotation = 1.5708
 
 [node name="WoodLong6" parent="Bricks" instance=ExtResource( 6 )]
@@ -107,13 +111,13 @@ rotation = 1.5708
 position = Vector2( -417, -363 )
 
 [node name="SteelLong12" parent="Bricks" instance=ExtResource( 8 )]
-position = Vector2( -541, -363 )
+position = Vector2( -543, -363 )
 
 [node name="SteelLong13" parent="Bricks" instance=ExtResource( 8 )]
 position = Vector2( -666, -363 )
 
 [node name="WoodLong9" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( -705, -291 )
+position = Vector2( -714, -292 )
 rotation = 1.5708
 
 [node name="WoodLong10" parent="Bricks" instance=ExtResource( 6 )]
@@ -132,7 +136,7 @@ rotation = 1.5708
 position = Vector2( -540, -107 )
 
 [node name="TNT2" parent="Bricks" instance=ExtResource( 11 )]
-position = Vector2( -749, 53 )
+position = Vector2( -750, 54 )
 
 [node name="TNT3" parent="Bricks" instance=ExtResource( 11 )]
 position = Vector2( -316, 54 )
