@@ -80,6 +80,7 @@ tracks/2/keys = {
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+music = "battle_dramatic"
 text = "“By the way,” Ninja says, “my name is Scarlett. You guys can call me Scarlett. I figured I would tell you now. In case we don’t make it.”
 The gang arrives outside of Rex's Grand Space Station of Evil."
 

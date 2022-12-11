@@ -48,6 +48,7 @@ position = Vector2( 4, 33 )
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "battle_final_chanting"
 text = "Rex defeats the gang, however. “I am sorry, Sarge, I really am. But you simply don’t understand. And if you’re not with me, then you’re against me, just like those foolish ninja bunnies who didn’t hand over their slingshot to me.” Ninja freezes, but Rex continues, “I will do what I must.” Rex readies himself in the slingshot, his sword out with the intent to impale Sarge, and fires at the group, who stand in a bunch. Chip, however, jumps in front of the gang, and particularly Sarge, taking the hit. However, the sheer power and momentum of Rex launches the gang right through the walls of the lair."
 
 [node name="Background" type="Sprite" parent="."]

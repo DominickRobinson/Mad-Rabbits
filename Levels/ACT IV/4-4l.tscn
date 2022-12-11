@@ -15,6 +15,7 @@ extents = Vector2( 835.344, 64.25 )
 script = ExtResource( 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
+music = "honkey"
 text = "But unbeknownst to the gang, Rex enters the Honkey's throne room, and effortlessly slays Him."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

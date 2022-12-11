@@ -45,6 +45,7 @@ colors = PoolColorArray( 0.27769, 0.406953, 0.914063, 1, 0.576471, 0.721998, 0.9
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "villain"
 text = "The gang fights valiantly, putting everything on the line. Sarge leads the gang into battle. Karen fires her glock while Scarlett darts around, rushing Rex with kicks and clones. However, Rex is simply too powerful and invulnerable with the Infinity Carrot. He retaliates, badly wounding the gang with quick swings of his carrot saber and tactical usage of his devastating explosives. The gang is defeated, unable to get back up.
 “Chief, please. Don’t do this. Why are you doing this, Chief, why?” Rex replies, “I will do what I must, Sarge, why can’t you see that what I am doing is only fair? Those bears don’t understand what we suffered. Not yet, at least.” Rex continues, “I don’t want you to suffer, Sarge,” Rex cocks his glock, “so I will kill you first. I don’t want you to suffer the pain of losing your comrades.” Rex takes aim at Sarge’s forehead. “NOOOOO DON”T, YOU MONSTER!!!!” Rex looks at Sarge and calmly yet begrudgingly says, “I’m sorry, Sarge.” BANG! “SARGE, NOOOO!!!!” cries Scarlett. BANG BANG! Utter silence."
 

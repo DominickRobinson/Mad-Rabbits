@@ -14,6 +14,7 @@
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+music = "death_chip"
 text = "Karen and Ninja wander and spot Sarge in the distance. They travel over to him."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

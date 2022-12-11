@@ -20,6 +20,7 @@ step = 0.01
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+music = "graceful_classical"
 text = "However, an army of robot rabbits lands on the planet. “Well, great! What do we do now?” Ninja sighs and panics. Sarge takes charge of the situation, “There is only one thing we can do: fight. For Chip! He didn’t sacrifice himself for nothing. We can’t let that be so. Just follow my lead. We got this!” Karen adds, “Yeah, I gotta use up my retirement savings somehow. Ain’t no way I’m letting that get inherited.”"
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

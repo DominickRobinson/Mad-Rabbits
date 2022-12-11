@@ -144,6 +144,7 @@ radius = 532.241
 script = ExtResource( 7 )
 
 [node name="GUI" parent="." instance=ExtResource( 3 )]
+music = "battle_guitar"
 text = "Yet, back in Sad Land, Rex informs his secret robot army that he totally had this whole time of the situation. “SEARCH THE ENTIRE UNIVERSE FOR THEM! THEY DEFIED DEATH ONCE, BUT THEY WON’T GET AWAY A SECOND TIME!” Immediately, millions of robot troops enter starships and take off in search of the gang. Also, as his first action as new dictator, he renames Sad Land to Bad Land, because the gang is now on the wanted list, so everyone sees them as bad. Grrrrr."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

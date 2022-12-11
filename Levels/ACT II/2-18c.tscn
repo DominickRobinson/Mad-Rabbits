@@ -62,6 +62,7 @@ rough = true
 script = ExtResource( 13 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "villain"
 text = "After defeating waves upon waves of guards, the gang finally reaches the volcano’s summit, arriving outside of Winnie’s evil lair. “Alright, let’s go finish what we started,” says Sarge. "
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

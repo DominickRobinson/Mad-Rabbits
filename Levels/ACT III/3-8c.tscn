@@ -30,6 +30,7 @@ tracks/0/keys = {
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+music = "death_chip"
 text = "Ninja and Karen approach Sarge. “I’m sorry, Sarge, it’s just not fair,” says Ninja. “Why would he do that? Why would he sacrifice himself for us?” cries Sarge. Karen comforts Sarge, “He had a heart of gold. Simple as that. I’m sure he’s in a better place, now.” Sarge, Ninja, and Karen stand in solidarity around Chip, mourning his loss."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

@@ -49,6 +49,7 @@ script = ExtResource( 9 )
 space_level = true
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+music = "battle_final_chanting"
 text = "In fact, the gang gets launched so far that they end up in outer space."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

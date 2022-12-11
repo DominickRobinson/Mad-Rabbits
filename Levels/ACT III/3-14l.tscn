@@ -25,6 +25,7 @@ script = ExtResource( 18 )
 space_level = true
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "tense_ominous"
 text = "Karen lands the ship in the hanger. “Alright guys, let’s go take down Rex, once and for all,” Sarge states, “for Chip.” “For Chip!” Karen and Scarlett repeat. They exit the ship and fight their way through some of Rex's guards."
 
 [node name="Background" type="Sprite" parent="."]

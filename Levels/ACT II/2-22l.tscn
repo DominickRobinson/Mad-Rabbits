@@ -28,6 +28,7 @@ gradient = SubResource( 5 )
 script = ExtResource( 6 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "battle_brutal"
 text = "However, before Sarge can put the handcuffs on Winnie, we see the mysterious  rabbit strike and kill Winnie! “WHAT?!?!” yells Sarge. “Who are you?” Sarge looks around, “Chief, where are you?” “Right here, my boy,” says the rabbit, whose hood lowers, “he was too dangerous to be kept alive. Rabbits have suffered too much for far too long. Now, it is our time to rule.” “But Rex, this is not the way. All citizens must be treated equally. Don’t repeat what Winnie did. Think of the bears, chief,” pleads Sarge. “They didn’t think of us, Sarge, an eye for an eye,” says Rex, who lowers his helmet and readies himself to fight. “To be fair,” says Karen, “I freed your rabbit friends.” “QUIET!” demands Rex. No side backs down, and these differences can only be settled in one way. They fight. "
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

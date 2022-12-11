@@ -60,6 +60,7 @@ font_data = ExtResource( 9 )
 script = ExtResource( 6 )
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
+music = "title_hopeful"
 text = ""
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

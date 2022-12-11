@@ -65,6 +65,7 @@ gradient = SubResource( 5 )
 script = ExtResource( 12 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "fun_piano"
 text = "“NOOO… IMPOSSIBLE! HOW COULD I LOSE TO RABBITS?!?!” cries out Winnie the Pooh. “AND BUNNY! NEVER MISS WITH NINJA BUNNY! REEE” cries out Ninja even louder. “Mwahahahaha…” chuckles Winnie. “What’s so funny?” asks Ninja. “Strike me down, now, and I shall become more powerful than you can imagine. Use your anger, turn to the dark side, and let tyranny continue to rule these lands. MWahaha,” explains Winnie. “Well, you see, that’s not happening. We are taking you prisoner, and you shall serve your time,” responds Sarge."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

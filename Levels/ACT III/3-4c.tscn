@@ -39,6 +39,7 @@ tracks/0/keys = {
 script = ExtResource( 6 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+music = "fun_piano"
 text = "Anywhere..."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

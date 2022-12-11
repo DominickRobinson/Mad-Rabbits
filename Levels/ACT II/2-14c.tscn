@@ -102,6 +102,7 @@ extents = Vector2( 785.735, 64.25 )
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "happy_chill"
 text = "This dojo is also quiet, too quiet. “Something is wrong, I know it,” states Ninja. They wander. Eventually, the gang hears a walking noise. They stop, and listen intently, scared. “WHO IS THERE? I’LL HAVE YOU KNOW, AS A NINJA BUNNY, I NEVER LOSE TO BEARS!” yells Ninja, upset. “No need to be afraid, I come in peace,” says a mysterious voice. “Wait, is that—” says Sarge, interrupted by Rex, who walks into the room. “CHIEF, YOU’RE ALIVE!” Sarge exclaims, rolling over to his former mentor. “My boy, It is good to see you! How have you been?” asks Rex. Ninja eyes Rex with suspicion. “Not so good. You see, we tried to avenge you. We challenged Winnie the Pooh, but we lost. Now, we don’t know what to do,” admits Sarge. Ninja scoffs, then storms out of the room."
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

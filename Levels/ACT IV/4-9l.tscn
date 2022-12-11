@@ -169,6 +169,7 @@ __meta__ = {
 }
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
+music = "battle_final_chanting"
 text = "Quickly, terror overtakes Rex. He knows that he is in trouble. Unsure of what else he can do, he runs away, rolling. Scarlett easily catches up with him, however, nailing him with a kick. Rex tries to fight back by shooting his glock at her, but Karen, with her deadly accuracy, shoots all of Rex’s bullets with her own. Rex is out of ammo. He runs again. This time, Chip, using his divine Infinity Carrot energy, summons the fallen. Random civilian rabbits and bears whom Winnie and Rex killed, as well as even Winnie the Pooh himself, appear. “If I’m going to Hell, then I may as well take my revenge and go out with a bang!” says Winnie, who attacks Rex. Rex is damaged, but escapes him. Then, Chip grows to 20x his normal size, and rolls after Rex. He is too fast in his enlarged state, catching up to and squishing Rex like a pancake. Rex is almost defeated. Finally, Sarge catches up to the gang, and, on his command, they all attack Rex at once with an epic team-attack with the power of friendship. Rex screams, “NOOOOOO!!!!” He has been defeated."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

@@ -106,7 +106,7 @@ func reload():
 #page flip animation - goes to next level in array
 func next_level():
 	speedup()
-	get_tree().paused = false	
+	get_tree().paused = false
 	Manager.LevelIndex += 1
 	#RestartLevel()
 	ChangeScene.display_flip = true

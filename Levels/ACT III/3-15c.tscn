@@ -71,6 +71,7 @@ extents = Vector2( 1000.26, 64.25 )
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
+music = "tense_ominous"
 text = "The gang rushes into his Rex's throne room. Rex sits atop his throne, waiting for them.
  “Well, well, well… Look who defied death yet again. You know what they say, third time’s the charm.” The gang are unamused. “This,” Sarge says, “is for Chip.” 
 They fight."

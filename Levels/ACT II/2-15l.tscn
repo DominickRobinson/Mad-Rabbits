@@ -41,6 +41,7 @@ extents = Vector2( 785.735, 64.25 )
 script = ExtResource( 7 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
+music = "fun_piano"
 text = "Ninja rolls around the dojo. The rooms are too clean, there is no sign of any struggle. “They would have put up at least a fight, I know it. Besides, we never lose to bears, so this must not have been a bear’s doing…” Ninja looks around, then opens a secret door. “Ah, here it is, the Epic Slingshot of Ninja Bunny Legend!” She pulls out a beautiful slingshot. She takes her anger out on the practice dummies in the room, then leaves the room and returns to the gang."
 
 [node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]

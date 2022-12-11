@@ -21,6 +21,7 @@ script = ExtResource( 18 )
 space_level = true
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "battle_dramatic"
 text = "As the gang heads for Rex’s space station, some robotic space rabbits ambush the team, trying to break inside of the ship. The gang gears up, and they head outside of the ship to take them down. After defeating the invaders, they continue for Rex."
 
 [node name="Background" type="Sprite" parent="."]

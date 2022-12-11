@@ -68,6 +68,7 @@ gradient = SubResource( 5 )
 script = ExtResource( 12 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "tense_ominous"
 text = "Winnie is atop his throne. He is just standing there, menacingly. Suddenly, the gang bursts into the room! “Mwahaahaha! Back for some more, foolish rabbits? You should have just stayed dead. I would hate to kill you twice. Oh wait, actually I would love it, because I am VERY EVIL mwahahah!!” says Winnie. “How many times… I AM A FREAKIN BUNNY, YOU BUTTHOLE!!!” retorts Ninja, who then farts for no reason. “Let’s just cut the chit-chat and get to it. You’re going down,” says Sarge. Ninja unveils the Epic Slingshot of Ninja Bunny Legend. They battle."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

@@ -144,6 +144,7 @@ height = 324.301
 script = ExtResource( 9 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "villain"
 text = "Now that the gang is out of the way, Rex takes over the entire universe. Still, Rex is unsatisfied. He craves more power. “They say that history repeats itself. That is why I will carve my own path. I will become more powerful than any being ever has been. I will become unstoppable. I do this to ensure justice for my people.” Rex sets course in his space station into the unknown regions of the universe."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

@@ -32,6 +32,7 @@ gradient = SubResource( 5 )
 script = ExtResource( 6 )
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "battle_final_chanting"
 text = "This time, however, the gang puts up a fight. They even manage to knock the Infinity Carrot out of Winnie's jar, which makes him weaker. Thanks to this, the gang defeat Winnie, making him surrender."
 
 [node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]

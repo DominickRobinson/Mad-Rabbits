@@ -21,6 +21,7 @@ position = Vector2( 4, 33 )
 script = ExtResource( 18 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "battle_decisive"
 text = "The gang fully trusts Sarge’s leadership. Sarge now has the ability to activate all of the gang members’ abilities on command. The gang fights the first wave of robot rabbits.
 However, a second wave takes the place of the first. Yet, the gang defeats them as they did the first wave.
 And yet another wave follows. But again, the gang fights with vigor and passion unseen before. They have newfound power. By the power of friendship, they overcome the entire army. “For Chip,” Sarge says. “For Chip,” the gang repeats in unison."
