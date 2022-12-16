@@ -1,0 +1,146 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Act II/Dojo/Dojo with cherry blossom view.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Characters/Rex(good).tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/GoldenSlingshot(sprite).tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=18]
+
+
+[sub_resource type="Animation" id=2]
+resource_name = "cutscene"
+length = 20.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Rabbits/Sarge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Rabbits/Chip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 11.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "*farts*", 1.0 ],
+"method": "speak"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../Rabbits/Rex (good)")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "nah", 3.0 ],
+"method": "speak"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../Rabbits/Ninja")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.9, 5.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Rex, ur sus", 3.0 ],
+"method": "speak"
+}, {
+"args": [ "oh ok my bad", 2.0 ],
+"method": "speak"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 785.735, 64.25 )
+
+[node name="2-16" type="Node2D"]
+script = ExtResource( 18 )
+
+[node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "graceful_classical"
+text = "“How are you even still alive, Chief? It’s been 6900 years!” asks Sarge. “Probably just good genes or something, haha,” explains Rex. “Hmm… makes sense,” says Sarge. Ninja returns to the gang, and interrogates Rex, “So, Mr. Suspicious Rabbit, how did you even find this unfindable place, huh? ANSWER ME!” “Probably got lucky, I don’t know, haha,” answers Rex. “Hmmmmm… makes sense,” says Ninja. She continues, “Well, I found the ultimate weapon, so let’s get out of here before Winnie the Poop gets even stronger, OK? I’m sick of this place.” Rex’s eyes widen. He grins, saying, “Yes, let us go and take down Winnie the Pooh. He has reigned terror over us all for far too long.” The gang leave to rematch Winnie the Pooh at his fortress at the top of Hot Volcano of Death and Bad Stuff."
+
+[node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
+margin_top = 0.0
+margin_bottom = 1445.0
+text = "Sarge and Rex walk back to the village after their successful training session. Sarge asks, “Chief Rex, why do we even need to defend ourselves? What do those bad bears want with us? Why can’t we be their friends?” Rex replies, “They are trying to steal all of the carrots in Happy Land to forge an ultimate weapon, the Infinity Carrot, which will grant its wielder an untold power, enough to conquer Happy Land.” Sarge responds, “Wow, that sounds scary!” Rex, “Yes, it is. That is why we cannot lose…” BANG!!! As if on cue, Rex and Sarge hear an explosion in the distance. “The village is under attack!” yells Rex. They race back to the village."
+
+[node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
+margin_top = 1449.0
+margin_bottom = 1449.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
+anims/cutscene = SubResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 345, -257 )
+z_index = -99
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( -308, -575 )
+
+[node name="Karen" parent="Rabbits" instance=ExtResource( 4 )]
+position = Vector2( 658, 552 )
+scale = Vector2( -1, 1 )
+
+[node name="Chip" parent="Rabbits" instance=ExtResource( 7 )]
+position = Vector2( 596, 551 )
+scale = Vector2( -1, 1 )
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 9 )]
+position = Vector2( 513, 557 )
+mode = 1
+
+[node name="GoldenSlingshot" parent="Rabbits/Ninja" instance=ExtResource( 6 )]
+position = Vector2( 7.83777, 2.49194 )
+rotation = 0.293127
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 10 )]
+position = Vector2( 448, 555 )
+
+[node name="Rex (good)" parent="Rabbits" instance=ExtResource( 3 )]
+position = Vector2( 731, 557 )
+scale = Vector2( -1, 1 )
+cutsceneMode = true
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 311.508, 59.256 )
+shape = SubResource( 3 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 2 )]
+position = Vector2( 357, -191 )
+zoom = Vector2( 0.75, 0.75 )
+editor_draw_limits = true
+
+[editable path="GUI"]
+[editable path="GUI/StoryText"]

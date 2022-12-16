@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bear.mp3-e21721caa88a7bf4ccaed1be2cc64dfe.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/SoundEffects/abilities/bear.mp3"
+dest_files=[ "res://.import/bear.mp3-e21721caa88a7bf4ccaed1be2cc64dfe.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

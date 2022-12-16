@@ -10,13 +10,13 @@ var can_take_damage = false
 
 var random_generator = RandomNumberGenerator.new()
 
-#export(String, FILE) var hit_noise_filename := "res://Assets/Sound/Sound effects/pow.mp3"
-var hit_noise1_filename := "res://Assets/Sound/Sound effects/hit.mp3"
-var hit_noise2_filename := "res://Assets/Sound/Sound effects/ow.mp3"
+#export(String, FILE) var hit_noise_filename := "res://Assets/Sound/SoundEffects/pow.mp3"
+var hit_noise1_filename := "res://Assets/Sound/SoundEffects/hit.mp3"
+var hit_noise2_filename := "res://Assets/Sound/SoundEffects/ow.mp3"
 
 
 onready var audio = $SoundEffect
-onready var damageNoise = "res://Assets/Sound/Sound effects/ow.mp3"
+onready var damageNoise = "res://Assets/Sound/SoundEffects/ow.mp3"
 
 func _init():
 	#_ready2()
@@ -75,7 +75,7 @@ func on_body_entered(body):
 			
 			var damage = abs(last_linear_velocity.length())
 			if not (body is StaticBody2D):
-				damage += abs(body.linear_velocity.length())
+				damage = (body.linear_velocity*body.mass).distance_to(last_linear_velocity)
 			damage *= 0.1
 			#print(damage)
 			
@@ -83,9 +83,11 @@ func on_body_entered(body):
 				
 
 func take_damage(amt):
+	amt = int(amt)
 	if amt <= 5:
 		return
 	
+#	Manager.makePOW(self, str(amt), Color(0, 1, 0, 0.5), global_position, 25)
 	random_generator.randomize()
 	var random_value = random_generator.randi_range(0,1)
 	match random_value:

@@ -4,33 +4,33 @@ var rng = RandomNumberGenerator.new()
 onready var bubble_root = preload("res://Scenes/Bubble.tscn")
 
 
-var Levels = ["ACT 0/0-0", "ACT 0/0-1", "ACT 0/0-2",
+var Levels = ["ACT_0/0-0", "ACT_0/0-1", "ACT_0/0-2",
 	
-			  "ACT I/1-0c",
-			  "ACT I/1-1l", "ACT I/1-2c", "ACT I/1-3l", "ACT I/1-4c", "ACT I/1-5l", "ACT I/1-6c", 
-			  "ACT I/1-7l", "ACT I/1-8c", "ACT I/1-9l", "ACT I/1-10c", "ACT I/1-11l", "ACT I/1-12c", 
-			  "ACT I/1-13l", "ACT I/1-14c", "ACT I/1-15c", "ACT I/1-16l", "ACT I/1-17c", "ACT I/1-18l", 
-			  "ACT I/1-19c",
+			  "ACT_I/1-0c",
+			  "ACT_I/1-1l", "ACT_I/1-2c", "ACT_I/1-3l", "ACT_I/1-4c", "ACT_I/1-5l", "ACT_I/1-6c", 
+			  "ACT_I/1-7l", "ACT_I/1-8c", "ACT_I/1-9l", "ACT_I/1-10c", "ACT_I/1-11l", "ACT_I/1-12c", 
+			  "ACT_I/1-13l", "ACT_I/1-14c", "ACT_I/1-15c", "ACT_I/1-16l", "ACT_I/1-17c", "ACT_I/1-18l", 
+			  "ACT_I/1-19c",
 			
-			  "ACT II/2-0c",
-			  "ACT II/2-1l", "ACT II/2-2c", "ACT II/2-3l", "ACT II/2-4c", "ACT II/2-5c", "ACT II/2-6c",
-			  "ACT II/2-7l", "ACT II/2-8l", "ACT II/2-9c", "ACT II/2-10l", "ACT II/2-11c", "ACT II/2-12l", 
-			  "ACT II/2-13c", "ACT II/2-14c", "ACT II/2-15l", "ACT II/2-16c", "ACT II/2-17l", 
-			  "ACT II/2-18c", "ACT II/2-19c", "ACT II/2-20l", "ACT II/2-21c", "ACT II/2-22l", 
-			  "ACT II/2-23l", "ACT II/2-24c", "ACT II/2-25c",
+			  "ACT_II/2-0c",
+			  "ACT_II/2-1l", "ACT_II/2-2c", "ACT_II/2-3l", "ACT_II/2-4c", "ACT_II/2-5c", "ACT_II/2-6c",
+			  "ACT_II/2-7l", "ACT_II/2-8l", "ACT_II/2-9c", "ACT_II/2-10l", "ACT_II/2-11c", "ACT_II/2-12l", 
+			  "ACT_II/2-13c", "ACT_II/2-14c", "ACT_II/2-15l", "ACT_II/2-16c", "ACT_II/2-17l", 
+			  "ACT_II/2-18c", "ACT_II/2-19c", "ACT_II/2-20l", "ACT_II/2-21c", "ACT_II/2-22l", 
+			  "ACT_II/2-23l", "ACT_II/2-24c", "ACT_II/2-25c",
 			  
-			  "ACT III/3-0c",
-			  "ACT III/3-1c", "ACT III/3-2c", "ACT III/3-3c", "ACT III/3-4c", "ACT III/3-5l", 
-			  "ACT III/3-6c", "ACT III/3-7l", "ACT III/3-8c", "ACT III/3-9c", "ACT III/3-10l", 
-			  "ACT III/3-11c", "ACT III/3-12l", "ACT III/3-13c", "ACT III/3-14l", "ACT III/3-15c", 
-			  "ACT III/3-16l", "ACT III/3-17c",
+			  "ACT_III/3-0c",
+			  "ACT_III/3-1c", "ACT_III/3-2c", "ACT_III/3-3c", "ACT_III/3-4c", "ACT_III/3-5l", 
+			  "ACT_III/3-6c", "ACT_III/3-7l", "ACT_III/3-8c", "ACT_III/3-9c", "ACT_III/3-10l", 
+			  "ACT_III/3-11c", "ACT_III/3-12l", "ACT_III/3-13c", "ACT_III/3-14l", "ACT_III/3-15c", 
+			  "ACT_III/3-16l", "ACT_III/3-17c",
 			
-			  "ACT IV/4-0c",
-			  "ACT IV/4-1c", "ACT IV/4-2c", "ACT IV/4-3c", "ACT IV/4-4l", "ACT IV/4-5c", "ACT IV/4-6l", 
-			  "ACT IV/4-7c", "ACT IV/4-8c", "ACT IV/4-9l","ACT IV/4-10c", "ACT IV/4-11c", "ACT IV/4-12c",
+			  "ACT_IV/4-0c",
+			  "ACT_IV/4-1c", "ACT_IV/4-2c", "ACT_IV/4-3c", "ACT_IV/4-4l", "ACT_IV/4-5c", "ACT_IV/4-6l", 
+			  "ACT_IV/4-7c", "ACT_IV/4-8c", "ACT_IV/4-9l","ACT_IV/4-10c", "ACT_IV/4-11c", "ACT_IV/4-12c",
 			
-			  "ACT V/5-0c",
-			  "ACT V/5-1c", "ACT V/5-2c"]
+			  "ACT_V/5-0c",
+			  "ACT_V/5-1c", "ACT_V/5-2c"]
 
 
 var LevelIndex = 0

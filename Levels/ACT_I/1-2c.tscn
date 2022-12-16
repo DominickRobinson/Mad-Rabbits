@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Act I/Plains/To training grounds.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Effects/ExplosionTNT.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Rex(good).tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=18]
+
+
+[sub_resource type="Animation" id=2]
+resource_name = "cutscene"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Rabbits/Sarge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 4, 7.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "ok", 2.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 800, 0 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Rabbits/Rex (good)")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.9, 7.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "uh oh. we gotta go", 3.0 ],
+"method": "speak"
+}, {
+"args": [ Vector2( 900, 0 ) ],
+"method": "apply_central_impulse"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1000.26, 64.25 )
+
+[node name="1-2" type="Node2D"]
+script = ExtResource( 18 )
+
+[node name="GUI" parent="." instance=ExtResource( 8 )]
+music = "villain"
+text = "Sarge and Rex walk back to the village after their successful training session. “What do the bad bears want with us? Why can’t we be their friends?” asks Sarge. Rex answers, “They want to steal all of the carrots in Happy Land to form the legendary Infinity Carrot, which will grant its wielder unlimited power. They want to conquer Happy Land.”
+As if on cue, BANG!!! Rex and Sarge hear an explosion in the distance. “The village is under attack!” yells Rex. They rush back to the village."
+
+[node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
+margin_top = 0.0
+margin_bottom = 1445.0
+text = "Sarge and Rex walk back to the village after their successful training session. “What do the bad bears want with us? Why can’t we be their friends?” asks Sarge. Rex answers, “They want to steal all of the carrots in Happy Land to form ge the legendary Infinity Carrot, which will grant its wielder unlimited power. They want to conquer Happy Land.”
+As if on cue, BANG!!! Rex and Sarge hear an explosion in the distance. “The village is under attack!” yells Rex. They rush back to the village."
+
+[node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
+margin_top = 1449.0
+margin_bottom = 1449.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
+anims/cutscene = SubResource( 2 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 2 )]
+anchor_mode = 0
+editor_draw_limits = true
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 505, 285 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -99
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 11 )]
+position = Vector2( 40, 481 )
+cutsceneMode = true
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Rex (good)" parent="Rabbits" instance=ExtResource( 4 )]
+position = Vector2( 108, 481 )
+scale = Vector2( -1, 1 )
+cutsceneMode = true
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( -22, 503 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 530.77, 62.0743 )
+rotation = 0.00872665
+shape = SubResource( 1 )
+
+[node name="ExplosionTNT" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1054, 402 )
+
+[editable path="GUI"]
+[editable path="GUI/StoryText"]

@@ -28,7 +28,7 @@ radius = 2.0
 [node name="Sarge" type="RigidBody2D" groups=["Player", "Rabbits"]]
 physics_material_override = SubResource( 2 )
 script = ExtResource( 2 )
-catchphrase1_filename = "res://Assets/Sound/Sound effects/abilities/sarge1.mp3"
+catchphrase1_filename = "res://Assets/Sound/SoundEffects/abilities/sarge1.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
 shape = SubResource( 6 )

@@ -30,10 +30,24 @@ var right_just_pressed = false
 var left_pressed = false
 var right_pressed = false
 
-var launchNoise = "res://Assets/Sound/Sound effects/slingshot.mp3"
+var launchNoise = "res://Assets/Sound/SoundEffects/slingshot.mp3"
+
+#variables for ghost trajectory calculator
+var GhostTimer = Timer.new()
+var ghost_time_to_launch = .75
+var rabbit_just_moved_in_slingshot = true
+var prevPullPositionGlobal = Vector2.ZERO
+var GhostDuplicate = null
+var ghost
+
+var velocity
+
 
 
 func _ready():
+	add_child(GhostTimer)
+	GhostTimer.one_shot = true
+#	GhostTimer.time_left = ghost_time_to_launch
 	SlingshotState = SlingState.idle
 	LeftLine = $LeftLine
 	RightLine = $RightLine
@@ -43,7 +57,7 @@ func _ready():
 	player = currentLevel.get_player()
 	reset_slingshot()
 	
-	wait(1)
+	wait(1.0)
 	#$Tween.interpolate_property(player, "global_position", player.global_position, CenterOfSlingshotGlobal, 1)
 	#$Tween.start()
 	movePlayerToSlingshot(1)
@@ -68,109 +82,93 @@ func wait(time):
 
 
 func _process(delta):
-#	if Input.is_action_just_pressed("return_to_slingshot"):
-#		print("hiiii")
-#	print(SlingshotState)
-#	print(player.get_name())
-	#print(str(SlingState.pulling))
-	#print(SlingshotState)
-#	if Input.is_action_just_pressed("pull_in_slingshot"):
-#		print(get_global_mouse_position())
-#		print(CenterOfSlingshotGlobal)
-#		print(Manager.findCamera().global_position)
-#	#print(player.global_position)
 	
 	if Input.is_action_just_released("ability"):
 		left_pressed = false
 		left_just_pressed = false
+	if Input.is_action_just_released("return_to_slingshot"):
+		right_pressed = false
+		right_just_pressed = false
 		
 	
 	match SlingshotState:
 		SlingState.idle:
 			$CanvasLayer/RabbitControls.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			player.showAbilitySelection(true)
+			GhostDuplicate = player.duplicate()
+			GhostDuplicate.set_collision_mask(0)
+			GhostDuplicate.set_collision_layer(0)
 		
 		SlingState.pulling:
 			$CanvasLayer/RabbitControls.mouse_filter = Control.MOUSE_FILTER_PASS
 			
 			#finds player
-			
 			if not can_start:
 				return false
 			
 			#finds current player
 			player = currentLevel.get_player()
-#			if player.has_node("Camera2D"):
-#				player.get_node("Camera2D").current = true
-			#shows ability selection
 			
 			#position of slingshot rope relative to center
 			var pullPositionGlobal = get_global_mouse_position()
 			var pullPositionLocal = CenterOfSlingshot
-			#length of pull
-			var pullDistance = pullPositionGlobal.distance_to(CenterOfSlingshotGlobal)        ####
-			#direction of pull (unit vector)
-			var pullDirection = (pullPositionGlobal - CenterOfSlingshotGlobal).normalized()   ####
-			var shootDirection = -pullDirection
 			
-			#$Arrow.rotation = pullDirection.angle() + PI/4 
+			#length of pull
+			var pullDistance = pullPositionGlobal.distance_to(CenterOfSlingshotGlobal)
+			
+			#direction of pull (unit vector)
+			var pullDirection = (pullPositionGlobal - CenterOfSlingshotGlobal).normalized()
+			var shootDirection = -pullDirection
 			
 			#shrinks pull distance and position if over max threshold
 			if pullDistance > MaxSlingshotPull:
 				pullDistance = MaxSlingshotPull
-				pullPositionGlobal = CenterOfSlingshotGlobal + pullDirection * pullDistance   ####
+				pullPositionGlobal = CenterOfSlingshotGlobal + pullDirection * pullDistance
 			
-			#print(rad2deg(pullDirection.angle()))
+#			rabbit_just_moved_in_slingshot = not (prevPullPositionGlobal.distance_to(pullPositionGlobal) <= 0.1)
+			rabbit_just_moved_in_slingshot = (prevPullPositionGlobal != pullPositionGlobal)
+			prevPullPositionGlobal = pullPositionGlobal
+			
 			pullPositionLocal = pullPositionLocal + pullDirection * pullDistance
+			
 			#pullStrength is related to how far you pull the slingshot
-			var pullStrength = pow(pullDistance / MaxSlingshotPull, 2)
-			#var pullStrength = sqrt(pullDistance / MaxSlingshotPull)
-			#print(pullStrength)
+			var pullStrength = pow(pullDistance / MaxSlingshotPull, 1)
+
 			
 			#velocity vector
 			var speed = pullStrength * MaxLaunchVelocity
-			var velocity = shootDirection * speed * (1)
-			#print(velocity)
-			#velocity.x *= -1
-			#velocity.y *= -1
-			
+			velocity = shootDirection * speed * (1)
+
 			$Arrow.global_position = pullPositionGlobal
+			
+			if right_just_pressed:
+				print("cancelled throw")
+				player.global_position = CenterOfSlingshotGlobal
+				reset_slingshot()
+				SlingshotState = SlingState.idle
+				GhostTimer.stop()
+				return
 			
 #			if Input.is_action_pressed("pull_in_slingshot"):
 			if left_pressed:
+				pass
 				#makes slingshot rope follow player
 				LeftLine.points[1] = pullPositionLocal
 				RightLine.points[1] = pullPositionLocal
 				player.global_position = pullPositionGlobal
-				var pointPosition = pullPositionLocal
-				var grav = ProjectSettings.get_setting("physics/2d/default_gravity")
-				grav *= Physics2DServer.area_get_param(get_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR).y
-				#print(grav)
-				#draws trajectory
-				if Input.is_action_just_pressed("return_to_slingshot"):
-					SlingshotState = SlingState.idle
-					reset_slingshot()
-					player.global_position = CenterOfSlingshotGlobal
-					return
-				$ShotArc.clear_points()
-				var c = 0.005
-#				c = 0
-				var linear_damping = ProjectSettings.get_setting("physics/2d/default_linear_damp")
-				for i in 500:
-#					print(pointPosition)
-					$ShotArc.add_point(pointPosition)
-#					print("Before: ", velocity)
-					velocity *= (1.0 - delta * linear_damping)
-#					print("After: ", velocity)
-					velocity.y += grav * delta / Engine.time_scale
-					velocity += -c * velocity
-					pointPosition += velocity * delta / Engine.time_scale
-					if pointPosition.y  + global_position.y > 0 and velocity.y > 0:
-						#print(str(i))
-						break
+				
+				if rabbit_just_moved_in_slingshot:
+					draw_trajectory(delta, pullPositionLocal, velocity)
+					draw_trajectory_ghost()
+
 			
 			#happens right after rabbit is thrown
 			else:
+				throw_ghost()
+				GhostTimer.stop()
+#				if is_instance_valid(ghost):
+#					ghost.queue_free()
+					
 				Manager.playAudio(launchNoise, -10)
 				player.ThrowRabbit()
 				lastRabbitThrown = player
@@ -192,9 +190,6 @@ func _process(delta):
 #				nextPlayer()
 #				return_to_slingshot()
 
-				
-				
-				
 		SlingState.thrown:
 			$CanvasLayer/RabbitControls.mouse_filter = Control.MOUSE_FILTER_PASS
 #			if Input.is_action_just_pressed("ability"):
@@ -229,6 +224,58 @@ func _process(delta):
 					SlingshotState = SlingState.idle
 #			elif lives.size() == 0:
 #				GameManager.gaveUp = true
+
+
+func draw_trajectory_ghost():
+	GhostTimer.start(ghost_time_to_launch)
+	GhostDuplicate.visible = false
+	yield(GhostTimer, "timeout")
+	throw_ghost()
+
+
+func throw_ghost():
+	GhostDuplicate.mode = RigidBody2D.MODE_KINEMATIC
+	GhostDuplicate.global_position = player.global_position
+	GhostDuplicate.ThrowRabbit()
+	GhostDuplicate.linear_velocity = velocity
+	GhostDuplicate.angular_velocity = player.initial_angular_velocity
+	GhostDuplicate.remove_from_group("Player")
+	GhostDuplicate.remove_from_group("Rabbits")
+
+	GhostDuplicate.showAbilitySelection(false)
+	GhostDuplicate.modulate = Color(0.2, 0.2, 0.2, 0.5)
+	GhostDuplicate.name = "Ghost"
+	GhostDuplicate.visible = true
+
+	if is_instance_valid(ghost):
+		ghost.queue_free()
+	ghost = get_tree().get_current_scene().add_child(GhostDuplicate)
+
+
+
+
+
+#draws line as trajectory
+func draw_trajectory(delta, pointPosition, velocity):
+	var grav = ProjectSettings.get_setting("physics/2d/default_gravity")
+	grav *= Physics2DServer.area_get_param(get_world_2d().get_space(), Physics2DServer.AREA_PARAM_GRAVITY_VECTOR).y
+	if Input.is_action_just_pressed("return_to_slingshot"):
+		SlingshotState = SlingState.idle
+		reset_slingshot()
+		player.global_position = CenterOfSlingshotGlobal
+		return
+	$ShotArc.clear_points()
+	var c = 0.005
+	var linear_damping = ProjectSettings.get_setting("physics/2d/default_linear_damp")
+	for i in 500:
+		$ShotArc.add_point(pointPosition)
+		velocity *= (1.0 - delta * linear_damping)
+		velocity.y += grav * delta / Engine.time_scale
+		velocity += -c * velocity
+		pointPosition += velocity * delta / Engine.time_scale
+		if pointPosition.y  + global_position.y > 0 and velocity.y > 0:
+			break
+
 
 
 func reset_slingshot():

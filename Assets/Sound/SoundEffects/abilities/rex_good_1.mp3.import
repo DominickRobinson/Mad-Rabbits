@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/rex_good_1.mp3-4d1c6801d8470bb43882a95c65b397b9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/SoundEffects/abilities/rex_good_1.mp3"
+dest_files=[ "res://.import/rex_good_1.mp3-4d1c6801d8470bb43882a95c65b397b9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

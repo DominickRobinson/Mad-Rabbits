@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Effects/ExplosionTNT.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sound/Sound effects/mi_explosion_03_hpx.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sound/SoundEffects/mi_explosion_03_hpx.mp3" type="AudioStream" id=2]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ninja1.mp3-81f2866734d98b62f0eb453c033d463b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/SoundEffects/abilities/ninja1.mp3"
+dest_files=[ "res://.import/ninja1.mp3-81f2866734d98b62f0eb453c033d463b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

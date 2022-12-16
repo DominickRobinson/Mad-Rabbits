@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Characters/Karen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Bodies/karen.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Characters/Right Ear/rightEar0012.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sound/Sound effects/dom_screaming.mp3" type="AudioStream" id=4]
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Gun.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Characters/Left Ear/leftEar0012.png" type="Texture" id=7]
@@ -159,7 +158,7 @@ script = ExtResource( 1 )
 initial_angular_velocity = 6
 ability_slowmo_scale = 0.9
 zoom_in_duration = 1.55
-catchphrase1_filename = "res://Assets/Sound/Sound effects/abilities/karen1.mp3"
+catchphrase1_filename = "res://Assets/Sound/SoundEffects/abilities/karen1.mp3"
 
 [node name="Body" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -9, 11, -8, 4, -10, 3, -7, 0, -3, -2, 2, -2, 6, -1, 9, 3, 8, 4, 9, 11, 5, 13, -4, 13 )
@@ -184,9 +183,6 @@ rotation = -0.121585
 scale = Vector2( 0.01, 0.009 )
 texture = ExtResource( 3 )
 offset = Vector2( -400, 150 )
-
-[node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
-stream = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 4 )

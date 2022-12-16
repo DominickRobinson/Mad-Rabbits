@@ -18,7 +18,7 @@ onready var speechBubble = preload("res://Scenes/Effects/SpeechBubble.tscn")
 func _ready():
 	if cutsceneMode:
 		unfreeze()
-	if is_instance_valid($Halo):
+	if is_instance_valid(get_node("Halo")):
 		if show_halo:
 			$Halo.visible = true
 		else:

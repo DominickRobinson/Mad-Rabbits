@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Characters/Chip.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Characters/Right Ear/rightEar0003.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sound/Sound effects/fart-meme-sound.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/AbilityPanel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/AbilitySelectionPanel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Characters/Bodies/chip.png" type="Texture" id=6]
@@ -41,9 +40,9 @@ mass = 2.0
 physics_material_override = SubResource( 2 )
 script = ExtResource( 1 )
 totalAbilities = 3
-catchphrase1_filename = "res://Assets/Sound/Sound effects/abilities/chip1.mp3"
-catchphrase2_filename = "res://Assets/Sound/Sound effects/abilities/chip2.mp3"
-catchphrase3_filename = "res://Assets/Sound/Sound effects/abilities/fart-meme-sound.mp3"
+catchphrase1_filename = "res://Assets/Sound/SoundEffects/abilities/chip1.mp3"
+catchphrase2_filename = "res://Assets/Sound/SoundEffects/abilities/chip2.mp3"
+catchphrase3_filename = "res://Assets/Sound/SoundEffects/abilities/fart-meme-sound.mp3"
 
 [node name="Body" type="CollisionShape2D" parent="."]
 scale = Vector2( 1.1, 1.1 )
@@ -232,9 +231,6 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LargeBody/EarStuff/EarNeutral2"]
 shape = SubResource( 5 )
 
-[node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
-stream = ExtResource( 3 )
-
 [node name="AbilityPanel" parent="." instance=ExtResource( 4 )]
 panelColor = Color( 0.352941, 0.207843, 0, 1 )
 catchphrase1 = "INEIRRIU3G45WH45WE"
@@ -259,7 +255,6 @@ icon = ExtResource( 11 )
 [node name="Halo" parent="." instance=ExtResource( 8 )]
 
 [connection signal="body_entered" from="." to="." method="_bounce"]
-[connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]
 
 [editable path="AbilityPanel"]
 [editable path="AbilitySelectionPanel"]

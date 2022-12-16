@@ -13,10 +13,10 @@ const Kaboom = preload("../Effects/Kaboom.tscn")
 
 var random_generator = RandomNumberGenerator.new()
 
-#var deathNoise = "res://Assets/Sound/Sound effects/dying.mp3"
-export(String, FILE) var oofNoise1 := ""
-export(String, FILE) var oofNoise2 := ""
-export (String, FILE) var deathNoise := "res://Assets/Sound/Sound effects/wilhelmscream.mp3"
+#var deathNoise = "res://Assets/Sound/SoundEffects/dying.mp3"
+export(String, FILE) var oofNoise1 := "res://Assets/Sound/SoundEffects/oof.mp3"
+export(String, FILE) var oofNoise2 := "res://Assets/Sound/SoundEffects/ow.mp3"
+export (String, FILE) var deathNoise := "res://Assets/Sound/SoundEffects/wilhelmscream.mp3"
 
 func _ready():
 	last_linear_velocity = linear_velocity
@@ -75,7 +75,7 @@ func _on_body_entered(body):
 			#	queue_free()
 			#else:
 			
-			var damage = abs(body.linear_velocity.length())*body.mass + abs(last_linear_velocity.length())
+			var damage = (body.linear_velocity*body.mass).distance_to(last_linear_velocity)
 			#damage *= 0.1
 			take_damage(damage)
 
@@ -86,15 +86,16 @@ func _on_body_entered(body):
 
 
 func take_damage(amt):
+	amt = int(amt)
 	if amt <= 5:
 		return
-	Manager.makePOW(get_tree().get_root(), "POW", Color(1, 1, 1, 0.5), global_position, 25)
+	Manager.makePOW(get_tree().get_root(), str(int(amt)), Color(1, 1, 1, 0.5), global_position, 25)
 
 	random_generator.randomize()
 	var random_value = random_generator.randi_range(0,1)
 	match random_value:
 		0:
-			Manager.playAudio(oofNoise1, 10)
+			Manager.playAudio(oofNoise1, 20)
 		1:
 			Manager.playAudio(oofNoise2, 10)
 	

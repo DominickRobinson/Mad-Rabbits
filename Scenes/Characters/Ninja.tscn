@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/AbilityPanel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Ninja.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Sound/Sound effects/guy-yelling-among-us-sound-effect.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Characters/Bodies/ninja.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Characters/foot.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Characters/Right Ear/rightEar0009.png" type="Texture" id=6]
@@ -34,9 +33,9 @@ mass = 0.7
 physics_material_override = SubResource( 2 )
 script = ExtResource( 2 )
 totalAbilities = 3
-catchphrase1_filename = "res://Assets/Sound/Sound effects/abilities/ninja1.mp3"
-catchphrase2_filename = "res://Assets/Sound/Sound effects/abilities/ninja2.mp3"
-catchphrase3_filename = "res://Assets/Sound/Sound effects/abilities/ninja3.mp3"
+catchphrase1_filename = "res://Assets/Sound/SoundEffects/abilities/ninja1.mp3"
+catchphrase2_filename = "res://Assets/Sound/SoundEffects/abilities/ninja2.mp3"
+catchphrase3_filename = "res://Assets/Sound/SoundEffects/abilities/ninja3.mp3"
 kickSpin = 60.0
 
 [node name="Body" type="CollisionShape2D" parent="."]
@@ -137,9 +136,6 @@ rotation = 1.5708
 scale = Vector2( 0.03, -0.03 )
 texture = ExtResource( 5 )
 
-[node name="CatchphraseAudio" type="AudioStreamPlayer" parent="." groups=["dampable"]]
-stream = ExtResource( 3 )
-
 [node name="AbilityPanel" parent="." instance=ExtResource( 1 )]
 panelColor = Color( 0.490196, 0.215686, 0.215686, 1 )
 catchphrase1 = "NINJA TRIPLE THREAT!!"
@@ -164,8 +160,6 @@ icon = ExtResource( 10 )
 
 [node name="Halo" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0, -37 )
-
-[connection signal="finished" from="CatchphraseAudio" to="." method="_on_CatchphraseAudio_finished"]
 
 [editable path="AbilityPanel"]
 [editable path="AbilitySelectionPanel"]

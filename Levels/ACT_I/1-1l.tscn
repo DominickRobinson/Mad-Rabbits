@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/Characters/Bear(dummy).tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Blocks/Wood/WoodSquare.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Rex(good).tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Blocks/Wood/WoodRectangle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Act I/Plains/Training grounds.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 618.775, 64.25 )
+
+[node name="1-1" type="Node2D" groups=["Level"]]
+script = ExtResource( 10 )
+
+[node name="GUI" parent="." instance=ExtResource( 6 )]
+music = "graceful_classical"
+text = "“Work on your aim, Sarge!” says Rex, the village chief, “The mean, evil bears could strike at any moment.” “Yes chief!” replies Sarge, who is next in line to become the village chief. Sarge defeats dummy after dummy, while Rex hones his sword skills."
+
+[node name="Label" parent="GUI/StoryText/VBoxContainer" index="0"]
+margin_top = 0.0
+margin_bottom = 620.0
+text = "“Work on your aim, Sarge!” says Rex, the village chief, “The mean, evil bears could strike at any moment.” “Yes chief!” replies Sarge, who is next in line to become the village chief. Sarge defeats dummy after dummy, while Rex hones his sword skills."
+
+[node name="Control" parent="GUI/StoryText/VBoxContainer" index="1"]
+margin_top = 624.0
+margin_bottom = 624.0
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 368, -219 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -99
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Slingshot" parent="." instance=ExtResource( 4 )]
+position = Vector2( 26, -2 )
+MaxSlingshotPull = 150
+MaxLaunchVelocity = 600
+
+[node name="Bricks" type="Node2D" parent="."]
+position = Vector2( 910, -84 )
+
+[node name="WoodRectangle" parent="Bricks" instance=ExtResource( 8 )]
+position = Vector2( -375, 38 )
+
+[node name="WoodSquare2" parent="Bricks" instance=ExtResource( 5 )]
+position = Vector2( -427, -24 )
+
+[node name="WoodRectangle2" parent="Bricks" instance=ExtResource( 8 )]
+position = Vector2( -470, 43 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 3 )]
+position = Vector2( -66, -22 )
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Rex (good)" parent="Rabbits" instance=ExtResource( 7 )]
+position = Vector2( -129, -22 )
+
+[node name="Bears" type="Node2D" parent="."]
+position = Vector2( -53, -7 )
+
+[node name="Bear" parent="Bears" instance=ExtResource( 1 )]
+position = Vector2( 534, -154 )
+
+[node name="Bear2" parent="Bears" instance=ExtResource( 1 )]
+position = Vector2( 396, -23 )
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 371.85, 64.1173 )
+rotation = 0.0174533
+shape = SubResource( 10 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 2 )]
+position = Vector2( 340, -182 )
+editor_draw_limits = true
+
+[editable path="GUI"]
+[editable path="GUI/StoryText"]

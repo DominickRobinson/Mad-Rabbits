@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Blocks/TNT.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sound/Sound effects/dom_screaming.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sound/SoundEffects/dom_screaming.mp3" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Blocks/TNT.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]

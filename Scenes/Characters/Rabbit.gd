@@ -24,7 +24,7 @@ export(String, FILE) var catchphrase3_filename := ""
 #different abilities
 var currentAbility = 1
 
-var teamwork_file = "res://Assets/Sound/Sound effects/teamwork.mp3"
+var teamwork_file = "res://Assets/Sound/SoundEffects/teamwork.mp3"
 
 var zoom_in = {1: true, 2: true, 3: true}
 
@@ -195,7 +195,7 @@ func hideCatchphrase():
 #	pass
 
 func prepareAbilityPopup():
-	if is_instance_valid($AbilityPanel):
+	if is_instance_valid(get_node("AbilityPanel")):
 		$AbilityPanel/Control.visible = false
 		$AbilityPanel/Control/DialoguePanel/Catchphrase.bbcode_text = catchphrase_text
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/teamwork.mp3-20534c46cce8d963ccc90e3bb0d9558e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/SoundEffects/teamwork.mp3"
+dest_files=[ "res://.import/teamwork.mp3-20534c46cce8d963ccc90e3bb0d9558e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

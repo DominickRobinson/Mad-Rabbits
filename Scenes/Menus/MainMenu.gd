@@ -36,16 +36,19 @@ func _ready():
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ability"):
+		$AnimationPlayer1.playback_speed = 100
+		$AnimationPlayer2.playback_speed = 100
 #		$PageNumber.visible = true
-		$AnimationPlayer1.seek(100)
-		$AnimationPlayer2.seek(100)
-		$Text.visible = true
-		$Sprites.visible = true
-		$GCS_logo.visible = true
-		$GCS_logo.modulate = Color(1,1,1,.7)
-		$TipToFlip.visible = true
-		$TipToFlip/AnimationPlayer.play("blink")
-		$Sprites.modulate = Color(1,1,1,1)
+#		$AnimationPlayer1.seek(100)
+#		$AnimationPlayer2.seek(100)
+#		$PageNumber.visible = true
+#		$Text.visible = true
+#		$Sprites.visible = true
+#		$GCS_logo.visible = true
+#		$GCS_logo.modulate = Color(1,1,1,.7)
+#		$TipToFlip.visible = true
+#		$TipToFlip/AnimationPlayer.play("blink")
+#		$Sprites.modulate = Color(1,1,1,1)
 
 
 

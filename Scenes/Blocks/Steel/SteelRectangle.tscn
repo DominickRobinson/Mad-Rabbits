@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Assets/Blocks/Steel/Steel rectangle.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Blocks/Steel/Steel.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Sound/Sound effects/dom_screaming.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sound/SoundEffects/dom_screaming.mp3" type="AudioStream" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 45, 30 )

@@ -1,0 +1,165 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Rex(bad).tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Characters/Chip(enemy).tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Act IV/Honk throne room.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Characters/Ninja(enemy).tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Characters/Sarge(enemy).tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Characters/Karen(enemy).tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/InfinityCarrot.tscn" type="PackedScene" id=11]
+
+
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 2.0
+rough = true
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 835.344, 64.25 )
+
+[node name="4-6" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="GUI" parent="." instance=ExtResource( 6 )]
+music = "battle_final_chanting"
+text = "Words cannot capture the full depth of this duel. But I will try. Quite simply, it is an epic. An epic epic. Daresay I, an epically epic epic of epic proportions. An epic vegetable duel.  Yet, even with Chip back on the team in better, holier shape than ever, the gang is no match for Rex. His Infinite Carrot is too powerful; it imbues him with so much energy. One by one, Rex chops the team down. Karen rains bullets on Rex, but he effortlessly deflects them with his saber. Karen gets slashed. Scarlett aims a swift kick at Rex, but he detonates a grenade, blasting her back. He follows up with a clean swipe of his saber. Scarlett is down. Sarge and Chip rush Rex together. Chip achieves the high ground with an egg jump, following up with expanding himself into a ground pound. Sarge grabs the egg and throws it at Rex. Rex slices the egg in half, then side steps out of the way of Chip’s ground pound, laying his saber out, which Chip lands on. Chip is defeated. Only Sarge remains. Sarge rolls around Rex and readies into a fighting stance. However, he looks at his fallen team and knows that he is no match for Rex alone. He surrenders."
+
+[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar8" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="6"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar9" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="7"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 333, 339 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -99
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( 6, -8 )
+
+[node name="Rex (bad)" parent="Rabbits" instance=ExtResource( 4 )]
+position = Vector2( 804, 292 )
+scale = Vector2( -1, 1 )
+
+[node name="Infinity Carrot2" parent="Rabbits/Rex (bad)" instance=ExtResource( 11 )]
+position = Vector2( 24.6398, -13.9446 )
+rotation = 1.81193
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( 70, 413 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2( 352, -108 )
+rotation = -0.0698132
+physics_material_override = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( -115.647, 277.609 )
+rotation = 0.00872665
+shape = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 294.958, 139.916, 331.638, 131.454, 391.15, 97.5228, 455.971, 88.0213, 550.328, 57.529, 539.619, -147.718, 485.603, -249.734, 553.577, -246.986, 686.546, -184.559, 573.237, 131.307, 638.302, 189.988, 639.411, 217.132, 244.139, 221.57, 247.529, 201.758, 289.894, 183.669 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 3 )]
+position = Vector2( 336, 305 )
+current = false
+zoom = Vector2( 1.6, 1.6 )
+editor_draw_limits = true
+
+[node name="Slingshot" parent="." instance=ExtResource( 2 )]
+position = Vector2( 780, 443 )
+MaxSlingshotPull = 150
+MaxLaunchVelocity = 800
+
+[node name="LeftLine" parent="Slingshot" index="2"]
+points = PoolVector2Array( -59, -202, -52, -143 )
+
+[node name="Front" parent="Slingshot" index="3"]
+visible = false
+
+[node name="Back" parent="Slingshot" index="4"]
+visible = false
+
+[node name="RightLine" parent="Slingshot" index="5"]
+points = PoolVector2Array( 61, -120, -52, -144 )
+
+[node name="Bricks" type="Node2D" parent="."]
+position = Vector2( 910, -84 )
+
+[node name="Bears" type="Node2D" parent="."]
+position = Vector2( -53, -7 )
+
+[node name="Chip (enemy)" parent="Bears" instance=ExtResource( 5 )]
+position = Vector2( 111, 530 )
+mode = 3
+show_halo = true
+
+[node name="Ninja (enemy)" parent="Bears" instance=ExtResource( 8 )]
+position = Vector2( 193, 526 )
+mode = 3
+show_halo = true
+
+[node name="Sarge (enemy)" parent="Bears" instance=ExtResource( 9 )]
+position = Vector2( 276, 521 )
+mode = 3
+show_halo = true
+
+[node name="Karen (enemy)" parent="Bears" instance=ExtResource( 10 )]
+position = Vector2( 34, 534 )
+mode = 3
+show_halo = true
+
+[editable path="GUI"]
+[editable path="Slingshot"]

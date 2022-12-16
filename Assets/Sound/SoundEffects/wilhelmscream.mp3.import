@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/wilhelmscream.mp3-f727c1537b83a46a02863c988f222c93.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/SoundEffects/wilhelmscream.mp3"
+dest_files=[ "res://.import/wilhelmscream.mp3-f727c1537b83a46a02863c988f222c93.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

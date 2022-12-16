@@ -1,0 +1,140 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=1]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Act IV/Honk throne room.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Characters/Honkey(enemy).tscn" type="PackedScene" id=7]
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "cutscene"
+length = 20.0
+step = 0.01
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Rabbits/Chip")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2.63, 5.53 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "yessir", 2.0 ],
+"method": "speak"
+}, {
+"args": [  ],
+"method": "unfreeze"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Rabbits/Honkey (enemy)")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.43 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "go", 3.0 ],
+"method": "speak"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 835.344, 64.25 )
+
+[node name="4-1" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="GUI" parent="." instance=ExtResource( 5 )]
+music = "meeting_god"
+text = "“They are here,” says Honkey. “Yes, Father, I shall go retrieve them,” replies Chip, who rolls out of the magnificent throne room."
+
+[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 2 )]
+anims/cutscene = SubResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 332, 339 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -99
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( 6, -8 )
+
+[node name="Chip" parent="Rabbits" instance=ExtResource( 3 )]
+position = Vector2( 726, 403 )
+scale = Vector2( -1, 1 )
+mode = 1
+mass = 1.0
+show_halo = true
+rainbow = true
+
+[node name="Honkey (enemy)" parent="Rabbits" instance=ExtResource( 7 )]
+position = Vector2( 742, 135 )
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( 70, 413 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2( 352, -108 )
+rotation = -0.0698132
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( -110, 273 )
+rotation = 0.00872665
+shape = SubResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PoolVector2Array( 294.958, 139.916, 331.638, 131.454, 335.893, 70.6027, 363.176, 67.4983, 368.61, 32.7928, 477.045, 30.3509, 555.405, -215.783, 611.896, -220.854, 683.275, -180.778, 581.67, 53.7061, 609.763, 67.6998, 573.237, 131.307, 638.302, 189.988, 639.411, 217.132, 244.139, 221.57, 247.529, 201.758, 289.894, 183.669 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 4 )]
+position = Vector2( 328, 274 )
+zoom = Vector2( 1.55, 1.55 )
+editor_draw_limits = true
+
+[editable path="GUI"]

@@ -1,0 +1,157 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelRectangle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelLong.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Characters/RobotRabbit(enemy).tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Slingshot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UFO.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelSquare.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Act III/space1.jpg" type="Texture" id=12]
+[ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
+
+
+[node name="3-12" type="Node2D" groups=["Level"]]
+position = Vector2( 4, 33 )
+script = ExtResource( 18 )
+space_level = true
+
+[node name="GUI" parent="." instance=ExtResource( 1 )]
+music = "battle_dramatic"
+text = "As the gang heads for Rex’s space station, some robotic space rabbits ambush the team, trying to break inside of the ship. The gang gears up, and they head outside of the ship to take them down. After defeating the invaders, they continue for Rex."
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 535, -183 )
+z_index = -99
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Slingshot" parent="." instance=ExtResource( 6 )]
+position = Vector2( -139, -104 )
+MaxSlingshotPull = 150
+MaxLaunchVelocity = 800
+
+[node name="Bricks" type="Node2D" parent="."]
+position = Vector2( 1033, -72 )
+
+[node name="WoodSuperLong" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -99, -275 )
+rotation = 1.5708
+gravity_scale = 0.0
+
+[node name="WoodSuperLong3" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -478, -175 )
+rotation = 1.5708
+gravity_scale = 0.0
+
+[node name="WoodSuperLong2" parent="Bricks" instance=ExtResource( 15 )]
+position = Vector2( -94, -11 )
+rotation = 1.5708
+gravity_scale = 0.0
+
+[node name="SteelRectangle" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( -33, -277 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle2" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( -36, -213 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle4" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( -36, -83 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle5" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( -36, -20 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle6" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( -37, 46 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle7" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 57, 47 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle8" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( 60, -20 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle9" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( -189, 48 )
+gravity_scale = 0.0
+
+[node name="SteelRectangle10" parent="Bricks" instance=ExtResource( 3 )]
+position = Vector2( -411, -104 )
+gravity_scale = 0.0
+
+[node name="SteelSquare" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 49, -87 )
+gravity_scale = 0.0
+
+[node name="SteelSquare2" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 49, -154 )
+gravity_scale = 0.0
+
+[node name="SteelSquare3" parent="Bricks" instance=ExtResource( 11 )]
+position = Vector2( 50, -219 )
+gravity_scale = 0.0
+
+[node name="SteelLong" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -20, -324 )
+gravity_scale = 0.0
+
+[node name="SteelLong2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -24, -351 )
+gravity_scale = 0.0
+
+[node name="SteelLong3" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( -23, -377 )
+gravity_scale = 0.0
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( -166, 12 )
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 10 )]
+position = Vector2( 1, -136 )
+
+[node name="Karen" parent="Rabbits" instance=ExtResource( 2 )]
+position = Vector2( -35, -106 )
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 7 )]
+position = Vector2( -67, -64 )
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Bears" type="Node2D" parent="."]
+position = Vector2( 70, 5 )
+
+[node name="RobotRabbit (enemy)" parent="Bears" instance=ExtResource( 5 )]
+position = Vector2( 547, -233 )
+time_to_explode = 5
+
+[node name="RobotRabbit (enemy)2" parent="Bears" instance=ExtResource( 5 )]
+position = Vector2( 766, -73 )
+time_to_explode = 5
+
+[node name="RobotRabbit (enemy)3" parent="Bears" instance=ExtResource( 5 )]
+position = Vector2( 904, -211 )
+time_to_explode = 5
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( -166, 12 )
+
+[node name="UFO" parent="Ground" instance=ExtResource( 9 )]
+position = Vector2( 29, -40 )
+play_idle = false
+
+[node name="LevelCamera" parent="." instance=ExtResource( 8 )]
+position = Vector2( 412, -276 )
+zoom = Vector2( 2, 2 )
+editor_draw_limits = true
+
+[editable path="Ground/UFO"]

@@ -1,0 +1,204 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/UI/GUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/Ninja.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/CutscenePlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Characters/Karen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/Rex(bad).tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Act I/Icy mountain/Throne.png" type="Texture" id=10]
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "cutscene"
+length = 20.0
+step = 0.01
+tracks/0/type = "method"
+tracks/0/path = NodePath("../Rabbits/Sarge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.24, 5.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "plz give up", 3.0 ],
+"method": "speak"
+}, {
+"args": [ "dang it", 2.0 ],
+"method": "speak"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("../Rabbits/Rex (bad)")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.06 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "lol no", 2.0 ],
+"method": "speak"
+} ]
+}
+
+[sub_resource type="Gradient" id=13]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 13 )
+
+[sub_resource type="Gradient" id=14]
+offsets = PoolRealArray( 0.00497512, 0.455026, 1 )
+colors = PoolColorArray( 0.282353, 0.0235294, 0.0235294, 0.0823529, 0.291851, 0.031025, 0.031025, 1, 0.305882, 0.0392157, 0.0392157, 0.113725 )
+
+[sub_resource type="GradientTexture" id=16]
+gradient = SubResource( 14 )
+
+[sub_resource type="PhysicsMaterial" id=17]
+friction = 0.5
+rough = true
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 1000.26, 64.25 )
+
+[node name="3-15" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="GUI" parent="." instance=ExtResource( 2 )]
+music = "tense_ominous"
+text = "The gang rushes into his Rex's throne room. Rex sits atop his throne, waiting for them.
+ “Well, well, well… Look who defied death yet again. You know what they say, third time’s the charm.” The gang are unamused. “This,” Sarge says, “is for Chip.” 
+They fight."
+
+[node name="VScrollBar2" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="0"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar3" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar4" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar5" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar6" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar7" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar8" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="6"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="VScrollBar9" type="VScrollBar" parent="GUI/EndOfLevel/Popup/WinLose" index="7"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+step = 1.0
+
+[node name="CutscenePlayer" parent="GUI" instance=ExtResource( 5 )]
+anims/cutscene = SubResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.176471, 0.176471, 0.176471, 1 )
+position = Vector2( 168, -300 )
+scale = Vector2( 0.75, 858 )
+z_index = -99
+texture = SubResource( 15 )
+region_rect = Rect2( 0, 0, 4000, 2000 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -28, -235 )
+scale = Vector2( 0.570313, 751 )
+texture = SubResource( 16 )
+color = Color( 1, 0.0235294, 0.0235294, 1 )
+energy = 1.69
+
+[node name="Props" type="Node2D" parent="."]
+position = Vector2( -1063, -676 )
+
+[node name="Throne" type="Sprite" parent="Props"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 981, 556 )
+rotation = -0.00872665
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2( -510, -95 )
+
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+margin_left = -155.0
+margin_top = 96.0
+margin_right = 1701.0
+margin_bottom = 378.0
+color = Color( 0, 0.0470588, 0.152941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2( 187, 98 )
+physics_material_override = SubResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 527, 62 )
+shape = SubResource( 18 )
+
+[node name="Rabbits" type="Node2D" parent="."]
+position = Vector2( -295, -776 )
+
+[node name="Sarge" parent="Rabbits" instance=ExtResource( 1 )]
+position = Vector2( 556, 761 )
+scale = Vector2( -1, 1 )
+catchphrase_text = "[wave] PEEPEE POOPOO !!"
+
+[node name="Ninja" parent="Rabbits" instance=ExtResource( 4 )]
+position = Vector2( 712, 762 )
+scale = Vector2( -1, 1 )
+
+[node name="Karen" parent="Rabbits" instance=ExtResource( 6 )]
+position = Vector2( 635, 760 )
+scale = Vector2( -1, 1 )
+
+[node name="Rex (bad)" parent="Rabbits" instance=ExtResource( 7 )]
+position = Vector2( 215, 593 )
+
+[node name="ScreenEffects" parent="." instance=ExtResource( 3 )]
+position = Vector2( -580, -170 )
+
+[node name="LevelCamera" parent="." instance=ExtResource( 8 )]
+position = Vector2( 117, -208 )
+zoom = Vector2( 0.9, 0.9 )
+editor_draw_limits = true
+
+[editable path="GUI"]

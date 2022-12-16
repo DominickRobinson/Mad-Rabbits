@@ -10,13 +10,14 @@
 [ext_resource path="res://Scenes/LevelCamera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelSuperLong.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelRectangle.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Characters/Rex (good).tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Characters/Rex(good).tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/UI/ScreenEffects.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Characters/Sarge.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Blocks/Ice/IceSuperLong.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Characters/Chip.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Blocks/Steel/SteelLong.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=18]
+
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 1000.26, 64.25 )

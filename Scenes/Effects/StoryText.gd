@@ -16,8 +16,8 @@ export var disable := false
 func _ready():
 	if disable:
 		queue_free()
-	#label.text = "     " + label.text
-	yield(get_tree().create_timer(0.1), "timeout")
+#	label.text = "     " + label.text
+#	yield(get_tree().create_timer(0.1), "timeout")
 	totalChars = len(label.text)
 	print(totalChars)
 	label.visible_characters = 0

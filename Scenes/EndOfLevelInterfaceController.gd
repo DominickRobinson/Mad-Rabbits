@@ -11,7 +11,8 @@ func _ready():
 	pass # Replace with function body.
 
 func SetScore():
-	$ScoreValue.text = str(int(Manager.Score))
+#	$ScoreValue.text = str(int(Manager.Score))
+	pass
 	
 func PopupLevelCompleted(win, score):
 	$Popup/ScoreValue.text = str(int(score))

@@ -34,11 +34,11 @@ export (String, MULTILINE) var text := "There once was a rabbit..."
 
 export (bool) var is_chapter_page := false
 
-onready var Score = $Score
+#onready var Score = $Score
 onready var EndOfLevel = $EndOfLevel
 onready var pauseMenu = $PauseMenu
 
-var children = [Score, EndOfLevel]
+var children = [EndOfLevel]
 
 func _ready():
 #	Manager.play_music(music)
