@@ -77,17 +77,17 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed("reload"):
 		reload()
 	
-	if Input.is_action_just_pressed("screenshot"):
-		Input.action_press("hide_ui")
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-		yield(get_tree(), "physics_frame")
-		yield(get_tree(), "physics_frame")
-		yield(get_tree(), "physics_frame")
-		yield(get_tree(), "physics_frame")
-		var image = get_viewport().get_texture().get_data()
-		image.flip_y()
-		image.save_png("res://Screenshots/" + get_tree().current_scene.get_name() + ".png")
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#	if Input.is_action_just_pressed("screenshot"):
+#		Input.action_press("hide_ui")
+#		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+#		yield(get_tree(), "physics_frame")
+#		yield(get_tree(), "physics_frame")
+#		yield(get_tree(), "physics_frame")
+#		yield(get_tree(), "physics_frame")
+#		var image = get_viewport().get_texture().get_data()
+#		image.flip_y()
+#		image.save_png("res://Screenshots/" + get_tree().current_scene.get_name() + ".png")
+#		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 #	if findCamera() != null:
 #		if Input.is_action_just_pressed("zoom_in_test"):
